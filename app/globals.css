@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 24, 24, 27;
+  --background-end-rgb: 9, 9, 11;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom, rgb(var(--background-start-rgb)), rgb(var(--background-end-rgb))) fixed;
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-amber-400 to-orange-600;
+}
+
+.perspective {
+  perspective: 1000px;
+}
+
+.card-3d:hover {
+  transform: rotateY(5deg) rotateX(5deg);
+  box-shadow: 0 25px 50px -12px rgba(255, 179, 71, 0.25);
+}
+
+@keyframes borderPulse {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+.project-item:before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border: 1px dashed theme("colors.amber.500");
+  border-radius: 0.75rem;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 0;
+  transition: opacity 0.3s;
+}
+
+.project-item:hover:before {
+  opacity: 0.5;
+  animation: borderPulse 2s infinite linear;
+}
+
+/* Code-inspired styling for software credibility */
+.code-block {
+  position: relative;
+  font-family: "Fira Code", monospace;
+  background: rgba(24, 24, 27, 0.8);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  overflow: hidden;
+}
+
+.code-block:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0.25rem;
+  background: linear-gradient(90deg, theme("colors.amber.500"), theme("colors.orange.600"));
+}
+
+.code-line {
+  display: block;
+  color: theme("colors.zinc.400");
+}
+
+.code-keyword {
+  color: theme("colors.amber.400");
+}
+
+.code-string {
+  color: theme("colors.green.400");
+}
+
+.code-comment {
+  color: theme("colors.zinc.500");
+  font-style: italic;
+}
