@@ -1,3 +1,4 @@
+import React from "react";
 import Link from "next/link"
 import { Github, Linkedin, ExternalLink } from "lucide-react"
 

@@ -1,5 +1,6 @@
 "use client"
 
+import React from "react"
 import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
@@ -15,7 +16,8 @@ interface ProjectCardProps {
   liveUrl: string
 }
 
-export function ProjectCard({ title, description, imageSrc, tags, githubUrl, liveUrl }: ProjectCardProps) {
+export function ProjectCard(props: Readonly<ProjectCardProps>) {
+  const { title, description, imageSrc, tags, githubUrl, liveUrl } = props;
   const [isHovered, setIsHovered] = useState(false)
 
   return (
@@ -40,8 +42,8 @@ export function ProjectCard({ title, description, imageSrc, tags, githubUrl, liv
 
       <div className="p-6 relative z-10">
         <div className="flex flex-wrap gap-2 mb-4">
-          {tags.map((tag, index) => (
-            <span key={index} className="px-2 py-1 text-xs font-medium rounded-full bg-amber-500/20 text-amber-400">
+          {tags.map((tag) => (
+            <span key={tag} className="px-2 py-1 text-xs font-medium rounded-full bg-amber-500/20 text-amber-400">
               {tag}
             </span>
           ))}
