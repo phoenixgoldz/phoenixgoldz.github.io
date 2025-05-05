@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trevor Hicks Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="Images/PGlogo.jpg">
+  <meta name="description" content="Trevor Hicks - Game Developer & Software Engineer Portfolio">
+  <meta property="og:title" content="Trevor Hicks Portfolio">
+  <meta property="og:description" content="Showcasing games, software, and creative projects by Trevor Hicks.">
+  <meta property="og:image" content="Images/TH_bannerimg.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://phoenixgoldz.github.io/">
+  <!-- Google Analytics (replace UA-XXXXX-Y with your ID) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXX-Y"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-XXXXX-Y');
+  </script>
+  <style>
+    /* Gradient background for body */
+    body {
+      background: linear-gradient(135deg, #f8fafc 0%, #ffe3ec 100%);
+      min-height: 100vh;
+    }
+    /* Glassmorphism card effect */
+    .section, .project-item, .contact-section {
+      background: rgba(255,255,255,0.85);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.10);
+      backdrop-filter: blur(6px);
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.18);
+    }
+    /* Animated gradient for banner overlay */
+    .banner-overlay {
+      background: linear-gradient(90deg, rgba(255,179,71,0.7) 0%, rgba(255,255,255,0.1) 100%);
+      padding: 2rem 1rem 1.5rem 1rem;
+      border-radius: 18px;
+      box-shadow: 0 4px 24px 0 rgba(255,179,71,0.10);
+      display: inline-block;
+      margin-top: 1.5rem;
+      animation: fadeInDown 1.2s cubic-bezier(.4,0,.2,1);
+    }
+    @keyframes fadeInDown {
+      0% { opacity: 0; transform: translateY(-40px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    /* Project card hover effect */
+    .project-item {
+      transition: transform 0.3s cubic-bezier(.4,0,.2,1), box-shadow 0.3s;
+      cursor: pointer;
+    }
+    .project-item:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 12px 32px 0 rgba(255,179,71,0.18);
+      border: 1.5px solid #ffb347;
+    }
+    /* Button style for project links */
+    .project-link {
+      background: linear-gradient(90deg, #ffb347 0%, #ff7e5f 100%);
+      color: #fff;
+      border: none;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      box-shadow: 0 2px 8px rgba(255,179,71,0.10);
+      transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    }
+    .project-link:hover {
+      background: linear-gradient(90deg, #ff7e5f 0%, #ffb347 100%);
+      color: #222;
+      box-shadow: 0 4px 16px rgba(255,179,71,0.18);
+    }
+    /* Social links hover */
+    .social-links a {
+      background: linear-gradient(90deg, #ffb347 0%, #ff7e5f 100%);
+      color: #fff;
+      font-weight: 600;
+      transition: background 0.2s, color 0.2s;
+    }
+    .social-links a:hover {
+      background: linear-gradient(90deg, #ff7e5f 0%, #ffb347 100%);
+      color: #222;
+    }
+    /* Navbar gradient */
+    .navbar {
+      background: linear-gradient(90deg, #ffb347 0%, #ff7e5f 100%);
+      box-shadow: 0 2px 8px rgba(255,179,71,0.10);
+    }
+    .navbar a {
+      color: #fff;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      transition: color 0.2s;
+    }
+    .navbar a:hover {
+      color: #222;
+    }
+    /* Responsive tweaks */
+    @media (max-width: 700px) {
+      .banner-overlay {
+        padding: 1rem 0.5rem 1rem 0.5rem;
+      }
+      .section {
+        padding: 1.5rem 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="splash-video-container">
+    <video autoplay muted loop playsinline class="splash-video">
+      <source src="Video/SplashVideo.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  <header class="banner">
+    <img src="Images/TH_bannerimg.png" alt="Banner" class="banner-img">
+    <div class="banner-overlay">
+      <img src="Images/PGlogo.jpg" alt="Logo" class="logo">
+      <h1 class="banner-title">Trevor Hicks</h1>
+      <p class="banner-subtitle">Game Developer | Software Engineer | AI Explorer</p>
+    </div>
+  </header>
+  <nav class="navbar" aria-label="Main Navigation">
+    <img src="Images/PGlogo.jpg" alt="Logo" class="nav-logo">
+    <a href="#home" tabindex="0">Home/About</a>
+    <a href="#projects" tabindex="0">Projects</a>
+    <a href="#skills" tabindex="0">Skills</a>
+    <a href="#testimonials" tabindex="0">Testimonials</a>
+    <a href="#blog" tabindex="0">Blog</a>
+    <a href="#contact" tabindex="0">Contact</a>
+    <button id="darkModeToggle" aria-label="Toggle dark mode">��</button>
+  </nav>
+
+  <section id="home" class="section home-section fade-in" aria-label="About Me">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>Welcome! I'm a Graduate from Neumont College of Computer Science (Class of 2025), passionate about creating fun, polished, and technically sound games and software.</p>
+      <a href="Resume_TrevorHicks.pdf" class="project-link" download>Download Resume</a>
+      <div class="social-links">
+        <a href="https://pheonixgold.itch.io/" target="_blank" aria-label="Itch.io">Itch.io</a>
+        <a href="https://www.linkedin.com/in/trevor-hicks2025/" target="_blank" aria-label="LinkedIn">LinkedIn</a>
+        <a href="https://github.com/phoenixgoldz" target="_blank" aria-label="GitHub">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="section skills-section fade-in" aria-label="Skills and Tools">
+    <div class="container">
+      <h2>Skills & Tools</h2>
+      <div class="skills-icons" style="display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;">
+        <img src="Images/unity.svg" alt="Unity" width="48" height="48">
+        <img src="Images/unreal.svg" alt="Unreal Engine" width="48" height="48">
+        <img src="Images/csharp.svg" alt="C#" width="48" height="48">
+        <img src="Images/java.svg" alt="Java" width="48" height="48">
+        <img src="Images/python.svg" alt="Python" width="48" height="48">
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="section projects-section fade-in" aria-label="Projects">
+    <div class="container">
+      <h2>Projects</h2>
+      <div class="project-list">
+        <div class="project-item" tabindex="0" role="button" aria-label="More about Frostpaw Dash" onclick="openModal('frostpaw')" onkeypress="if(event.key==='Enter'){openModal('frostpaw')}">
+          <img src="Images/FPdash Banner.png" alt="Frostpaw Dash Screenshot" class="project-img">
+          <h3><a href="https://github.com/phoenixgoldz/FrostpawDash" class="project-link" target="_blank">Frostpaw Dash</a></h3>
+          <p>A fantasy endless runner for Android where you guide a chibi white leopard through magical biomes. Built with Unity 6, C#, TextMeshPro, Post Processing.</p>
+        </div>
+        <div class="project-item" tabindex="0" role="button" aria-label="More about Candy Rush Grand Prix" onclick="openModal('crgp')" onkeypress="if(event.key==='Enter'){openModal('crgp')}">
+          <img src="Images/CRGP banner.jpg" alt="Candy Rush Grand Prix Screenshot" class="project-img">
+          <h3><a href="https://www.linkedin.com/in/trevor-hicks2025/details/projects/" class="project-link" target="_blank">Candy Rush Grand Prix</a></h3>
+          <p>A candy-themed kart racer inspired by Diddy Kong Racing, built in Unreal Engine 5. Local multiplayer, boss races, and more.</p>
+        </div>
+        <div class="project-item">
+          <a href="https://github.com/phoenixgoldz" class="project-link" target="_blank">Software Projects</a>
+          <p>Explore more of my open source and software engineering work on GitHub.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Modals -->
+  <div id="modal-frostpaw" class="modal" aria-modal="true" role="dialog" tabindex="-1" style="display:none;">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('frostpaw')" tabindex="0" aria-label="Close modal">&times;</span>
+      <h2>Frostpaw Dash</h2>
+      <img src="Images/FPdash Banner.png" alt="Frostpaw Dash Screenshot" style="width:100%;max-width:400px;border-radius:10px;">
+      <p>Frostpaw Dash is an endless runner 3D game inspired by Temple Run, developed in Unity Engine 6. Players take control of a chibi snow leopard, dashing through a stylized fantasy world filled with obstacles, environmental interactions, and dynamic challenges. <a href='https://github.com/phoenixgoldz/FrostpawDash' target='_blank'>View on GitHub</a></p>
+    </div>
+  </div>
+  <div id="modal-crgp" class="modal" aria-modal="true" role="dialog" tabindex="-1" style="display:none;">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('crgp')" tabindex="0" aria-label="Close modal">&times;</span>
+      <h2>Candy Rush Grand Prix</h2>
+      <img src="Images/CRGP banner.jpg" alt="Candy Rush Grand Prix Screenshot" style="width:100%;max-width:400px;border-radius:10px;">
+      <p>Candy Rush Grand Prix is a candy-themed kart racer inspired by Diddy Kong Racing, built in Unreal Engine 5. Explore lollipop forests, unlock new biomes, and defeat bosses to save the Candy Kingdom. <a href='https://www.linkedin.com/in/trevor-hicks2025/details/projects/' target='_blank'>View on LinkedIn</a></p>
+    </div>
+  </div>
+
+  <section id="testimonials" class="section testimonials-section fade-in" aria-label="Testimonials">
+    <div class="container">
+      <h2>Testimonials</h2>
+      <blockquote>"Trevor's attention to detail and passion for game development is unmatched. His code is clean, and his creativity shines in every project."<br><span>- Jane Doe, Senior Game Designer</span></blockquote>
+      <blockquote>"A reliable and innovative software engineer. Trevor always delivers on time and exceeds expectations."<br><span>- John Smith, Software Lead</span></blockquote>
+    </div>
+  </section>
+
+  <section id="blog" class="section blog-section fade-in" aria-label="Blog and Devlog">
+    <div class="container">
+      <h2>Blog & Devlog</h2>
+      <ul>
+        <li><a href="#" tabindex="0">How I Designed the Frostpaw Dash Biomes</a></li>
+        <li><a href="#" tabindex="0">Unity vs Unreal: My Experience</a></li>
+        <li><a href="#" tabindex="0">Tips for Game Jam Success</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact" class="section contact-section fade-in" aria-label="Contact">
+    <div class="container">
+      <h2>Contact</h2>
+      <form action="https://formspree.io/f/mnqekgqg" method="POST" aria-label="Contact Form">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+        <button type="submit" class="project-link">Send</button>
+      </form>
+      <p>Email: <a href="mailto:th1ckssoftwar3@gmail.com">th1ckssoftwar3@gmail.com</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/trevor-hicks2025/" target="_blank">Trevor Hicks</a></p>
+      <p>GitHub: <a href="https://github.com/phoenixgoldz" target="_blank">phoenixgoldz</a></p>
+    </div>
+  </section>
+
+  <script>
+    // Dark mode toggle
+    const darkToggle = document.getElementById('darkModeToggle');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if(localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && prefersDark)) {
+      document.body.classList.add('dark-mode');
+      darkToggle.textContent = '☀️';
+    }
+    darkToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      if(document.body.classList.contains('dark-mode')) {
+        localStorage.setItem('theme', 'dark');
+        darkToggle.textContent = '☀️';
+      } else {
+        localStorage.setItem('theme', 'light');
+        darkToggle.textContent = '🌙';
+      }
+    });
+    // Modal logic
+    function openModal(id) {
+      document.getElementById('modal-' + id).style.display = 'block';
+      document.getElementById('modal-' + id).focus();
+    }
+    function closeModal(id) {
+      document.getElementById('modal-' + id).style.display = 'none';
+    }
+    // Accessibility: close modal on Escape
+    document.addEventListener('keydown', function(e) {
+      if(e.key === 'Escape') {
+        document.querySelectorAll('.modal').forEach(m => m.style.display = 'none');
+      }
+    });
+    // Simple fade-in animation on scroll
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = { threshold: 0.1 };
+    const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('appear');
+        appearOnScroll.unobserve(entry.target);
+      });
+    }, appearOptions);
+    faders.forEach(fader => { appearOnScroll.observe(fader); });
+  </script>
+</body>
+</html>
