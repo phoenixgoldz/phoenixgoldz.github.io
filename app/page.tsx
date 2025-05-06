@@ -32,7 +32,7 @@ export default function Home() {
             <div className="relative group perspective">
               <div className="relative h-[400px] w-full rounded-xl overflow-hidden transform transition-all duration-700 card-3d">
                 <Image
-                  src="/placeholder.svg?height=800&width=600"
+                  
                   alt="Trevor Hicks"
                   fill
                   className="object-cover"
@@ -60,27 +60,29 @@ export default function Home() {
             <ProjectCard
               title="Frostpaw Dash"
               description="A fantasy endless runner for Android where you guide a chibi white leopard through magical biomes. Built with Unity 6, C#, TextMeshPro, Post Processing."
-              imageSrc="/placeholder.svg?height=300&width=500"
+              imageSrc="/images/FPdash Banner.png"
+              imageStyle={{ width: "500px", height: "300px" }}
               tags={["Unity", "C#", "Android", "Game Dev"]}
               githubUrl="https://github.com/phoenixgoldz/FrostpawDash"
               liveUrl="https://pheonixgold.itch.io/"
             />
             <ProjectCard
-              title="Candy Rush Grand Prix"
-              description="A candy-themed kart racer inspired by Diddy Kong Racing, built in Unreal Engine 5. Features local multiplayer, boss races, and more."
-              imageSrc="/placeholder.svg?height=300&width=500"
-              tags={["Unreal Engine 5", "C++", "Multiplayer", "Game Dev"]}
-              githubUrl="#"
-              liveUrl="https://www.linkedin.com/in/trevor-hicks2025/details/projects/"
-            />
+  title="Candy Rush Grand Prix"
+  description="A candy-themed kart racer inspired by Diddy Kong Racing, built in Unreal Engine 5. Features local multiplayer, boss races, and more."
+  imageSrc="/Images/CRGP banner.jpg"
+              imageStyle={{ width: "500px", height: "300px" }}
+  tags={["Unreal Engine 5", "C++", "Multiplayer", "Game Dev"]}
+  githubUrl="https://github.com/phoenixgoldz/Capstone"
+  liveUrl="https://www.linkedin.com/in/trevor-hicks2025/details/projects/"
+/>
             <ProjectCard
-              title="AI Code Assistant"
-              description="A VS Code extension that uses machine learning to suggest code completions and refactorings based on your coding patterns."
-              imageSrc="/placeholder.svg?height=300&width=500"
-              tags={["TypeScript", "Machine Learning", "VS Code API", "Software Dev"]}
-              githubUrl="https://github.com/phoenixgoldz"
-              liveUrl="#"
-            />
+  title="MegaBlast Mayhem"
+  description="A fast-paced Bomberman-style Java game with gamepad support, dynamic map parsing, and custom explosions. Built from scratch in Java."
+  imageSrc="/Images/MegaBlast_banner.jpg"
+  tags={["Java", "Game Dev", "Custom Engine", "Retro"]}
+  githubUrl="https://github.com/phoenixgoldz/MegaBlast-Mayhem"
+              // Replace with specific game link if available
+/>
           </div>
           <div className="text-center mt-12">
             <Link
