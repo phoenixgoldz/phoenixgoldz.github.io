@@ -1,18 +1,18 @@
-import type { Config } from "tailwindcss"
-import animate from "tailwindcss-animate"
-
-const config: Config = {
+/** @type {import('tailwindcss').Config} */
+const config = {
   darkMode: ["class"],
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "*.{js,ts,jsx,tsx,mdx}",
-    "app/**/*.{ts,tsx}",
-    "components/**/*.{ts,tsx}",
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["var(--font-inter)", "sans-serif"],
+        display: ["var(--font-orbitron)", "sans-serif"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -38,6 +38,8 @@ const config: Config = {
         accent: {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
+          primary: "var(--color-accent-primary)",
+          secondary: "var(--color-accent-secondary)",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
@@ -47,65 +49,15 @@ const config: Config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        amber: {
-          400: "#FFB347",
-          500: "#FF9F29",
-          600: "#FF8C00",
-        },
-        orange: {
-          500: "#FF7E5F",
-          600: "#FF6347",
-        },
       },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
-      animation: {
-        "gradient-x": "gradient-x 15s ease infinite",
-        "gradient-y": "gradient-y 15s ease infinite",
-        "gradient-xy": "gradient-xy 15s ease infinite",
-      },
-      keyframes: {
-        "gradient-x": {
-          "0%, 100%": {
-            "background-size": "200% 200%",
-            "background-position": "left center",
-          },
-          "50%": {
-            "background-size": "200% 200%",
-            "background-position": "right center",
-          },
-        },
-        "gradient-y": {
-          "0%, 100%": {
-            "background-size": "200% 200%",
-            "background-position": "top center",
-          },
-          "50%": {
-            "background-size": "200% 200%",
-            "background-position": "bottom center",
-          },
-        },
-        "gradient-xy": {
-          "0%, 100%": {
-            "background-size": "400% 400%",
-            "background-position": "0% 0%",
-          },
-          "25%": {
-            "background-position": "100% 0%",
-          },
-          "50%": {
-            "background-position": "100% 100%",
-          },
-          "75%": {
-            "background-position": "0% 100%",
-          },
-        },
-      },
     },
   },
-  plugins: [animate],
+  plugins: [],
 }
+
 export default config

@@ -1,148 +1,211 @@
 "use client"
 
-import { useEffect, useRef } from "react"
+import { useEffect, useState, useRef } from "react"
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { ArrowDown, Code, Gamepad2 } from "lucide-react"
+import { Gamepad2, Code, ChevronDown } from "lucide-react"
 
 export function HeroSection() {
-  const canvasRef = useRef<HTMLCanvasElement>(null)
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
+  const heroRef = useRef<HTMLDivElement>(null)
+  const [scrollIndicatorVisible, setScrollIndicatorVisible] = useState(true)
 
+  // Track mouse position for parallax effect
   useEffect(() => {
-    const canvas = canvasRef.current
-    if (!canvas) return
-
-    const ctx = canvas.getContext("2d")
-    if (!ctx) return
-
-    canvas.width = window.innerWidth
-    canvas.height = window.innerHeight
-
-    const particles = []
-    const particleCount = 100
-
-    function createParticle(canvasWidth, canvasHeight) {
-      return {
-        x: Math.random() * canvasWidth,
-        y: Math.random() * canvasHeight,
-        size: Math.random() * 3 + 1,
-        speedX: Math.random() * 3 - 1.5,
-        speedY: Math.random() * 3 - 1.5,
-        color: `rgba(255, 179, 71, ${Math.random() * 0.5 + 0.2})`,
-        update(canvasWidth, canvasHeight) {
-          this.x += this.speedX
-          this.y += this.speedY
-          if (this.x > canvasWidth) this.x = 0
-          else if (this.x < 0) this.x = canvasWidth
-          if (this.y > canvasHeight) this.y = 0
-          else if (this.y < 0) this.y = canvasHeight
-        },
-        draw(ctx) {
-          ctx.fillStyle = this.color
-          ctx.beginPath()
-          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2)
-          ctx.fill()
-        }
+    const handleMouseMove = (e: MouseEvent) => {
+      if (heroRef.current) {
+        const { left, top, width, height } = heroRef.current.getBoundingClientRect()
+        const x = (e.clientX - left) / width - 0.5
+        const y = (e.clientY - top) / height - 0.5
+        setMousePosition({ x, y })
       }
     }
 
-    const init = () => {
-      for (let i = 0; i < particleCount; i++) {
-        particles.push(createParticle(canvas.width, canvas.height))
+    window.addEventListener("mousemove", handleMouseMove)
+
+    // Hide scroll indicator when user scrolls
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setScrollIndicatorVisible(false)
+      } else {
+        setScrollIndicatorVisible(true)
       }
     }
 
-    const animate = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height)
-
-      for (let i = 0; i < particles.length; i++) {
-        particles[i].update(canvas.width, canvas.height)
-        particles[i].draw(ctx)
-      }
-
-      requestAnimationFrame(animate)
-    }
-
-    init()
-    animate()
-
-    const handleResize = () => {
-      canvas.width = window.innerWidth
-      canvas.height = window.innerHeight
-    }
-
-    window.addEventListener("resize", handleResize)
+    window.addEventListener("scroll", handleScroll)
 
     return () => {
-      window.removeEventListener("resize", handleResize)
+      window.removeEventListener("mousemove", handleMouseMove)
+      window.removeEventListener("scroll", handleScroll)
     }
   }, [])
 
+  // Text animation variants
+  const titleVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    },
+  }
+
+  const subtitleVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        delay: 0.3,
+        ease: "easeOut",
+      },
+    },
+  }
+
+  const buttonVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        delay: 0.6,
+        ease: "easeOut",
+      },
+    },
+    hover: {
+      scale: 1.05,
+      boxShadow: "0 10px 20px rgba(255, 179, 71, 0.3)",
+      transition: {
+        duration: 0.3,
+        ease: "easeInOut",
+      },
+    },
+  }
+
+  const badgeVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+      },
+    },
+  }
+
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      <canvas ref={canvasRef} className="absolute inset-0 z-0" />
-      <div className="absolute inset-0 bg-gradient-to-b from-zinc-900/90 to-zinc-900/70 z-10"></div>
+    <section className="hero" ref={heroRef}>
+      <div className="container">
+        <div className="hero-content">
+          <motion.div initial="hidden" animate="visible" variants={badgeVariants} whileHover={{ scale: 1.05 }}>
+            <span className="hero-badge">Game Developer & Software Engineer</span>
+          </motion.div>
 
-      <div className="relative z-20 text-center px-4 max-w-5xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="mb-6"
-        >
-          <span className="inline-block px-4 py-2 rounded-full bg-gradient-to-r from-amber-500/20 to-orange-600/20 text-amber-400 text-sm font-medium mb-4">
-            Game Developer & Software Engineer
-          </span>
-        </motion.div>
-
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-amber-400 to-orange-600"
-        >
-          Trevor Hicks
-        </motion.h1>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-xl md:text-2xl text-zinc-300 mb-10 max-w-3xl mx-auto"
-        >
-          Crafting immersive digital experiences where{" "}
-          <span className="text-amber-400 font-semibold">code meets creativity</span>. Specializing in game development,
-          software engineering, and AI exploration.
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
-        >
-          <Link
-            href="#projects"
-            className="px-8 py-4 rounded-full bg-gradient-to-r from-amber-500 to-orange-600 text-white font-medium transition-transform hover:scale-105 hover:shadow-lg flex items-center justify-center"
+          <motion.h1
+            className="hero-title font-display"
+            initial="hidden"
+            animate="visible"
+            variants={titleVariants}
+            style={{
+              transform: `translate(${mousePosition.x * 20}px, ${mousePosition.y * 20}px)`,
+              textShadow: `${mousePosition.x * -10}px ${mousePosition.y * -10}px 20px rgba(255, 179, 71, 0.3)`,
+            }}
           >
-            <Gamepad2 className="mr-2 h-5 w-5" />
-            View My Projects
-          </Link>
-          <Link
-            href="#contact"
-            className="px-8 py-4 rounded-full bg-zinc-800 border border-zinc-700 text-white font-medium transition-transform hover:scale-105 hover:shadow-lg hover:bg-zinc-700 flex items-center justify-center"
+            Trevor Hicks
+          </motion.h1>
+
+          <motion.p
+            className="hero-subtitle"
+            initial="hidden"
+            animate="visible"
+            variants={subtitleVariants}
+            style={{
+              transform: `translate(${mousePosition.x * 10}px, ${mousePosition.y * 10}px)`,
+            }}
           >
-            <Code className="mr-2 h-5 w-5" />
-            Let's Collaborate
-          </Link>
-        </motion.div>
+            Crafting immersive digital experiences where{" "}
+            <motion.span
+              className="highlight"
+              animate={{
+                color: ["#ffb347", "#ff7e5f", "#ffb347"],
+                textShadow: [
+                  "0 0 5px rgba(255, 179, 71, 0.3)",
+                  "0 0 15px rgba(255, 126, 95, 0.5)",
+                  "0 0 5px rgba(255, 179, 71, 0.3)",
+                ],
+              }}
+              transition={{
+                duration: 3,
+                repeat: Number.POSITIVE_INFINITY,
+                ease: "easeInOut",
+              }}
+            >
+              code meets creativity
+            </motion.span>
+            . Specializing in game development, software engineering, web development, and AI exploration.
+          </motion.p>
+
+          <div className="hero-buttons">
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={buttonVariants}
+              whileHover="hover"
+              whileTap={{ scale: 0.95 }}
+            >
+              <Link href="#projects" className="btn btn-primary">
+                <Gamepad2 className="h-5 w-5 mr-2" />
+                View My Projects
+              </Link>
+            </motion.div>
+
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={buttonVariants}
+              whileHover="hover"
+              whileTap={{ scale: 0.95 }}
+              transition={{ delay: 0.8 }}
+            >
+              <Link href="#contact" className="btn btn-secondary">
+                <Code className="h-5 w-5 mr-2" />
+                Let's Collaborate
+              </Link>
+            </motion.div>
+          </div>
+        </div>
       </div>
 
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20 animate-bounce">
-        <Link href="#about" className="text-zinc-400 hover:text-amber-400 transition-colors">
-          <ArrowDown className="h-8 w-8" />
+      <motion.div
+        className="scroll-indicator"
+        initial={{ opacity: 0, y: 10 }}
+        animate={{
+          opacity: scrollIndicatorVisible ? 1 : 0,
+          y: scrollIndicatorVisible ? 0 : 20,
+        }}
+        transition={{ duration: 0.5 }}
+      >
+        <Link href="#about">
+          <motion.div
+            animate={{
+              y: [0, 10, 0],
+            }}
+            transition={{
+              duration: 1.5,
+              repeat: Number.POSITIVE_INFINITY,
+              ease: "easeInOut",
+            }}
+          >
+            <ChevronDown className="h-8 w-8 text-amber-400" />
+          </motion.div>
         </Link>
-      </div>
+      </motion.div>
     </section>
   )
 }

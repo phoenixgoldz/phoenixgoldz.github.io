@@ -1,6 +1,5 @@
 "use client"
 
-import React from "react"
 import { motion } from "framer-motion"
 
 const technologies = [
@@ -27,7 +26,7 @@ export function TechStack() {
       <div className="max-w-6xl mx-auto">
         <h2 className="text-4xl font-bold text-center mb-16 text-gradient">Tech Stack</h2>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
           {technologies.map((tech, index) => (
             <motion.div
               key={tech.name}
@@ -37,9 +36,9 @@ export function TechStack() {
               viewport={{ once: true }}
               className="relative group"
             >
-              <div className="bg-zinc-800 border border-zinc-700 rounded-lg p-4 h-full flex flex-col items-center justify-center text-center transition-all duration-300 group-hover:border-amber-500 group-hover:shadow-[0_0_15px_rgba(255,179,71,0.3)]">
-                <div className="text-amber-400 mb-2 text-lg font-bold">{tech.name}</div>
-                <div className="text-zinc-500 text-xs">{tech.category}</div>
+              <div className="bg-zinc-800/80 backdrop-blur-sm border border-zinc-700 rounded-lg p-6 h-full flex flex-col items-center justify-center text-center transition-all duration-300 group-hover:border-amber-500 group-hover:shadow-[0_0_15px_rgba(255,179,71,0.3)]">
+                <div className="text-amber-400 mb-2 text-xl font-bold">{tech.name}</div>
+                <div className="text-zinc-400 text-sm font-medium">{tech.category}</div>
 
                 <div className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-amber-500 to-orange-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-b-lg"></div>
               </div>
