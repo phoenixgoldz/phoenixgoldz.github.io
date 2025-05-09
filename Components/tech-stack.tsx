@@ -28,7 +28,7 @@ export function TechStack() {
           Tech Stack
         </h2>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 w-full">
           {technologies.map((tech, index) => (
             <motion.div
               key={tech.name}
@@ -36,9 +36,9 @@ export function TechStack() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
               viewport={{ once: true }}
-              className="relative group"
+              className="w-full"
             >
-              <div className="bg-zinc-800/80 backdrop-blur-sm border border-zinc-700 rounded-lg p-6 h-full flex flex-col items-center justify-center text-center transition-all duration-300 group-hover:border-amber-500 group-hover:shadow-[0_0_15px_rgba(255,179,71,0.3)]">
+              <div className="w-full min-h-[120px] bg-zinc-800/80 backdrop-blur-sm border border-zinc-700 rounded-lg p-6 flex flex-col items-center justify-center text-center transition-all duration-300 group-hover:border-amber-500 group-hover:shadow-[0_0_15px_rgba(255,179,71,0.3)]">
                 <div className="text-amber-400 mb-2 text-xl font-bold">
                   {tech.name}
                 </div>
