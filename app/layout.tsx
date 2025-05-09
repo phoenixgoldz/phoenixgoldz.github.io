@@ -1,12 +1,25 @@
-import React from "react"
-import "./globals.css"
+import type React from "react"
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import { Inter, Orbitron } from "next/font/google"
+import "./globals.css"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
-import { ThemeProvider } from "@/components/theme-provider"
 
-const inter = Inter({ subsets: ["latin"] })
+// Configure the Inter font
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+  weight: ["400", "500", "600", "700"],
+})
+
+// Configure the Orbitron font
+const orbitron = Orbitron({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-orbitron",
+  weight: ["400", "500", "600", "700"],
+})
 
 export const metadata: Metadata = {
   title: "Trevor Hicks - Game Developer & Software Engineer",
@@ -19,13 +32,11 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className={`${inter.variable} ${orbitron.variable}`}>
       <body className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="dark">
-          <Navbar />
-          {children}
-          <Footer />
-        </ThemeProvider>
+        <Navbar />
+        {children}
+        <Footer />
       </body>
     </html>
   )
