@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 
 const technologies = [
   { name: "Unity", category: "Game Dev" },
@@ -18,13 +18,15 @@ const technologies = [
   { name: "Blender", category: "Design" },
   { name: "Photoshop", category: "Design" },
   { name: "Figma", category: "Design" },
-]
+];
 
 export function TechStack() {
   return (
     <section className="py-20 px-4 bg-gradient-to-br from-zinc-800 to-zinc-900">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-16 text-gradient">Tech Stack</h2>
+        <h2 className="text-4xl font-bold text-center mb-16 text-gradient">
+          Tech Stack
+        </h2>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
           {technologies.map((tech, index) => (
@@ -37,15 +39,19 @@ export function TechStack() {
               className="relative group"
             >
               <div className="bg-zinc-800/80 backdrop-blur-sm border border-zinc-700 rounded-lg p-6 h-full flex flex-col items-center justify-center text-center transition-all duration-300 group-hover:border-amber-500 group-hover:shadow-[0_0_15px_rgba(255,179,71,0.3)]">
-                <div className="text-amber-400 mb-2 text-xl font-bold">{tech.name}</div>
-                <div className="text-zinc-400 text-sm font-medium">{tech.category}</div>
+                <div className="text-amber-400 mb-2 text-xl font-bold">
+                  {tech.name}
+                </div>
+                <div className="text-zinc-400 text-sm font-medium">
+                  {tech.category}
+                </div>
 
-                <div className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-amber-500 to-orange-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-b-lg"></div>
+                <div className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-amber-500 to-orange-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-b-lg" />
               </div>
             </motion.div>
           ))}
         </div>
       </div>
     </section>
-  )
+  );
 }
