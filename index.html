@@ -12,705 +12,612 @@
   <link rel="icon" type="image/jpg" href="Images/PGlogo.jpg">
 </head>
 <body>
-  <!-- Particle Canvas Background -->
-  <canvas id="particles-canvas" class="particles-canvas"></canvas>
+<canvas id="particles-canvas" class="particles-canvas"></canvas>
 
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="container">
-      <a href="#" class="logo">
-        <img src="/Images/PGlogo.jpg" alt="Logo" class="nav-logo">
-        <span class="logo-text">TH</span>
-      </a>
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-      </div>
-      <button class="mobile-menu-btn" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+<nav class="navbar">
+  <div class="container">
+    <a href="#" class="logo">
+      <img src="/Images/PGlogo.jpg" alt="Logo" class="nav-logo">
+      <span class="logo-text">TH</span>
+    </a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#game-projects">Games</a>
+      <a href="#software-projects">Software</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
     </div>
-  </nav>
-
-  <!-- Mobile Menu -->
-  <div class="mobile-menu">
-    <div class="mobile-menu-container">
-      <a href="#about" class="mobile-link">About</a>
-      <a href="#projects" class="mobile-link">Projects</a>
-      <a href="#skills" class="mobile-link">Skills</a>
-      <a href="#contact" class="mobile-link">Contact</a>
-    </div>
+    <button class="mobile-menu-btn" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </div>
+</nav>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="container">
-      <div class="hero-content">
-        <div class="hero-badge">Game Developer & Software Engineer</div>
-        <h1 class="hero-title">Trevor Hicks</h1>
-        <p class="hero-subtitle">Crafting immersive digital experiences where <span class="highlight">code meets creativity</span>. Specializing in game development, software engineering, web development, and AI exploration.</p>
-        <div class="hero-buttons">
-          <a href="#projects" class="btn btn-primary">
-            <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M17 6H13.5C12.9477 6 12.5 6.44772 12.5 7V17C12.5 17.5523 12.9477 18 13.5 18H17C17.5523 18 18 17.5523 18 17V7C18 6.44772 17.5523 6 17 6Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M6 6H9.5C10.0523 6 10.5 6.44772 10.5 7V17C10.5 17.5523 10.0523 18 9.5 18H6C5.44772 18 5 17.5523 5 17V7C5 6.44772 5.44772 6 6 6Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M10.5 9H12.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M10.5 15H12.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            View My Projects
-          </a>
-          <a href="#contact" class="btn btn-secondary">
-            <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M20 4L3 11L10 14L13 21L20 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            Let's Collaborate
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="scroll-indicator">
-      <a href="#about">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M19 12L12 19L5 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </a>
-    </div>
-  </section>
+<div class="mobile-menu">
+  <div class="mobile-menu-container">
+    <a href="#about" class="mobile-link">About</a>
+    <a href="#game-projects" class="mobile-link">Games</a>
+    <a href="#software-projects" class="mobile-link">Software</a>
+    <a href="#skills" class="mobile-link">Skills</a>
+    <a href="#contact" class="mobile-link">Contact</a>
+  </div>
+</div>
 
-  <!-- About Section -->
-  <section id="about" class="section about-section">
-    <div class="container">
-      <div class="section-grid">
-        <div class="section-content">
-          <h2 class="section-title">About Me</h2>
-          <p class="section-text">I'm a Graduate from Neumont College of Computer Science (Class of 2025), passionate about creating fun, polished, and technically sound games and software.</p>
-          <p class="section-text">With a strong foundation in both technical implementation and creative design, I bridge the gap between software engineering precision and game development creativity.</p>
-          <div class="social-links">
-            <a href="https://github.com/phoenixgoldz" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5229 6.47715 22 12 22C17.5229 22 22 17.5229 22 12C22 6.47715 17.5229 2 12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M14.3333 19V17.137C14.3583 16.8275 14.3154 16.5163 14.2073 16.2242C14.0993 15.9321 13.9286 15.6657 13.7067 15.4428C15.8 15.2156 18 14.4431 18 10.8989C17.9998 9.99256 17.6418 9.12101 17 8.46461C17.3039 7.67171 17.2824 6.79528 16.94 6.01739C16.94 6.01739 16.1533 5.7902 14.3333 6.97811C12.8053 6.57488 11.1947 6.57488 9.66666 6.97811C7.84666 5.7902 7.05999 6.01739 7.05999 6.01739C6.71757 6.79528 6.69609 7.67171 6.99999 8.46461C6.35341 9.12588 5.99501 10.0053 5.99999 10.9178C5.99999 14.4337 8.19999 15.2063 10.2933 15.4616C10.074 15.6829 9.90483 15.9461 9.79686 16.2347C9.68889 16.5232 9.64453 16.8306 9.66666 17.137V19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M9.66667 17.7018C7.66667 18.3335 6 17.7018 5 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-            <a href="https://www.linkedin.com/in/trevor-hicks2025/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M16 8C17.5913 8 19.1174 8.63214 20.2426 9.75736C21.3679 10.8826 22 12.4087 22 14V21H18V14C18 13.4696 17.7893 12.9609 17.4142 12.5858C17.0391 12.2107 16.5304 12 16 12C15.4696 12 14.9609 12.2107 14.5858 12.5858C14.2107 12.9609 14 13.4696 14 14V21H10V14C10 12.4087 10.6321 10.8826 11.7574 9.75736C12.8826 8.63214 14.4087 8 16 8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M6 9H2V21H6V9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M4 6C5.10457 6 6 5.10457 6 4C6 2.89543 5.10457 2 4 2C2.89543 2 2 2.89543 2 4C2 5.10457 2.89543 6 4 6Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-            <a href="https://pheonixgold.itch.io/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Itch.io">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M21 9V15C21 16.1046 20.1046 17 19 17H5C3.89543 17 3 16.1046 3 15V9C3 7.89543 3.89543 7 5 7H19C20.1046 7 21 7.89543 21 9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M3 9H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M9 17V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M15 17V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M9 21H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-            <a href="resume.pdf" target="_blank" class="btn btn-small">Resume</a>
-          </div>
-        </div>
-        <div class="profile-card">
-          <div class="profile-card-inner">
-            <img src="/Images/TH_bannerimg.png" alt="Trevor Hicks" class="profile-image">
-            <div class="profile-overlay">
-              <h3 class="profile-name">Trevor Hicks</h3>
-              <p class="profile-title">Game Developer | Software Engineer</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Skills Section -->
-  <section id="skills" class="section skills-section">
-    <div class="container">
-      <h2 class="section-title centered">Tech Stack</h2>
-
-      <div class="skills-container">
-
-        <!-- Game Development -->
-        <div class="skill-category">
-          <h3 class="skill-category-title">Game Development</h3>
-          <div class="skills-grid">
-            <div class="skill-item" data-skill="Unity">
-              <div class="skill-icon">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 2L2 12L12 22L22 12L12 2Z" stroke="currentColor" stroke-width="2"/>
-                </svg>
-              </div>
-              <span class="skill-name">Unity</span>
-            </div>
-
-            <div class="skill-item" data-skill="Unreal Engine">
-              <div class="skill-icon">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
-                </svg>
-              </div>
-              <span class="skill-name">Unreal Engine</span>
-            </div>
-
-            <div class="skill-item" data-skill="Blender">
-              <div class="skill-icon">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 3L20 7V17L12 21L4 17V7L12 3Z" stroke="currentColor" stroke-width="2"/>
-                </svg>
-              </div>
-              <span class="skill-name">Blender</span>
-            </div>
-
-            <div class="skill-item" data-skill="Godot Engine">
-              <div class="skill-icon">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M2 12L12 2L22 12L12 22L2 12Z" stroke="currentColor" stroke-width="2"/>
-                </svg>
-              </div>
-              <span class="skill-name">Godot Engine</span>
-            </div>
-
-            <div class="skill-item" data-skill="Blueprint Visual Scripting">
-              <div class="skill-icon">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="4" y="4" width="16" height="16" stroke="currentColor" stroke-width="2"/>
-                </svg>
-              </div>
-              <span class="skill-name">Blueprint Visual Scripting</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Programming Languages -->
-        <div class="skill-category">
-          <h3 class="skill-category-title">Programming Languages</h3>
-          <div class="skills-grid">
-            <div class="skill-item" data-skill="C#">
-              <div class="skill-icon">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 4L4 12L12 20L20 12L12 4Z" stroke="currentColor" stroke-width="2"/>
-                </svg>
-              </div>
-              <span class="skill-name">C#</span>
-            </div>
-
-            <div class="skill-item" data-skill="C++">
-              <div class="skill-icon">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M6 12H18M12 6V18" stroke="currentColor" stroke-width="2"/>
-                </svg>
-              </div>
-              <span class="skill-name">C++</span>
-            </div>
-
-            <div class="skill-item" data-skill="JavaScript">
-              <div class="skill-icon">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
-                </svg>
-              </div>
-              <span class="skill-name">JavaScript</span>
-            </div>
-
-            <div class="skill-item" data-skill="Python">
-              <div class="skill-icon">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 2C9 2 6 4 6 8V10H14V12H6V14C6 18 9 20 12 20C15 20 18 18 18 14V12H10V10H18V8C18 4 15 2 12 2Z" stroke="currentColor" stroke-width="2"/>
-                </svg>
-              </div>
-              <span class="skill-name">Python</span>
-            </div>
-
-            <div class="skill-item" data-skill="Java">
-              <div class="skill-icon">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="4" y="4" width="16" height="16" stroke="currentColor" stroke-width="2"/>
-                </svg>
-              </div>
-              <span class="skill-name">Java</span>
-            </div>
-
-            <div class="skill-item" data-skill="TypeScript">
-              <div class="skill-icon">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <polygon points="12,2 2,12 22,12" stroke="currentColor" stroke-width="2"/>
-                </svg>
-              </div>
-              <span class="skill-name">TypeScript</span>
-            </div>
-
-            <div class="skill-item" data-skill="SQL">
-              <div class="skill-icon">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <ellipse cx="12" cy="6" rx="8" ry="3" stroke="currentColor" stroke-width="2"/>
-                  <path d="M4 6V18C4 19.6569 8 21 12 21C16 21 20 19.6569 20 18V6" stroke="currentColor" stroke-width="2"/>
-                </svg>
-              </div>
-              <span class="skill-name">SQL</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Web & Tools -->
-        <div class="skill-category">
-          <h3 class="skill-category-title">Web & Tools</h3>
-          <div class="skills-grid">
-            <div class="skill-item" data-skill="React">
-              <div class="skill-icon">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="12" r="2" stroke="currentColor" stroke-width="2"/>
-                  <ellipse cx="12" cy="12" rx="10" ry="4" stroke="currentColor" stroke-width="2"/>
-                </svg>
-              </div>
-              <span class="skill-name">React</span>
-            </div>
-
-            <div class="skill-item" data-skill="Git">
-              <div class="skill-icon">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M15 5L9 5M12 2L12 22M5 19L19 5" stroke="currentColor" stroke-width="2"/>
-                </svg>
-              </div>
-              <span class="skill-name">Git</span>
-            </div>
-
-            <div class="skill-item" data-skill="Node.js">
-              <div class="skill-icon">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <polygon points="12,2 22,8 22,16 12,22 2,16 2,8" stroke="currentColor" stroke-width="2"/>
-                </svg>
-              </div>
-              <span class="skill-name">Node.js</span>
-            </div>
-
-            <div class="skill-item" data-skill="TensorFlow">
-              <div class="skill-icon">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="4" y="4" width="16" height="16" stroke="currentColor" stroke-width="2"/>
-                  <path d="M4 12H20M12 4V20" stroke="currentColor" stroke-width="2"/>
-                </svg>
-              </div>
-              <span class="skill-name">TensorFlow</span>
-            </div>
-
-            <div class="skill-item" data-skill="Spring Boot">
-              <div class="skill-icon">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 2L22 12L12 22L2 12L12 2Z" stroke="currentColor" stroke-width="2"/>
-                </svg>
-              </div>
-              <span class="skill-name">Spring Boot</span>
-            </div>
-
-            <div class="skill-item" data-skill="Firebase">
-              <div class="skill-icon">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M4 20L12 4L20 20H4Z" stroke="currentColor" stroke-width="2"/>
-                </svg>
-              </div>
-              <span class="skill-name">Firebase</span>
-            </div>
-
-            <div class="skill-item" data-skill="Docker">
-              <div class="skill-icon">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
-                </svg>
-              </div>
-              <span class="skill-name">Docker</span>
-            </div>
-
-            <div class="skill-item" data-skill="Figma">
-              <div class="skill-icon">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>
-                </svg>
-              </div>
-              <span class="skill-name">Figma</span>
-            </div>
-
-            <div class="skill-item" data-skill="Agile/Scrum">
-              <div class="skill-icon">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M3 12a9 9 0 1118 0" stroke="currentColor" stroke-width="2"/>
-                </svg>
-              </div>
-              <span class="skill-name">Agile / Scrum</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Projects Section -->
-  <section id="projects" class="section projects-section">
-    <div class="container">
-      <h2 class="section-title centered">Featured Projects</h2>
-      <div class="projects-grid">
-        <div class="project-card">
-          <div class="project-image">
-            <img src="/Images/FPdash Banner.png" alt="Frostpaw Dash" loading="lazy">
-            <div class="project-overlay">
-              <div class="project-tags">
-                <span class="project-tag">Unity</span>
-                <span class="project-tag">C#</span>
-                <span class="project-tag">Android</span>
-              </div>
-            </div>
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">Frostpaw Dash</h3>
-            <p class="project-description">A fantasy endless runner for Android where you guide a chibi white leopard through magical biomes. Built with Unity 6, C#, TextMeshPro, Post Processing.</p>
-            <div class="project-links">
-              <a href="https://github.com/phoenixgoldz/FrostpawDash" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="GitHub Repository">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5229 6.47715 22 12 22C17.5229 22 22 17.5229 22 12C22 6.47715 17.5229 2 12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M14.3333 19V17.137C14.3583 16.8275 14.3154 16.5163 14.2073 16.2242C14.0993 15.9321 13.9286 15.6657 13.7067 15.4428C15.8 15.2156 18 14.4431 18 10.8989C17.9998 9.99256 17.6418 9.12101 17 8.46461C17.3039 7.67171 17.2824 6.79528 16.94 6.01739C16.94 6.01739 16.1533 5.7902 14.3333 6.97811C12.8053 6.57488 11.1947 6.57488 9.66666 6.97811C7.84666 5.7902 7.05999 6.01739 7.05999 6.01739C6.71757 6.79528 6.69609 7.67171 6.99999 8.46461C6.35341 9.12588 5.99501 10.0053 5.99999 10.9178C5.99999 14.4337 8.19999 15.2063 10.2933 15.4616C10.074 15.6829 9.90483 15.9461 9.79686 16.2347C9.68889 16.5232 9.64453 16.8306 9.66666 17.137V19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M9.66667 17.7018C7.66667 18.3335 6 17.7018 5 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </a>
-              <a href="https://pheonixgold.itch.io/" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Live Demo">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M18 13V19C18 19.5304 17.7893 20.0391 17.4142 20.4142C17.0391 20.7893 16.5304 21 16 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V8C3 7.46957 3.21071 6.96086 3.58579 6.58579C3.96086 6.21071 4.46957 6 5 6H11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M15 3H21V9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M10 14L21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </a>
-              <a href="https://github.com/phoenixgoldz/FrostpawDash" class="project-details">
-                View Details
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M12 5L19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-image">
-            <img src="/Images/CRGP banner.jpg" alt="Candy Rush Grand Prix" loading="lazy">
-            <div class="project-overlay">
-              <div class="project-tags">
-                <span class="project-tag">Unreal Engine</span>
-                <span class="project-tag">C++</span>
-                <span class="project-tag">Multiplayer</span>
-              </div>
-            </div>
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">Candy Rush Grand Prix</h3>
-            <p class="project-description">A candy-themed kart racer inspired by Diddy Kong Racing, built in Unreal Engine 5. Features local multiplayer, boss races, and more.</p>
-            <div class="project-links">
-              <a href="https://github.com/phoenixgoldz/Capstone" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="LinkedIn Project">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M16 8C17.5913 8 19.1174 8.63214 20.2426 9.75736C21.3679 10.8826 22 12.4087 22 14V21H18V14C18 13.4696 17.7893 12.9609 17.4142 12.5858C17.0391 12.2107 16.5304 12 16 12C15.4696 12 14.9609 12.2107 14.5858 12.5858C14.2107 12.9609 14 13.4696 14 14V21H10V14C10 12.4087 10.6321 10.8826 11.7574 9.75736C12.8826 8.63214 14.4087 8 16 8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M6 9H2V21H6V9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M4 6C5.10457 6 6 5.10457 6 4C6 2.89543 5.10457 2 4 2C2.89543 2 2 2.89543 2 4C2 5.10457 2.89543 6 4 6Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </a>
-              <a href="https://github.com/phoenixgoldz/Capstone" class="project-details">
-                View Details
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M12 5L19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-        <!-- MegaBlast Mayhem -->
-        <div class="project-card">
-          <div class="project-image">
-            <img src="/Images/Mbm.jpg" alt="Megablast Mayhem" loading="lazy">
-            <div class="project-overlay">
-              <div class="project-tags">
-                <span class="project-tag">JavaScript</span>
-                <span class="project-tag">Java</span>
-                <span class="project-tag">Multiplayer</span>
-              </div>
-            </div>
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">MegaBlast Mayhem</h3>
-            <p class="project-description">
-              A chaotic 2D action-battle game inspired by Bomberman, featuring retro sprite art, explosive abilities, controller support, and custom maps powered by Java and CSV logic.
-            </p>
-            <div class="project-links">
-              <a href="https://github.com/phoenixgoldz/MegablastMayhem" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="GitHub Repository">
-                <!-- GitHub SVG -->
-              </a>
-              <a href="https://github.com/phoenixgoldz/MegablastMayhem" class="project-details">
-                View Details
-              </a>
-            </div>
-          </div>
-        </div> <!-- ✅ Properly closed -->
-
-        <!-- The Forgotten Trial -->
-        <div class="project-card">
-          <div class="project-image">
-            <img src="/Images/TheForgottenTrial.png" alt="The Forgotten Trial" loading="lazy">
-            <div class="project-overlay">
-              <div class="project-tags">
-                <span class="project-tag">Unreal Engine</span>
-                <span class="project-tag">C++</span>
-                <span class="project-tag">Tactical RPG</span>
-              </div>
-            </div>
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">The Forgotten Trial</h3>
-            <p class="project-description">
-              A tactical RPG mystery built in Unreal Engine 5.5.4 featuring turn-based combat, AI-generated dialogue, and an immersive dungeon narrative with evolving gameplay and unique stories each playthrough!
-            </p>
-            <div class="project-links">
-              <a href="https://github.com/phoenixgoldz/The-Forgotten-Trial" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="GitHub Repository">
-                <!-- GitHub SVG -->
-              </a>
-                <a href="https://github.com/phoenixgoldz/The-Forgotten-Trial" class="project-details">
-                View Details
-                </a>
-            </div>
-          </div>
-        </div> <!-- ✅ Properly closed -->
-
-        <div class="projects-cta">
-        <a href="https://github.com/phoenixgoldz" class="btn btn-primary">
-          View All Ongoing Projects
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M12 5L19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badge">Software Engineer | Full-Stack Developer</div>
+      <h1 class="hero-title">Trevor Hicks</h1>
+      <p class="hero-subtitle">Building scalable software where <span class="highlight">engineering meets innovation</span>. Specializing in full-stack development, APIs, system design, and AI tooling.</p>
+      <div class="hero-buttons">
+        <a href="#game-projects" class="btn btn-primary">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17 6H13.5C12.9477 6 12.5 6.44772 12.5 7V17C12.5 17.5523 12.9477 18 13.5 18H17C17.5523 18 18 17.5523 18 17V7C18 6.44772 17.5523 6 17 6Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M6 6H9.5C10.0523 6 10.5 6.44772 10.5 7V17C10.5 17.5523 10.0523 18 9.5 18H6C5.44772 18 5 17.5523 5 17V7C5 6.44772 5.44772 6 6 6Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M10.5 9H12.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M10.5 15H12.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
+          View My Projects
+        </a>
+        <a href="#contact" class="btn btn-secondary">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 4L3 11L10 14L13 21L20 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Let's Collaborate
         </a>
       </div>
     </div>
-    </div>
-  </section>
+  </div>
+  <div class="scroll-indicator">
+    <a href="#about">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M19 12L12 19L5 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+</section>
 
-  <!-- Code Showcase Section -->
-  <section class="section code-showcase-section">
-    <div class="container">
-      <h2 class="section-title centered">Code Showcase</h2>
-      <div class="code-block">
-        <div class="code-header">
-          <span class="code-filename">PlayerController.cs</span>
-          <div class="code-actions">
-            <span class="code-language">C#</span>
-          </div>
-        </div>
-        <pre class="code-content"><code><span class="code-keyword">using</span> UnityEngine;
-<span class="code-keyword">using</span> System.Collections;
-
-<span class="code-keyword">public class</span> <span class="code-class">PlayerController</span> : MonoBehaviour
-{
-    <span class="code-comment">// Movement parameters</span>
-    [SerializeField] <span class="code-keyword">private float</span> moveSpeed = 5f;
-    [SerializeField] <span class="code-keyword">private float</span> jumpForce = 10f;
-    
-    <span class="code-comment">// Component references</span>
-    <span class="code-keyword">private</span> Rigidbody2D rb;
-    <span class="code-keyword">private</span> Animator animator;
-    <span class="code-keyword">private bool</span> isGrounded = <span class="code-keyword">false</span>;
-    
-    <span class="code-keyword">void</span> Start()
-    {
-        rb = GetComponent&lt;Rigidbody2D&gt;();
-        animator = GetComponent&lt;Animator&gt;();
-    }
-    
-    <span class="code-keyword">void</span> Update()
-    {
-        <span class="code-comment">// Handle horizontal movement</span>
-        <span class="code-keyword">float</span> moveInput = Input.GetAxis(<span class="code-string">"Horizontal"</span>);
-        rb.velocity = <span class="code-keyword">new</span> Vector2(moveInput * moveSpeed, rb.velocity.y);
-        
-        <span class="code-comment">// Update animation parameters</span>
-        animator.SetFloat(<span class="code-string">"Speed"</span>, Mathf.Abs(moveInput));
-        
-        <span class="code-comment">// Handle jumping</span>
-        <span class="code-keyword">if</span> (Input.GetButtonDown(<span class="code-string">"Jump"</span>) && isGrounded)
-        {
-            rb.AddForce(<span class="code-keyword">new</span> Vector2(0f, jumpForce), ForceMode2D.Impulse);
-            animator.SetTrigger(<span class="code-string">"Jump"</span>);
-            isGrounded = <span class="code-keyword">false</span>;
-        }
-        
-        <span class="code-comment">// Flip character based on direction</span>
-        <span class="code-keyword">if</span> (moveInput > 0)
-            transform.localScale = <span class="code-keyword">new</span> Vector3(1, 1, 1);
-        <span class="code-keyword">else if</span> (moveInput < 0)
-            transform.localScale = <span class="code-keyword">new</span> Vector3(-1, 1, 1);
-    }
-    
-    <span class="code-keyword">void</span> OnCollisionEnter2D(Collision2D collision)
-    {
-        <span class="code-keyword">if</span> (collision.gameObject.CompareTag(<span class="code-string">"Ground"</span>))
-        {
-            isGrounded = <span class="code-keyword">true</span>;
-            animator.SetBool(<span class="code-string">"Grounded"</span>, <span class="code-keyword">true</span>);
-        }
-    }
-}</code></pre>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="section contact-section">
-    <div class="container">
-      <h2 class="section-title centered">Get In Touch</h2>
-      <div class="contact-grid">
-        <div class="contact-info">
-          <h3 class="contact-subtitle">Let's Talk</h3>
-          <p class="contact-text">I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
-          
-          <div class="contact-methods">
-            <div class="contact-method">
-              <div class="contact-icon">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M22 6L12 13L2 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </div>
-              <div class="contact-method-content">
-                <h4 class="contact-method-title">Email</h4>
-                <a href="mailto:th1ckssoftwar3@gmail.com" class="contact-method-value">th1ckssoftwar3@gmail.com</a>
-              </div>
-            </div>
-            
-            <div class="contact-method">
-              <div class="contact-icon">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </div>
-              <div class="contact-method-content">
-                <h4 class="contact-method-title">Location</h4>
-                <p class="contact-method-value">Salt Lake City, Utah</p>
-              </div>
-            </div>
-            
-            <div class="contact-method">
-              <div class="contact-icon">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M16 8C17.5913 8 19.1174 8.63214 20.2426 9.75736C21.3679 10.8826 22 12.4087 22 14V21H18V14C18 13.4696 17.7893 12.9609 17.4142 12.5858C17.0391 12.2107 16.5304 12 16 12C15.4696 12 14.9609 12.2107 14.5858 12.5858C14.2107 12.9609 14 13.4696 14 14V21H10V14C10 12.4087 10.6321 10.8826 11.7574 9.75736C12.8826 8.63214 14.4087 8 16 8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M6 9H2V21H6V9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M4 6C5.10457 6 6 5.10457 6 4C6 2.89543 5.10457 2 4 2C2.89543 2 2 2.89543 2 4C2 5.10457 2.89543 6 4 6Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </div>
-              <div class="contact-method-content">
-                <h4 class="contact-method-title">LinkedIn</h4>
-                <a href="https://www.linkedin.com/in/trevor-hicks2025/" target="_blank" rel="noopener noreferrer" class="contact-method-value">Trevor Hicks</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <form class="contact-form" id="contact-form">
-          <div class="form-group">
-            <label for="name" class="form-label">Name</label>
-            <input type="text" id="name" name="name" class="form-input" required>
-          </div>
-          
-          <div class="form-group">
-            <label for="email" class="form-label">Email</label>
-            <input type="email" id="email" name="email" class="form-input" required>
-          </div>
-          
-          <div class="form-group">
-            <label for="subject" class="form-label">Subject</label>
-            <input type="text" id="subject" name="subject" class="form-input" required>
-          </div>
-          
-          <div class="form-group">
-            <label for="message" class="form-label">Message</label>
-            <textarea id="message" name="message" class="form-textarea" rows="4" required></textarea>
-          </div>
-          
-          <button type="submit" class="btn btn-primary btn-full">
-            Send Message
+<section id="about" class="section about-section">
+  <div class="container">
+    <div class="section-grid">
+      <div class="section-content">
+        <h2 class="section-title">About Me</h2>
+        <p class="section-text">I'm a Graduate from Neumont College of Computer Science (Class of 2025), passionate about creating fun, polished, and technically sound games and software.</p>
+        <p class="section-text">With a strong foundation in both technical implementation and creative design, I bridge the gap between software engineering precision and game development creativity.</p>
+        <div class="social-links">
+          <a href="https://github.com/phoenixgoldz" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M22 2L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5229 6.47715 22 12 22C17.5229 22 22 17.5229 22 12C22 6.47715 17.5229 2 12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M14.3333 19V17.137C14.3583 16.8275 14.3154 16.5163 14.2073 16.2242C14.0993 15.9321 13.9286 15.6657 13.7067 15.4428C15.8 15.2156 18 14.4431 18 10.8989C17.9998 9.99256 17.6418 9.12101 17 8.46461C17.3039 7.67171 17.2824 6.79528 16.94 6.01739C16.94 6.01739 16.1533 5.7902 14.3333 6.97811C12.8053 6.57488 11.1947 6.57488 9.66666 6.97811C7.84666 5.7902 7.05999 6.01739 7.05999 6.01739C6.71757 6.79528 6.69609 7.67171 6.99999 8.46461C6.35341 9.12588 5.99501 10.0053 5.99999 10.9178C5.99999 14.4337 8.19999 15.2063 10.2933 15.4616C10.074 15.6829 9.90483 15.9461 9.79686 16.2347C9.68889 16.5232 9.64453 16.8306 9.66666 17.137V19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M9.66667 17.7018C7.66667 18.3335 6 17.7018 5 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
-          </button>
-        </form>
+          </a>
+          <a href="https://www.linkedin.com/in/trevor-hicks2025/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 8C17.5913 8 19.1174 8.63214 20.2426 9.75736C21.3679 10.8826 22 12.4087 22 14V21H18V14C18 13.4696 17.7893 12.9609 17.4142 12.5858C17.0391 12.2107 16.5304 12 16 12C15.4696 12 14.9609 12.2107 14.5858 12.5858C14.2107 12.9609 14 13.4696 14 14V21H10V14C10 12.4087 10.6321 10.8826 11.7574 9.75736C12.8826 8.63214 14.4087 8 16 8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M6 9H2V21H6V9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M4 6C5.10457 6 6 5.10457 6 4C6 2.89543 5.10457 2 4 2C2.89543 2 2 2.89543 2 4C2 5.10457 2.89543 6 4 6Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a href="https://pheonixgold.itch.io/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Itch.io">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M21 9V15C21 16.1046 20.1046 17 19 17H5C3.89543 17 3 16.1046 3 15V9C3 7.89543 3.89543 7 5 7H19C20.1046 7 21 7.89543 21 9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M3 9H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M9 17V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M15 17V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M9 21H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a href="resume.pdf" target="_blank" class="btn btn-small">Resume</a>
+        </div>
+      </div>
+      <div class="profile-card">
+        <div class="profile-card-inner">
+          <img src="/Images/TH_bannerimg.png" alt="Trevor Hicks" class="profile-image">
+          <div class="profile-overlay">
+            <h3 class="profile-name">Trevor Hicks</h3>
+            <p class="profile-title">Game Developer | Software Engineer</p>
+          </div>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+<section id="skills" class="section skills-section">
+  <div class="container">
+    <h2 class="section-title centered">Tech Stack</h2>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-info">
-          <a href="#" class="footer-logo">
-            <span class="logo-text">Trevor Hicks</span>
-          </a>
-          <p class="footer-description">Game developer and software engineer passionate about creating immersive digital experiences where code meets creativity.</p>
-          <div class="footer-social">
-            <a href="https://github.com/phoenixgoldz" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="GitHub">
+    <div class="skills-container">
+
+      <div class="skill-category">
+        <h3 class="skill-category-title">Game Development</h3>
+        <div class="skills-grid">
+          <div class="skill-item" data-skill="Unity">
+            <div class="skill-icon">
               <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5229 6.47715 22 12 22C17.5229 22 22 17.5229 22 12C22 6.47715 17.5229 2 12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M14.3333 19V17.137C14.3583 16.8275 14.3154 16.5163 14.2073 16.2242C14.0993 15.9321 13.9286 15.6657 13.7067 15.4428C15.8 15.2156 18 14.4431 18 10.8989C17.9998 9.99256 17.6418 9.12101 17 8.46461C17.3039 7.67171 17.2824 6.79528 16.94 6.01739C16.94 6.01739 16.1533 5.7902 14.3333 6.97811C12.8053 6.57488 11.1947 6.57488 9.66666 6.97811C7.84666 5.7902 7.05999 6.01739 7.05999 6.01739C6.71757 6.79528 6.69609 7.67171 6.99999 8.46461C6.35341 9.12588 5.99501 10.0053 5.99999 10.9178C5.99999 14.4337 8.19999 15.2063 10.2933 15.4616C10.074 15.6829 9.90483 15.9461 9.79686 16.2347C9.68889 16.5232 9.64453 16.8306 9.66666 17.137V19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M9.66667 17.7018C7.66667 18.3335 6 17.7018 5 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 2L2 12L12 22L22 12L12 2Z" stroke="currentColor" stroke-width="2"/>
               </svg>
-            </a>
-            <a href="https://www.linkedin.com/in/trevor-hicks2025/" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="LinkedIn">
+            </div>
+            <span class="skill-name">Unity</span>
+          </div>
+
+          <div class="skill-item" data-skill="Unreal Engine">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </div>
+            <span class="skill-name">Unreal Engine</span>
+          </div>
+
+          <div class="skill-item" data-skill="Blender">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 3L20 7V17L12 21L4 17V7L12 3Z" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </div>
+            <span class="skill-name">Blender</span>
+          </div>
+
+          <div class="skill-item" data-skill="Godot Engine">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2 12L12 2L22 12L12 22L2 12Z" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </div>
+            <span class="skill-name">Godot Engine</span>
+          </div>
+
+          <div class="skill-item" data-skill="Blueprint Visual Scripting">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="4" y="4" width="16" height="16" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </div>
+            <span class="skill-name">Blueprint Visual Scripting</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <h3 class="skill-category-title">Programming Languages</h3>
+        <div class="skills-grid">
+          <div class="skill-item" data-skill="C#">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 4L4 12L12 20L20 12L12 4Z" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </div>
+            <span class="skill-name">C#</span>
+          </div>
+
+          <div class="skill-item" data-skill="C++">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 12H18M12 6V18" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </div>
+            <span class="skill-name">C++</span>
+          </div>
+
+          <div class="skill-item" data-skill="JavaScript">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </div>
+            <span class="skill-name">JavaScript</span>
+          </div>
+
+          <div class="skill-item" data-skill="Python">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C9 2 6 4 6 8V10H14V12H6V14C6 18 9 20 12 20C15 20 18 18 18 14V12H10V10H18V8C18 4 15 2 12 2Z" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </div>
+            <span class="skill-name">Python</span>
+          </div>
+
+          <div class="skill-item" data-skill="Java">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="4" y="4" width="16" height="16" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </div>
+            <span class="skill-name">Java</span>
+          </div>
+
+          <div class="skill-item" data-skill="TypeScript">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="12,2 2,12 22,12" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </div>
+            <span class="skill-name">TypeScript</span>
+          </div>
+
+          <div class="skill-item" data-skill="SQL">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="12" cy="6" rx="8" ry="3" stroke="currentColor" stroke-width="2"/>
+                <path d="M4 6V18C4 19.6569 8 21 12 21C16 21 20 19.6569 20 18V6" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </div>
+            <span class="skill-name">SQL</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <h3 class="skill-category-title">Web & Tools</h3>
+        <div class="skills-grid">
+          <div class="skill-item" data-skill="React">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="2" stroke="currentColor" stroke-width="2"/>
+                <ellipse cx="12" cy="12" rx="10" ry="4" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </div>
+            <span class="skill-name">React</span>
+          </div>
+
+          <div class="skill-item" data-skill="Git">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 5L9 5M12 2L12 22M5 19L19 5" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </div>
+            <span class="skill-name">Git</span>
+          </div>
+
+          <div class="skill-item" data-skill="Node.js">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="12,2 22,8 22,16 12,22 2,16 2,8" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </div>
+            <span class="skill-name">Node.js</span>
+          </div>
+
+          <div class="skill-item" data-skill="TensorFlow">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="4" y="4" width="16" height="16" stroke="currentColor" stroke-width="2"/>
+                <path d="M4 12H20M12 4V20" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </div>
+            <span class="skill-name">TensorFlow</span>
+          </div>
+
+          <div class="skill-item" data-skill="Spring Boot">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2L22 12L12 22L2 12L12 2Z" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </div>
+            <span class="skill-name">Spring Boot</span>
+          </div>
+
+          <div class="skill-item" data-skill="Firebase">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 20L12 4L20 20H4Z" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </div>
+            <span class="skill-name">Firebase</span>
+          </div>
+
+          <div class="skill-item" data-skill="Docker">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </div>
+            <span class="skill-name">Docker</span>
+          </div>
+
+          <div class="skill-item" data-skill="Figma">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </div>
+            <span class="skill-name">Figma</span>
+          </div>
+
+          <div class="skill-item" data-skill="Agile/Scrum">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 12a9 9 0 1118 0" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </div>
+            <span class="skill-name">Agile / Scrum</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="software-projects" class="section projects-section">
+  <div class="container">
+    <h2 class="section-title centered">Featured Software Projects</h2>
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <div class="project-overlay">
+          <div class="project-tags">
+            <span class="project-tag">Flask</span>
+            <span class="project-tag">Python</span>
+            <span class="project-tag">Chart.js</span>
+          </div>
+        </div>
+        <div class="project-content">
+          <h3 class="project-title">GitHub Activity Dashboard</h3>
+          <p class="project-description">
+            A real-time dashboard that visualizes GitHub activity across repositories using Flask, GitHub API, and Chart.js.
+          </p>
+          <div class="project-links">
+            <a href="https://github.com/phoenixgoldz/github-dashboard" target="_blank" class="project-link" aria-label="GitHub Repo">🔗</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-overlay">
+          <div class="project-tags">
+            <span class="project-tag">Java</span>
+            <span class="project-tag">Spring Boot</span>
+            <span class="project-tag">JPA</span>
+            <span class="project-tag">REST API</span>
+          </div>
+        </div>
+        <div class="project-content">
+          <h3 class="project-title">Superhero API Search Service</h3>
+          <p class="project-description">REST API built with Spring Boot for superhero search using JPA query methods and custom filters.</p>
+          <div class="project-links">
+            <a href="https://github.com/phoenixgoldz/superheroapi" target="_blank" class="project-link" aria-label="GitHub">🔗</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-overlay">
+          <div class="project-tags">
+            <span class="project-tag">TypeScript</span>
+            <span class="project-tag">OOP</span>
+            <span class="project-tag">SOLID</span>
+          </div>
+        </div>
+        <div class="project-content">
+          <h3 class="project-title">Design Patterns Showcase</h3>
+          <p class="project-description">A showcase of classic software design patterns implemented in TypeScript with clean modular code.</p>
+          <div class="project-links">
+            <a href="https://github.com/phoenixgoldz/design-patterns" target="_blank" class="project-link" aria-label="GitHub">🔗</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-overlay">
+          <div class="project-tags">
+            <span class="project-tag">ASP.NET Core</span>
+            <span class="project-tag">C#</span>
+            <span class="project-tag">MVC</span>
+          </div>
+        </div>
+        <div class="project-content">
+          <h3 class="project-title">NeuMeet Web App</h3>
+          <p class="project-description">Full-stack .NET web app demonstrating MVC routing, Razor views, and server-side rendering.</p>
+          <div class="project-links">
+            <a href="https://github.com/phoenixgoldz/NeuMeetASPNET" target="_blank" class="project-link" aria-label="GitHub">🔗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="game-projects" class="section projects-section">
+  <div class="container">
+    <h2 class="section-title centered">Featured Game Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-image">
+          <img src="/Images/FPdash Banner.png" alt="Frostpaw Dash" loading="lazy">
+          <div class="project-overlay">
+            <div class="project-tags">
+              <span class="project-tag">Unity</span>
+              <span class="project-tag">C#</span>
+              <span class="project-tag">Android</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-content">
+          <h3 class="project-title">Frostpaw Dash</h3>
+          <p class="project-description">A fantasy endless runner for Android where you guide a chibi white leopard through magical biomes. Built with Unity 6, C#, TextMeshPro, Post Processing.</p>
+          <div class="project-links">
+            <a href="https://github.com/phoenixgoldz/FrostpawDash" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="GitHub Repository">🔗</a>
+          </div>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-image">
+          <img src="/Images/CRGP banner.jpg" alt="Candy Rush Grand Prix" loading="lazy">
+          <div class="project-overlay">
+            <div class="project-tags">
+              <span class="project-tag">Unreal Engine</span>
+              <span class="project-tag">C++</span>
+              <span class="project-tag">Multiplayer</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-content">
+          <h3 class="project-title">Candy Rush Grand Prix</h3>
+          <p class="project-description">A candy-themed kart racer inspired by Diddy Kong Racing, built in Unreal Engine 5. Features local multiplayer, boss races, and more.</p>
+          <div class="project-links">
+            <a href="https://github.com/phoenixgoldz/Capstone" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="LinkedIn Project">🔗</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-image">
+          <img src="/Images/TheForgottenTrial.png" alt="The Forgotten Trial" loading="lazy">
+          <div class="project-overlay">
+            <div class="project-tags">
+              <span class="project-tag">Unreal Engine</span>
+              <span class="project-tag">C++</span>
+              <span class="project-tag">Tactical RPG</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-content">
+          <h3 class="project-title">The Forgotten Trial</h3>
+          <p class="project-description">
+            A tactical RPG mystery built in Unreal Engine 5.5.4 featuring turn-based combat, AI-generated dialogue, and an immersive dungeon narrative with evolving gameplay and unique stories each playthrough!
+          </p>
+          <div class="project-links">
+            <a href="https://github.com/phoenixgoldz/The-Forgotten-Trial" target="_blank" class="project-link" aria-label="GitHub Repository">🔗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="projects-cta">
+    <a href="https://github.com/phoenixgoldz" class="btn btn-primary">
+      View All Ongoing Projects
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M12 5L19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+</section>
+
+<section class="section code-showcase-section">
+  <div class="container">
+    <h2 class="section-title centered">Code Snippets</h2>
+    <div class="code-block">
+      <div class="code-header">
+        <span class="code-filename">ProjectController.java</span>
+        <div class="code-actions">
+          <span class="code-language">Java</span>
+        </div>
+      </div>
+      <pre class="code-content">
+
+<code>
+@RestController
+@RequestMapping("/api/projects")
+public class ProjectController {
+
+  @Autowired
+  private ProjectService service;
+
+  @GetMapping
+  public ResponseEntity&lt;List&lt;Project&gt;&gt; getAll() {
+    return ResponseEntity.ok(service.findAll());
+  }
+
+  @PostMapping
+  public ResponseEntity&lt;Project&gt; create(@RequestBody Project project) {
+    return ResponseEntity.status(HttpStatus.CREATED).body(service.save(project));
+  }
+}
+</code>
+</pre>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="section contact-section">
+  <div class="container">
+    <h2 class="section-title centered">Get In Touch</h2>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3 class="contact-subtitle">Let's Talk</h3>
+        <p class="contact-text">I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+
+        <div class="contact-methods">
+          <div class="contact-method">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M22 6L12 13L2 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="contact-method-content">
+              <h4 class="contact-method-title">Email</h4>
+              <a href="mailto:th1ckssoftwar3@gmail.com" class="contact-method-value">th1ckssoftwar3@gmail.com</a>
+            </div>
+          </div>
+
+          <div class="contact-method">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="contact-method-content">
+              <h4 class="contact-method-title">Location</h4>
+              <p class="contact-method-value">Salt Lake City, Utah</p>
+            </div>
+          </div>
+
+          <div class="contact-method">
+            <div class="contact-icon">
               <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M16 8C17.5913 8 19.1174 8.63214 20.2426 9.75736C21.3679 10.8826 22 12.4087 22 14V21H18V14C18 13.4696 17.7893 12.9609 17.4142 12.5858C17.0391 12.2107 16.5304 12 16 12C15.4696 12 14.9609 12.2107 14.5858 12.5858C14.2107 12.9609 14 13.4696 14 14V21H10V14C10 12.4087 10.6321 10.8826 11.7574 9.75736C12.8826 8.63214 14.4087 8 16 8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M6 9H2V21H6V9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M4 6C5.10457 6 6 5.10457 6 4C6 2.89543 5.10457 2 4 2C2.89543 2 2 2.89543 2 4C2 5.10457 2.89543 6 4 6Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
-            </a>
-            <a href="https://pheonixgold.itch.io/" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Itch.io">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M21 9V15C21 16.1046 20.1046 17 19 17H5C3.89543 17 3 16.1046 3 15V9C3 7.89543 3.89543 7 5 7H19C20.1046 7 21 7.89543 21 9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M3 9H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M9 17V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M15 17V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M9 21H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
+            </div>
+            <div class="contact-method-content">
+              <h4 class="contact-method-title">LinkedIn</h4>
+              <a href="https://www.linkedin.com/in/trevor-hicks2025/" target="_blank" rel="noopener noreferrer" class="contact-method-value">Trevor Hicks</a>
+            </div>
           </div>
         </div>
-        
-        <div class="footer-links">
-          <h3 class="footer-title">Quick Links</h3>
-          <ul class="footer-nav">
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-        
-        <div class="footer-contact">
-          <h3 class="footer-title">Contact</h3>
-          <p class="footer-contact-item">
-            <a href="mailto:th1ckssoftwar3@gmail.com">th1ckssoftwar3@gmail.com</a>
-          </p>
-          <p class="footer-contact-item">Salt Lake City, Utah</p>
-        </div>
       </div>
-      
-      <div class="footer-bottom">
-        <p class="copyright">&copy; <span id="current-year"></span> Trevor Hicks. All rights reserved.</p>
-        <p class="credits">Built with <span class="highlight">HTML</span>, <span class="highlight">CSS</span>, and <span class="highlight">JavaScript</span></p>
-      </div>
-    </div>
-  </footer>
 
-  <script src="js/main.js"></script>
+      <form class="contact-form" id="contact-form">
+        <div class="form-group">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" id="name" name="name" class="form-input" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" id="email" name="email" class="form-input" required>
+        </div>
+
+        <div class="form-group">
+          <label for="subject" class="form-label">Subject</label>
+          <input type="text" id="subject" name="subject" class="form-input" required>
+        </div>
+
+        <div class="form-group">
+          <label for="message" class="form-label">Message</label>
+          <textarea id="message" name="message" class="form-textarea" rows="4" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-full">
+          Send Message
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22 2L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
 </body>
 </html>

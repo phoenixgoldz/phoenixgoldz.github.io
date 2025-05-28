@@ -8,14 +8,12 @@ export function AboutSection() {
         <div className="section-grid">
           <div className="section-content">
             <h2 className="section-title font-display">About Me</h2>
-            <p className="section-text">
-              I'm a Graduate from Neumont College of Computer Science (Class of 2025), passionate about creating fun,
-              polished, and technically sound games and software.
-            </p>
-            <p className="section-text">
-              With a strong foundation in both technical implementation and creative design, I bridge the gap between
-              software engineering precision and game development creativity.
-            </p>
+           <p className="section-text">
+             I'm a software engineer graduating from Neumont College of Computer Science (Class of 2025), with three internships and hands-on experience in full-stack web development, backend APIs, and cloud deployment.
+           </p>
+           <p className="section-text">
+             I specialize in building reliable, scalable, and user-focused software systems. My projects span web apps, developer tools, and real-time data platforms — all grounded in solid engineering and clean design.
+           </p>
             <div className="social-links">
               <a
                 href="https://github.com/phoenixgoldz"
