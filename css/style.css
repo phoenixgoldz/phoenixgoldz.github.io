@@ -977,184 +977,548 @@
     gap: 1rem;
   }
   
+  .footer-social {
+
+    display: flex;
+
+    gap: 1rem;
+
+  }
+
+  
+
   .footer-social-link {
+
     display: flex;
+
     align-items: center;
+
     justify-content: center;
+
     width: 2rem;
+
     height: 2rem;
+
     border-radius: var(--border-radius-full);
+
     background-color: rgba(255, 255, 255, 0.1);
+
     color: var(--color-text-secondary);
+
     transition: all var(--transition-fast);
+
   }
+
   
+
   .footer-social-link:hover {
+
     background-color: var(--color-accent-primary);
+
     color: var(--color-bg-primary);
+
     transform: translateY(-2px);
+
   }
+
   
+
   .footer-social-link svg {
+
     width: 1rem;
+
     height: 1rem;
+
   }
+
   
+
   .footer-title {
+
     font-family: var(--font-display);
+
     font-size: 1.25rem;
+
     font-weight: 700;
+
     margin-bottom: 1.5rem;
+
     color: var(--color-text-primary);
+
   }
+
   
+
   .footer-nav {
+
     display: flex;
+
     flex-direction: column;
+
     gap: 0.75rem;
+
   }
+
   
+
   .footer-nav a {
+
     color: var(--color-text-secondary);
+
     font-size: 0.875rem;
+
     transition: color var(--transition-fast);
+
   }
+
   
+
   .footer-nav a:hover {
+
     color: var(--color-text-accent);
+
   }
+
   
+
   .footer-contact-item {
+
     color: var(--color-text-secondary);
+
     font-size: 0.875rem;
+
     margin-bottom: 0.75rem;
+
   }
+
   
+
   .footer-contact-item a {
+
     color: var(--color-text-secondary);
+
     transition: color var(--transition-fast);
+
   }
+
   
+
   .footer-contact-item a:hover {
+
     color: var(--color-text-accent);
+
   }
+
   
+
   .footer-bottom {
+
     padding-top: 2rem;
+
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+
     text-align: center;
+
   }
+
   
+
   .copyright {
+
     color: var(--color-text-secondary);
+
     font-size: 0.875rem;
+
     margin-bottom: 0.5rem;
+
   }
+
   
+
   .credits {
+
     color: var(--color-text-secondary);
+
     font-size: 0.75rem;
+
   }
+
   
+
   /* Media Queries */
+
   @media (max-width: 1024px) {
+
     .section-grid,
+
     .contact-grid,
+
     .footer-grid {
+
       grid-template-columns: 1fr;
+
       gap: 3rem;
+
     }
+
   
+
     .profile-card {
+
       max-width: 400px;
+
       margin: 0 auto;
+
     }
+
   
+
     .footer-info {
+
       max-width: 100%;
+
     }
+
   }
+
   
+
   @media (max-width: 768px) {
+
     html {
+
       font-size: 14px;
+
     }
+
   
+
     .nav-links {
+
       display: none;
+
     }
+
   
+
     .mobile-menu-btn {
+
       display: flex;
+
       flex-direction: column;
+
       justify-content: space-between;
+
     }
+
   
+
     .hero-title {
+
       font-size: 2.5rem;
+
     }
+
   
+
     .hero-subtitle {
+
       font-size: 1rem;
+
     }
+
   
+
     .section {
+
       padding: 4rem 0;
+
     }
+
   
+
     .section-title {
+
       font-size: 2rem;
+
       margin-bottom: 2rem;
+
     }
+
   
+
     .projects-grid {
+
       grid-template-columns: 1fr;
+
     }
+
   
+
     .skills-grid {
+
       grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+
     }
+
   }
+
   
+
   @media (max-width: 480px) {
+
     .hero-buttons {
+
       flex-direction: column;
+
       gap: 1rem;
+
     }
+
   
+
     .contact-form {
+
       padding: 1.5rem;
+
     }
+
   
+
     .footer-grid {
+
       grid-template-columns: 1fr;
+
       gap: 2rem;
+
     }
-      .featured-project {
-    background: linear-gradient(
-        180deg,
-        rgba(255,179,71,.05),
-        rgba(255,126,95,.05)
-    );
+
+  }
+
+
+
+
+
+/* =========================================================
+
+   Phoenix Gold Games / Eucalyptus Edge Updates
+
+   ========================================================= */
+
+
+
+.featured-project {
+
+  background: linear-gradient(
+
+    180deg,
+
+    rgba(255, 179, 71, 0.06),
+
+    rgba(255, 126, 95, 0.06)
+
+  );
+
 }
+
+
+
+.featured-banner-container {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+}
+
+
 
 .featured-banner {
-    width: 100%;
-    border-radius: 20px;
-    margin-bottom: 2rem;
-    box-shadow: 0 20px 50px rgba(0,0,0,.35);
+
+  width: 100%;
+
+  border-radius: 20px;
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+
+  border: 1px solid var(--color-border);
+
 }
+
+
 
 .centered {
-    text-align: center;
+
+  text-align: center;
+
 }
 
-.featured-project .section-title {
-    margin-bottom: 1rem;
+
+
+.nav-links .btn,
+
+.mobile-menu .btn {
+
+  padding: 0.5rem 1rem;
+
+  margin-top: -0.35rem;
+
 }
 
-.featured-project .hero-buttons {
-    margin-top: 2rem;
+
+
+.nav-links .btn::after {
+
+  display: none;
+
 }
+
+
+
+/* Roadmap Section */
+
+.roadmap {
+
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+  gap: 1.5rem;
+
+  margin-top: 2rem;
+
+}
+
+
+
+.roadmap-item {
+
+  background-color: rgba(255, 255, 255, 0.05);
+
+  border: 1px solid var(--color-border);
+
+  border-radius: var(--border-radius-lg);
+
+  padding: 1.5rem;
+
+  box-shadow: var(--shadow-lg);
+
+  transition: all var(--transition-normal);
+
+  position: relative;
+
+  overflow: hidden;
+
+}
+
+
+
+.roadmap-item::before {
+
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+
+  left: 0;
+
+  width: 100%;
+
+  height: 4px;
+
+  background: linear-gradient(to right, var(--color-accent-primary), var(--color-accent-secondary));
+
+}
+
+
+
+.roadmap-item:hover {
+
+  transform: translateY(-6px);
+
+  border-color: var(--color-accent-primary);
+
+}
+
+
+
+.roadmap-item h3 {
+
+  font-family: var(--font-display);
+
+  color: var(--color-text-accent);
+
+  font-size: 1.25rem;
+
+  margin-bottom: 0.5rem;
+
+}
+
+
+
+.roadmap-item p {
+
+  color: var(--color-text-secondary);
+
+  font-size: 0.95rem;
+
+}
+
+
+
+/* Eucalyptus Edge project card emphasis */
+
+.project-card:first-child .project-title {
+
+  color: var(--color-text-accent);
+
+}
+
+
+
+.project-link[aria-label="Kickstarter"] {
+
+  background: linear-gradient(to right, var(--color-accent-primary), var(--color-accent-secondary));
+
+  color: var(--color-bg-primary);
+
+}
+
+
+
+.project-link[aria-label="Kickstarter"]:hover {
+
+  transform: translateY(-2px) scale(1.05);
+
+  box-shadow: 0 4px 12px rgba(255, 179, 71, 0.3);
+
+}
+
+
+/* Better mobile spacing for buttons and roadmap */
+
+@media (max-width: 768px) {
+
+  .hero-buttons {
+
+    flex-wrap: wrap;
+
   }
-  
+
+
+  .featured-banner {
+
+    border-radius: 14px;
+
+  }
+
+  .roadmap {
+
+    grid-template-columns: 1fr;
+
+  }
+
+}
