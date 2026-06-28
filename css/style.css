@@ -1886,4 +1886,45 @@
   .logo-text {
     font-size: 1.15rem;
   }
+    @media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+    height: auto;
+    padding: 5.5rem 0 3rem;
+  }
+
+  .hero-video {
+    position: absolute;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero-content {
+    padding: 2rem 0;
+  }
+
+  .hero-logo {
+    width: 170px;
+    margin-bottom: 1rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2.4rem, 10vw, 3.5rem);
+    line-height: 1.1;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+  }
+    
 }
