@@ -1,65 +1,110 @@
 "use client"
 
-import React from "react"
-import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { Github, ExternalLink } from "lucide-react"
+import { ExternalLink, Github, Play, Star } from "lucide-react"
 
-interface ProjectCardProps {
+export interface ProjectCardProps {
   title: string
   description: string
-  imageSrc: string
+  imageSrc?: string
+  videoSrc?: string
+  posterSrc?: string
   tags: string[]
-  githubUrl: string
-  liveUrl: string
+  githubUrl?: string
+  liveUrl?: string
+  trailerUrl?: string
+  kickstarterUrl?: string
+  featured?: boolean
+  index?: number
 }
 
-export function ProjectCard(props: Readonly<ProjectCardProps>) {
-  const { title, description, imageSrc, tags, githubUrl, liveUrl } = props;
-  const [isHovered, setIsHovered] = useState(false)
-
+export function ProjectCard({
+  title,
+  description,
+  imageSrc = "/placeholder.svg",
+  videoSrc,
+  posterSrc,
+  tags,
+  githubUrl,
+  liveUrl,
+  trailerUrl,
+  kickstarterUrl,
+  featured = false,
+  index = 0,
+}: Readonly<ProjectCardProps>) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
+    <motion.article
+      initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.55, delay: index * 0.08 }}
       viewport={{ once: true }}
-      className="group relative bg-zinc-800 rounded-xl overflow-hidden border border-zinc-700 shadow-xl"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      className={`project-card ${featured ? "featured-game-card" : ""}`}
     >
-      <div className="relative h-48 w-full overflow-hidden">
-        <Image
-          src={imageSrc || "/placeholder.svg"}
-          alt={title}
-          fill
-          className={`object-cover transition-transform duration-700 ${isHovered ? "scale-110" : "scale-100"}`}
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 to-transparent opacity-70"></div>
+      <div className="project-image">
+        {videoSrc ? (
+          <video
+            className="project-video"
+            controls
+            preload="metadata"
+            poster={posterSrc || imageSrc}
+          >
+            <source src={videoSrc} type="video/mp4" />
+            Your browser does not support HTML5 video.
+          </video>
+        ) : (
+          <Image src={imageSrc} alt={title} fill className="object-cover" />
+        )}
+
+        <div className="project-overlay">
+          <div className="project-tags">
+            {tags.map((tag) => (
+              <span key={tag} className="project-tag">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
       </div>
 
-      <div className="p-6 relative z-10">
-        <div className="flex flex-wrap gap-2 mb-4">
-          {tags.map((tag) => (
-            <span key={tag} className="px-2 py-1 text-xs font-medium rounded-full bg-amber-500/20 text-amber-400">
-              {tag}
-            </span>
-          ))}
-        </div>
+      <div className="project-content">
+        {featured && <p className="hero-badge">Flagship Project</p>}
 
-        <h3 className="text-xl font-bold mb-2 text-white group-hover:text-amber-400 transition-colors">{title}</h3>
+        <h3 className="project-title font-display">{title}</h3>
+        <p className="project-description">{description}</p>
 
-        <p className="text-zinc-400 mb-6 line-clamp-3">{description}</p>
+        <div className="project-links">
+          {trailerUrl && (
+            <Link
+              href={trailerUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-link"
+              aria-label={`Watch ${title} trailer`}
+            >
+              <Play className="h-5 w-5" />
+            </Link>
+          )}
 
-        <div className="flex items-center gap-4">
+          {kickstarterUrl && (
+            <Link
+              href={kickstarterUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-link"
+              aria-label={`Support ${title} on Kickstarter`}
+            >
+              <Star className="h-5 w-5" />
+            </Link>
+          )}
+
           {githubUrl && (
             <Link
               href={githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-zinc-400 hover:text-amber-400 transition-colors"
+              className="project-link"
               aria-label={`View ${title} on GitHub`}
             >
               <Github className="h-5 w-5" />
@@ -71,34 +116,14 @@ export function ProjectCard(props: Readonly<ProjectCardProps>) {
               href={liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-zinc-400 hover:text-amber-400 transition-colors"
-              aria-label={`View live demo of ${title}`}
+              className="project-link"
+              aria-label={`Open ${title}`}
             >
               <ExternalLink className="h-5 w-5" />
             </Link>
           )}
-
-          <Link
-            href={`/projects/${title.toLowerCase().replace(/\s+/g, "-")}`}
-            className="ml-auto text-sm font-medium text-amber-400 hover:text-amber-300 transition-colors flex items-center"
-          >
-            View Details
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
-              <path
-                fillRule="evenodd"
-                d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </Link>
         </div>
       </div>
-
-      <div
-        className={`absolute inset-0 border-2 border-amber-500 rounded-xl transition-opacity duration-300 pointer-events-none ${
-          isHovered ? "opacity-100" : "opacity-0"
-        }`}
-      ></div>
-    </motion.div>
+    </motion.article>
   )
 }
