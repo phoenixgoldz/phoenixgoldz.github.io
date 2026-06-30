@@ -7,13 +7,28 @@ export function AboutSection() {
       <div className="container">
         <div className="section-grid">
           <div className="section-content">
-            <h2 className="section-title font-display">About Me</h2>
-           <p className="section-text">
-             I'm a software engineer graduating from Neumont College of Computer Science (Class of 2025), with three internships and hands-on experience in full-stack web development, backend APIs, and cloud deployment.
-           </p>
-           <p className="section-text">
-             I specialize in building reliable, scalable, and user-focused software systems. My projects span web apps, developer tools, and real-time data platforms — all grounded in solid engineering and clean design.
-           </p>
+            <p className="hero-badge">Founder • Game Developer • Software Engineer</p>
+
+            <h2 className="section-title font-display">About Trevor Hicks</h2>
+
+            <p className="section-text">
+              I'm Trevor Hicks, founder of PhoenixGold Game Studios and a graduate of Neumont College of
+              Computer Science. I build games, software, and interactive experiences that combine strong
+              technical systems with memorable creative direction.
+            </p>
+
+            <p className="section-text">
+              My current flagship project is <span className="highlight">Eucalyptus Edge</span>, a
+              family-friendly 3D weapon-based fighting game built in Unreal Engine 5.8. The project focuses
+              on responsive melee combat, stylized Australian-inspired environments, original animal
+              fighters, and the magical world of Verdantia.
+            </p>
+
+            <p className="section-text">
+              PhoenixGold Game Studios is my path toward building original indie IPs with colorful worlds,
+              expressive gameplay, and polished player-first design.
+            </p>
+
             <div className="social-links">
               <a
                 href="https://github.com/phoenixgoldz"
@@ -37,15 +52,9 @@ export function AboutSection() {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   />
-                  <path
-                    d="M9.66667 17.7018C7.66667 18.3335 6 17.7018 5 16"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
                 </svg>
               </a>
+
               <a
                 href="https://www.linkedin.com/in/trevor-hicks2025/"
                 target="_blank"
@@ -61,22 +70,15 @@ export function AboutSection() {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   />
-                  <path
-                    d="M6 9H2V21H6V9Z"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
+                  <path d="M6 9H2V21H6V9Z" stroke="currentColor" strokeWidth="2" />
                   <path
                     d="M4 6C5.10457 6 6 5.10457 6 4C6 2.89543 5.10457 2 4 2C2.89543 2 2 2.89543 2 4C2 5.10457 2.89543 6 4 6Z"
                     stroke="currentColor"
                     strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
                   />
                 </svg>
               </a>
+
               <a
                 href="https://pheonixgold.itch.io/"
                 target="_blank"
@@ -84,55 +86,21 @@ export function AboutSection() {
                 className="social-link"
                 aria-label="Itch.io"
               >
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M21 9V15C21 16.1046 20.1046 17 19 17H5C3.89543 17 3 16.1046 3 15V9C3 7.89543 3.89543 7 5 7H19C20.1046 7 21 7.89543 21 9Z"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M3 9H21"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M9 17V21"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M15 17V21"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M9 21H15"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
+                <span className="link-icon">🎮</span>
               </a>
+
               <Link href="/resume.pdf" target="_blank" className="btn btn-small">
                 Resume
               </Link>
             </div>
           </div>
+
           <div className="profile-card">
             <div className="profile-card-inner">
               <Image src="/Images/TH_bannerimg.png" alt="Trevor Hicks" fill className="profile-image" />
               <div className="profile-overlay">
                 <h3 className="profile-name font-display">Trevor Hicks</h3>
-                <p className="profile-title">Game Developer | Software Engineer</p>
+                <p className="profile-title">Founder | PhoenixGold Game Studios</p>
               </div>
             </div>
           </div>
