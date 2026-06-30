@@ -3,8 +3,23 @@
 import { useEffect, useRef } from "react"
 import { motion } from "framer-motion"
 
+type Particle = {
+  x: number
+  y: number
+  size: number
+  baseSize: number
+  speedX: number
+  speedY: number
+  color: string
+  glowColor: string
+  glowing: boolean
+  glowIntensity: number
+  glowDirection: number
+}
+
 export function ParticleBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
+  const animationRef = useRef<number | null>(null)
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -13,132 +28,88 @@ export function ParticleBackground() {
     const ctx = canvas.getContext("2d")
     if (!ctx) return
 
-    // Set canvas dimensions
+    const palette = [
+      { color: "rgba(255, 179, 71, 0.55)", glow: "rgba(255, 179, 71, 0.35)" },
+      { color: "rgba(255, 126, 95, 0.45)", glow: "rgba(255, 126, 95, 0.25)" },
+      { color: "rgba(52, 211, 153, 0.45)", glow: "rgba(52, 211, 153, 0.25)" },
+      { color: "rgba(34, 211, 238, 0.35)", glow: "rgba(34, 211, 238, 0.2)" },
+      { color: "rgba(168, 85, 247, 0.28)", glow: "rgba(168, 85, 247, 0.18)" },
+    ]
+
+    const particles: Particle[] = []
+    let mouseX = -9999
+    let mouseY = -9999
+
     const setCanvasDimensions = () => {
       canvas.width = window.innerWidth
       canvas.height = window.innerHeight
     }
 
-    setCanvasDimensions()
-    window.addEventListener("resize", setCanvasDimensions)
+    const createParticle = (): Particle => {
+      const selected = palette[Math.floor(Math.random() * palette.length)]
+      const baseSize = Math.random() * 2.6 + 0.8
 
-    // Enhanced Particle class with more dynamic properties
-    class Particle {
-      x: number
-      y: number
-      size: number
-      baseSize: number
-      speedX: number
-      speedY: number
-      color: string
-      glowing: boolean
-      glowIntensity: number
-      glowDirection: number
-
-      constructor() {
-        this.x = Math.random() * canvas.width
-        this.y = Math.random() * canvas.height
-        this.baseSize = Math.random() * 3 + 1
-        this.size = this.baseSize
-        this.speedX = Math.random() * 1.5 - 0.75
-        this.speedY = Math.random() * 1.5 - 0.75
-
-        // More vibrant colors
-        const hue = Math.floor(Math.random() * 60) + 20 // Golden/amber range
-        const saturation = Math.floor(Math.random() * 30) + 70 // High saturation
-        const lightness = Math.floor(Math.random() * 20) + 50 // Medium to high lightness
-        const alpha = Math.random() * 0.3 + 0.2
-
-        this.color = `hsla(${hue}, ${saturation}%, ${lightness}%, ${alpha})`
-
-        // Glow effect properties
-        this.glowing = Math.random() > 0.7
-        this.glowIntensity = 0
-        this.glowDirection = 1
+      return {
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        size: baseSize,
+        baseSize,
+        speedX: Math.random() * 0.9 - 0.45,
+        speedY: Math.random() * 0.9 - 0.45,
+        color: selected.color,
+        glowColor: selected.glow,
+        glowing: Math.random() > 0.58,
+        glowIntensity: Math.random(),
+        glowDirection: Math.random() > 0.5 ? 1 : -1,
       }
+    }
 
-      update() {
-        this.x += this.speedX
-        this.y += this.speedY
+    const rebuildParticles = () => {
+      particles.length = 0
+      const count = Math.min(110, Math.max(45, Math.floor(window.innerWidth / 18)))
+      for (let i = 0; i < count; i++) particles.push(createParticle())
+    }
 
-        // Bounce off edges with slight randomization
-        if (this.x > canvas.width || this.x < 0) {
-          this.speedX = -this.speedX * (0.9 + Math.random() * 0.2)
-        }
+    const drawParticle = (particle: Particle) => {
+      if (particle.glowing) {
+        const gradient = ctx.createRadialGradient(
+          particle.x,
+          particle.y,
+          0,
+          particle.x,
+          particle.y,
+          particle.size * 5,
+        )
+        gradient.addColorStop(0, particle.glowColor)
+        gradient.addColorStop(1, "rgba(0,0,0,0)")
 
-        if (this.y > canvas.height || this.y < 0) {
-          this.speedY = -this.speedY * (0.9 + Math.random() * 0.2)
-        }
-
-        // Pulsating size effect
-        if (this.glowing) {
-          this.glowIntensity += 0.03 * this.glowDirection
-          if (this.glowIntensity > 1) {
-            this.glowDirection = -1
-          } else if (this.glowIntensity < 0) {
-            this.glowDirection = 1
-          }
-
-          this.size = this.baseSize * (1 + this.glowIntensity * 0.5)
-        }
-      }
-
-      draw() {
-        if (!ctx) return
-
-        // Draw glow effect for some particles
-        if (this.glowing) {
-          // Parse the current color to extract components
-          const colorMatch = this.color.match(/hsla$$(\d+),\s*(\d+)%,\s*(\d+)%,\s*([\d.]+)$$/)
-          if (colorMatch) {
-            const [, hue, saturation, lightness] = colorMatch
-
-            const gradient = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.size * 3)
-            gradient.addColorStop(0, `hsla(${hue}, ${saturation}%, ${lightness}%, 0.6)`)
-            gradient.addColorStop(1, `hsla(${hue}, ${saturation}%, ${lightness}%, 0)`)
-
-            ctx.fillStyle = gradient
-            ctx.beginPath()
-            ctx.arc(this.x, this.y, this.size * 3, 0, Math.PI * 2)
-            ctx.fill()
-          }
-        }
-
-        // Draw the particle
-        ctx.fillStyle = this.color
+        ctx.fillStyle = gradient
         ctx.beginPath()
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2)
+        ctx.arc(particle.x, particle.y, particle.size * 5, 0, Math.PI * 2)
         ctx.fill()
       }
+
+      ctx.fillStyle = particle.color
+      ctx.beginPath()
+      ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2)
+      ctx.fill()
     }
 
-    // Create particles
-    const particles: Particle[] = []
-    const particleCount = Math.min(120, Math.floor(window.innerWidth / 15))
-
-    for (let i = 0; i < particleCount; i++) {
-      particles.push(new Particle())
-    }
-
-    // Connect particles with lines
-    function connectParticles() {
-      if (!ctx) return
-      const maxDistance = 180
+    const connectParticles = () => {
+      const maxDistance = 145
 
       for (let i = 0; i < particles.length; i++) {
-        for (let j = i; j < particles.length; j++) {
+        for (let j = i + 1; j < particles.length; j++) {
           const dx = particles[i].x - particles[j].x
           const dy = particles[i].y - particles[j].y
           const distance = Math.sqrt(dx * dx + dy * dy)
 
           if (distance < maxDistance) {
-            const opacity = 1 - distance / maxDistance
-
-            // Create gradient lines
+            const opacity = (1 - distance / maxDistance) * 0.18
             const gradient = ctx.createLinearGradient(particles[i].x, particles[i].y, particles[j].x, particles[j].y)
-
-            gradient.addColorStop(0, `rgba(255, 179, 71, ${opacity * 0.3})`)
-            gradient.addColorStop(1, `rgba(255, 126, 95, ${opacity * 0.3})`)
+            gradient.addColorStop(0, `rgba(255, 179, 71, ${opacity})`)
+            gradient.addColorStop(0.5, `rgba(52, 211, 153, ${opacity * 0.85})`)
+            gradient.addColorStop(1, `rgba(168, 85, 247, ${opacity * 0.7})`)
 
             ctx.strokeStyle = gradient
             ctx.lineWidth = 1
@@ -151,58 +122,71 @@ export function ParticleBackground() {
       }
     }
 
-    // Mouse interaction
-    let mouseX = 0
-    let mouseY = 0
-    const mouseRadius = 150
-
-    canvas.addEventListener("mousemove", (e) => {
-      mouseX = e.clientX
-      mouseY = e.clientY
-    })
-
-    // Animation loop
-    function animateParticles() {
-      if (!ctx) return
+    const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
 
       for (const particle of particles) {
-        // Add mouse interaction
         const dx = particle.x - mouseX
         const dy = particle.y - mouseY
         const distance = Math.sqrt(dx * dx + dy * dy)
 
-        if (distance < mouseRadius) {
-          const force = (mouseRadius - distance) / mouseRadius
-          particle.speedX += dx * force * 0.02
-          particle.speedY += dy * force * 0.02
-
-          // Limit max speed
-          const maxSpeed = 3
-          const currentSpeed = Math.sqrt(particle.speedX * particle.speedX + particle.speedY * particle.speedY)
-          if (currentSpeed > maxSpeed) {
-            particle.speedX = (particle.speedX / currentSpeed) * maxSpeed
-            particle.speedY = (particle.speedY / currentSpeed) * maxSpeed
-          }
+        if (distance < 130) {
+          const force = (130 - distance) / 130
+          particle.speedX += dx * force * 0.006
+          particle.speedY += dy * force * 0.006
         }
 
-        // Apply some drag to slow particles gradually
-        particle.speedX *= 0.99
-        particle.speedY *= 0.99
+        particle.x += particle.speedX
+        particle.y += particle.speedY
+        particle.speedX *= 0.995
+        particle.speedY *= 0.995
 
-        particle.update()
-        particle.draw()
+        if (particle.x > canvas.width + 20) particle.x = -20
+        if (particle.x < -20) particle.x = canvas.width + 20
+        if (particle.y > canvas.height + 20) particle.y = -20
+        if (particle.y < -20) particle.y = canvas.height + 20
+
+        if (particle.glowing) {
+          particle.glowIntensity += 0.02 * particle.glowDirection
+          if (particle.glowIntensity > 1 || particle.glowIntensity < 0) particle.glowDirection *= -1
+          particle.size = particle.baseSize * (1 + Math.max(0, particle.glowIntensity) * 0.45)
+        }
+
+        drawParticle(particle)
       }
 
       connectParticles()
-      requestAnimationFrame(animateParticles)
+      animationRef.current = requestAnimationFrame(animate)
     }
 
-    animateParticles()
+    const handleResize = () => {
+      setCanvasDimensions()
+      rebuildParticles()
+    }
+
+    const handleMouseMove = (event: MouseEvent) => {
+      mouseX = event.clientX
+      mouseY = event.clientY
+    }
+
+    const handleMouseLeave = () => {
+      mouseX = -9999
+      mouseY = -9999
+    }
+
+    setCanvasDimensions()
+    rebuildParticles()
+    animate()
+
+    window.addEventListener("resize", handleResize)
+    window.addEventListener("mousemove", handleMouseMove)
+    window.addEventListener("mouseleave", handleMouseLeave)
 
     return () => {
-      window.removeEventListener("resize", setCanvasDimensions)
-      canvas.removeEventListener("mousemove", () => {})
+      if (animationRef.current) cancelAnimationFrame(animationRef.current)
+      window.removeEventListener("resize", handleResize)
+      window.removeEventListener("mousemove", handleMouseMove)
+      window.removeEventListener("mouseleave", handleMouseLeave)
     }
   }, [])
 
@@ -211,8 +195,9 @@ export function ParticleBackground() {
       ref={canvasRef}
       className="particles-canvas"
       initial={{ opacity: 0 }}
-      animate={{ opacity: 0.6 }}
-      transition={{ duration: 2 }}
+      animate={{ opacity: 0.42 }}
+      transition={{ duration: 1.8 }}
+      aria-hidden="true"
     />
   )
 }

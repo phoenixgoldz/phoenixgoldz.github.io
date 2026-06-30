@@ -1,29 +1,32 @@
 "use client"
 
-import { useEffect } from "react"
 import Link from "next/link"
+import Image from "next/image"
 
 export function Footer() {
-  useEffect(() => {
-    // Set current year in footer
-    const currentYearElement = document.getElementById("current-year")
-    if (currentYearElement) {
-      currentYearElement.textContent = new Date().getFullYear().toString()
-    }
-  }, [])
+  const year = new Date().getFullYear()
 
   return (
     <footer className="footer">
       <div className="container">
         <div className="footer-grid">
           <div className="footer-info">
-            <Link href="/" className="footer-logo">
-              <span className="logo-text font-display">Trevor Hicks</span>
+            <Link href="/" className="logo footer-logo">
+              <Image
+                src="/Images/Logo2026.png"
+                alt="PhoenixGold Game Studios logo"
+                width={40}
+                height={40}
+                className="nav-logo"
+              />
+              <span className="logo-text font-display">PhoenixGold</span>
             </Link>
+
             <p className="footer-description">
-              Game developer and software engineer passionate about creating immersive digital experiences where code
-              meets creativity.
+              PhoenixGold Game Studios is an independent game studio creating memorable family-friendly experiences with
+              competitive gameplay, vibrant worlds, and lovable characters. Current flagship project: Eucalyptus Edge.
             </p>
+
             <div className="footer-social">
               <a
                 href="https://github.com/phoenixgoldz"
@@ -33,29 +36,10 @@ export function Footer() {
                 aria-label="GitHub"
               >
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5229 6.47715 22 12 22C17.5229 22 22 17.5229 22 12C22 6.47715 17.5229 2 12 2Z"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M14.3333 19V17.137C14.3583 16.8275 14.3154 16.5163 14.2073 16.2242C14.0993 15.9321 13.9286 15.6657 13.7067 15.4428C15.8 15.2156 18 14.4431 18 10.8989C17.9998 9.99256 17.6418 9.12101 17 8.46461C17.3039 7.67171 17.2824 6.79528 16.94 6.01739C16.94 6.01739 16.1533 5.7902 14.3333 6.97811C12.8053 6.57488 11.1947 6.57488 9.66666 6.97811C7.84666 5.7902 7.05999 6.01739 7.05999 6.01739C6.71757 6.79528 6.69609 7.67171 6.99999 8.46461C6.35341 9.12588 5.99501 10.0053 5.99999 10.9178C5.99999 14.4337 8.19999 15.2063 10.2933 15.4616C10.074 15.6829 9.90483 15.9461 9.79686 16.2347C9.68889 16.5232 9.64453 16.8306 9.66666 17.137V19"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M9.66667 17.7018C7.66667 18.3335 6 17.7018 5 16"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
+                  <path d="M12 2C6.477 2 2 6.477 2 12c0 4.419 2.866 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.866-.014-1.7-2.782.604-3.369-1.34-3.369-1.34-.455-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.004.071 1.532 1.031 1.532 1.031.892 1.529 2.341 1.087 2.91.832.091-.646.35-1.087.636-1.337-2.221-.253-4.555-1.111-4.555-4.944 0-1.092.39-1.985 1.03-2.684-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0 1 12 6.834a9.56 9.56 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.684 0 3.842-2.337 4.687-4.566 4.935.359.309.679.919.679 1.852 0 1.337-.012 2.417-.012 2.746 0 .267.18.579.688.481C19.137 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10Z" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </a>
+
               <a
                 href="https://www.linkedin.com/in/trevor-hicks2025/"
                 target="_blank"
@@ -64,29 +48,12 @@ export function Footer() {
                 aria-label="LinkedIn"
               >
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M16 8C17.5913 8 19.1174 8.63214 20.2426 9.75736C21.3679 10.8826 22 12.4087 22 14V21H18V14C18 13.4696 17.7893 12.9609 17.4142 12.5858C17.0391 12.2107 16.5304 12 16 12C15.4696 12 14.9609 12.2107 14.5858 12.5858C14.2107 12.9609 14 13.4696 14 14V21H10V14C10 12.4087 10.6321 10.8826 11.7574 9.75736C12.8826 8.63214 14.4087 8 16 8Z"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M6 9H2V21H6V9Z"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M4 6C5.10457 6 6 5.10457 6 4C6 2.89543 5.10457 2 4 2C2.89543 2 2 2.89543 2 4C2 5.10457 2.89543 6 4 6Z"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M6 9H2v12h4V9Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M4 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </a>
+
               <a
                 href="https://pheonixgold.itch.io/"
                 target="_blank"
@@ -95,81 +62,45 @@ export function Footer() {
                 aria-label="Itch.io"
               >
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M21 9V15C21 16.1046 20.1046 17 19 17H5C3.89543 17 3 16.1046 3 15V9C3 7.89543 3.89543 7 5 7H19C20.1046 7 21 7.89543 21 9Z"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M3 9H21"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M9 17V21"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M15 17V21"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M9 21H15"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
+                  <path d="M3 7h18l-1 5a3 3 0 0 1-3 2.5 3 3 0 0 1-3-2.5 3 3 0 0 1-6 0 3 3 0 0 1-3 2.5A3 3 0 0 1 2 12l1-5Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M5 14v6h14v-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </a>
             </div>
           </div>
 
           <div className="footer-links">
-            <h3 className="footer-title font-display">Quick Links</h3>
-            <ul className="footer-nav">
-              <li>
-                <Link href="#about">About</Link>
-              </li>
-              <li>
-                <Link href="#projects">Projects</Link>
-              </li>
-              <li>
-                <Link href="#skills">Skills</Link>
-              </li>
-              <li>
-                <Link href="#contact">Contact</Link>
-              </li>
-            </ul>
+            <h3 className="footer-title font-display">Explore</h3>
+            <nav className="footer-nav">
+              <Link href="#game-projects">Eucalyptus Edge</Link>
+              <Link href="#software-projects">Software Projects</Link>
+              <Link href="#skills">Tech Stack</Link>
+              <Link href="#contact">Contact</Link>
+            </nav>
           </div>
 
           <div className="footer-contact">
-            <h3 className="footer-title font-display">Contact</h3>
+            <h3 className="footer-title font-display">Studio</h3>
+            <p className="footer-contact-item">PhoenixGold Game Studios</p>
+            <p className="footer-contact-item">Salt Lake City, Utah</p>
             <p className="footer-contact-item">
               <a href="mailto:th1ckssoftwar3@gmail.com">th1ckssoftwar3@gmail.com</a>
             </p>
-            <p className="footer-contact-item">Salt Lake City, Utah</p>
+            <p className="footer-contact-item">
+              <a
+                href="https://www.kickstarter.com/projects/phoenixgoldgames/eucalyptus-edge"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Support Eucalyptus Edge on Kickstarter
+              </a>
+            </p>
           </div>
         </div>
 
         <div className="footer-bottom">
-          <p className="copyright">
-            &copy; <span id="current-year"></span> Trevor Hicks. All rights reserved.
-          </p>
-          <p className="credits">
-            Built with <span className="highlight">Next.js</span>, <span className="highlight">TypeScript</span>, and{" "}
-            <span className="highlight">Tailwind CSS</span>
-          </p>
+          <p className="copyright">© {year} PhoenixGold Game Studios. All rights reserved.</p>
+          <p className="credits">Built by Trevor Hicks with Next.js, TypeScript, and Tailwind CSS.</p>
         </div>
       </div>
     </footer>
