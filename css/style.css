@@ -1916,35 +1916,95 @@
   }
 }
 
-@media (min-width: 769px) {
-  .nav-links {
-    display: flex;
-  }
-.mobile-menu {
-    position: fixed;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    max-height: 0;
-    overflow: hidden;
+/* =========================================================
+   FINAL FIX: Responsive navbar and mobile dropdown
+   This block intentionally overrides earlier duplicate menu rules.
+   ========================================================= */
 
-    background: rgba(15, 23, 42, 0.98);
-    backdrop-filter: blur(10px);
-
-    transition: max-height 0.3s ease;
-    z-index: 105;
-}
-
-.mobile-menu.active {
-    max-height: 420px; /* enough for your links */
-}
-    .mobile-menu-btn {
+.mobile-menu-btn {
   position: relative;
   z-index: 9999;
 }
 
-.mobile-menu {
-  z-index: 105;
+.no-scroll {
+  overflow: hidden;
 }
+
+/* Desktop / tablet: normal navbar, no hamburger menu */
+@media (min-width: 769px) {
+  .nav-links {
+    display: flex !important;
+  }
+
+  .mobile-menu-btn {
+    display: none !important;
+  }
+
+  .mobile-menu {
+    display: none !important;
+  }
 }
+
+/* Mobile: hamburger button + dropdown panel */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none !important;
+  }
+
+  .mobile-menu-btn {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: space-between;
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 2rem;
+    height: 1.5rem;
+  }
+
+  .mobile-menu {
+    position: fixed !important;
+    top: 64px !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: 0 !important;
+    overflow: hidden !important;
+
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+
+    background: rgba(15, 23, 42, 0.98) !important;
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--color-border);
+
+    transition: max-height 0.3s ease !important;
+    z-index: 105 !important;
+  }
+
+  .mobile-menu.active {
+    max-height: 440px !important;
+  }
+
+  .mobile-menu-container {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.35rem;
+    padding: 2rem 1.5rem;
+  }
+
+  .mobile-link {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+  }
+}
+
+@media (max-width: 520px) {
+  .mobile-menu {
+    top: 58px !important;
+  }
 }
