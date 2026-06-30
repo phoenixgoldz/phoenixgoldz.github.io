@@ -1938,5 +1938,13 @@
 .mobile-menu.active {
     max-height: 420px; /* enough for your links */
 }
+    .mobile-menu-btn {
+  position: relative;
+  z-index: 9999;
+}
+
+.mobile-menu {
+  z-index: 105;
+}
 }
 }
