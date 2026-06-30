@@ -1904,27 +1904,26 @@
   }
 }
 
-@media (max-width: 520px) {
-  .hero {
-    padding-top: 5rem;
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
   }
 
-  .hero-logo {
-    width: 145px;
+  .mobile-menu-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
-
-  .logo-text {
-    font-size: 1.15rem;
-  }
-    .no-scroll {
-  overflow: hidden;
 }
 
-.mobile-menu {
-  z-index: 105;
-}
+@media (min-width: 769px) {
+  .nav-links {
+    display: flex;
+  }
 
-.mobile-menu-btn {
-  z-index: 120;
+  .mobile-menu-btn,
+  .mobile-menu {
+    display: none;
+  }
 }
 }
