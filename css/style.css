@@ -1926,5 +1926,12 @@
   .hero-buttons .btn {
     width: 100%;
   }
-    
+    .project-video{
+    width:100%;
+    display:block;
+    border-radius:16px;
+    aspect-ratio:16/9;
+    object-fit:cover;
+    background:#000;
+    }
 }
