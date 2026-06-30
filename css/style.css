@@ -1916,4 +1916,15 @@
   .logo-text {
     font-size: 1.15rem;
   }
+    .no-scroll {
+  overflow: hidden;
+}
+
+.mobile-menu {
+  z-index: 105;
+}
+
+.mobile-menu-btn {
+  z-index: 120;
+}
 }
