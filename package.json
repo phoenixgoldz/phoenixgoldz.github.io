@@ -1,5 +1,24 @@
 {
-  "devDependencies": {
-    "@types/node": "^22.15.17"
-  }
+  "name": "phoenixgoldz.github.io",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Official PhoenixGold Game Studios portfolio featuring Eucalyptus Edge and software engineering projects.",
+  "author": "Trevor Hicks",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "keywords": [
+    "portfolio",
+    "phoenixgold",
+    "eucalyptus-edge",
+    "unreal-engine",
+    "nextjs",
+    "tailwind",
+    "typescript",
+    "game-development"
+  ]
 }
