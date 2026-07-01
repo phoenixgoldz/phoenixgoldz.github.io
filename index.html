@@ -1,708 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trevor Hicks | Founder of PhoenixGold Game Studios</title>
-  <meta name="description" content="Portfolio of Trevor Hicks, founder of PhoenixGold Game Studios and creator of Eucalyptus Edge.">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="Images/Logo2026.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PhoenixGold Game Studios</title>
+  <meta name="description" content="PhoenixGold Game Studios is an independent game development studio building original worlds, memorable characters, and family-friendly games. Eucalyptus Edge is the studio's first commercial game coming to Steam." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@500;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="Images/Logo2026.png" />
 </head>
 <body>
-<canvas id="particles-canvas" class="particles-canvas"></canvas>
+  <canvas id="particles-canvas" class="particles-canvas" aria-hidden="true"></canvas>
 
-<nav class="navbar">
-  <div class="container">
-    <a href="#" class="logo">
-      <img src="/Images/Logo2026.png" alt="Logo" class="nav-logo">
-      <span class="logo-text">PhoenixGold</span>
-    </a>
-    <div class="nav-links">
-      <a href="#game-projects">Eucalyptus Edge</a>
-      <a href="#about">About</a>
-      <a href="#skills">Tech Stack</a>
-      <a href="#software-projects">Software</a>
-      <a href="#contact">Contact</a>
-      <a href="https://www.kickstarter.com/projects/phoenixgoldgames/eucalyptus-edge" target="_blank" rel="noopener noreferrer" class="btn btn-small">Kickstarter</a>
-    </div>
-    <button class="mobile-menu-btn" aria-label="Toggle menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </div>
-</nav>
-
-<div class="mobile-menu">
-  <div class="mobile-menu-container">
-    <a href="#game-projects" class="mobile-link">Eucalyptus Edge</a>
-    <a href="#about" class="mobile-link">About</a>
-    <a href="#skills" class="mobile-link">Tech Stack</a>
-    <a href="#software-projects" class="mobile-link">Software</a>
-    <a href="#contact" class="mobile-link">Contact</a>
-    <a href="https://www.kickstarter.com/projects/phoenixgoldgames/eucalyptus-edge" target="_blank" rel="noopener noreferrer" class="mobile-link">Kickstarter</a>
-  </div>
-</div>
-
-<section class="hero">
-  <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="Images/Logo2026.png">
-    <source src="Images/IntroLogo.mp4" type="video/mp4">
-  </video>
-
-  <div class="hero-overlay"></div>
-
-  <div class="container">
-    <div class="hero-content">
-      <img src="Images/Logo2026.png" alt="PhoenixGold Game Studios" class="hero-logo">
-
-      <div class="hero-badge">Founder of PhoenixGold Game Studios</div>
-
-      <h1 class="hero-title">PhoenixGold Game Studios</h1>
-
-      <p class="hero-subtitle">
-        Creating Worlds.<br>
-        Crafting Memorable Games.<br>
-        Built with Passion.
-      </p>
-
-      <div class="hero-buttons">
-        <a href="https://www.kickstarter.com/projects/phoenixgoldgames/eucalyptus-edge" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-          Support Eucalyptus Edge
-        </a>
-        <a href="#game-projects" class="btn btn-secondary">
-          View Projects
-        </a>
-        <a href="Images/IntroLogo.mp4" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-          ▶ Watch Studio Intro
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <div class="scroll-indicator">
-    <a href="#about">
-      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M19 12L12 19L5 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </a>
-  </div>
-</section>
-
-<section id="phoenix-gold-games" class="section">
-  <div class="container">
-    <h2 class="section-title centered">PhoenixGold Game Studios</h2>
-    <p class="section-text" style="text-align:center; max-width:800px; margin:0 auto;">
-      PhoenixGold Game Studios is an independent game studio focused on creating memorable family-friendly experiences with competitive gameplay, vibrant worlds, and lovable characters.
-    </p>
-  </div>
-</section>
-
-<section id="about" class="section about-section">
-  <div class="container">
-    <div class="section-grid">
-      <div class="section-content">
-        <h2 class="section-title">About PhoenixGold</h2>
-        <p class="section-text">PhoenixGold Game Studios was founded by Trevor Hicks with the goal of creating memorable family-friendly games that combine expressive gameplay, colorful worlds, and polished player-first design.</p>
-        <p class="section-text">I'm Trevor Hicks, founder of PhoenixGold Game Studios and a graduate of Neumont College of Computer Science. I specialize in game development, software engineering, and creating engaging experiences that blend technical excellence with creative design.</p>
-        <p class="section-text">My current flagship project is Eucalyptus Edge, a family-friendly 3D weapon-based fighting game built in Unreal Engine 5.8.</p>
-        <div class="social-links">
-          <a href="https://github.com/phoenixgoldz" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5229 6.47715 22 12 22C17.5229 22 22 17.5229 22 12C22 6.47715 17.5229 2 12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M14.3333 19V17.137C14.3583 16.8275 14.3154 16.5163 14.2073 16.2242C14.0993 15.9321 13.9286 15.6657 13.7067 15.4428C15.8 15.2156 18 14.4431 18 10.8989C17.9998 9.99256 17.6418 9.12101 17 8.46461C17.3039 7.67171 17.2824 6.79528 16.94 6.01739C16.94 6.01739 16.1533 5.7902 14.3333 6.97811C12.8053 6.57488 11.1947 6.57488 9.66666 6.97811C7.84666 5.7902 7.05999 6.01739 7.05999 6.01739C6.71757 6.79528 6.69609 7.67171 6.99999 8.46461C6.35341 9.12588 5.99501 10.0053 5.99999 10.9178C5.99999 14.4337 8.19999 15.2063 10.2933 15.4616C10.074 15.6829 9.90483 15.9461 9.79686 16.2347C9.68889 16.5232 9.64453 16.8306 9.66666 17.137V19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M9.66667 17.7018C7.66667 18.3335 6 17.7018 5 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </a>
-          <a href="https://www.linkedin.com/in/trevor-hicks2025/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M16 8C17.5913 8 19.1174 8.63214 20.2426 9.75736C21.3679 10.8826 22 12.4087 22 14V21H18V14C18 13.4696 17.7893 12.9609 17.4142 12.5858C17.0391 12.2107 16.5304 12 16 12C15.4696 12 14.9609 12.2107 14.5858 12.5858C14.2107 12.9609 14 13.4696 14 14V21H10V14C10 12.4087 10.6321 10.8826 11.7574 9.75736C12.8826 8.63214 14.4087 8 16 8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M6 9H2V21H6V9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M4 6C5.10457 6 6 5.10457 6 4C6 2.89543 5.10457 2 4 2C2.89543 2 2 2.89543 2 4C2 5.10457 2.89543 6 4 6Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </a>
-          <a href="https://pheonixgold.itch.io/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Itch.io">
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M21 9V15C21 16.1046 20.1046 17 19 17H5C3.89543 17 3 16.1046 3 15V9C3 7.89543 3.89543 7 5 7H19C20.1046 7 21 7.89543 21 9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M3 9H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M9 17V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M15 17V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M9 21H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </a>
-          <a href="resume.pdf" target="_blank" class="btn btn-small">Resume</a>
-        </div>
-      </div>
-      <div class="profile-card">
-        <div class="profile-card-inner">
-          <img src="/Images/TH_bannerimg.png" alt="Trevor Hicks" class="profile-image">
-          <div class="profile-overlay">
-            <h3 class="profile-name">Trevor Hicks</h3>
-            <p class="profile-title">Game Developer | Software Engineer</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section id="skills" class="section skills-section">
-  <div class="container">
-    <h2 class="section-title centered">Tech Stack</h2>
-
-    <div class="skills-container">
-
-      <div class="skill-category">
-        <h3 class="skill-category-title">Game Development</h3>
-        <div class="skills-grid">
-          <div class="skill-item" data-skill="Unity">
-            <div class="skill-icon">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2L2 12L12 22L22 12L12 2Z" stroke="currentColor" stroke-width="2"/>
-              </svg>
-            </div>
-            <span class="skill-name">Unity</span>
-          </div>
-
-          <div class="skill-item" data-skill="Unreal Engine">
-            <div class="skill-icon">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
-              </svg>
-            </div>
-            <span class="skill-name">Unreal Engine</span>
-          </div>
-
-          <div class="skill-item" data-skill="Blender">
-            <div class="skill-icon">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 3L20 7V17L12 21L4 17V7L12 3Z" stroke="currentColor" stroke-width="2"/>
-              </svg>
-            </div>
-            <span class="skill-name">Blender</span>
-          </div>
-
-          <div class="skill-item" data-skill="Godot Engine">
-            <div class="skill-icon">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M2 12L12 2L22 12L12 22L2 12Z" stroke="currentColor" stroke-width="2"/>
-              </svg>
-            </div>
-            <span class="skill-name">Godot Engine</span>
-          </div>
-
-          <div class="skill-item" data-skill="Blueprint Visual Scripting">
-            <div class="skill-icon">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="4" y="4" width="16" height="16" stroke="currentColor" stroke-width="2"/>
-              </svg>
-            </div>
-            <span class="skill-name">Blueprint Visual Scripting</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="skill-category">
-        <h3 class="skill-category-title">Programming Languages</h3>
-        <div class="skills-grid">
-          <div class="skill-item" data-skill="C#">
-            <div class="skill-icon">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 4L4 12L12 20L20 12L12 4Z" stroke="currentColor" stroke-width="2"/>
-              </svg>
-            </div>
-            <span class="skill-name">C#</span>
-          </div>
-
-          <div class="skill-item" data-skill="C++">
-            <div class="skill-icon">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M6 12H18M12 6V18" stroke="currentColor" stroke-width="2"/>
-              </svg>
-            </div>
-            <span class="skill-name">C++</span>
-          </div>
-
-          <div class="skill-item" data-skill="JavaScript">
-            <div class="skill-icon">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
-              </svg>
-            </div>
-            <span class="skill-name">JavaScript</span>
-          </div>
-
-          <div class="skill-item" data-skill="Python">
-            <div class="skill-icon">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2C9 2 6 4 6 8V10H14V12H6V14C6 18 9 20 12 20C15 20 18 18 18 14V12H10V10H18V8C18 4 15 2 12 2Z" stroke="currentColor" stroke-width="2"/>
-              </svg>
-            </div>
-            <span class="skill-name">Python</span>
-          </div>
-
-          <div class="skill-item" data-skill="Java">
-            <div class="skill-icon">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="4" y="4" width="16" height="16" stroke="currentColor" stroke-width="2"/>
-              </svg>
-            </div>
-            <span class="skill-name">Java</span>
-          </div>
-
-          <div class="skill-item" data-skill="TypeScript">
-            <div class="skill-icon">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <polygon points="12,2 2,12 22,12" stroke="currentColor" stroke-width="2"/>
-              </svg>
-            </div>
-            <span class="skill-name">TypeScript</span>
-          </div>
-
-          <div class="skill-item" data-skill="SQL">
-            <div class="skill-icon">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <ellipse cx="12" cy="6" rx="8" ry="3" stroke="currentColor" stroke-width="2"/>
-                <path d="M4 6V18C4 19.6569 8 21 12 21C16 21 20 19.6569 20 18V6" stroke="currentColor" stroke-width="2"/>
-              </svg>
-            </div>
-            <span class="skill-name">SQL</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="skill-category">
-        <h3 class="skill-category-title">Web & Tools</h3>
-        <div class="skills-grid">
-          <div class="skill-item" data-skill="React">
-            <div class="skill-icon">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="12" cy="12" r="2" stroke="currentColor" stroke-width="2"/>
-                <ellipse cx="12" cy="12" rx="10" ry="4" stroke="currentColor" stroke-width="2"/>
-              </svg>
-            </div>
-            <span class="skill-name">React</span>
-          </div>
-
-          <div class="skill-item" data-skill="Git">
-            <div class="skill-icon">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M15 5L9 5M12 2L12 22M5 19L19 5" stroke="currentColor" stroke-width="2"/>
-              </svg>
-            </div>
-            <span class="skill-name">Git</span>
-          </div>
-
-          <div class="skill-item" data-skill="Node.js">
-            <div class="skill-icon">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <polygon points="12,2 22,8 22,16 12,22 2,16 2,8" stroke="currentColor" stroke-width="2"/>
-              </svg>
-            </div>
-            <span class="skill-name">Node.js</span>
-          </div>
-
-          <div class="skill-item" data-skill="TensorFlow">
-            <div class="skill-icon">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="4" y="4" width="16" height="16" stroke="currentColor" stroke-width="2"/>
-                <path d="M4 12H20M12 4V20" stroke="currentColor" stroke-width="2"/>
-              </svg>
-            </div>
-            <span class="skill-name">TensorFlow</span>
-          </div>
-
-          <div class="skill-item" data-skill="Spring Boot">
-            <div class="skill-icon">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2L22 12L12 22L2 12L12 2Z" stroke="currentColor" stroke-width="2"/>
-              </svg>
-            </div>
-            <span class="skill-name">Spring Boot</span>
-          </div>
-
-          <div class="skill-item" data-skill="Firebase">
-            <div class="skill-icon">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 20L12 4L20 20H4Z" stroke="currentColor" stroke-width="2"/>
-              </svg>
-            </div>
-            <span class="skill-name">Firebase</span>
-          </div>
-
-          <div class="skill-item" data-skill="Docker">
-            <div class="skill-icon">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
-              </svg>
-            </div>
-            <span class="skill-name">Docker</span>
-          </div>
-
-          <div class="skill-item" data-skill="Figma">
-            <div class="skill-icon">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>
-              </svg>
-            </div>
-            <span class="skill-name">Figma</span>
-          </div>
-
-          <div class="skill-item" data-skill="Agile/Scrum">
-            <div class="skill-icon">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M3 12a9 9 0 1118 0" stroke="currentColor" stroke-width="2"/>
-              </svg>
-            </div>
-            <span class="skill-name">Agile / Scrum</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<section id="game-projects" class="section projects-section">
-  <div class="container">
-    <h2 class="section-title centered">Featured Game Projects</h2>
-
-    <div class="projects-grid">
-
-      <div class="project-card">
-        <div class="project-image">
-          <video
-            class="project-video"
-            controls
-            preload="metadata"
-            poster="Images/EE_Banner1920x1080.png">
-            <source src="Video/EE_TrailerConcept.mp4" type="video/mp4">
-            Your browser does not support HTML5 video.
-          </video>
-
-          <div class="project-overlay">
-            <div class="project-tags">
-              <span class="project-tag">Unreal Engine 5.8</span>
-              <span class="project-tag">Fighting Game</span>
-              <span class="project-tag">Concept Trailer</span>
-              <span class="project-tag">PC</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-content">
-          <h3 class="project-title">Eucalyptus Edge</h3>
-          <p class="project-description">
-            Cute Fighters. Serious Skills.
-            <br><br>
-            Eucalyptus Edge is a family-friendly 3D weapon-based fighting game inspired by Soulcalibur.
-            Explore the magical world of Verdantia where adorable Australian animal warriors battle
-            against the mysterious Blight using unique weapons, strategic combat, and ring-out mechanics.
-            <br><br>
-            🎬 Watch the latest concept trailer above.
-            This cinematic uses AI-assisted placeholder visuals to communicate the game's world and story
-            while development continues in Unreal Engine 5.8.
-          </p>
-          <div class="project-links">
-            <a href="Video/Untitled design.mp4" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Watch Trailer">
-              <span class="link-icon">▶</span>
-            </a>
-            <a href="https://www.kickstarter.com/projects/phoenixgoldgames/eucalyptus-edge" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Kickstarter">
-              <span class="link-icon">★</span>
-            </a>
-            <a href="https://github.com/phoenixgoldz/Eucalyptus-Edge" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="GitHub Repository">
-              <span class="link-icon">↗</span>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-image">
-          <img src="/Images/CRGP banner.jpg" alt="Candy Rush Grand Prix" loading="lazy">
-          <div class="project-overlay">
-            <div class="project-tags">
-              <span class="project-tag">Unreal Engine</span>
-              <span class="project-tag">C++</span>
-              <span class="project-tag">Multiplayer</span>
-            </div>
-          </div>
-        </div>
-        <div class="project-content">
-          <h3 class="project-title">Candy Rush Grand Prix</h3>
-          <p class="project-description">A candy-themed kart racer inspired by Diddy Kong Racing, built in Unreal Engine 5. Features local multiplayer, boss races, and more.</p>
-          <div class="project-links">
-            <a href="https://github.com/phoenixgoldz/Capstone" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="GitHub Repository"><span class="link-icon">↗</span></a>
-          </div>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-image">
-          <img src="/Images/FPdash Banner.png" alt="Frostpaw Dash" loading="lazy">
-          <div class="project-overlay">
-            <div class="project-tags">
-              <span class="project-tag">Unity</span>
-              <span class="project-tag">C#</span>
-              <span class="project-tag">Android</span>
-            </div>
-          </div>
-        </div>
-        <div class="project-content">
-          <h3 class="project-title">Frostpaw Dash</h3>
-          <p class="project-description">A fantasy endless runner for Android where you guide a chibi white leopard through magical biomes. Built with Unity 6, C#, TextMeshPro, and Post Processing.</p>
-          <div class="project-links">
-            <a href="https://github.com/phoenixgoldz/FrostpawDash" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="GitHub Repository"><span class="link-icon">↗</span></a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <div class="projects-cta">
-    <a href="https://github.com/phoenixgoldz" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-      View All Ongoing Projects
-      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M12 5L19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </a>
-  </div>
-</section>
-
-<section id="software-projects" class="section projects-section">
-  <div class="container">
-    <h2 class="section-title centered">Featured Software Projects</h2>
-    <div class="projects-grid">
-
-      <div class="project-card">
-        <div class="project-overlay">
-          <div class="project-tags">
-            <span class="project-tag">Flask</span>
-            <span class="project-tag">Python</span>
-            <span class="project-tag">Chart.js</span>
-          </div>
-        </div>
-        <div class="project-content">
-          <h3 class="project-title">GitHub Activity Dashboard</h3>
-          <p class="project-description">
-            A real-time dashboard that visualizes GitHub activity across repositories using Flask, GitHub API, and Chart.js.
-          </p>
-          <div class="project-links">
-            <a href="https://github.com/phoenixgoldz/github-dashboard" target="_blank" class="project-link" aria-label="GitHub Repo"><span class="link-icon">↗</span></a>
-          </div>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-overlay">
-          <div class="project-tags">
-            <span class="project-tag">Java</span>
-            <span class="project-tag">Spring Boot</span>
-            <span class="project-tag">JPA</span>
-            <span class="project-tag">REST API</span>
-          </div>
-        </div>
-        <div class="project-content">
-          <h3 class="project-title">Superhero API Search Service</h3>
-          <p class="project-description">REST API built with Spring Boot for superhero search using JPA query methods and custom filters.</p>
-          <div class="project-links">
-            <a href="https://github.com/phoenixgoldz/superheroapi" target="_blank" class="project-link" aria-label="GitHub"><span class="link-icon">↗</span></a>
-          </div>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-overlay">
-          <div class="project-tags">
-            <span class="project-tag">TypeScript</span>
-            <span class="project-tag">OOP</span>
-            <span class="project-tag">SOLID</span>
-          </div>
-        </div>
-        <div class="project-content">
-          <h3 class="project-title">Design Patterns Showcase</h3>
-          <p class="project-description">A showcase of classic software design patterns implemented in TypeScript with clean modular code.</p>
-          <div class="project-links">
-            <a href="https://github.com/phoenixgoldz/design-patterns" target="_blank" class="project-link" aria-label="GitHub"><span class="link-icon">↗</span></a>
-          </div>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-overlay">
-          <div class="project-tags">
-            <span class="project-tag">ASP.NET Core</span>
-            <span class="project-tag">C#</span>
-            <span class="project-tag">MVC</span>
-          </div>
-        </div>
-        <div class="project-content">
-          <h3 class="project-title">NeuMeet Web App</h3>
-          <p class="project-description">Full-stack .NET web app demonstrating MVC routing, Razor views, and server-side rendering.</p>
-          <div class="project-links">
-            <a href="https://github.com/phoenixgoldz/NeuMeetASPNET" target="_blank" class="project-link" aria-label="GitHub"><span class="link-icon">↗</span></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section roadmap-section">
-  <div class="container">
-    <h2 class="section-title centered">Eucalyptus Edge Development Roadmap</h2>
-    <p class="section-text centered roadmap-intro">
-      Current progress toward the first playable prototype for PhoenixGold Game Studios' debut title.
-    </p>
-
-    <div class="roadmap-status-grid">
-      <div class="roadmap-card roadmap-done">
-        <span class="roadmap-status">✅ Completed</span>
-        <h3>Foundation & Branding</h3>
-        <p>
-          Game concept, studio branding, Kickstarter page, portfolio page, GitHub repository, and public project identity have been established.
-        </p>
-      </div>
-
-      <div class="roadmap-card roadmap-done">
-        <span class="roadmap-status">✅ Completed</span>
-        <h3>World & Character Concepts</h3>
-        <p>
-          Verdantia, core arenas, fighter roster, PhoenixGold studio intro direction, and Eucalyptus Edge visual style have been designed.
-        </p>
-      </div>
-
-      <div class="roadmap-card roadmap-progress">
-        <span class="roadmap-status">🚧 In Progress</span>
-        <h3>Unreal Engine 5.8 Setup</h3>
-        <p>
-          Project is now running in Unreal Engine 5.8 with imported character assets, consistent scaling, GitHub LFS support, and early project structure.
-        </p>
-      </div>
-
-      <div class="roadmap-card roadmap-progress">
-        <span class="roadmap-status">🚧 In Progress</span>
-        <h3>Playable Character Pipeline</h3>
-        <p>
-          Multiple fighters have been imported and prepared with skeletons/animation compatibility. Remaining work includes cleanup, polish, and final rig testing.
-        </p>
-      </div>
-
-      <div class="roadmap-card roadmap-progress">
-        <span class="roadmap-status">🚧 In Progress</span>
-        <h3>Main Menu Experience</h3>
-        <p>
-          Main menu direction is locked: cinematic animated background, streamlined AAA-style navigation, and a clear flow into character select and mode select.
-        </p>
-      </div>
-
-      <div class="roadmap-card roadmap-next">
-        <span class="roadmap-status">🎮 Next Step</span>
-        <h3>Combat Prototype</h3>
-        <p>
-          Build the first playable local versus prototype with movement, attacks, blocking, dodging, hit detection, camera behavior, UI feedback, and arena loading.
-        </p>
-      </div>
-
-      <div class="roadmap-card roadmap-next">
-        <span class="roadmap-status">🔜 Upcoming</span>
-        <h3>Training & AI Systems</h3>
-        <p>
-          Add training dummy logic, basic AI behavior, combat testing tools, and player feedback systems for health, Edge Energy, and match flow.
-        </p>
-      </div>
-
-      <div class="roadmap-card roadmap-next">
-        <span class="roadmap-status">🔒 Future Phase</span>
-        <h3>Expansion Toward Full Game</h3>
-        <p>
-          Expand roster, arenas, online multiplayer, story mode, cosmetics, supporter rewards, polish, optimization, and release preparation.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<section class="section stats-section">
-  <div class="container">
-    <h2 class="section-title centered">PhoenixGold Snapshot</h2>
-    <div class="roadmap-status-grid">
-      <div class="roadmap-card">
-        <span class="roadmap-status">🎮 Prototype Goal</span>
-        <h3>4 Fighters</h3>
-        <p>Koda, Wren, Ripper, and Kiri are the Phase 1 playable fighter focus.</p>
-      </div>
-      <div class="roadmap-card">
-        <span class="roadmap-status">🏟️ Arena Goal</span>
-        <h3>2 Battle Arenas</h3>
-        <p>Eucalyptus Summit and Crystal Caverns establish the first playable environments.</p>
-      </div>
-      <div class="roadmap-card">
-        <span class="roadmap-status">🧭 Roadmap</span>
-        <h3>5 Development Phases</h3>
-        <p>From combat prototype to full launch and live support.</p>
-      </div>
-      <div class="roadmap-card">
-        <span class="roadmap-status">🌿 World</span>
-        <h3>Verdantia</h3>
-        <p>A magical Australian-inspired world threatened by the mysterious Blight.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section kickstarter-cta-section">
-  <div class="container">
-    <div class="roadmap-card" style="text-align:center; max-width:900px; margin:0 auto;">
-      <span class="roadmap-status">⭐ Kickstarter</span>
-      <h2 class="section-title centered" style="margin-bottom:1rem;">Help Bring Verdantia to Life</h2>
-      <p class="section-text centered" style="max-width:720px; margin:0 auto 2rem;">
-        Eucalyptus Edge is still early in development, and every bit of support helps move the project closer to its first playable combat prototype.
-      </p>
-      <a href="https://www.kickstarter.com/projects/phoenixgoldgames/eucalyptus-edge" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-        Support Development
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo" aria-label="PhoenixGold Game Studios Home">
+        <img src="Images/Logo2026.png" alt="PhoenixGold Game Studios logo" class="nav-logo" />
+        <span class="logo-text">PhoenixGold</span>
       </a>
+
+      <div class="nav-links" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="#studio">Studio</a>
+        <a href="eucalyptus-edge.html">Games</a>
+        <a href="#updates">Updates</a>
+        <a href="eucalyptus-edge.html#support" class="btn btn-small">Support</a>
+      </div>
+
+      <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" aria-label="Mobile navigation">
+    <div class="mobile-menu-container">
+      <a href="index.html" class="mobile-link">Home</a>
+      <a href="#studio" class="mobile-link">Studio</a>
+      <a href="eucalyptus-edge.html" class="mobile-link">Games</a>
+      <a href="#updates" class="mobile-link">Updates</a>
+      <a href="eucalyptus-edge.html#support" class="mobile-link">Support</a>
     </div>
   </div>
-</section>
 
-<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-info">
-        <a href="#" class="logo footer-logo">
-          <img src="/Images/PGlogo.jpg" alt="PhoenixGold Game Studios logo" class="nav-logo">
-          <span class="logo-text">PhoenixGold</span>
-        </a>
-        <p class="footer-description">Independent game studio and software portfolio of Trevor Hicks, creator of Eucalyptus Edge.</p>
+  <main>
+    <section class="hero studio-hero">
+      <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="Images/Logo2026.png">
+        <source src="Images/IntroLogo.mp4" type="video/mp4" />
+      </video>
+      <div class="hero-overlay"></div>
+      <div class="container">
+        <div class="hero-content reveal">
+          <img src="Images/Logo2026.png" alt="PhoenixGold Game Studios" class="hero-logo" />
+          <div class="hero-badge">Independent Game Development Studio</div>
+          <h1 class="hero-title">PhoenixGold Game Studios</h1>
+          <p class="hero-subtitle">Building original worlds, competitive gameplay, and character-driven experiences for the next generation of players.</p>
+          <div class="hero-buttons">
+            <a href="eucalyptus-edge.html" class="btn btn-primary">Explore Eucalyptus Edge</a>
+            <a href="#studio" class="btn btn-secondary">Discover the Studio</a>
+          </div>
+        </div>
       </div>
-      <div>
-        <h3 class="footer-title">Explore</h3>
-        <nav class="footer-nav">
-          <a href="#game-projects">Game Projects</a>
-          <a href="#software-projects">Software Projects</a>
-          <a href="#skills">Tech Stack</a>
-          <a href="#contact">Contact</a>
-        </nav>
+      <a class="scroll-indicator" href="#studio" aria-label="Scroll to studio section">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M19 12L12 19L5 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </section>
+
+    <section id="studio" class="section studio-section">
+      <div class="container">
+        <div class="section-kicker">Studio Identity</div>
+        <div class="section-grid studio-grid">
+          <div class="section-content reveal">
+            <h2 class="section-title">A new studio built for original game worlds.</h2>
+            <p class="section-text">PhoenixGold Game Studios is evolving from a student portfolio into a studio-first brand focused on commercial game development, public-facing releases, and long-term original IP.</p>
+            <p class="section-text">The studio is focused on polished presentation, memorable characters, expressive gameplay, and player-first worlds that can grow beyond a single release.</p>
+            <p class="section-text">Our first published game will be <strong>Eucalyptus Edge</strong>, a family-friendly 3D weapon-based arena fighter planned for PC and Steam.</p>
+          </div>
+          <div class="studio-card reveal">
+            <div class="studio-card-top">Studio Focus</div>
+            <h3>Original Games. Memorable Worlds.</h3>
+            <p>Every page, trailer, update, and visual asset should now support PhoenixGold as a real game development studio with Eucalyptus Edge as its flagship title.</p>
+          </div>
+        </div>
       </div>
-      <div>
-        <h3 class="footer-title">Studio</h3>
-        <p class="footer-contact-item">PhoenixGold Game Studios</p>
-        <p class="footer-contact-item">Salt Lake City, Utah</p>
+    </section>
+
+    <section id="games" class="section featured-game-section">
+      <div class="container">
+        <div class="section-kicker centered">Featured Game</div>
+        <h2 class="section-title centered">Eucalyptus Edge</h2>
+        <p class="section-text centered section-intro">Cute fighters. Serious skills. A stylized 3D arena fighting game where Australian animal warriors battle across the magical world of Verdantia.</p>
+
+        <div class="feature-split reveal">
+          <div class="feature-media">
+            <img src="Images/FigtherBanner (1) (1).png" alt="Eucalyptus Edge fighter lineup" loading="lazy" />
+          </div>
+          <div class="feature-copy">
+            <div class="game-status">Coming to Steam</div>
+            <h3>The first published PhoenixGold title.</h3>
+            <p>Eucalyptus Edge is being developed as the studio's flagship game project, combining responsive 3D arena movement, weapon-based combat, character-specific fighting styles, and a colorful world inspired by Australian eucalyptus forests.</p>
+            <div class="feature-tags">
+              <span>PC</span><span>3D Arena Fighter</span><span>Family-Friendly</span><span>In Development</span>
+            </div>
+            <div class="hero-buttons left-buttons">
+              <a href="eucalyptus-edge.html" class="btn btn-primary">Open Game Page</a>
+              <a href="https://www.kickstarter.com/projects/phoenixgoldgames/eucalyptus-edge" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Support Development</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="updates" class="section updates-section">
+      <div class="container">
+        <div class="section-kicker centered">Studio Updates</div>
+        <h2 class="section-title centered">Development Direction</h2>
+        <div class="updates-grid">
+          <article class="update-card reveal">
+            <span class="update-label">Current Focus</span>
+            <h3>Studio Website v2.0</h3>
+            <p>The site is being rebuilt as a studio-first brand home instead of a student portfolio, with Eucalyptus Edge receiving its own dedicated game page.</p>
+          </article>
+          <article class="update-card reveal">
+            <span class="update-label">Flagship Game</span>
+            <h3>Eucalyptus Edge</h3>
+            <p>The studio's first commercial release is being positioned for Steam with a dedicated trailer, character showcase, roadmap, and support section.</p>
+          </article>
+          <article class="update-card reveal">
+            <span class="update-label">Next Milestone</span>
+            <h3>Playable Prototype</h3>
+            <p>The next production goal is a playable combat loop featuring movement, attacks, blocking, dodging, hit feedback, UI, and local versus flow.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section final-cta-section">
+      <div class="container">
+        <div class="final-cta reveal">
+          <div class="section-kicker centered">First Commercial Game</div>
+          <h2>Enter Verdantia.</h2>
+          <p>Visit the dedicated Eucalyptus Edge page to watch the trailer, meet the fighters, explore the arenas, and follow development toward Steam.</p>
+          <a href="eucalyptus-edge.html" class="btn btn-primary">View Eucalyptus Edge</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-info">
+          <a href="index.html" class="logo footer-logo">
+            <img src="Images/Logo2026.png" alt="PhoenixGold Game Studios logo" class="nav-logo" />
+            <span class="logo-text">PhoenixGold</span>
+          </a>
+          <p class="footer-description">Independent game development studio creating original worlds and family-friendly games.</p>
+        </div>
+        <div>
+          <h3 class="footer-title">Explore</h3>
+          <nav class="footer-nav">
+            <a href="index.html">Home</a>
+            <a href="#studio">Studio</a>
+            <a href="eucalyptus-edge.html">Eucalyptus Edge</a>
+            <a href="#updates">Updates</a>
+          </nav>
+        </div>
+        <div>
+          <h3 class="footer-title">Studio</h3>
+          <p class="footer-contact-item">PhoenixGold Game Studios</p>
+          <p class="footer-contact-item">Independent Game Development Studio</p>
+          <p class="footer-contact-item">First title: Eucalyptus Edge</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="copyright">© <span id="current-year"></span> PhoenixGold Game Studios. All rights reserved.</p>
+        <p class="credits">Original Games. Memorable Worlds.</p>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p class="copyright">© <span id="current-year"></span> PhoenixGold Game Studios. All rights reserved.</p>
-      <p class="credits">Cute Fighters. Serious Skills.<br>Designed and developed by Trevor Hicks, founder of PhoenixGold Game Studios.</p>
-    </div>
-  </div>
-</footer>
-<script src="js/main.js"></script>
+  </footer>
 
+  <script src="js/main.js"></script>
 </body>
 </html>
