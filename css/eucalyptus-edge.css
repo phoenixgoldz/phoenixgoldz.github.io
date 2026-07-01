@@ -893,251 +893,178 @@ body,
 }
 
 /* =======================================================
-   FINAL HERO LAYOUT FIX
-   Fixes desktop + mobile readability/cropping.
+   FINAL TITLE + MOBILE FIX
+   Fixes disappearing letters caused by clipped gradient text
+   and creates a safer mobile hero layout.
 ======================================================= */
 
-/* Desktop/tablet hero: keep cinematic look but stop oversized title clipping */
-.ee-page-hero {
-  padding-top: 7rem;
-}
-
-.ee-hero-showcase {
-  min-height: 620px;
-}
-
-.ee-hero-copybox {
-  max-width: 620px;
-  padding: clamp(2rem, 4vw, 3.5rem);
+/* Fix disappearing letters on desktop */
+.ee-brand-lockup h1,
+.ee-section-head h2,
+.ee-support-panel h2 {
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+  color: var(--ee-gold-bright) !important;
+  text-shadow:
+    0 2px 0 rgba(0, 0, 0, 0.65),
+    0 8px 26px rgba(0, 0, 0, 0.72) !important;
+  overflow: visible !important;
 }
 
 .ee-brand-lockup h1 {
-  font-size: clamp(3.25rem, 5.8vw, 6.25rem) !important;
-  line-height: 0.95 !important;
-  max-width: 100%;
-  overflow-wrap: normal;
-  word-break: normal;
+  font-size: clamp(3.25rem, 5.6vw, 5.85rem) !important;
+  line-height: 0.96 !important;
+  max-width: 620px !important;
+  letter-spacing: 0.035em !important;
+  word-break: normal !important;
+  overflow-wrap: normal !important;
 }
 
-.ee-brand-lockup p {
-  font-size: clamp(1.1rem, 2vw, 1.65rem) !important;
-  line-height: 1.25;
+.ee-hero-copybox {
+  max-width: 660px !important;
+  overflow: visible !important;
 }
 
-.ee-kicker {
-  max-width: 100%;
-  line-height: 1.2;
+.ee-hero-showcase {
+  overflow: hidden;
+  min-height: 620px;
 }
 
-.ee-status-row span {
-  white-space: nowrap;
-}
-
-.ee-btn {
-  white-space: nowrap;
-}
-
-/* Better medium-screen behavior */
-@media (max-width: 1024px) {
-  .ee-page-hero {
-    padding-top: 5.5rem;
-  }
-
-  .ee-hero-showcase {
-    min-height: 640px;
-  }
-
-  .ee-hero-copybox {
-    max-width: 560px;
-  }
-
+/* Desktop-site mode on phones still has a narrow CSS viewport sometimes */
+@media (max-width: 900px) {
   .ee-brand-lockup h1 {
-    font-size: clamp(3rem, 8vw, 5rem) !important;
+    font-size: clamp(2.7rem, 8.5vw, 4.4rem) !important;
+    max-width: 100% !important;
   }
 }
 
-/* Phone layout: no desktop overlay squeezing */
+/* True phone layout */
 @media (max-width: 700px) {
   .ee-container {
-    width: min(100% - 1.25rem, 1840px);
+    width: min(100% - 1.25rem, 1840px) !important;
   }
 
   .ee-page-hero {
     padding-top: 5.25rem !important;
-    padding-bottom: 2rem;
+    padding-bottom: 2rem !important;
   }
 
   .ee-hero-showcase {
     min-height: auto !important;
-    display: grid;
-    grid-template-rows: 300px auto;
-    border-radius: 1.25rem;
-    overflow: hidden;
-  }
-
-  .ee-hero-showcase::before,
-  .ee-hero-showcase::after {
-    width: 3.2rem;
-    height: 3.2rem;
-  }
-
-  .ee-hero-showcase::before {
-    top: 0.85rem;
-    left: 0.85rem;
-  }
-
-  .ee-hero-showcase::after {
-    right: 0.85rem;
-    bottom: 0.85rem;
+    display: grid !important;
+    grid-template-rows: 285px auto !important;
+    border-radius: 1.2rem !important;
   }
 
   .ee-hero-art {
     position: relative !important;
     inset: auto !important;
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    object-position: center top;
-    grid-row: 1;
+    width: 100% !important;
+    height: 285px !important;
+    object-fit: cover !important;
+    object-position: center top !important;
+    grid-row: 1 !important;
   }
 
   .ee-hero-shade {
-    position: absolute;
-    inset: 0;
+    position: absolute !important;
+    inset: 0 !important;
     background:
-      linear-gradient(180deg, rgba(2, 8, 7, 0.12) 0%, rgba(2, 8, 7, 0.45) 35%, rgba(2, 8, 7, 0.96) 58%, rgba(2, 8, 7, 0.98) 100%);
-    pointer-events: none;
+      linear-gradient(180deg, rgba(2, 8, 7, 0.1) 0%, rgba(2, 8, 7, 0.35) 34%, rgba(2, 8, 7, 0.98) 57%, rgba(2, 8, 7, 0.99) 100%) !important;
+    pointer-events: none !important;
   }
 
   .ee-hero-copybox {
     position: relative !important;
     top: auto !important;
-    z-index: 5;
-    width: 100%;
-    max-width: 100%;
-    padding: 1.25rem 1rem 2rem !important;
-    text-align: center;
-    grid-row: 2;
-    background: linear-gradient(180deg, rgba(2, 8, 7, 0.1), rgba(2, 8, 7, 0.92));
-  }
-
-  .ee-brand-lockup {
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 1.15rem 1rem 2rem !important;
+    text-align: center !important;
+    grid-row: 2 !important;
+    background: rgba(2, 8, 7, 0.95) !important;
   }
 
   .ee-kicker {
-    display: inline-flex;
-    justify-content: center;
-    margin: 0 auto 0.95rem;
+    display: inline-flex !important;
+    justify-content: center !important;
+    margin: 0 auto 0.9rem !important;
     font-size: 0.64rem !important;
-    letter-spacing: 0.05em !important;
-    padding: 0.42rem 0.62rem;
-    white-space: normal;
+    line-height: 1.25 !important;
+    letter-spacing: 0.045em !important;
+    white-space: normal !important;
   }
 
   .ee-brand-lockup h1 {
-    font-size: clamp(2.05rem, 10.5vw, 3.05rem) !important;
-    line-height: 1 !important;
-    letter-spacing: 0.025em !important;
-    max-width: 100%;
-    margin: 0 auto;
-    text-align: center;
-    overflow-wrap: normal;
-    word-break: keep-all;
+    font-size: clamp(2rem, 10vw, 3rem) !important;
+    line-height: 1.02 !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    letter-spacing: 0.018em !important;
+    text-align: center !important;
   }
 
   .ee-brand-lockup p {
-    font-size: clamp(0.9rem, 3.8vw, 1.05rem) !important;
+    font-size: clamp(0.92rem, 3.9vw, 1.05rem) !important;
     line-height: 1.3 !important;
-    letter-spacing: 0.045em !important;
-    margin-top: 0.85rem;
-    text-align: center;
+    letter-spacing: 0.04em !important;
+    margin-top: 0.8rem !important;
+    text-align: center !important;
   }
 
   .ee-status-row {
-    justify-content: center;
-    gap: 0.45rem;
-    margin: 1rem auto 1.2rem;
+    justify-content: center !important;
+    gap: 0.45rem !important;
+    margin: 1rem auto 1.15rem !important;
   }
 
   .ee-status-row span {
-    font-size: 0.64rem;
-    padding: 0.34rem 0.5rem;
+    font-size: 0.62rem !important;
+    padding: 0.32rem 0.48rem !important;
   }
 
   .ee-actions {
-    justify-content: center;
-    align-items: center;
-    gap: 0.7rem;
-    flex-direction: column;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 0.7rem !important;
   }
 
   .ee-btn {
-    width: 100%;
-    max-width: 17rem;
-    min-height: 2.85rem;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 0.72rem;
-    letter-spacing: 0.055em !important;
-    padding: 0.75rem 0.85rem;
+    width: 100% !important;
+    max-width: 17rem !important;
+    min-height: 2.8rem !important;
+    font-size: 0.72rem !important;
+    letter-spacing: 0.05em !important;
+    padding: 0.72rem 0.85rem !important;
   }
 
   .ee-feature-strip {
-    margin-top: 1rem;
     grid-template-columns: 1fr !important;
-    border-radius: 1rem;
-  }
-
-  .ee-feature-strip article {
-    padding: 1rem;
-    border-right: none !important;
-    border-bottom: 1px solid rgba(216, 179, 90, 0.24);
-  }
-
-  .ee-feature-strip article:last-child {
-    border-bottom: none;
-  }
-
-  .ee-feature-strip strong {
-    font-size: 0.86rem;
-  }
-
-  .ee-feature-strip span {
-    font-size: 0.9rem;
+    margin-top: 1rem !important;
   }
 
   .ee-section {
-    padding: 3.5rem 0;
+    padding: 3.5rem 0 !important;
   }
 
   .ee-section-head h2 {
     font-size: clamp(2rem, 10vw, 3rem) !important;
-    line-height: 1.05;
+    line-height: 1.08 !important;
   }
 }
 
-/* Very narrow phones */
 @media (max-width: 390px) {
   .ee-hero-showcase {
-    grid-template-rows: 260px auto;
+    grid-template-rows: 255px auto !important;
   }
 
   .ee-hero-art {
-    height: 260px;
+    height: 255px !important;
   }
 
   .ee-brand-lockup h1 {
-    font-size: clamp(1.8rem, 9.6vw, 2.55rem) !important;
-  }
-
-  .ee-brand-lockup p {
-    font-size: 0.86rem !important;
-  }
-
-  .ee-status-row span {
-    font-size: 0.58rem;
+    font-size: clamp(1.8rem, 9vw, 2.45rem) !important;
   }
 }
