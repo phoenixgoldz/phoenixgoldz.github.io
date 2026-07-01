@@ -10,7 +10,7 @@
     content="Eucalyptus Edge is a family-friendly 3D weapon-based arena fighting game from PhoenixGold Game Studios, planned for PC and Steam."
   />
 
-  <link rel="stylesheet" href="css/eucalyptus-edge.css?v=verdantia-1000004594" />
+  <link rel="stylesheet" href="css/eucalyptus-edge.css?v=landing-1000004594" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -23,16 +23,16 @@
 <body>
   <nav class="ee-navbar">
     <div class="ee-container ee-nav-inner">
-      <a href="index.html" class="ee-logo" aria-label="Back to PhoenixGold Game Studios">
+      <a href="index.html" class="ee-logo" aria-label="PhoenixGold Game Studios">
         <img src="Images/Logo2026.png" alt="PhoenixGold Game Studios logo" />
         <span>PhoenixGold</span>
       </a>
 
-      <div class="ee-nav-links">
+      <div class="ee-nav-links" aria-label="Primary navigation">
         <a href="index.html">Studio</a>
         <a href="#trailer">Trailer</a>
+        <a href="#verdantia">Verdantia</a>
         <a href="#fighters">Fighters</a>
-        <a href="#arenas">Arenas</a>
         <a href="#roadmap">Roadmap</a>
         <a href="#support" class="ee-btn ee-btn-small">Support</a>
       </div>
@@ -43,48 +43,77 @@
     </div>
   </nav>
 
-  <div class="mobile-menu">
+  <div class="mobile-menu" aria-label="Mobile navigation">
     <div class="mobile-menu-container">
       <a href="index.html" class="mobile-link">Studio</a>
       <a href="#trailer" class="mobile-link">Trailer</a>
+      <a href="#verdantia" class="mobile-link">Verdantia</a>
       <a href="#fighters" class="mobile-link">Fighters</a>
-      <a href="#arenas" class="mobile-link">Arenas</a>
       <a href="#roadmap" class="mobile-link">Roadmap</a>
       <a href="#support" class="mobile-link">Support</a>
     </div>
   </div>
 
   <main>
-    <section class="ee-hero">
-      <img src="Images/EE_Wallpaper1920x1080.png" alt="Eucalyptus Edge key art wallpaper" class="ee-hero-bg" />
-      <div class="ee-hero-overlay"></div>
-
+    <section class="ee-page-hero">
       <div class="ee-container">
-        <div class="ee-hero-content reveal">
-          <div class="ee-kicker">Coming Soon to Steam</div>
-          <h1>Eucalyptus Edge</h1>
-          <p class="ee-tagline">Cute Fighters. Serious Skills.</p>
-          <p class="ee-hero-copy">
-            A family-friendly 3D weapon-based arena fighter where Australian animal warriors battle across Verdantia, a magical world threatened by The Blight.
-          </p>
+        <div class="ee-hero-showcase reveal">
+          <img src="Images/EE_Wallpaper1920x1080.png" alt="Eucalyptus Edge key art" class="ee-hero-art" />
+          <div class="ee-hero-shade"></div>
 
-          <div class="ee-actions">
-            <a href="#trailer" class="ee-btn ee-btn-primary">Watch Trailer</a>
-            <a href="#fighters" class="ee-btn ee-btn-secondary">Meet the Fighters</a>
+          <div class="ee-hero-copybox">
+            <div class="ee-brand-lockup">
+              <span class="ee-kicker">A stylized 3D arena fighter</span>
+              <h1>Eucalyptus Edge</h1>
+              <p>Cute Fighters. Serious Skills.</p>
+            </div>
+
+            <div class="ee-status-row">
+              <span>Steam planned</span>
+              <span>In development</span>
+              <span>PC</span>
+            </div>
+
+            <div class="ee-actions">
+              <a href="#support" class="ee-btn ee-btn-primary">Wishlist on Steam</a>
+              <a href="#trailer" class="ee-btn ee-btn-secondary">Watch Trailer</a>
+            </div>
           </div>
+        </div>
+
+        <div class="ee-feature-strip reveal">
+          <article>
+            <strong>Animal Warriors</strong>
+            <span>Unique fighters with signature weapons and combat roles.</span>
+          </article>
+          <article>
+            <strong>Dynamic Arenas</strong>
+            <span>Australian-inspired environments built around ring-out pressure.</span>
+          </article>
+          <article>
+            <strong>Responsive Combat</strong>
+            <span>Skill-based dodging, blocking, counters, and Edge Energy.</span>
+          </article>
+          <article>
+            <strong>Nature Fights Back</strong>
+            <span>Defend Verdantia from a corruption known as The Blight.</span>
+          </article>
         </div>
       </div>
     </section>
 
     <section id="trailer" class="ee-section">
       <div class="ee-container">
-        <div class="ee-kicker center">Official Concept Trailer</div>
-        <h2 class="ee-heading center">Watch the Vision</h2>
-        <p class="ee-section-intro">
-          This concept trailer was created with Google Flow and Canva to communicate the tone, world, and cinematic direction while the playable prototype continues development.
-        </p>
+        <div class="ee-section-head reveal">
+          <span class="ee-kicker">Official Concept Trailer</span>
+          <h2>Watch the Vision</h2>
+          <p>
+            This trailer was created with Google Flow and Canva as a cinematic concept piece to show the tone,
+            world, and excitement of Eucalyptus Edge while the playable prototype continues development.
+          </p>
+        </div>
 
-        <div class="ee-video-card reveal">
+        <div class="ee-video-panel reveal">
           <video controls preload="metadata" poster="Images/EE_Wallpaper1920x1080.png">
             <source src="Video/EE_TrailerConcept.mp4" type="video/mp4" />
             Your browser does not support HTML5 video.
@@ -93,160 +122,221 @@
       </div>
     </section>
 
-    <section id="world" class="ee-section ee-world-section">
-      <div class="ee-container ee-split">
-        <div class="reveal">
-          <div class="ee-kicker">World of Verdantia</div>
-          <h2 class="ee-heading">Nature fights back.</h2>
+    <section id="verdantia" class="ee-section ee-section-alt">
+      <div class="ee-container">
+        <div class="ee-section-head reveal">
+          <span class="ee-kicker">Explore Verdantia</span>
+          <h2>A living world of magical battle arenas.</h2>
           <p>
-            Verdantia is a magical wildlife world shaped by eucalyptus forests, crystal caverns, coastal harbors, moonlit rainforests, and festival arenas.
-          </p>
-          <p>
-            The Edge Festival brings champions together, but The Blight threatens to twist nature and corrupt the fighters sworn to protect it.
+            Verdantia is a magical wildlife world shaped by eucalyptus forests, crystal caverns, coastal harbors,
+            moonlit rainforests, icy ridges, and ceremonial battle arenas.
           </p>
         </div>
 
-        <div class="ee-media-card reveal">
-          <img src="Images/Arenas of Verdantia.png" alt="Arenas of Verdantia showcase" />
+        <div class="ee-arena-row reveal">
+          <a href="#arenas" class="ee-arena-tile">
+            <img src="Images/Eucalyptus Summit.png" alt="Eucalyptus Summit" />
+            <span>Eucalyptus Summit</span>
+          </a>
+          <a href="#arenas" class="ee-arena-tile">
+            <img src="Images/Crystal Cavern.png" alt="Crystal Caverns" />
+            <span>Crystal Caverns</span>
+          </a>
+          <a href="#arenas" class="ee-arena-tile">
+            <img src="Images/Bamboo Harbor.png" alt="Bamboo Harbor" />
+            <span>Bamboo Harbor</span>
+          </a>
+          <a href="#arenas" class="ee-arena-tile">
+            <img src="Images/Frostpine Ridge.png" alt="Frostpine Ridge" />
+            <span>Frostpine Ridge</span>
+          </a>
+          <a href="#arenas" class="ee-arena-tile">
+            <img src="Images/Moonlit Rainforest.png" alt="Moonlit Rainforest" />
+            <span>Moonlit Rainforest</span>
+          </a>
         </div>
       </div>
     </section>
 
     <section id="fighters" class="ee-section">
       <div class="ee-container">
-        <div class="ee-kicker center">Roster</div>
-        <h2 class="ee-heading center">Meet the Fighters</h2>
-        <p class="ee-section-intro">
-          Each fighter is designed around a readable silhouette, signature colors, weapon identity, and a unique combat role.
-        </p>
+        <div class="ee-section-head reveal">
+          <span class="ee-kicker">Roster</span>
+          <h2>Fighters of Verdantia</h2>
+          <p>
+            Each fighter is designed around a readable silhouette, signature colors, weapon identity, and a unique combat role.
+          </p>
+        </div>
 
         <div class="ee-fighter-grid">
-          <article class="ee-fighter-card reveal">
-            <img src="Images/KodaRedesign.png" alt="Koda redesign" />
-            <div><h3>Koda</h3><p>Balanced Staff Fighter</p></div>
+          <article class="ee-fighter-card reveal koda">
+            <img src="Images/KodaRedesign.png" alt="Koda the Koala" />
+            <div>
+              <h3>Koda</h3>
+              <p>The Koala</p>
+              <span>Balanced Staff Fighter</span>
+            </div>
           </article>
 
-          <article class="ee-fighter-card reveal">
-            <img src="Images/WrenRedesign.png" alt="Wren redesign" />
-            <div><h3>Wren</h3><p>Mobile Bruiser</p></div>
+          <article class="ee-fighter-card reveal wren">
+            <img src="Images/WrenRedesign.png" alt="Wren the Kangaroo" />
+            <div>
+              <h3>Wren</h3>
+              <p>The Kangaroo</p>
+              <span>Agile Pugilist</span>
+            </div>
           </article>
 
-          <article class="ee-fighter-card reveal">
-            <img src="Images/RipperRedesign.png" alt="Ripper redesign" />
-            <div><h3>Ripper</h3><p>Aggressive Brawler</p></div>
+          <article class="ee-fighter-card reveal ripper">
+            <img src="Images/RipperRedesign.png" alt="Ripper the Tasmanian Devil" />
+            <div>
+              <h3>Ripper</h3>
+              <p>The Tasmanian Devil</p>
+              <span>Rushdown Bruiser</span>
+            </div>
           </article>
 
-          <article class="ee-fighter-card reveal">
-            <img src="Images/KiriRedesign.png" alt="Kiri redesign" />
-            <div><h3>Kiri</h3><p>Precision Duelist</p></div>
-          </article>
-
-          <article class="ee-fighter-card reveal">
-            <img src="Images/BanjoRedesign.png" alt="Banjo redesign" />
-            <div><h3>Banjo</h3><p>Vine Whip Grappler</p></div>
-          </article>
-
-          <article class="ee-fighter-card reveal">
-            <img src="Images/EchoRedesign.png" alt="Echo redesign" />
-            <div><h3>Echo</h3><p>Crystal Tonfa Specialist</p></div>
-          </article>
-
-          <article class="ee-fighter-card reveal">
-            <img src="Images/AtlusRedesign.png" alt="Atlas redesign" />
-            <div><h3>Atlas</h3><p>Windspine Polearm Fighter</p></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="arenas" class="ee-section ee-arena-section">
-      <div class="ee-container">
-        <div class="ee-kicker center">Battlefields</div>
-        <h2 class="ee-heading center">Arenas of Verdantia</h2>
-        <p class="ee-section-intro">
-          Arenas are built to feel like memorable landmarks with ring-out pressure, dynamic hazards, and strong environmental identity.
-        </p>
-
-        <div class="ee-arena-grid">
-          <article class="ee-arena-card reveal">
-            <img src="Images/Eucalyptus Summit.png" alt="Eucalyptus Summit arena concept" />
-            <h3>Eucalyptus Summit</h3>
-            <p>The highest point in Verdantia, surrounded by ancient eucalyptus forests and cliffside festival platforms.</p>
-          </article>
-
-          <article class="ee-arena-card reveal">
-            <img src="Images/Crystal Cavern.png" alt="Crystal Cavern arena concept" />
-            <h3>Crystal Caverns</h3>
-            <p>A glowing underground arena built around magical crystals, reflective surfaces, and dramatic lighting.</p>
-          </article>
-
-          <article class="ee-arena-card reveal">
-            <img src="Images/Bamboo Harbor.png" alt="Bamboo Harbor arena concept" />
-            <h3>Bamboo Harbor</h3>
-            <p>A coastal harbor village with bamboo platforms, water movement, and interactive arena edges.</p>
-          </article>
-
-          <article class="ee-arena-card reveal">
-            <img src="Images/Moonlit Rainforest.png" alt="Moonlit Rainforest arena concept" />
-            <h3>Moonlit Rainforest</h3>
-            <p>A night arena filled with glowing flora, dense canopy silhouettes, and magical atmosphere.</p>
-          </article>
-
-          <article class="ee-arena-card reveal">
-            <img src="Images/Frostpine Ridge.png" alt="Frostpine Ridge arena concept" />
-            <h3>Frostpine Ridge</h3>
-            <p>A colder highland arena concept that expands Verdantia’s climate and terrain variety.</p>
-          </article>
-
-          <article class="ee-arena-card reveal">
-            <img src="Images/EdgeFestivalColosseum.png" alt="Edge Festival Colosseum arena concept" />
-            <h3>Edge Festival Colosseum</h3>
-            <p>A ceremonial competition stage built for champions, crowds, banners, and high-stakes battles.</p>
+          <article class="ee-fighter-card reveal kiri">
+            <img src="Images/KiriRedesign.png" alt="Kiri the Kookaburra" />
+            <div>
+              <h3>Kiri</h3>
+              <p>The Kookaburra</p>
+              <span>Ranged Striker</span>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="banners" class="ee-section">
+    <section id="features" class="ee-section ee-section-alt">
       <div class="ee-container">
-        <div class="ee-kicker center">Factions</div>
-        <h2 class="ee-heading center">Banners of Verdantia</h2>
+        <div class="ee-section-head reveal">
+          <span class="ee-kicker">Features</span>
+          <h2>Unite nature. Master the Edge.</h2>
+        </div>
 
-        <div class="ee-banner-grid">
-          <img src="Images/ForestFlag.png" alt="Forest faction flag" />
-          <img src="Images/BlueFlag.png" alt="Blue faction flag" />
-          <img src="Images/RedFlag.png" alt="Red faction flag" />
-          <img src="Images/BlightFlag.png" alt="Blight faction flag" />
+        <div class="ee-feature-card-grid">
+          <article class="ee-info-card reveal">
+            <h3>Responsive Combat</h3>
+            <p>Tight, readable fighting with dodging, blocking, parrying, attacks, counters, and momentum shifts.</p>
+          </article>
+
+          <article class="ee-info-card reveal">
+            <h3>Ring-Out Victory</h3>
+            <p>Battle across 3D arenas with dangerous edges. Knock opponents out to win.</p>
+          </article>
+
+          <article class="ee-info-card reveal">
+            <h3>Edge Energy</h3>
+            <p>Build Edge Energy to unleash powerful character abilities and turn the tide.</p>
+          </article>
+
+          <article class="ee-info-card reveal">
+            <h3>Magical Worlds</h3>
+            <p>Explore beautiful arenas inspired by Australian forests, caverns, harbors, and festival spaces.</p>
+          </article>
+
+          <article class="ee-info-card reveal">
+            <h3>Family Friendly</h3>
+            <p>No blood or graphic violence. Fun, stylized, accessible combat for a wide audience.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section id="roadmap" class="ee-section">
+    <section id="arenas" class="ee-section">
       <div class="ee-container">
-        <div class="ee-kicker center">Development Roadmap</div>
-        <h2 class="ee-heading center">From Prototype to Launch</h2>
+        <div class="ee-section-head reveal">
+          <span class="ee-kicker">Battlefields</span>
+          <h2>Arenas of Verdantia</h2>
+          <p>Arenas are built to feel like memorable landmarks with ring-out pressure, hazards, and strong environmental identity.</p>
+        </div>
+
+        <div class="ee-wide-showcase reveal">
+          <img src="Images/Arenas of Verdantia.png" alt="Arenas of Verdantia overview" />
+        </div>
+      </div>
+    </section>
+
+    <section id="roadmap" class="ee-section ee-section-alt">
+      <div class="ee-container">
+        <div class="ee-section-head reveal">
+          <span class="ee-kicker">Development Roadmap</span>
+          <h2>From prototype to launch.</h2>
+        </div>
 
         <div class="ee-roadmap">
-          <article class="reveal"><span>Phase 1</span><h3>Combat Prototype</h3><p>Movement, attacks, blocking, dodging, Edge Energy, local versus flow, and first playable fighters.</p></article>
-          <article class="reveal"><span>Phase 2</span><h3>Vertical Slice</h3><p>Polished arena presentation, stronger animation pass, improved match flow, and combat feedback.</p></article>
-          <article class="reveal"><span>Phase 3</span><h3>Multiplayer Integration</h3><p>Online structure, private lobbies, ranked testing, replay planning, and networked combat validation.</p></article>
-          <article class="reveal"><span>Phase 4</span><h3>Roster Expansion</h3><p>Additional fighters, arenas, story content, cosmetics, and character-specific polish.</p></article>
-          <article class="reveal"><span>Phase 5</span><h3>Launch and Live Support</h3><p>Steam launch preparation, optimization, supporter rewards, post-launch updates, and future content.</p></article>
+          <article class="reveal active">
+            <span>Phase 1 / 5</span>
+            <h3>Prototype Foundation</h3>
+            <ul>
+              <li>Core combat system</li>
+              <li>4 playable fighters</li>
+              <li>2 battle arenas</li>
+              <li>Local versus gameplay</li>
+            </ul>
+          </article>
+
+          <article class="reveal">
+            <span>Phase 2 / 5</span>
+            <h3>Content Expansion</h3>
+            <ul>
+              <li>More fighters</li>
+              <li>More arenas</li>
+              <li>Game modes</li>
+              <li>Improved AI</li>
+            </ul>
+          </article>
+
+          <article class="reveal">
+            <span>Phase 3 / 5</span>
+            <h3>Online Features</h3>
+            <ul>
+              <li>Online matches</li>
+              <li>Ranked play</li>
+              <li>Leaderboards</li>
+              <li>Spectator mode</li>
+            </ul>
+          </article>
+
+          <article class="reveal">
+            <span>Phase 4 / 5</span>
+            <h3>Story and Polish</h3>
+            <ul>
+              <li>Story mode</li>
+              <li>Cinematics</li>
+              <li>UI/UX polish</li>
+              <li>Accessibility</li>
+            </ul>
+          </article>
+
+          <article class="reveal">
+            <span>Phase 5 / 5</span>
+            <h3>Launch and Beyond</h3>
+            <ul>
+              <li>Full release</li>
+              <li>Post-launch content</li>
+              <li>Balance updates</li>
+              <li>Community events</li>
+            </ul>
+          </article>
         </div>
       </div>
     </section>
 
-    <section id="support" class="ee-section ee-support">
+    <section id="support" class="ee-section ee-support-section">
       <div class="ee-container">
-        <div class="ee-final reveal">
-          <div class="ee-kicker center">Support Development</div>
+        <div class="ee-support-panel reveal">
+          <span class="ee-kicker">Support Development</span>
           <h2>Help bring Verdantia to life.</h2>
           <p>
-            Eucalyptus Edge is in early development, and support helps move the project toward its first playable combat prototype and future Steam release.
+            Eucalyptus Edge is in early development. Support helps move the project toward its playable combat prototype,
+            Steam page, and future release.
           </p>
-          <div class="ee-actions">
+
+          <div class="ee-actions center-actions">
             <a href="https://www.kickstarter.com/projects/phoenixgoldgames/eucalyptus-edge" target="_blank" rel="noopener noreferrer" class="ee-btn ee-btn-primary">Support on Kickstarter</a>
-            <a href="index.html" class="ee-btn ee-btn-secondary">Back to Studio</a>
+            <a href="#trailer" class="ee-btn ee-btn-secondary">Watch Trailer</a>
           </div>
         </div>
       </div>
@@ -254,29 +344,15 @@
   </main>
 
   <footer class="ee-footer">
-    <div class="ee-container ee-footer-grid">
-      <div>
-        <a href="index.html" class="ee-logo">
-          <img src="Images/Logo2026.png" alt="PhoenixGold Game Studios logo" />
-          <span>PhoenixGold</span>
-        </a>
-        <p>Eucalyptus Edge is the first commercial title from PhoenixGold Game Studios.</p>
-      </div>
-
-      <div>
-        <h3>Game</h3>
+    <div class="ee-container ee-footer-inner">
+      <p>Eucalyptus Edge is a PhoenixGold original.</p>
+      <p>United by nature. Master the Edge.</p>
+      <nav>
+        <a href="index.html">Studio</a>
         <a href="#trailer">Trailer</a>
         <a href="#fighters">Fighters</a>
-        <a href="#arenas">Arenas</a>
-        <a href="#roadmap">Roadmap</a>
-      </div>
-
-      <div>
-        <h3>Status</h3>
-        <p>Coming Soon to Steam</p>
-        <p>PC Development</p>
-        <p>Family-Friendly Arena Fighter</p>
-      </div>
+        <a href="#support">Support</a>
+      </nav>
     </div>
 
     <div class="ee-footer-bottom">
