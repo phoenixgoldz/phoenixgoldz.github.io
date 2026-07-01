@@ -490,3 +490,209 @@ a{color:inherit;text-decoration:none}
     font-size: 0.76rem;
   }
 }
+
+/* =======================================================
+   MAP LOCATION SIZE + MOBILE LAYOUT FIX
+   Makes map location buttons cleaner and stops the map area
+   from feeling oversized on phones.
+======================================================= */
+
+.ee-map-shell {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+/* Desktop and tablet pins stay compact */
+.ee-map-pin {
+  max-width: 15rem;
+  min-width: 11.5rem;
+  padding: 0.42rem 0.72rem;
+}
+
+.ee-map-pin span {
+  font-size: clamp(0.62rem, 0.72vw, 0.78rem);
+  line-height: 1.12;
+}
+
+.ee-map-pin small {
+  font-size: clamp(0.58rem, 0.66vw, 0.72rem);
+  line-height: 1.25;
+}
+
+/* Image detail card should not take over the whole section on desktop */
+.ee-map-detail img {
+  max-height: 17rem;
+}
+
+.ee-map-detail div {
+  align-self: center;
+}
+
+/* Tablet / mobile: turn location buttons into a clean grid under the map */
+@media (max-width: 1024px) {
+  .ee-map-shell {
+    padding-bottom: 1rem;
+  }
+
+  .ee-map-shell > img {
+    width: 100%;
+    aspect-ratio: 16 / 8.4;
+    min-height: 0 !important;
+    object-fit: cover;
+    object-position: center;
+    border-bottom: 1px solid var(--ee-border-soft);
+  }
+
+  .ee-map-pin {
+    position: static;
+    width: auto !important;
+    min-width: 0;
+    max-width: none;
+    margin: 0 !important;
+    padding: 0.58rem 0.72rem;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ee-map-pin::before {
+    display: none;
+  }
+
+  .ee-map-pin span {
+    font-size: 0.72rem;
+  }
+
+  .ee-map-pin small {
+    font-size: 0.64rem;
+  }
+
+  /* This uses all map buttons before the detail card as a two-column control panel */
+  .ee-map-pin.summit {
+    margin-top: 0.9rem !important;
+  }
+
+  .ee-map-pin.summit,
+  .ee-map-pin.frostpine,
+  .ee-map-pin.crystal,
+  .ee-map-pin.bamboo,
+  .ee-map-pin.moonlit,
+  .ee-map-pin.festival {
+    justify-self: stretch;
+  }
+
+  .ee-map-shell {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 0.55rem;
+    row-gap: 0.55rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .ee-map-shell > img,
+  .ee-map-info {
+    grid-column: 1 / -1;
+  }
+
+  .ee-map-info {
+    margin: 0.65rem 0 0 !important;
+  }
+
+  .ee-map-detail {
+    border-radius: 1rem;
+  }
+
+  .ee-map-detail img {
+    max-height: none;
+    height: auto;
+  }
+}
+
+/* Phone: smaller buttons, tighter section, better map crop */
+@media (max-width: 700px) {
+  .ee-section:has(.ee-map-shell) {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .ee-map-shell {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 0 0.6rem 0.8rem;
+    gap: 0.48rem;
+    border-radius: 1.2rem;
+  }
+
+  .ee-map-shell > img {
+    aspect-ratio: 16 / 9.2;
+    border-radius: 1.05rem 1.05rem 0 0;
+  }
+
+  .ee-map-pin {
+    min-height: 3.35rem;
+    padding: 0.48rem 0.42rem;
+    border-radius: 0.9rem;
+  }
+
+  .ee-map-pin span {
+    font-size: 0.62rem;
+    letter-spacing: 0.035em;
+  }
+
+  .ee-map-pin small {
+    font-size: 0.56rem;
+    line-height: 1.18;
+  }
+
+  .ee-map-detail {
+    grid-template-columns: 1fr;
+    border-radius: 1rem;
+  }
+
+  .ee-map-detail img {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .ee-map-detail div {
+    padding: 0.9rem;
+  }
+
+  .ee-map-detail span {
+    font-size: 0.68rem;
+  }
+
+  .ee-map-detail h3 {
+    font-size: 0.98rem;
+    line-height: 1.15;
+  }
+
+  .ee-map-detail p {
+    font-size: 0.84rem;
+    line-height: 1.42;
+  }
+
+  .ee-map-detail small {
+    font-size: 0.72rem;
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 390px) {
+  .ee-map-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .ee-map-pin {
+    min-height: 2.85rem;
+  }
+
+  .ee-map-pin span {
+    font-size: 0.64rem;
+  }
+
+  .ee-map-pin small {
+    font-size: 0.58rem;
+  }
+}
