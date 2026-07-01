@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eucalyptus Edge | PhoenixGold Game Studios</title>
+  <meta name="description" content="Eucalyptus Edge is a family-friendly 3D weapon-based arena fighting game from PhoenixGold Game Studios, coming to Steam." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@500;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="Images/Logo2026.png" />
+</head>
+<body>
+  <canvas id="particles-canvas" class="particles-canvas" aria-hidden="true"></canvas>
+
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo" aria-label="PhoenixGold Game Studios Home">
+        <img src="Images/Logo2026.png" alt="PhoenixGold Game Studios logo" class="nav-logo" />
+        <span class="logo-text">PhoenixGold</span>
+      </a>
+      <div class="nav-links" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="#trailer">Trailer</a>
+        <a href="#fighters">Fighters</a>
+        <a href="#arenas">Arenas</a>
+        <a href="#support" class="btn btn-small">Support</a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" aria-label="Mobile navigation">
+    <div class="mobile-menu-container">
+      <a href="index.html" class="mobile-link">Home</a>
+      <a href="#trailer" class="mobile-link">Trailer</a>
+      <a href="#fighters" class="mobile-link">Fighters</a>
+      <a href="#arenas" class="mobile-link">Arenas</a>
+      <a href="#support" class="mobile-link">Support</a>
+    </div>
+  </div>
+
+  <main>
+    <section class="game-hero">
+      <div class="game-hero-bg">
+        <img src="Images/Verdantia.png" alt="Verdantia world art" />
+      </div>
+      <div class="hero-overlay"></div>
+      <div class="container">
+        <div class="game-hero-content reveal">
+          <div class="hero-badge">First PhoenixGold Game Studios Title</div>
+          <h1 class="hero-title">Eucalyptus Edge</h1>
+          <p class="hero-subtitle">Cute Fighters. Serious Skills.</p>
+          <p class="game-hero-copy">A family-friendly 3D weapon-based arena fighter set in Verdantia, a magical Australian-inspired world threatened by a mysterious corruption known as The Blight.</p>
+          <div class="hero-buttons">
+            <a href="#trailer" class="btn btn-primary">Watch Trailer</a>
+            <a href="#support" class="btn btn-secondary">Support Development</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="trailer" class="section trailer-section">
+      <div class="container">
+        <div class="section-kicker centered">Official Concept Trailer</div>
+        <h2 class="section-title centered">Watch the Vision</h2>
+        <p class="section-text centered section-intro">This trailer uses AI-assisted concept visuals created through Google Flow and Canva to communicate the world, tone, and cinematic direction while the game continues development.</p>
+        <div class="trailer-frame reveal">
+          <video controls preload="metadata" poster="Images/FigtherBanner (1) (1).png">
+            <source src="Video/EE_TrailerConcept.mp4" type="video/mp4" />
+            Your browser does not support HTML5 video.
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <section id="overview" class="section overview-section">
+      <div class="container">
+        <div class="overview-grid">
+          <div class="section-content reveal">
+            <div class="section-kicker">Game Overview</div>
+            <h2 class="section-title">A new arena fighter with charm and combat depth.</h2>
+            <p class="section-text">Eucalyptus Edge blends stylized Australian animal warriors, 3D arena movement, weapon-based combat, ring-out victories, and character-specific fighting styles.</p>
+            <p class="section-text">Players build Edge Energy by attacking, defending, dodging, countering, and surviving pressure, then spend it on special abilities that reinforce each fighter's identity.</p>
+          </div>
+          <div class="pillars-grid reveal">
+            <div class="pillar-card"><h3>3D Movement</h3><p>Fight across full arenas with positioning, spacing, and ring-out pressure.</p></div>
+            <div class="pillar-card"><h3>Weapon Combat</h3><p>Each fighter uses a distinct weapon style, silhouette, and combat rhythm.</p></div>
+            <div class="pillar-card"><h3>Edge Energy</h3><p>Build meter through skilled play and unleash powerful character abilities.</p></div>
+            <div class="pillar-card"><h3>Family-Friendly</h3><p>Stylized action with no blood or graphic violence.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="fighters" class="section fighters-section">
+      <div class="container">
+        <div class="section-kicker centered">Roster</div>
+        <h2 class="section-title centered">Meet the Fighters</h2>
+        <p class="section-text centered section-intro">Phase 1 focuses on proving the core combat loop with four playable fighters, then expanding the roster as development continues.</p>
+        <div class="fighter-grid">
+          <article class="fighter-card reveal"><img src="Images/KodaKoala.png" alt="Koda the Koala" /><div><h3>Koda</h3><p>Balanced Staff Fighter</p></div></article>
+          <article class="fighter-card reveal"><img src="Images/WrenRedKangaroo.png" alt="Wren the Kangaroo" /><div><h3>Wren</h3><p>Mobile Bruiser</p></div></article>
+          <article class="fighter-card reveal"><img src="Images/RipperTasmanianDevil.png" alt="Ripper the Tasmanian Devil" /><div><h3>Ripper</h3><p>Aggressive Brawler</p></div></article>
+          <article class="fighter-card reveal"><img src="Images/KiriKookaburra.png" alt="Kiri the Kookaburra" /><div><h3>Kiri</h3><p>Precision Duelist</p></div></article>
+          <article class="fighter-card reveal"><img src="Images/BanjoSugarGlider.png" alt="Banjo the Sugar Glider" /><div><h3>Banjo</h3><p>Vine Whip Grappler</p></div></article>
+          <article class="fighter-card reveal"><img src="Images/EchoPlatypus.png" alt="Echo the Platypus" /><div><h3>Echo</h3><p>Crystal Tonfa Specialist</p></div></article>
+          <article class="fighter-card reveal"><img src="Images/AtlasTheEmu.png" alt="Atlas the Emu" /><div><h3>Atlas</h3><p>Windspine Polearm Fighter</p></div></article>
+          <article class="fighter-card reveal"><img src="Images/MakoTheQuokka.png" alt="Mako the Quokka" /><div><h3>Mako</h3><p>Support Trickster</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="arenas" class="section arenas-section">
+      <div class="container">
+        <div class="section-kicker centered">World of Verdantia</div>
+        <h2 class="section-title centered">Arena Showcase</h2>
+        <div class="arena-grid">
+          <article class="arena-card reveal"><img src="Images/Eucalyptus Summit.png" alt="Eucalyptus Summit" /><h3>Eucalyptus Summit</h3><p>A high-canopy battle arena surrounded by ancient trees, sweeping views, and festival architecture.</p></article>
+          <article class="arena-card reveal"><img src="Images/Crystal Cavern.png" alt="Crystal Caverns" /><h3>Crystal Caverns</h3><p>A glowing underground arena filled with luminous crystals and dramatic combat silhouettes.</p></article>
+          <article class="arena-card reveal"><img src="Images/Bamboo Harbor.png" alt="Bamboo Harbor" /><h3>Bamboo Harbor</h3><p>A coastal stage built around water, docks, bridges, and strong environmental identity.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="roadmap" class="section roadmap-section">
+      <div class="container">
+        <div class="section-kicker centered">Development Roadmap</div>
+        <h2 class="section-title centered">From Prototype to Launch</h2>
+        <div class="roadmap-status-grid">
+          <div class="roadmap-card roadmap-progress reveal"><span class="roadmap-status">Phase 1</span><h3>Combat Prototype</h3><p>Core movement, attacks, blocking, dodging, Edge Energy, UI feedback, local versus flow, and first playable fighters.</p></div>
+          <div class="roadmap-card roadmap-next reveal"><span class="roadmap-status">Phase 2</span><h3>Vertical Slice</h3><p>Polished arena presentation, stronger animation pass, improved combat feedback, and refined match flow.</p></div>
+          <div class="roadmap-card roadmap-next reveal"><span class="roadmap-status">Phase 3</span><h3>Multiplayer Integration</h3><p>Online structure, private lobbies, ranked testing, replay planning, and networked combat validation.</p></div>
+          <div class="roadmap-card roadmap-next reveal"><span class="roadmap-status">Phase 4</span><h3>Roster Expansion</h3><p>Additional fighters, arenas, story content, cosmetics, and character-specific polish.</p></div>
+          <div class="roadmap-card roadmap-next reveal"><span class="roadmap-status">Phase 5</span><h3>Launch and Live Support</h3><p>Steam launch preparation, optimization, supporter rewards, post-launch updates, and future content.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="support" class="section support-section">
+      <div class="container">
+        <div class="final-cta reveal">
+          <div class="section-kicker centered">Support Development</div>
+          <h2>Help bring Verdantia to life.</h2>
+          <p>Eucalyptus Edge is in early development, and support helps move the project toward its first playable combat prototype and future Steam release.</p>
+          <div class="hero-buttons">
+            <a href="https://www.kickstarter.com/projects/phoenixgoldgames/eucalyptus-edge" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Support on Kickstarter</a>
+            <a href="index.html" class="btn btn-secondary">Back to Studio</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-info">
+          <a href="index.html" class="logo footer-logo"><img src="Images/Logo2026.png" alt="PhoenixGold Game Studios logo" class="nav-logo" /><span class="logo-text">PhoenixGold</span></a>
+          <p class="footer-description">Eucalyptus Edge is the first commercial title from PhoenixGold Game Studios.</p>
+        </div>
+        <div>
+          <h3 class="footer-title">Game</h3>
+          <nav class="footer-nav"><a href="#trailer">Trailer</a><a href="#fighters">Fighters</a><a href="#arenas">Arenas</a><a href="#roadmap">Roadmap</a></nav>
+        </div>
+        <div>
+          <h3 class="footer-title">Studio</h3>
+          <p class="footer-contact-item">PhoenixGold Game Studios</p><p class="footer-contact-item">Coming to Steam</p><p class="footer-contact-item">PC Development</p>
+        </div>
+      </div>
+      <div class="footer-bottom"><p class="copyright">© <span id="current-year"></span> PhoenixGold Game Studios. All rights reserved.</p><p class="credits">Cute Fighters. Serious Skills.</p></div>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>
