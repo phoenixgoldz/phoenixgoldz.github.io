@@ -166,35 +166,73 @@
         <div class="ee-map-shell reveal">
           <img src="Images/VerdantiaWorld.png" alt="Illustrated map of Verdantia" />
 
-          <button class="ee-map-pin summit" type="button">
+          <button class="ee-map-pin summit active" type="button" data-map-target="summit" aria-pressed="true">
             <span>Eucalyptus Summit</span>
             <small>Home of the Edge Clans</small>
           </button>
 
-          <button class="ee-map-pin frostpine" type="button">
+          <button class="ee-map-pin frostpine" type="button" data-map-target="frostpine" aria-pressed="false">
             <span>Frostpine Ridge</span>
             <small>Cold highlands and icy trials</small>
           </button>
 
-          <button class="ee-map-pin crystal" type="button">
+          <button class="ee-map-pin crystal" type="button" data-map-target="crystal" aria-pressed="false">
             <span>Crystal Caverns</span>
             <small>Ancient crystals beneath the surface</small>
           </button>
 
-          <button class="ee-map-pin bamboo" type="button">
+          <button class="ee-map-pin bamboo" type="button" data-map-target="bamboo" aria-pressed="false">
             <span>Bamboo Harbor</span>
             <small>Coastal village and tidal platforms</small>
           </button>
 
-          <button class="ee-map-pin moonlit" type="button">
+          <button class="ee-map-pin moonlit" type="button" data-map-target="moonlit" aria-pressed="false">
             <span>Moonlit Rainforest</span>
             <small>Glowing forest under ancient magic</small>
           </button>
 
-          <button class="ee-map-pin festival" type="button">
+          <button class="ee-map-pin festival" type="button" data-map-target="festival" aria-pressed="false">
             <span>Edge Festival Grounds</span>
             <small>Where champions prove their skill</small>
           </button>
+
+          <div class="ee-map-info" aria-live="polite">
+            <article class="ee-map-detail active" data-map-detail="summit">
+              <span>Eucalyptus Summit</span>
+              <h3>Home of the Edge Clans</h3>
+              <p>A high-altitude arena surrounded by ancient eucalyptus trees, wooden platforms, and scenic cliffside views.</p>
+            </article>
+
+            <article class="ee-map-detail" data-map-detail="frostpine">
+              <span>Frostpine Ridge</span>
+              <h3>Where Cold Forges Endurance</h3>
+              <p>A frozen mountain region built around icy ledges, wind pressure, and dangerous arena edges.</p>
+            </article>
+
+            <article class="ee-map-detail" data-map-detail="crystal">
+              <span>Crystal Caverns</span>
+              <h3>Ancient Power Beneath Verdantia</h3>
+              <p>A glowing underground arena filled with radiant crystals, reflective surfaces, and magical combat lighting.</p>
+            </article>
+
+            <article class="ee-map-detail" data-map-detail="bamboo">
+              <span>Bamboo Harbor</span>
+              <h3>Coastal Village Combat</h3>
+              <p>A vibrant harbor of bamboo platforms, tidal hazards, rope bridges, and shifting battlefield momentum.</p>
+            </article>
+
+            <article class="ee-map-detail" data-map-detail="moonlit">
+              <span>Moonlit Rainforest</span>
+              <h3>Where Ancient Magic Glows</h3>
+              <p>A mystical rainforest arena filled with bioluminescent plants, moonlight, fog, and hidden paths.</p>
+            </article>
+
+            <article class="ee-map-detail" data-map-detail="festival">
+              <span>Edge Festival Grounds</span>
+              <h3>The Heart of the Championship</h3>
+              <p>The ceremonial grounds where champions gather to prove their skill, honor their clans, and protect Verdantia.</p>
+            </article>
+          </div>
         </div>
       </div>
     </section>
@@ -380,6 +418,33 @@
 
     <div class="ee-footer-bottom">© <span id="current-year"></span> PhoenixGold Game Studios. All rights reserved.</div>
   </footer>
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const pins = document.querySelectorAll(".ee-map-pin[data-map-target]");
+      const details = document.querySelectorAll(".ee-map-detail[data-map-detail]");
+
+      function setActiveMapLocation(location) {
+        pins.forEach((pin) => {
+          const isActive = pin.dataset.mapTarget === location;
+          pin.classList.toggle("active", isActive);
+          pin.setAttribute("aria-pressed", isActive ? "true" : "false");
+        });
+
+        details.forEach((detail) => {
+          detail.classList.toggle("active", detail.dataset.mapDetail === location);
+        });
+      }
+
+      pins.forEach((pin) => {
+        pin.addEventListener("mouseenter", () => setActiveMapLocation(pin.dataset.mapTarget));
+        pin.addEventListener("focus", () => setActiveMapLocation(pin.dataset.mapTarget));
+        pin.addEventListener("click", () => setActiveMapLocation(pin.dataset.mapTarget));
+        pin.addEventListener("touchstart", () => setActiveMapLocation(pin.dataset.mapTarget), { passive: true });
+      });
+    });
+  </script>
 
   <script src="js/main.js"></script>
 </body>
