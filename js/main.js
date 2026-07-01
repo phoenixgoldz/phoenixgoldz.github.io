@@ -10,54 +10,67 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   if (menuBtn && mobileMenu) {
+    function closeMenu() {
+      menuBtn.classList.remove("active");
+      mobileMenu.classList.remove("active");
+      document.body.classList.remove("no-scroll");
+    }
 
-  function closeMenu() {
-    menuBtn.classList.remove("active");
-    mobileMenu.classList.remove("active");
-    document.body.classList.remove("no-scroll");
+    function openMenu() {
+      menuBtn.classList.add("active");
+      mobileMenu.classList.add("active");
+      document.body.classList.add("no-scroll");
+    }
+
+    function toggleMenu(event) {
+      event.stopPropagation();
+
+      if (mobileMenu.classList.contains("active")) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    }
+
+    menuBtn.addEventListener("click", toggleMenu);
+
+    mobileLinks.forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
+
+    document.addEventListener("click", (event) => {
+      const clickedInsideMenu = mobileMenu.contains(event.target);
+      const clickedMenuButton = menuBtn.contains(event.target);
+
+      if (
+        mobileMenu.classList.contains("active") &&
+        !clickedInsideMenu &&
+        !clickedMenuButton
+      ) {
+        closeMenu();
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        closeMenu();
+      }
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 768) {
+        closeMenu();
+      }
+    });
   }
 
-  function openMenu() {
-    menuBtn.classList.add("active");
-    mobileMenu.classList.add("active");
-    document.body.classList.add("no-scroll");
-  }
-
-  menuBtn.addEventListener("click", (e) => {
-    e.stopPropagation();
-
-    if (mobileMenu.classList.contains("active")) {
-      closeMenu();
-    } else {
-      openMenu();
-    }
-  });
-
-  mobileLinks.forEach(link => {
-    link.addEventListener("click", closeMenu);
-  });
-
-  document.addEventListener("click", (e) => {
-    if (
-      mobileMenu.classList.contains("active") &&
-      !mobileMenu.contains(e.target) &&
-      !menuBtn.contains(e.target)
-    ) {
-      closeMenu();
-    }
-  });
-
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-      closeMenu();
-    }
-  });
-  }
   navLinks.forEach((anchor) => {
     anchor.addEventListener("click", function (event) {
       const targetId = this.getAttribute("href");
 
-      if (!targetId || targetId === "#") return;
+      if (!targetId || targetId === "#" || !targetId.startsWith("#")) {
+        return;
+      }
 
       const targetElement = document.querySelector(targetId);
 
