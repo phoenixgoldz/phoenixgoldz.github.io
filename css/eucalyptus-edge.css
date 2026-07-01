@@ -891,3 +891,154 @@ body,
     letter-spacing: 0.05em;
   }
 }
+
+/* =======================================================
+   MOBILE HERO REBUILD
+   Keeps desktop layout intact while giving phones a dedicated
+   cinematic layout so the title does not get cut off.
+======================================================= */
+
+@media (max-width: 700px) {
+  .ee-page-hero {
+    padding-top: 5.25rem;
+    padding-bottom: 2.25rem;
+  }
+
+  .ee-hero-showcase {
+    min-height: 760px;
+    border-radius: 1.15rem;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .ee-hero-showcase::before,
+  .ee-hero-showcase::after {
+    width: 3.4rem;
+    height: 3.4rem;
+  }
+
+  .ee-hero-showcase::before {
+    top: 0.8rem;
+    left: 0.8rem;
+  }
+
+  .ee-hero-showcase::after {
+    right: 0.8rem;
+    bottom: 0.8rem;
+  }
+
+  .ee-hero-art {
+    object-position: center top;
+  }
+
+  .ee-hero-shade {
+    background:
+      linear-gradient(180deg, rgba(2, 8, 7, 0.08) 0%, rgba(2, 8, 7, 0.24) 32%, rgba(2, 8, 7, 0.96) 76%),
+      linear-gradient(90deg, rgba(2, 8, 7, 0.42), rgba(2, 8, 7, 0.08), rgba(2, 8, 7, 0.42));
+  }
+
+  .ee-hero-copybox {
+    top: auto !important;
+    left: auto;
+    right: auto;
+    width: 100%;
+    max-width: 100%;
+    padding: 1.45rem 1.05rem 2.35rem;
+    text-align: center;
+  }
+
+  .ee-brand-lockup {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .ee-kicker {
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    font-size: 0.68rem;
+    line-height: 1.2;
+    padding: 0.42rem 0.7rem;
+    max-width: 100%;
+    white-space: normal;
+  }
+
+  .ee-brand-lockup h1 {
+    font-size: clamp(2.35rem, 12vw, 3.6rem) !important;
+    line-height: 0.96;
+    letter-spacing: 0.025em !important;
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    word-break: normal;
+    overflow-wrap: normal;
+  }
+
+  .ee-brand-lockup p {
+    font-size: clamp(0.98rem, 4.4vw, 1.25rem) !important;
+    line-height: 1.25;
+    letter-spacing: 0.05em !important;
+    margin-top: 0.9rem;
+    text-align: center;
+  }
+
+  .ee-status-row {
+    justify-content: center;
+    gap: 0.45rem;
+    margin: 1.05rem auto 1.3rem;
+  }
+
+  .ee-status-row span {
+    font-size: 0.68rem;
+    padding: 0.36rem 0.55rem;
+  }
+
+  .ee-actions {
+    justify-content: center;
+    align-items: center;
+    gap: 0.7rem;
+  }
+
+  .ee-btn {
+    min-height: 3rem;
+    width: 100%;
+    max-width: 18rem;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 0.78rem;
+    letter-spacing: 0.055em !important;
+    padding: 0.8rem 1rem;
+  }
+
+  .ee-feature-strip {
+    margin-top: 1rem;
+    border-radius: 1rem;
+  }
+
+  .ee-feature-strip article {
+    padding: 1rem;
+  }
+
+  .ee-feature-strip strong {
+    font-size: 0.86rem;
+  }
+
+  .ee-feature-strip span {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 390px) {
+  .ee-hero-showcase {
+    min-height: 720px;
+  }
+
+  .ee-brand-lockup h1 {
+    font-size: clamp(2.05rem, 11vw, 3rem) !important;
+    letter-spacing: 0.015em !important;
+  }
+
+  .ee-brand-lockup p {
+    font-size: 0.95rem !important;
+  }
+}
