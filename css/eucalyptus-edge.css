@@ -570,3 +570,79 @@ a { color: inherit; text-decoration: none; }
     grid-template-columns: 1fr;
   }
 }
+
+
+/* =======================================================
+   FINAL VERDANTIA FONT OVERRIDE
+   Put Verdantia.ttf in the same folder as this CSS file:
+   css/Verdantia.ttf
+======================================================= */
+
+@font-face {
+  font-family: "Verdantia";
+  src: url("./Verdantia.ttf?v=2026-verdantia") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --font-display: "Verdantia", Georgia, serif;
+}
+
+/* Force Verdantia on every game-brand/title/UI heading element */
+.ee-logo,
+.ee-logo span,
+.ee-nav-links,
+.ee-nav-links a,
+.mobile-link,
+.ee-kicker,
+.ee-hero h1,
+.ee-tagline,
+.ee-heading,
+.ee-info-card h3,
+.ee-fighter-card h3,
+.ee-arena-card h3,
+.ee-banner-grid h3,
+.ee-roadmap h3,
+.ee-roadmap span,
+.ee-final h2,
+.ee-footer h3 {
+  font-family: "Verdantia", Georgia, serif !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.055em;
+}
+
+/* Keep long paragraph text readable */
+body,
+.ee-hero-copy,
+.ee-section p,
+.ee-section-intro,
+.ee-footer p,
+.ee-footer a,
+.ee-info-card p,
+.ee-fighter-card p,
+.ee-arena-card p {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* Buttons use Verdantia for game UI flavor, but stay legible */
+.ee-btn {
+  font-family: "Verdantia", Georgia, serif !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.055em;
+}
+
+/* Slightly enlarge Verdantia headings because the font has a different visual scale */
+.ee-hero h1 {
+  font-size: clamp(4.2rem, 9vw, 8.8rem);
+}
+
+.ee-heading {
+  font-size: clamp(2.5rem, 5vw, 4.6rem);
+}
+
+.ee-fighter-card h3,
+.ee-arena-card h3 {
+  font-size: 1.65rem;
+}
