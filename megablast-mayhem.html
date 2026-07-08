@@ -5,96 +5,80 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Eucalyptus Edge: MegaBlast Mayhem | PhoenixGold Game Studios</title>
-  <meta
-    name="description"
-    content="Eucalyptus Edge: MegaBlast Mayhem is a pixel party battle companion game set in Verdantia."
-  />
+  <meta name="description" content="Eucalyptus Edge: MegaBlast Mayhem is a pixel party battle companion game set in Verdantia." />
 
-  <!-- IMPORTANT:
-       Put megablast-mayhem.css in the SAME folder as this HTML file.
-       This avoids the page breaking if the CSS file is not inside /css/.
-  -->
-  <link rel="stylesheet" href="megablast-mayhem.css?v=nav-polish-20260708" />
+  <link rel="stylesheet" href="megablast-mayhem.css?v=complete-fix-20260707" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700;800;900&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/png" href="Images/Logo2026.png" />
 </head>
 
 <body>
-  <nav class="mb-navbar">
-    <div class="mb-container mb-nav-inner">
-      <a href="index.html" class="mb-logo" aria-label="PhoenixGold Game Studios">
-        <img src="Images/Logo2026.png" alt="PhoenixGold Game Studios logo" />
+  <header class="pg-header">
+    <div class="pg-container pg-nav">
+      <a href="index.html" class="pg-brand" aria-label="PhoenixGold Game Studios">
+        <img src="Images/Logo2026.png" alt="PhoenixGold logo" />
         <span>PhoenixGold</span>
       </a>
 
-      <div class="mb-nav-links" aria-label="Primary navigation">
+      <nav class="pg-desktop-nav" aria-label="Primary navigation">
         <a href="index.html">Studio</a>
         <a href="eucalyptus-edge.html">Eucalyptus Edge</a>
+        <a href="megablast-mayhem.html" class="active">MegaBlast Mayhem</a>
         <a href="#fighters">Fighters</a>
-        <a href="#powerups">Power-Ups</a>
-        <a href="#download" class="mb-btn mb-btn-small">Download</a>
-      </div>
+        <a href="#download" class="pg-nav-pill">Download</a>
+      </nav>
 
-      <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
+      <button class="pg-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
+  </header>
+
+  <nav class="pg-mobile-menu" aria-label="Mobile navigation">
+    <a href="index.html">Studio</a>
+    <a href="eucalyptus-edge.html">Eucalyptus Edge</a>
+    <a href="megablast-mayhem.html">MegaBlast Mayhem</a>
+    <a href="#fighters">Fighters</a>
+    <a href="#powerups">Power-Ups</a>
+    <a href="#download">Download</a>
   </nav>
 
-  <div class="mobile-menu" aria-label="Mobile navigation">
-    <div class="mobile-menu-container">
-      <a href="index.html" class="mobile-link">Studio</a>
-      <a href="eucalyptus-edge.html" class="mobile-link">Eucalyptus Edge</a>
-      <a href="#fighters" class="mobile-link">Fighters</a>
-      <a href="#powerups" class="mobile-link">Power-Ups</a>
-      <a href="#download" class="mobile-link">Download</a>
-    </div>
-  </div>
-
   <main>
-    <section class="hero">
-      <div class="hero-bg"></div>
-
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <span class="eyebrow">A Verdantia Arcade Spin-Off</span>
-          <h1>
-            <span>Eucalyptus Edge:</span>
-            MegaBlast Mayhem
-          </h1>
-          <p class="tagline">Bombs. Power-ups. Pixel chaos.</p>
-          <p class="hero-text">
+    <section class="mb-hero">
+      <div class="pg-container mb-hero-grid">
+        <div class="mb-hero-copy">
+          <span class="mb-eyebrow">A Verdantia Arcade Spin-Off</span>
+          <h1><span>Eucalyptus Edge:</span> MegaBlast Mayhem</h1>
+          <p class="mb-tagline">Bombs. Power-ups. Pixel chaos.</p>
+          <p>
             A fast-paced pixel party battle game where the heroes of Verdantia throw bombs, collect power-ups,
             dodge hazards, and compete in quick arcade-style matches.
           </p>
 
-          <div class="pill-row">
+          <div class="mb-pill-row">
             <span>Pixel Party Battle</span>
             <span>Local Multiplayer</span>
             <span>Family Friendly</span>
             <span>Companion Game</span>
           </div>
 
-          <div class="button-row">
-            <a href="#download" class="button primary">Play / Download</a>
-            <a href="eucalyptus-edge.html" class="button secondary">View Eucalyptus Edge</a>
+          <div class="mb-button-row">
+            <a href="#download" class="mb-button mb-button-primary">Play / Download</a>
+            <a href="eucalyptus-edge.html" class="mb-button mb-button-secondary">View Eucalyptus Edge</a>
           </div>
         </div>
 
-        <div class="hero-art">
+        <div class="mb-hero-art">
           <img src="Images/SpritesheetMain.png" alt="MegaBlast Mayhem core fighter sprite sheet" />
         </div>
       </div>
     </section>
 
-    <section class="info-strip">
-      <div class="container info-grid">
+    <section class="mb-strip">
+      <div class="pg-container mb-strip-grid">
         <article>
           <h2>Quick Matches</h2>
           <p>Short chaotic rounds built for fast replay.</p>
@@ -114,112 +98,78 @@
       </div>
     </section>
 
-    <section class="section">
-      <div class="container two-column">
-        <div class="text-panel">
-          <span class="eyebrow">What Is It?</span>
+    <section class="mb-section">
+      <div class="pg-container mb-two-col">
+        <div class="mb-panel">
+          <span class="mb-eyebrow">What Is It?</span>
           <h2>A smaller game that keeps Verdantia active.</h2>
           <p>
             Eucalyptus Edge is still the flagship 3D arena fighter. MegaBlast Mayhem is a smaller companion game
-            designed to introduce the characters and world in a faster, simpler, arcade format.
+            designed to introduce the characters and world in a faster, simpler arcade format.
           </p>
           <p>
             This gives players something connected to Verdantia while the larger Unreal Engine 5.8 prototype continues development.
           </p>
         </div>
 
-        <div class="feature-panel">
+        <div class="mb-panel mb-panel-feature">
           <span>Design Goal</span>
           <h3>Simple to start. Fun to replay.</h3>
-          <p>
-            Clear movement, readable bombs, quick power-up decisions, and recognizable character personalities.
-          </p>
+          <p>Clear movement, readable bombs, quick power-up decisions, and recognizable character personalities.</p>
         </div>
       </div>
     </section>
 
-    <section id="fighters" class="section dark-section">
-      <div class="container">
-        <div class="section-heading">
-          <span class="eyebrow">Core Roster</span>
+    <section id="fighters" class="mb-section mb-section-alt">
+      <div class="pg-container">
+        <div class="mb-section-heading">
+          <span class="mb-eyebrow">Core Roster</span>
           <h2>Playable Fighters</h2>
           <p>The first sprite sheet focuses on Koda, Banjo, Kiri, and Ripper.</p>
         </div>
 
-        <div class="sprite-card">
+        <div class="mb-sprite-card">
           <img src="Images/SpritesheetMain.png" alt="Koda, Banjo, Kiri, and Ripper sprite sheet" />
         </div>
 
-        <div class="fighter-grid">
-          <article class="fighter koda">
-            <h3>Koda</h3>
-            <span>The Koala Druid</span>
-            <p>Balanced nature fighter with staff energy.</p>
-          </article>
-          <article class="fighter banjo">
-            <h3>Banjo</h3>
-            <span>The Sugar Glider</span>
-            <p>Fast, tricky, and evasive.</p>
-          </article>
-          <article class="fighter kiri">
-            <h3>Kiri</h3>
-            <span>The Kookaburra</span>
-            <p>Sharp blue-feathered striker.</p>
-          </article>
-          <article class="fighter ripper">
-            <h3>Ripper</h3>
-            <span>The Tasmanian Devil</span>
-            <p>Aggressive rushdown bruiser.</p>
-          </article>
+        <div class="mb-card-grid">
+          <article class="mb-fighter koda"><h3>Koda</h3><strong>The Koala Druid</strong><p>Balanced nature fighter with staff energy.</p></article>
+          <article class="mb-fighter banjo"><h3>Banjo</h3><strong>The Sugar Glider</strong><p>Fast, tricky, and evasive.</p></article>
+          <article class="mb-fighter kiri"><h3>Kiri</h3><strong>The Kookaburra</strong><p>Sharp blue-feathered striker.</p></article>
+          <article class="mb-fighter ripper"><h3>Ripper</h3><strong>The Tasmanian Devil</strong><p>Aggressive rushdown bruiser.</p></article>
         </div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="container">
-        <div class="section-heading">
-          <span class="eyebrow">Expanded Roster</span>
+    <section class="mb-section">
+      <div class="pg-container">
+        <div class="mb-section-heading">
+          <span class="mb-eyebrow">Expanded Roster</span>
           <h2>More Fighters Join the Mayhem</h2>
           <p>Atlas, Echo, Wren, and Sonia expand the arcade roster.</p>
         </div>
 
-        <div class="sprite-card">
+        <div class="mb-sprite-card">
           <img src="Images/SpritesheetUnlockable.png" alt="Atlas, Echo, Wren, and Sonia sprite sheet" />
         </div>
 
-        <div class="fighter-grid">
-          <article class="fighter atlas">
-            <h3>Atlas</h3>
-            <span>The Emu Spear Warrior</span>
-            <p>Longer reach and strong forward pressure.</p>
-          </article>
-          <article class="fighter echo">
-            <h3>Echo</h3>
-            <span>The Platypus Ice Tonfa Master</span>
-            <p>Cool blue effects and ice-themed control.</p>
-          </article>
-          <article class="fighter wren">
-            <h3>Wren</h3>
-            <span>The Kangaroo Boxing Brawler</span>
-            <p>Close-range boxing pressure.</p>
-          </article>
-          <article class="fighter sonia">
-            <h3>Sonia</h3>
-            <span>The White Tigress</span>
-            <p>A special teaser fighter for future Verdantia content.</p>
-          </article>
+        <div class="mb-card-grid">
+          <article class="mb-fighter atlas"><h3>Atlas</h3><strong>The Emu Spear Warrior</strong><p>Longer reach and strong forward pressure.</p></article>
+          <article class="mb-fighter echo"><h3>Echo</h3><strong>The Platypus Ice Tonfa Master</strong><p>Cool blue effects and ice-themed control.</p></article>
+          <article class="mb-fighter wren"><h3>Wren</h3><strong>The Kangaroo Boxing Brawler</strong><p>Close-range boxing pressure.</p></article>
+          <article class="mb-fighter sonia"><h3>Sonia</h3><strong>The White Tigress</strong><p>A special teaser fighter for future Verdantia content.</p></article>
         </div>
       </div>
     </section>
 
-    <section id="powerups" class="section dark-section">
-      <div class="container">
-        <div class="section-heading">
-          <span class="eyebrow">Bombs and Power-Ups</span>
+    <section id="powerups" class="mb-section mb-section-alt">
+      <div class="pg-container">
+        <div class="mb-section-heading">
+          <span class="mb-eyebrow">Bombs and Power-Ups</span>
           <h2>Every Round Changes Fast</h2>
         </div>
 
-        <div class="power-grid">
+        <div class="mb-power-grid">
           <article><h3>Classic Bomb</h3><p>Reliable blast pattern for learning the basics.</p></article>
           <article><h3>Fire Bomb</h3><p>Turns up pressure with aggressive fire effects.</p></article>
           <article><h3>Ice Bomb</h3><p>Slows the battlefield and adds crystal energy.</p></article>
@@ -232,10 +182,10 @@
       </div>
     </section>
 
-    <section class="section">
-      <div class="container two-column">
-        <div class="text-panel">
-          <span class="eyebrow">Main Game Connection</span>
+    <section class="mb-section">
+      <div class="pg-container mb-two-col">
+        <div class="mb-panel">
+          <span class="mb-eyebrow">Main Game Connection</span>
           <h2>A playful gateway into Eucalyptus Edge.</h2>
           <p>
             MegaBlast Mayhem is a smaller arcade companion. The main project remains Eucalyptus Edge:
@@ -243,7 +193,7 @@
           </p>
         </div>
 
-        <a href="eucalyptus-edge.html" class="main-game-card">
+        <a href="eucalyptus-edge.html" class="mb-main-game-card">
           <img src="Images/EE_Wallpaper1920x1080.png" alt="Eucalyptus Edge artwork" />
           <div>
             <span>Main Game</span>
@@ -254,25 +204,25 @@
       </div>
     </section>
 
-    <section id="download" class="section download-section">
-      <div class="container">
-        <div class="download-panel">
-          <span class="eyebrow">Play MegaBlast Mayhem</span>
+    <section id="download" class="mb-section mb-download">
+      <div class="pg-container">
+        <div class="mb-download-panel">
+          <span class="mb-eyebrow">Play MegaBlast Mayhem</span>
           <h2>Available as the project develops.</h2>
           <p>Add your itch.io, GitHub release, or download link here when the latest build is ready.</p>
-          <div class="button-row centered">
-            <a href="#" class="button primary">Download Coming Soon</a>
-            <a href="eucalyptus-edge.html" class="button secondary">View Eucalyptus Edge</a>
+          <div class="mb-button-row centered">
+            <a href="#" class="mb-button mb-button-primary">Download Coming Soon</a>
+            <a href="eucalyptus-edge.html" class="mb-button mb-button-secondary">View Eucalyptus Edge</a>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-grid">
+  <footer class="pg-footer">
+    <div class="pg-container pg-footer-grid">
       <div>
-        <a class="brand footer-brand" href="index.html">
+        <a class="pg-brand pg-footer-brand" href="index.html">
           <img src="Images/Logo2026.png" alt="PhoenixGold logo" />
           <span>PhoenixGold</span>
         </a>
@@ -292,16 +242,17 @@
       </nav>
     </div>
 
-    <div class="footer-bottom">© 2026 PhoenixGold Game Studios. All rights reserved.</div>
+    <div class="pg-footer-bottom">© 2026 PhoenixGold Game Studios. All rights reserved.</div>
   </footer>
 
   <script>
-    const button = document.querySelector('.mobile-menu-btn');
-    const menu = document.querySelector('.mobile-menu');
-    button?.addEventListener('click', () => {
-      const isOpen = button.classList.toggle('active');
-      menu.classList.toggle('active');
-      button.setAttribute('aria-expanded', String(isOpen));
+    const button = document.querySelector(".pg-menu-toggle");
+    const menu = document.querySelector(".pg-mobile-menu");
+
+    button?.addEventListener("click", () => {
+      const open = button.classList.toggle("active");
+      menu.classList.toggle("active");
+      button.setAttribute("aria-expanded", String(open));
     });
   </script>
 </body>
