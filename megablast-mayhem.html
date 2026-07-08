@@ -7,12 +7,72 @@
   <title>Eucalyptus Edge: MegaBlast Mayhem | PhoenixGold Game Studios</title>
   <meta name="description" content="Eucalyptus Edge: MegaBlast Mayhem is a pixel party battle companion game set in Verdantia." />
 
-  <link rel="stylesheet" href="megablast-mayhem.css?v=complete-fix-20260707" />
-
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/png" href="Images/Logo2026.png" />
+  <style>
+:root {
+  --pg-bg:#020807; --pg-panel:rgba(7,18,12,.92); --pg-dark:rgba(3,12,8,.96);
+  --pg-gold:#d8b35a; --pg-gold-bright:#f2d27c; --pg-leaf:#9acb3d; --pg-orange:#ff8a3d;
+  --pg-blue:#3bb6ff; --pg-red:#e25a3d; --pg-cyan:#45d7ff; --pg-pink:#ff6aa9;
+  --pg-text:#f4efe2; --pg-muted:#c7c2b8; --pg-border:rgba(216,179,90,.44);
+  --pg-border-soft:rgba(216,179,90,.22); --font-main:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --font-display:"Cinzel",Georgia,serif; --shadow:0 28px 80px rgba(0,0,0,.55);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{min-height:100vh;font-family:var(--font-main);color:var(--pg-text);line-height:1.65;background:radial-gradient(circle at top left,rgba(154,203,61,.11),transparent 28rem),radial-gradient(circle at top right,rgba(255,138,61,.13),transparent 34rem),linear-gradient(180deg,var(--pg-bg),#06120d 46%,var(--pg-bg));overflow-x:hidden}
+img{display:block;max-width:100%} a{color:inherit;text-decoration:none}
+.pg-container{width:min(1380px,calc(100% - 3rem));margin:0 auto}
+.pg-header{position:fixed;inset:0 0 auto 0;z-index:1000;background:rgba(2,8,7,.94);border-bottom:1px solid var(--pg-border);backdrop-filter:blur(18px)}
+.pg-nav{min-height:82px;display:flex;align-items:center;justify-content:space-between}
+.pg-brand{display:inline-flex;align-items:center;gap:.85rem;font-weight:900;color:var(--pg-orange);font-size:1.35rem}
+.pg-brand img{width:2.65rem;height:2.65rem;border-radius:.5rem;object-fit:cover;box-shadow:0 0 26px rgba(255,138,61,.22)}
+.pg-desktop-nav{display:flex;align-items:center;gap:1.55rem;font-family:var(--font-display);text-transform:uppercase;letter-spacing:.07em;color:var(--pg-muted);font-weight:700}
+.pg-desktop-nav a{transition:.22s ease}.pg-desktop-nav a:hover,.pg-desktop-nav .active{color:var(--pg-gold-bright);transform:translateY(-1px)}
+.pg-nav-pill{min-height:2.7rem;padding:.55rem .95rem;border:1px solid var(--pg-border);border-radius:999px;color:var(--pg-gold-bright)!important;background:rgba(216,179,90,.08)}
+.pg-menu-toggle{display:none;width:2.15rem;height:1.55rem;background:transparent;border:0;cursor:pointer;position:relative;z-index:1002}
+.pg-menu-toggle span{position:absolute;left:0;width:100%;height:2px;background:var(--pg-text);transition:.25s ease}
+.pg-menu-toggle span:nth-child(1){top:0}.pg-menu-toggle span:nth-child(2){top:50%;transform:translateY(-50%)}.pg-menu-toggle span:nth-child(3){bottom:0}
+.pg-menu-toggle.active span:nth-child(1){top:50%;transform:rotate(45deg)}.pg-menu-toggle.active span:nth-child(2){opacity:0}.pg-menu-toggle.active span:nth-child(3){bottom:42%;transform:rotate(-45deg)}
+.pg-mobile-menu{display:none}
+.mb-hero{position:relative;min-height:100vh;padding:8rem 0 4rem;display:flex;align-items:center;overflow:hidden}
+.mb-hero:before{content:"";position:absolute;inset:0;opacity:.1;background-image:linear-gradient(rgba(242,210,124,.16) 1px,transparent 1px),linear-gradient(90deg,rgba(242,210,124,.16) 1px,transparent 1px);background-size:34px 34px}
+.mb-hero:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 20% 30%,rgba(216,179,90,.13),transparent 20rem),radial-gradient(circle at 85% 22%,rgba(255,138,61,.16),transparent 28rem),linear-gradient(180deg,rgba(2,8,7,.08),rgba(2,8,7,.86))}
+.mb-hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,.92fr) minmax(340px,1.08fr);gap:2rem;align-items:center}
+.mb-hero-copy,.mb-panel,.mb-sprite-card,.mb-fighter,.mb-power-grid article,.mb-main-game-card,.mb-download-panel{border:1px solid var(--pg-border);border-radius:1.75rem;background:linear-gradient(180deg,rgba(7,18,12,.92),rgba(3,12,8,.96));box-shadow:var(--shadow)}
+.mb-hero-copy,.mb-panel,.mb-download-panel{padding:clamp(1.4rem,4vw,2.6rem)}
+.mb-eyebrow{display:inline-flex;margin-bottom:1rem;padding:.42rem .85rem;border:1px solid var(--pg-border);border-radius:999px;background:rgba(216,179,90,.1);color:var(--pg-gold-bright);font-family:var(--font-display);font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:.8rem}
+h1,h2,h3{font-family:var(--font-display);text-transform:uppercase;letter-spacing:.055em}
+h1{font-size:clamp(3rem,6vw,6rem);line-height:.95;color:var(--pg-gold-bright);text-shadow:0 3px 0 rgba(0,0,0,.8),0 18px 38px rgba(0,0,0,.8)}
+h1 span{display:block;font-size:.42em;color:var(--pg-leaf)}
+.mb-tagline{margin:.9rem 0 .2rem;color:var(--pg-orange);font-size:clamp(1.05rem,2vw,1.45rem);font-weight:900;text-transform:uppercase;letter-spacing:.06em}
+.mb-hero-copy p,.mb-panel p,.mb-section-heading p,.mb-fighter p,.mb-power-grid p,.mb-main-game-card p,.mb-download-panel p,.pg-footer p{color:var(--pg-muted)}
+.mb-pill-row{display:flex;flex-wrap:wrap;gap:.55rem;margin:1.4rem 0}.mb-pill-row span{padding:.38rem .65rem;border-radius:999px;border:1px solid var(--pg-border-soft);background:rgba(0,0,0,.26);color:var(--pg-muted);font-size:.76rem;font-weight:800;text-transform:uppercase}
+.mb-button-row{display:flex;flex-wrap:wrap;gap:.9rem}.mb-button-row.centered{justify-content:center}
+.mb-button{display:inline-flex;align-items:center;justify-content:center;min-height:3.15rem;padding:.8rem 1.35rem;border-radius:999px;border:1px solid var(--pg-border);font-family:var(--font-display);font-weight:700;text-transform:uppercase;letter-spacing:.07em;transition:.22s ease}
+.mb-button:hover{transform:translateY(-2px);border-color:var(--pg-gold-bright);box-shadow:0 0 32px rgba(216,179,90,.2)}
+.mb-button-primary{background:linear-gradient(90deg,var(--pg-gold-bright),var(--pg-orange));color:#171008}.mb-button-secondary{background:rgba(255,255,255,.05);color:var(--pg-text)}
+.mb-hero-art{padding:.45rem;border:1px solid var(--pg-border);border-radius:1.75rem;background:var(--pg-dark);box-shadow:var(--shadow);overflow:hidden}
+.mb-hero-art img,.mb-sprite-card img{width:100%;border-radius:1.35rem}.mb-hero-art img{aspect-ratio:16/11;object-fit:cover;object-position:center}
+.mb-strip{padding:1.5rem 0;border-top:1px solid var(--pg-border-soft);border-bottom:1px solid var(--pg-border-soft);background:rgba(3,12,8,.95)}
+.mb-strip-grid{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--pg-border-soft);border-radius:1.2rem;overflow:hidden}
+.mb-strip-grid article{padding:1rem;border-right:1px solid var(--pg-border-soft)}.mb-strip-grid article:last-child{border-right:0}.mb-strip-grid h2{color:var(--pg-gold-bright);font-size:1rem}.mb-strip-grid p{color:var(--pg-muted);font-size:.92rem}
+.mb-section{padding:5.5rem 0}.mb-section-alt{background:radial-gradient(circle at top right,rgba(255,138,61,.08),transparent 30rem),rgba(7,28,17,.72)}
+.mb-two-col{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(280px,.92fr);gap:1.2rem}
+.mb-panel h2,.mb-section-heading h2,.mb-download-panel h2{font-size:clamp(2.25rem,4.8vw,4.6rem);line-height:1.05;color:var(--pg-gold-bright)}
+.mb-panel p+p{margin-top:1rem}.mb-panel-feature{display:flex;flex-direction:column;justify-content:flex-end}.mb-panel-feature span,.mb-main-game-card span{color:var(--pg-leaf);font-weight:900;text-transform:uppercase}.mb-panel-feature h3{margin:.45rem 0;color:var(--pg-text);font-size:1.5rem}
+.mb-section-heading{max-width:900px;margin:0 auto 2.4rem;text-align:center}.mb-sprite-card{padding:.45rem;margin-bottom:1.2rem;overflow:hidden}
+.mb-card-grid,.mb-power-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}.mb-fighter,.mb-power-grid article{padding:1.2rem}.mb-fighter h3{font-size:1.7rem;margin-bottom:.15rem}.mb-fighter strong{display:block;color:var(--pg-gold-bright);font-weight:900;text-transform:uppercase;margin-bottom:.55rem}
+.mb-fighter.koda h3{color:var(--pg-leaf)}.mb-fighter.banjo h3{color:#d6b179}.mb-fighter.kiri h3{color:var(--pg-blue)}.mb-fighter.ripper h3{color:var(--pg-red)}.mb-fighter.atlas h3{color:#6f91ff}.mb-fighter.echo h3{color:var(--pg-cyan)}.mb-fighter.wren h3{color:var(--pg-orange)}.mb-fighter.sonia h3{color:var(--pg-pink)}
+.mb-power-grid h3{color:var(--pg-gold-bright);font-size:1.05rem;margin-bottom:.4rem}
+.mb-main-game-card{display:block;overflow:hidden}.mb-main-game-card img{width:100%;aspect-ratio:16/9;object-fit:cover}.mb-main-game-card div{padding:1.2rem}.mb-main-game-card h3{color:var(--pg-gold-bright);font-size:1.7rem}
+.mb-download{background:radial-gradient(circle at center,rgba(216,179,90,.14),transparent 33rem),var(--pg-bg)}.mb-download-panel{text-align:center;max-width:980px;margin:0 auto}.mb-download-panel p{max-width:720px;margin:1rem auto 1.7rem}
+.pg-footer{padding:2.5rem 0 1.4rem;border-top:1px solid var(--pg-border);background:var(--pg-bg)}.pg-footer-grid{display:grid;grid-template-columns:minmax(0,1.3fr) .7fr .7fr;gap:2rem}.pg-footer-brand{margin-bottom:.9rem}.pg-footer h2{color:var(--pg-gold-bright);font-size:1rem;margin-bottom:.65rem}.pg-footer nav{display:flex;flex-direction:column;gap:.4rem;color:var(--pg-muted)}.pg-footer-bottom{width:min(1380px,calc(100% - 3rem));margin:1.5rem auto 0;padding-top:1rem;border-top:1px solid var(--pg-border-soft);text-align:center;color:var(--pg-muted);font-size:.85rem}
+@media(max-width:1100px){.pg-desktop-nav{display:none}.pg-menu-toggle{display:block}.pg-mobile-menu{position:fixed;top:82px;left:0;right:0;z-index:999;display:flex;flex-direction:column;gap:1rem;max-height:0;overflow:hidden;padding:0 1rem;background:rgba(2,8,7,.98);border-bottom:1px solid var(--pg-border);transition:max-height .25s ease,padding .25s ease;font-family:var(--font-display);text-transform:uppercase;letter-spacing:.07em;text-align:center}.pg-mobile-menu.active{max-height:420px;padding:1.5rem 1rem}.mb-hero-grid,.mb-two-col{grid-template-columns:1fr}.mb-strip-grid,.mb-card-grid,.mb-power-grid,.pg-footer-grid{grid-template-columns:repeat(2,1fr)}.mb-hero-art{max-width:850px;margin:0 auto}}
+@media(max-width:700px){html{scroll-padding-top:72px}.pg-container{width:min(100% - 1.25rem,1380px)}.pg-nav{min-height:68px}.pg-brand{font-size:1rem}.pg-brand img{width:2.25rem;height:2.25rem}.pg-mobile-menu{top:68px}.mb-hero{min-height:auto;padding:5.5rem 0 3rem}.mb-hero-copy{text-align:center;padding:1.15rem}h1{font-size:clamp(2.35rem,11vw,3.5rem)}.mb-tagline{font-size:1rem}.mb-pill-row,.mb-button-row{justify-content:center}.mb-button{width:100%;max-width:18rem;font-size:.74rem}.mb-strip-grid,.mb-card-grid,.mb-power-grid,.pg-footer-grid{grid-template-columns:1fr}.mb-strip-grid article{border-right:0;border-bottom:1px solid var(--pg-border-soft)}.mb-section{padding:3.8rem 0}.mb-panel h2,.mb-section-heading h2,.mb-download-panel h2{font-size:clamp(2rem,10vw,3rem)}.mb-hero-art img,.mb-sprite-card img{min-height:17rem;object-fit:cover;object-position:center}}
+</style>
 </head>
 
 <body>
@@ -22,7 +82,6 @@
         <img src="Images/Logo2026.png" alt="PhoenixGold logo" />
         <span>PhoenixGold</span>
       </a>
-
       <nav class="pg-desktop-nav" aria-label="Primary navigation">
         <a href="index.html">Studio</a>
         <a href="eucalyptus-edge.html">Eucalyptus Edge</a>
@@ -30,10 +89,7 @@
         <a href="#fighters">Fighters</a>
         <a href="#download" class="pg-nav-pill">Download</a>
       </nav>
-
-      <button class="pg-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="pg-menu-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </header>
 
@@ -53,202 +109,74 @@
           <span class="mb-eyebrow">A Verdantia Arcade Spin-Off</span>
           <h1><span>Eucalyptus Edge:</span> MegaBlast Mayhem</h1>
           <p class="mb-tagline">Bombs. Power-ups. Pixel chaos.</p>
-          <p>
-            A fast-paced pixel party battle game where the heroes of Verdantia throw bombs, collect power-ups,
-            dodge hazards, and compete in quick arcade-style matches.
-          </p>
-
-          <div class="mb-pill-row">
-            <span>Pixel Party Battle</span>
-            <span>Local Multiplayer</span>
-            <span>Family Friendly</span>
-            <span>Companion Game</span>
-          </div>
-
-          <div class="mb-button-row">
-            <a href="#download" class="mb-button mb-button-primary">Play / Download</a>
-            <a href="eucalyptus-edge.html" class="mb-button mb-button-secondary">View Eucalyptus Edge</a>
-          </div>
+          <p>A fast-paced pixel party battle game where the heroes of Verdantia throw bombs, collect power-ups, dodge hazards, and compete in quick arcade-style matches.</p>
+          <div class="mb-pill-row"><span>Pixel Party Battle</span><span>Local Multiplayer</span><span>Family Friendly</span><span>Companion Game</span></div>
+          <div class="mb-button-row"><a href="#download" class="mb-button mb-button-primary">Play / Download</a><a href="eucalyptus-edge.html" class="mb-button mb-button-secondary">View Eucalyptus Edge</a></div>
         </div>
-
-        <div class="mb-hero-art">
-          <img src="Images/SpritesheetMain.png" alt="MegaBlast Mayhem core fighter sprite sheet" />
-        </div>
+        <div class="mb-hero-art"><img src="Images/SpritesheetMain.png" alt="MegaBlast Mayhem core fighter sprite sheet" /></div>
       </div>
     </section>
 
-    <section class="mb-strip">
-      <div class="pg-container mb-strip-grid">
-        <article>
-          <h2>Quick Matches</h2>
-          <p>Short chaotic rounds built for fast replay.</p>
-        </article>
-        <article>
-          <h2>Bomb Battles</h2>
-          <p>Classic, fire, ice, nature, golden, and chaos bombs.</p>
-        </article>
-        <article>
-          <h2>Power-Ups</h2>
-          <p>Speed, range, shields, bomb boosts, kick boosts, and more.</p>
-        </article>
-        <article>
-          <h2>Verdantia Cast</h2>
-          <p>Play as familiar fighters from the Eucalyptus Edge universe.</p>
-        </article>
+    <section class="mb-strip"><div class="pg-container mb-strip-grid">
+      <article><h2>Quick Matches</h2><p>Short chaotic rounds built for fast replay.</p></article>
+      <article><h2>Bomb Battles</h2><p>Classic, fire, ice, nature, golden, and chaos bombs.</p></article>
+      <article><h2>Power-Ups</h2><p>Speed, range, shields, bomb boosts, kick boosts, and more.</p></article>
+      <article><h2>Verdantia Cast</h2><p>Play as familiar fighters from the Eucalyptus Edge universe.</p></article>
+    </div></section>
+
+    <section class="mb-section"><div class="pg-container mb-two-col">
+      <div class="mb-panel"><span class="mb-eyebrow">What Is It?</span><h2>A smaller game that keeps Verdantia active.</h2><p>Eucalyptus Edge is still the flagship 3D arena fighter. MegaBlast Mayhem is a smaller companion game designed to introduce the characters and world in a faster, simpler arcade format.</p><p>This gives players something connected to Verdantia while the larger Unreal Engine 5.8 prototype continues development.</p></div>
+      <div class="mb-panel mb-panel-feature"><span>Design Goal</span><h3>Simple to start. Fun to replay.</h3><p>Clear movement, readable bombs, quick power-up decisions, and recognizable character personalities.</p></div>
+    </div></section>
+
+    <section id="fighters" class="mb-section mb-section-alt"><div class="pg-container">
+      <div class="mb-section-heading"><span class="mb-eyebrow">Core Roster</span><h2>Playable Fighters</h2><p>The first sprite sheet focuses on Koda, Banjo, Kiri, and Ripper.</p></div>
+      <div class="mb-sprite-card"><img src="Images/SpritesheetMain.png" alt="Koda, Banjo, Kiri, and Ripper sprite sheet" /></div>
+      <div class="mb-card-grid">
+        <article class="mb-fighter koda"><h3>Koda</h3><strong>The Koala Druid</strong><p>Balanced nature fighter with staff energy.</p></article>
+        <article class="mb-fighter banjo"><h3>Banjo</h3><strong>The Sugar Glider</strong><p>Fast, tricky, and evasive.</p></article>
+        <article class="mb-fighter kiri"><h3>Kiri</h3><strong>The Kookaburra</strong><p>Sharp blue-feathered striker.</p></article>
+        <article class="mb-fighter ripper"><h3>Ripper</h3><strong>The Tasmanian Devil</strong><p>Aggressive rushdown bruiser.</p></article>
       </div>
-    </section>
+    </div></section>
 
-    <section class="mb-section">
-      <div class="pg-container mb-two-col">
-        <div class="mb-panel">
-          <span class="mb-eyebrow">What Is It?</span>
-          <h2>A smaller game that keeps Verdantia active.</h2>
-          <p>
-            Eucalyptus Edge is still the flagship 3D arena fighter. MegaBlast Mayhem is a smaller companion game
-            designed to introduce the characters and world in a faster, simpler arcade format.
-          </p>
-          <p>
-            This gives players something connected to Verdantia while the larger Unreal Engine 5.8 prototype continues development.
-          </p>
-        </div>
-
-        <div class="mb-panel mb-panel-feature">
-          <span>Design Goal</span>
-          <h3>Simple to start. Fun to replay.</h3>
-          <p>Clear movement, readable bombs, quick power-up decisions, and recognizable character personalities.</p>
-        </div>
+    <section class="mb-section"><div class="pg-container">
+      <div class="mb-section-heading"><span class="mb-eyebrow">Expanded Roster</span><h2>More Fighters Join the Mayhem</h2><p>Atlas, Echo, Wren, and Sonia expand the arcade roster.</p></div>
+      <div class="mb-sprite-card"><img src="Images/SpritesheetUnlockable.png" alt="Atlas, Echo, Wren, and Sonia sprite sheet" /></div>
+      <div class="mb-card-grid">
+        <article class="mb-fighter atlas"><h3>Atlas</h3><strong>The Emu Spear Warrior</strong><p>Longer reach and strong forward pressure.</p></article>
+        <article class="mb-fighter echo"><h3>Echo</h3><strong>The Platypus Ice Tonfa Master</strong><p>Cool blue effects and ice-themed control.</p></article>
+        <article class="mb-fighter wren"><h3>Wren</h3><strong>The Kangaroo Boxing Brawler</strong><p>Close-range boxing pressure.</p></article>
+        <article class="mb-fighter sonia"><h3>Sonia</h3><strong>The White Tigress</strong><p>A special teaser fighter for future Verdantia content.</p></article>
       </div>
-    </section>
+    </div></section>
 
-    <section id="fighters" class="mb-section mb-section-alt">
-      <div class="pg-container">
-        <div class="mb-section-heading">
-          <span class="mb-eyebrow">Core Roster</span>
-          <h2>Playable Fighters</h2>
-          <p>The first sprite sheet focuses on Koda, Banjo, Kiri, and Ripper.</p>
-        </div>
-
-        <div class="mb-sprite-card">
-          <img src="Images/SpritesheetMain.png" alt="Koda, Banjo, Kiri, and Ripper sprite sheet" />
-        </div>
-
-        <div class="mb-card-grid">
-          <article class="mb-fighter koda"><h3>Koda</h3><strong>The Koala Druid</strong><p>Balanced nature fighter with staff energy.</p></article>
-          <article class="mb-fighter banjo"><h3>Banjo</h3><strong>The Sugar Glider</strong><p>Fast, tricky, and evasive.</p></article>
-          <article class="mb-fighter kiri"><h3>Kiri</h3><strong>The Kookaburra</strong><p>Sharp blue-feathered striker.</p></article>
-          <article class="mb-fighter ripper"><h3>Ripper</h3><strong>The Tasmanian Devil</strong><p>Aggressive rushdown bruiser.</p></article>
-        </div>
+    <section id="powerups" class="mb-section mb-section-alt"><div class="pg-container">
+      <div class="mb-section-heading"><span class="mb-eyebrow">Bombs and Power-Ups</span><h2>Every Round Changes Fast</h2></div>
+      <div class="mb-power-grid">
+        <article><h3>Classic Bomb</h3><p>Reliable blast pattern for learning the basics.</p></article><article><h3>Fire Bomb</h3><p>Turns up pressure with aggressive fire effects.</p></article><article><h3>Ice Bomb</h3><p>Slows the battlefield and adds crystal energy.</p></article><article><h3>Nature Bomb</h3><p>Verdantia-themed blast with green leaf energy.</p></article><article><h3>Speed Up</h3><p>Move faster and escape before the blast.</p></article><article><h3>Range Up</h3><p>Extend blast reach and control more space.</p></article><article><h3>Kick Boost</h3><p>Send bombs sliding into dangerous positions.</p></article><article><h3>Shield</h3><p>Survive a mistake and stay in the round.</p></article>
       </div>
-    </section>
+    </div></section>
 
-    <section class="mb-section">
-      <div class="pg-container">
-        <div class="mb-section-heading">
-          <span class="mb-eyebrow">Expanded Roster</span>
-          <h2>More Fighters Join the Mayhem</h2>
-          <p>Atlas, Echo, Wren, and Sonia expand the arcade roster.</p>
-        </div>
+    <section class="mb-section"><div class="pg-container mb-two-col">
+      <div class="mb-panel"><span class="mb-eyebrow">Main Game Connection</span><h2>A playful gateway into Eucalyptus Edge.</h2><p>MegaBlast Mayhem is a smaller arcade companion. The main project remains Eucalyptus Edge: a stylized 3D weapon-based arena fighter built in Unreal Engine 5.8.</p></div>
+      <a href="eucalyptus-edge.html" class="mb-main-game-card"><img src="Images/EE_Wallpaper1920x1080.png" alt="Eucalyptus Edge artwork" /><div><span>Main Game</span><h3>Eucalyptus Edge</h3><p>Explore the full 3D arena fighter project.</p></div></a>
+    </div></section>
 
-        <div class="mb-sprite-card">
-          <img src="Images/SpritesheetUnlockable.png" alt="Atlas, Echo, Wren, and Sonia sprite sheet" />
-        </div>
-
-        <div class="mb-card-grid">
-          <article class="mb-fighter atlas"><h3>Atlas</h3><strong>The Emu Spear Warrior</strong><p>Longer reach and strong forward pressure.</p></article>
-          <article class="mb-fighter echo"><h3>Echo</h3><strong>The Platypus Ice Tonfa Master</strong><p>Cool blue effects and ice-themed control.</p></article>
-          <article class="mb-fighter wren"><h3>Wren</h3><strong>The Kangaroo Boxing Brawler</strong><p>Close-range boxing pressure.</p></article>
-          <article class="mb-fighter sonia"><h3>Sonia</h3><strong>The White Tigress</strong><p>A special teaser fighter for future Verdantia content.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section id="powerups" class="mb-section mb-section-alt">
-      <div class="pg-container">
-        <div class="mb-section-heading">
-          <span class="mb-eyebrow">Bombs and Power-Ups</span>
-          <h2>Every Round Changes Fast</h2>
-        </div>
-
-        <div class="mb-power-grid">
-          <article><h3>Classic Bomb</h3><p>Reliable blast pattern for learning the basics.</p></article>
-          <article><h3>Fire Bomb</h3><p>Turns up pressure with aggressive fire effects.</p></article>
-          <article><h3>Ice Bomb</h3><p>Slows the battlefield and adds crystal energy.</p></article>
-          <article><h3>Nature Bomb</h3><p>Verdantia-themed blast with green leaf energy.</p></article>
-          <article><h3>Speed Up</h3><p>Move faster and escape before the blast.</p></article>
-          <article><h3>Range Up</h3><p>Extend blast reach and control more space.</p></article>
-          <article><h3>Kick Boost</h3><p>Send bombs sliding into dangerous positions.</p></article>
-          <article><h3>Shield</h3><p>Survive a mistake and stay in the round.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="mb-section">
-      <div class="pg-container mb-two-col">
-        <div class="mb-panel">
-          <span class="mb-eyebrow">Main Game Connection</span>
-          <h2>A playful gateway into Eucalyptus Edge.</h2>
-          <p>
-            MegaBlast Mayhem is a smaller arcade companion. The main project remains Eucalyptus Edge:
-            a stylized 3D weapon-based arena fighter built in Unreal Engine 5.8.
-          </p>
-        </div>
-
-        <a href="eucalyptus-edge.html" class="mb-main-game-card">
-          <img src="Images/EE_Wallpaper1920x1080.png" alt="Eucalyptus Edge artwork" />
-          <div>
-            <span>Main Game</span>
-            <h3>Eucalyptus Edge</h3>
-            <p>Explore the full 3D arena fighter project.</p>
-          </div>
-        </a>
-      </div>
-    </section>
-
-    <section id="download" class="mb-section mb-download">
-      <div class="pg-container">
-        <div class="mb-download-panel">
-          <span class="mb-eyebrow">Play MegaBlast Mayhem</span>
-          <h2>Available as the project develops.</h2>
-          <p>Add your itch.io, GitHub release, or download link here when the latest build is ready.</p>
-          <div class="mb-button-row centered">
-            <a href="#" class="mb-button mb-button-primary">Download Coming Soon</a>
-            <a href="eucalyptus-edge.html" class="mb-button mb-button-secondary">View Eucalyptus Edge</a>
-          </div>
-        </div>
-      </div>
-    </section>
+    <section id="download" class="mb-section mb-download"><div class="pg-container">
+      <div class="mb-download-panel"><span class="mb-eyebrow">Play MegaBlast Mayhem</span><h2>Available as the project develops.</h2><p>Add your itch.io, GitHub release, or download link here when the latest build is ready.</p><div class="mb-button-row centered"><a href="#" class="mb-button mb-button-primary">Download Coming Soon</a><a href="eucalyptus-edge.html" class="mb-button mb-button-secondary">View Eucalyptus Edge</a></div></div>
+    </div></section>
   </main>
 
-  <footer class="pg-footer">
-    <div class="pg-container pg-footer-grid">
-      <div>
-        <a class="pg-brand pg-footer-brand" href="index.html">
-          <img src="Images/Logo2026.png" alt="PhoenixGold logo" />
-          <span>PhoenixGold</span>
-        </a>
-        <p>Eucalyptus Edge: MegaBlast Mayhem is a PhoenixGold companion game set in Verdantia.</p>
-      </div>
-
-      <nav>
-        <h2>Games</h2>
-        <a href="eucalyptus-edge.html">Eucalyptus Edge</a>
-        <a href="megablast-mayhem.html">MegaBlast Mayhem</a>
-      </nav>
-
-      <nav>
-        <h2>Studio</h2>
-        <a href="index.html">PhoenixGold</a>
-        <a href="#download">Download</a>
-      </nav>
-    </div>
-
-    <div class="pg-footer-bottom">© 2026 PhoenixGold Game Studios. All rights reserved.</div>
-  </footer>
+  <footer class="pg-footer"><div class="pg-container pg-footer-grid">
+    <div><a class="pg-brand pg-footer-brand" href="index.html"><img src="Images/Logo2026.png" alt="PhoenixGold logo" /><span>PhoenixGold</span></a><p>Eucalyptus Edge: MegaBlast Mayhem is a PhoenixGold companion game set in Verdantia.</p></div>
+    <nav><h2>Games</h2><a href="eucalyptus-edge.html">Eucalyptus Edge</a><a href="megablast-mayhem.html">MegaBlast Mayhem</a></nav>
+    <nav><h2>Studio</h2><a href="index.html">PhoenixGold</a><a href="#download">Download</a></nav>
+  </div><div class="pg-footer-bottom">© 2026 PhoenixGold Game Studios. All rights reserved.</div></footer>
 
   <script>
     const button = document.querySelector(".pg-menu-toggle");
     const menu = document.querySelector(".pg-mobile-menu");
-
     button?.addEventListener("click", () => {
       const open = button.classList.toggle("active");
       menu.classList.toggle("active");
