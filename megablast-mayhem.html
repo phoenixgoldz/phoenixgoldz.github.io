@@ -5,18 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Eucalyptus Edge: MegaBlast Mayhem | PhoenixGold Game Studios</title>
-  <meta
-    name="description"
-    content="Eucalyptus Edge: MegaBlast Mayhem is a fast-paced local multiplayer bomb arena game set in Verdantia, created as the first playable release in the Eucalyptus Edge universe."
-  />
+  <meta name="description" content="Eucalyptus Edge: MegaBlast Mayhem is a fast-paced local multiplayer bomb arena game set in Verdantia, created as the first playable release in the Eucalyptus Edge universe." />
 
-  <link rel="stylesheet" href="css/megablast-mayhem.css?v=verdantia-megablast-2026" />
+  <link rel="stylesheet" href="css/megablast-mayhem.css?v=verdantia-megablast-2026-2" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/png" href="Images/Logo2026.png" />
 </head>
 
@@ -31,6 +25,7 @@
       <div class="mbm-nav-links" aria-label="Primary navigation">
         <a href="index.html">Studio</a>
         <a href="eucalyptus-edge.html">Eucalyptus Edge</a>
+        <a href="megablast-mayhem.html" class="active">MegaBlast Mayhem</a>
         <a href="#gameplay">Gameplay</a>
         <a href="#arenas">Arenas</a>
         <a href="#heroes">Heroes</a>
@@ -47,6 +42,7 @@
     <div class="mobile-menu-container">
       <a href="index.html" class="mobile-link">Studio</a>
       <a href="eucalyptus-edge.html" class="mobile-link">Eucalyptus Edge</a>
+      <a href="megablast-mayhem.html" class="mobile-link">MegaBlast Mayhem</a>
       <a href="#gameplay" class="mobile-link">Gameplay</a>
       <a href="#arenas" class="mobile-link">Arenas</a>
       <a href="#heroes" class="mobile-link">Heroes</a>
@@ -57,7 +53,7 @@
   <main>
     <section class="mbm-hero">
       <div class="mbm-hero-bg" aria-hidden="true">
-        <img src="Images/00_character_select.png" alt="" />
+        <img src="Images/EEMMbanner.png" alt="" />
       </div>
       <div class="mbm-hero-overlay"></div>
 
@@ -82,6 +78,7 @@
             <a href="eucalyptus-edge.html" class="mbm-btn mbm-btn-secondary">Explore Main Game</a>
           </div>
         </div>
+      </div>
     </section>
 
     <section class="mbm-quick-strip">
@@ -156,7 +153,7 @@
           <span class="mbm-kicker">Verdantia Arenas</span>
           <h2>Festival battlegrounds from the world map</h2>
           <p>
-            Each arena should feel like a pixel-art version of the regions shown on the main Eucalyptus Edge Page.
+            Each arena is designed to feel like a pixel-art version of the regions shown on the main Eucalyptus Edge page.
           </p>
         </div>
 
@@ -213,5 +210,8 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
