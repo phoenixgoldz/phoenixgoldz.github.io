@@ -72,6 +72,68 @@ h1 span{display:block;font-size:.42em;color:var(--pg-leaf)}
 .pg-footer{padding:2.5rem 0 1.4rem;border-top:1px solid var(--pg-border);background:var(--pg-bg)}.pg-footer-grid{display:grid;grid-template-columns:minmax(0,1.3fr) .7fr .7fr;gap:2rem}.pg-footer-brand{margin-bottom:.9rem}.pg-footer h2{color:var(--pg-gold-bright);font-size:1rem;margin-bottom:.65rem}.pg-footer nav{display:flex;flex-direction:column;gap:.4rem;color:var(--pg-muted)}.pg-footer-bottom{width:min(1380px,calc(100% - 3rem));margin:1.5rem auto 0;padding-top:1rem;border-top:1px solid var(--pg-border-soft);text-align:center;color:var(--pg-muted);font-size:.85rem}
 @media(max-width:1100px){.pg-desktop-nav{display:none}.pg-menu-toggle{display:block}.pg-mobile-menu{position:fixed;top:82px;left:0;right:0;z-index:999;display:flex;flex-direction:column;gap:1rem;max-height:0;overflow:hidden;padding:0 1rem;background:rgba(2,8,7,.98);border-bottom:1px solid var(--pg-border);transition:max-height .25s ease,padding .25s ease;font-family:var(--font-display);text-transform:uppercase;letter-spacing:.07em;text-align:center}.pg-mobile-menu.active{max-height:420px;padding:1.5rem 1rem}.mb-hero-grid,.mb-two-col{grid-template-columns:1fr}.mb-strip-grid,.mb-card-grid,.mb-power-grid,.pg-footer-grid{grid-template-columns:repeat(2,1fr)}.mb-hero-art{max-width:850px;margin:0 auto}}
 @media(max-width:700px){html{scroll-padding-top:72px}.pg-container{width:min(100% - 1.25rem,1380px)}.pg-nav{min-height:68px}.pg-brand{font-size:1rem}.pg-brand img{width:2.25rem;height:2.25rem}.pg-mobile-menu{top:68px}.mb-hero{min-height:auto;padding:5.5rem 0 3rem}.mb-hero-copy{text-align:center;padding:1.15rem}h1{font-size:clamp(2.35rem,11vw,3.5rem)}.mb-tagline{font-size:1rem}.mb-pill-row,.mb-button-row{justify-content:center}.mb-button{width:100%;max-width:18rem;font-size:.74rem}.mb-strip-grid,.mb-card-grid,.mb-power-grid,.pg-footer-grid{grid-template-columns:1fr}.mb-strip-grid article{border-right:0;border-bottom:1px solid var(--pg-border-soft)}.mb-section{padding:3.8rem 0}.mb-panel h2,.mb-section-heading h2,.mb-download-panel h2{font-size:clamp(2rem,10vw,3rem)}.mb-hero-art img,.mb-sprite-card img{min-height:17rem;object-fit:cover;object-position:center}}
+
+/* MegaBlast unique cinematic banner hero */
+.mb-hero {
+  min-height: auto;
+  padding: 8.8rem 0 4.5rem;
+}
+.mb-hero::before {
+  background-image: none;
+}
+.mb-hero::after {
+  background:
+    radial-gradient(circle at 22% 30%, rgba(255, 138, 61, 0.22), transparent 24rem),
+    radial-gradient(circle at 78% 32%, rgba(154, 203, 61, 0.14), transparent 26rem),
+    linear-gradient(180deg, rgba(2,8,7,.18), rgba(2,8,7,.92));
+}
+.mb-hero-grid {
+  display: block;
+}
+.mb-banner-stage {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid var(--pg-border);
+  border-radius: 1.75rem;
+  background: var(--pg-dark);
+  box-shadow: var(--shadow);
+}
+.mb-banner-stage::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(90deg, rgba(2,8,7,.92), rgba(2,8,7,.58) 42%, rgba(2,8,7,.16)),
+    linear-gradient(180deg, rgba(2,8,7,.05), rgba(2,8,7,.76));
+  pointer-events: none;
+}
+.mb-banner-stage img {
+  width: 100%;
+  min-height: clamp(520px, 58vw, 760px);
+  object-fit: cover;
+  object-position: center;
+}
+.mb-hero-copy {
+  position: absolute;
+  z-index: 2;
+  left: clamp(1.15rem, 4vw, 3rem);
+  bottom: clamp(1.15rem, 4vw, 3rem);
+  max-width: min(760px, calc(100% - 2.3rem));
+  background: linear-gradient(180deg, rgba(7,18,12,.72), rgba(3,12,8,.86));
+  backdrop-filter: blur(10px);
+}
+.mb-hero-art {
+  display: none;
+}
+@media(max-width:700px){
+  .mb-hero{padding:5.3rem 0 3rem;}
+  .mb-banner-stage img{min-height:620px;object-position:center;}
+  .mb-banner-stage::after{background:linear-gradient(180deg, rgba(2,8,7,.18), rgba(2,8,7,.95) 58%, rgba(2,8,7,.98));}
+  .mb-hero-copy{left:.75rem;right:.75rem;bottom:.75rem;max-width:none;}
+}
+
 </style>
 </head>
 
@@ -105,15 +167,17 @@ h1 span{display:block;font-size:.42em;color:var(--pg-leaf)}
   <main>
     <section class="mb-hero">
       <div class="pg-container mb-hero-grid">
-        <div class="mb-hero-copy">
-          <span class="mb-eyebrow">A Verdantia Arcade Spin-Off</span>
-          <h1><span>Eucalyptus Edge:</span> MegaBlast Mayhem</h1>
-          <p class="mb-tagline">Bombs. Power-ups. Pixel chaos.</p>
-          <p>A fast-paced pixel party battle game where the heroes of Verdantia throw bombs, collect power-ups, dodge hazards, and compete in quick arcade-style matches.</p>
-          <div class="mb-pill-row"><span>Pixel Party Battle</span><span>Local Multiplayer</span><span>Family Friendly</span><span>Companion Game</span></div>
-          <div class="mb-button-row"><a href="#download" class="mb-button mb-button-primary">Play / Download</a><a href="eucalyptus-edge.html" class="mb-button mb-button-secondary">View Eucalyptus Edge</a></div>
+        <div class="mb-banner-stage">
+          <img src="Images/EEMMbanner.png" alt="Eucalyptus Edge: MegaBlast Mayhem banner" />
+          <div class="mb-hero-copy">
+            <span class="mb-eyebrow">A Verdantia Arcade Spin-Off</span>
+            <h1><span>Eucalyptus Edge:</span> MegaBlast Mayhem</h1>
+            <p class="mb-tagline">Bombs. Power-ups. Pixel chaos.</p>
+            <p>A fast-paced pixel party battle game where the heroes of Verdantia throw bombs, collect power-ups, dodge hazards, and compete in quick arcade-style matches.</p>
+            <div class="mb-pill-row"><span>Pixel Party Battle</span><span>Local Multiplayer</span><span>Family Friendly</span><span>Companion Game</span></div>
+            <div class="mb-button-row"><a href="#download" class="mb-button mb-button-primary">Play / Download</a><a href="eucalyptus-edge.html" class="mb-button mb-button-secondary">View Eucalyptus Edge</a></div>
+          </div>
         </div>
-        <div class="mb-hero-art"><img src="Images/SpritesheetMain.png" alt="MegaBlast Mayhem core fighter sprite sheet" /></div>
       </div>
     </section>
 
