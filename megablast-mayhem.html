@@ -14,7 +14,7 @@
        Put megablast-mayhem.css in the SAME folder as this HTML file.
        This avoids the page breaking if the CSS file is not inside /css/.
   -->
-  <link rel="stylesheet" href="megablast-mayhem.css?v=fix-20260707" />
+  <link rel="stylesheet" href="megablast-mayhem.css?v=nav-polish-20260708" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,30 +26,36 @@
 </head>
 
 <body>
-  <header class="site-header">
-    <a class="brand" href="index.html">
-      <img src="Images/Logo2026.png" alt="PhoenixGold logo" />
-      <span>PhoenixGold</span>
-    </a>
+  <nav class="mb-navbar">
+    <div class="mb-container mb-nav-inner">
+      <a href="index.html" class="mb-logo" aria-label="PhoenixGold Game Studios">
+        <img src="Images/Logo2026.png" alt="PhoenixGold Game Studios logo" />
+        <span>PhoenixGold</span>
+      </a>
 
-    <nav class="desktop-nav">
-      <a href="index.html">Studio</a>
-      <a href="eucalyptus-edge.html">Eucalyptus Edge</a>
-      <a href="megablast-mayhem.html" class="active">MegaBlast Mayhem</a>
-      <a href="#download" class="nav-button">Download</a>
-    </nav>
+      <div class="mb-nav-links" aria-label="Primary navigation">
+        <a href="index.html">Studio</a>
+        <a href="eucalyptus-edge.html">Eucalyptus Edge</a>
+        <a href="#fighters">Fighters</a>
+        <a href="#powerups">Power-Ups</a>
+        <a href="#download" class="mb-btn mb-btn-small">Download</a>
+      </div>
 
-    <button class="menu-toggle" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
-  </header>
-
-  <nav class="mobile-nav">
-    <a href="index.html">Studio</a>
-    <a href="eucalyptus-edge.html">Eucalyptus Edge</a>
-    <a href="megablast-mayhem.html">MegaBlast Mayhem</a>
-    <a href="#download">Download</a>
+      <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </nav>
+
+  <div class="mobile-menu" aria-label="Mobile navigation">
+    <div class="mobile-menu-container">
+      <a href="index.html" class="mobile-link">Studio</a>
+      <a href="eucalyptus-edge.html" class="mobile-link">Eucalyptus Edge</a>
+      <a href="#fighters" class="mobile-link">Fighters</a>
+      <a href="#powerups" class="mobile-link">Power-Ups</a>
+      <a href="#download" class="mobile-link">Download</a>
+    </div>
+  </div>
 
   <main>
     <section class="hero">
@@ -290,11 +296,12 @@
   </footer>
 
   <script>
-    const button = document.querySelector('.menu-toggle');
-    const menu = document.querySelector('.mobile-nav');
+    const button = document.querySelector('.mobile-menu-btn');
+    const menu = document.querySelector('.mobile-menu');
     button?.addEventListener('click', () => {
-      button.classList.toggle('active');
+      const isOpen = button.classList.toggle('active');
       menu.classList.toggle('active');
+      button.setAttribute('aria-expanded', String(isOpen));
     });
   </script>
 </body>
