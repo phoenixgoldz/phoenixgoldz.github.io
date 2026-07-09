@@ -11,6 +11,7 @@
   />
 
   <link rel="stylesheet" href="css/style.css?v=studio-redesign-2026" />
+  <link rel="stylesheet" href="css/game-showcase.css?v=full-production-showcase" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -149,36 +150,55 @@
           </p>
         </div>
 
-        <div class="featured-game-layout">
-          <a href="eucalyptus-edge.html" class="featured-game-card flagship reveal" aria-label="Open Eucalyptus Edge game page">
+        <div class="game-showcase reveal" aria-label="PhoenixGold featured games showcase">
+          <a href="eucalyptus-edge.html" class="showcase-card showcase-main" aria-label="Open Eucalyptus Edge game page">
             <img src="Images/EE_Wallpaper1920x1080.png" alt="Eucalyptus Edge key art" />
-            <div class="featured-game-overlay">
-              <span class="game-label">Flagship Project</span>
+            <div class="showcase-gradient"></div>
+            <div class="showcase-content">
+              <span class="game-label flagship-label">Flagship Project · In Full Production</span>
               <h3>Eucalyptus Edge</h3>
-              <p>Cute Fighters. Serious Skills.</p>
+              <p>
+                Cute Fighters. Serious Skills. A family-friendly 3D weapon-based arena fighter set across the world of Verdantia.
+              </p>
               <div class="feature-tags">
+                <span>Unreal Engine 5.8</span>
                 <span>3D Arena Fighter</span>
-                <span>PC</span>
+                <span>Phase 1A</span>
                 <span>Steam Planned</span>
-                <span>In Development</span>
               </div>
               <span class="btn btn-primary">Explore Eucalyptus Edge</span>
             </div>
           </a>
 
-          <aside class="companion-game-card reveal">
-            <div class="companion-image">
-              <img src="Images/EEMMbanner.png" alt="MegaBlast Mayhem banner" />
-            </div>
-            <div class="companion-copy">
-              <span class="game-label available">Companion Game</span>
-              <h3>Eucalyptus Edge: MegaBlast Mayhem</h3>
+          <div class="showcase-side-panel">
+            <a href="megablast-mayhem.html" class="showcase-card showcase-companion" aria-label="Open MegaBlast Mayhem game page">
+              <img src="Images/EEMMbanner.png" alt="Eucalyptus Edge MegaBlast Mayhem banner" />
+              <div class="showcase-gradient"></div>
+              <div class="showcase-content compact">
+                <span class="game-label available">Available Now</span>
+                <h3>Eucalyptus Edge: MegaBlast Mayhem</h3>
+                <p>The first playable Verdantia companion game, released on itch.io.</p>
+                <div class="feature-tags">
+                  <span>Windows</span>
+                  <span>Local Multiplayer</span>
+                  <span>itch.io</span>
+                </div>
+                <span class="btn btn-secondary">View MegaBlast</span>
+              </div>
+            </a>
+
+            <div class="showcase-status-card">
+              <span class="eyebrow">Production Pipeline</span>
+              <h3>Current Milestone</h3>
               <p>
-                A pixel party battle spin-off set in Verdantia. Smaller, faster, and built to give players something fun while the main game develops.
+                Main Menu → Character Select → Mode Select → Eucalyptus Summit combat prototype.
               </p>
-              <a href="megablast-mayhem.html" class="btn btn-secondary">View MegaBlast</a>
+              <div class="status-meter" aria-hidden="true">
+                <span style="width: 42%"></span>
+              </div>
+              <small>Phase 1A: Front-end systems and first playable flow.</small>
             </div>
-          </aside>
+          </div>
         </div>
       </div>
     </section>
