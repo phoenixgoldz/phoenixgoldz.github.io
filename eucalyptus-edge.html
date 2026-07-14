@@ -8,7 +8,7 @@
     name="description"
     content="Eucalyptus Edge is a family-friendly 3D weapon-based arena fighting game from PhoenixGold Game Studios, planned for PC and Steam."
   />
-  <link rel="stylesheet" href="css/eucalyptus-edge.css?v=map-split-panel-2026" />
+  <link rel="stylesheet" href="css/eucalyptus-edge.css?v=mobile-map-buttons-fix-2026" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -88,6 +88,59 @@
         max-height: none;
       }
     }
+
+    @media (max-width: 700px) {
+      .ee-map-stage {
+        display: flex;
+        flex-direction: column;
+        gap: 0.55rem;
+        overflow: visible;
+      }
+
+      .ee-map-stage > img {
+        order: 0;
+        margin-bottom: 0.35rem;
+      }
+
+      .ee-map-stage .ee-map-pin {
+        position: static !important;
+        inset: auto !important;
+        transform: none !important;
+        order: 1;
+        display: flex;
+        width: 100% !important;
+        max-width: none !important;
+        min-width: 0 !important;
+        min-height: 74px;
+        margin: 0 !important;
+        padding: 0.9rem 1rem !important;
+        box-sizing: border-box;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        border-radius: 24px;
+      }
+
+      .ee-map-stage .ee-map-pin span,
+      .ee-map-stage .ee-map-pin small {
+        display: block;
+        width: 100%;
+        white-space: normal;
+        overflow-wrap: anywhere;
+      }
+
+      .ee-map-stage .ee-map-pin span {
+        font-size: clamp(0.95rem, 4.2vw, 1.1rem);
+        line-height: 1.2;
+      }
+
+      .ee-map-stage .ee-map-pin small {
+        margin-top: 0.2rem;
+        font-size: clamp(0.78rem, 3.5vw, 0.95rem);
+        line-height: 1.3;
+      }
+    }
+
   </style>
 
 </head>
