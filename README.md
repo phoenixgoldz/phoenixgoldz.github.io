@@ -1,6 +1,6 @@
 # PhoenixGold Game Studios Portfolio
 
-Welcome to the official portfolio website of **Trevor Hicks**, founder of **PhoenixGold Game Studios**.
+Welcome to the official portfolio website of **PhoenixGold Game Studios**.
 
 This repository powers my GitHub Pages portfolio where I showcase my game development journey, software engineering projects, and the ongoing development of **Eucalyptus Edge**.
 
