@@ -727,9 +727,9 @@ a{color:inherit;text-decoration:none}
 
 /* =======================================================
    PHASE 1 STATUS UPDATE — July 2026
-   Roadmap aligned to the README's five phases, arena
-   status chips, in-development roster badges, and the
-   locked "???" mystery challenger card (CSS-only).
+   Roadmap aligned to the five development phases, arena
+   status chips, and the locked "???" mystery challenger
+   card (CSS-only).
 ======================================================= */
 
 /* Six roadmap cards + three dev-insight cards on wide screens */
@@ -758,29 +758,6 @@ a{color:inherit;text-decoration:none}
   color: var(--ee-leaf);
   border-color: rgba(154, 203, 61, 0.5);
   box-shadow: 0 0 16px rgba(154, 203, 61, 0.22);
-}
-
-/* In-development roster badges under the carousel */
-.ee-roster-note { margin-top: 1.5rem; text-align: center; }
-.ee-roster-note strong {
-  display: block;
-  margin-bottom: 0.7rem;
-  color: var(--ee-gold-bright);
-  font-family: var(--font-display);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: 0.85rem;
-}
-.ee-roster-badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.55rem; }
-.ee-roster-badges span {
-  padding: 0.42rem 0.85rem;
-  border: 1px solid var(--ee-border-soft);
-  border-radius: 999px;
-  background: rgba(0, 0, 0, 0.28);
-  color: var(--ee-muted);
-  font-size: 0.82rem;
-  font-weight: 700;
 }
 
 /* Locked mystery challenger card — no image asset required */
