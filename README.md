@@ -17,10 +17,10 @@ Eucalyptus Edge is a family-friendly 3D weapon-based fighting game currently in 
 Inspired by games like Soulcalibur, it features:
 
 - ⚔️ Weapon-based combat
-- 🦘 Original Australian animal fighters
+- 🦘 Seven original Australian animal champions
 - 🌿 The magical world of Verdantia
-- 💎 Edge Crystal abilities
-- ⚡ The mysterious Blight
+- ⚡ The Edge Energy system
+- 🌑 The mysterious Blight
 - 🏟️ Ring-out arena gameplay
 - 🎮 Local multiplayer with future online expansion
 
@@ -30,6 +30,7 @@ Inspired by games like Soulcalibur, it features:
 
 - 🎬 PhoenixGold Game Studios animated intro
 - 🎮 Eucalyptus Edge concept trailer
+- 🗺️ Interactive Verdantia world map
 - 💻 Software engineering projects
 - 🛠️ Technical skills and development roadmap
 - 📱 Responsive desktop and mobile design
@@ -52,21 +53,27 @@ Inspired by games like Soulcalibur, it features:
 
 ## Development Status
 
-Current focus:
+**Current phase: Phase 1 — Combat Prototype**
 
 - ✅ Studio branding
-- ✅ Kickstarter campaign
-- ✅ Character roster
-- ✅ World building
+- ✅ Kickstarter campaign — live
+- ✅ Character roster — finalized at seven champions
+- ✅ World building — Verdantia world map and arena concepts
 - ✅ Main menu design
-- 🚧 Combat prototype
+- ✅ Reveal cinematic direction — "Nature Fights Back" fully shot-listed
+- 🚧 Reveal cinematic production — built in-engine with UE 5.8 Sequencer
+- 🚧 Combat prototype — movement, core combat, Edge Energy, local versus
 - 🚧 Character animation pipeline
+
+Full roadmap: https://phoenixgoldz.github.io/eucalyptus-edge.html#roadmap
 
 ---
 
 ## Live Website
 
 https://phoenixgoldz.github.io
+
+Eucalyptus Edge page: https://phoenixgoldz.github.io/eucalyptus-edge.html
 
 ---
 
