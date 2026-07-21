@@ -781,3 +781,43 @@ a{color:inherit;text-decoration:none}
   text-shadow: 0 0 42px rgba(154, 203, 61, 0.18);
 }
 .ee-fighter-mystery h3 { color: var(--ee-muted); }
+
+
+/* =======================================================
+   ROSTER PRODUCTION DASHBOARD
+======================================================= */
+.ee-roster-status-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.15rem}
+.ee-roster-status-card{display:grid;grid-template-columns:12rem minmax(0,1fr);min-height:18rem;overflow:hidden;border:1px solid var(--ee-border);border-radius:var(--radius-lg);background:linear-gradient(135deg,rgba(10,28,18,.96),rgba(2,8,7,.96));box-shadow:var(--shadow)}
+.ee-roster-status-card.is-ready{border-color:rgba(154,203,61,.65);box-shadow:0 0 38px rgba(154,203,61,.12),var(--shadow)}
+.ee-roster-status-card>img{width:100%;height:100%;min-height:18rem;object-fit:cover;object-position:top center}
+.ee-roster-status-content{display:flex;flex-direction:column;padding:1.25rem}
+.ee-roster-status-top{display:flex;justify-content:space-between;gap:1rem;align-items:flex-start}
+.ee-roster-status-top h3,.ee-phase-focus h3,.ee-milestone-card h3{font-family:var(--font-display);text-transform:uppercase;letter-spacing:.05em}
+.ee-roster-status-top h3{color:var(--ee-gold-bright);font-size:1.65rem}
+.ee-roster-status-top p{color:var(--ee-muted);font-size:.88rem;font-weight:700;text-transform:uppercase}
+.ee-production-badge{flex:0 0 auto;padding:.34rem .62rem;border:1px solid var(--ee-border-soft);border-radius:999px;font-size:.64rem;font-weight:900;line-height:1.15;text-align:center;text-transform:uppercase;letter-spacing:.06em;background:rgba(0,0,0,.28)}
+.ee-production-badge.ready{color:var(--ee-leaf);border-color:rgba(154,203,61,.55)}
+.ee-production-badge.dev{color:var(--ee-gold-bright)}
+.ee-production-badge.integration{color:#91d8ff;border-color:rgba(145,216,255,.4)}
+.ee-production-badge.locked{color:var(--ee-muted)}
+.ee-production-track{display:flex;flex-wrap:wrap;gap:.45rem;margin:1.1rem 0}
+.ee-production-track span{padding:.3rem .55rem;border:1px solid rgba(255,255,255,.1);border-radius:999px;color:#858b86;background:rgba(255,255,255,.025);font-size:.68rem;font-weight:900;text-transform:uppercase;letter-spacing:.05em}
+.ee-production-track span.complete{color:var(--ee-leaf);border-color:rgba(154,203,61,.32);background:rgba(154,203,61,.06)}
+.ee-production-track span.active{color:var(--ee-gold-bright);border-color:rgba(216,179,90,.45);background:rgba(216,179,90,.07)}
+.ee-production-note{margin-top:auto;color:var(--ee-muted);font-size:.92rem}
+.ee-locked-fighter-art{display:flex;align-items:center;justify-content:center;min-height:18rem;background:radial-gradient(circle,rgba(216,179,90,.14),transparent 58%),linear-gradient(180deg,#0b1b12,#020807);color:rgba(216,179,90,.28);font-family:var(--font-display);font-size:8rem;font-weight:700}
+.ee-phase-focus{max-width:960px;margin:2rem auto 0;padding:clamp(1.5rem,3vw,2.5rem);text-align:center;border:1px solid var(--ee-border);border-radius:var(--radius-lg);background:radial-gradient(circle at top,rgba(154,203,61,.1),transparent 26rem),var(--ee-panel);box-shadow:var(--shadow)}
+.ee-phase-focus h3{color:var(--ee-gold-bright);font-size:clamp(2rem,4vw,3.6rem)}
+.ee-phase-focus p{max-width:800px;margin:.8rem auto 0;color:var(--ee-muted)}
+.ee-milestone-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+.ee-milestone-card{position:relative;min-height:14rem;padding:1.35rem;border:1px solid var(--ee-border-soft);border-radius:var(--radius-lg);background:var(--ee-panel);box-shadow:var(--shadow)}
+.ee-milestone-card:before{content:"";position:absolute;top:1.2rem;right:1.2rem;width:.75rem;height:.75rem;border-radius:50%;background:#6d746e}
+.ee-milestone-card.complete:before{background:var(--ee-leaf);box-shadow:0 0 18px rgba(154,203,61,.65)}
+.ee-milestone-card.active{border-color:var(--ee-gold-bright);box-shadow:0 0 36px rgba(216,179,90,.18),var(--shadow)}
+.ee-milestone-card.active:before{background:var(--ee-gold-bright);box-shadow:0 0 18px rgba(216,179,90,.7)}
+.ee-milestone-card>span{display:inline-block;margin-bottom:.7rem;color:var(--ee-leaf);font-size:.74rem;font-weight:900;text-transform:uppercase;letter-spacing:.08em}
+.ee-milestone-card.active>span{color:var(--ee-gold-bright)}
+.ee-milestone-card h3{margin-bottom:.6rem;color:var(--ee-text);font-size:1.22rem}
+.ee-milestone-card p{color:var(--ee-muted);font-size:.92rem}
+@media(max-width:1100px){.ee-roster-status-grid{grid-template-columns:1fr}.ee-milestone-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){.ee-roster-status-card{grid-template-columns:1fr}.ee-roster-status-card>img,.ee-locked-fighter-art{min-height:24rem;max-height:34rem}.ee-roster-status-top{flex-direction:column}.ee-production-badge{align-self:flex-start}.ee-milestone-grid{grid-template-columns:1fr}}
