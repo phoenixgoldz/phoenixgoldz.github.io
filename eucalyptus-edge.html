@@ -206,7 +206,7 @@
           <div class="ee-status-row">
             <span>PC</span>
             <span>Steam page coming soon</span>
-            <span>Phase 1: Combat Prototype</span>
+            <span>Phase 1: Prototype Production</span>
             <span>Family friendly</span>
           </div>
           <div class="ee-actions">
@@ -454,27 +454,97 @@
       </div>
     </section>
 
+    
     <section id="fighters" class="ee-section">
       <div class="ee-container">
         <div class="ee-section-head reveal">
-          <span class="ee-kicker">Character Carousel</span>
+          <span class="ee-kicker">Roster Production Status</span>
           <h2>Fighters of Verdantia</h2>
-          <p>Seven champions lead the current roster, each built around a signature weapon and a readable combat role — and rumors speak of a challenger from far beyond Verdantia.</p>
+          <p>Wren and Ripper are the active Phase 1 fighters and the only characters currently ready for full combat testing. Every other champion remains visible as part of the planned roster while progressing through the production pipeline.</p>
         </div>
-        <div class="ee-carousel-wrap">
-          <div class="ee-fighter-carousel" aria-label="Fighter carousel">
-            <article class="ee-fighter-card reveal"><img src="Images/KodaRedesign.png" alt="Koda the Koala" /><div><h3>Koda</h3><p>The Koala</p><span>Balanced Staff Fighter</span></div></article>
-            <article class="ee-fighter-card reveal"><img src="Images/WrenRedesign.png" alt="Wren the Kangaroo" /><div><h3>Wren</h3><p>The Kangaroo</p><span>Mobile Bruiser</span></div></article>
-            <article class="ee-fighter-card reveal"><img src="Images/RipperRedesign.png" alt="Ripper the Tasmanian Devil" /><div><h3>Ripper</h3><p>The Tasmanian Devil</p><span>Aggressive Brawler</span></div></article>
-            <article class="ee-fighter-card reveal"><img src="Images/KiriRedesign.png" alt="Kiri the Kookaburra" /><div><h3>Kiri</h3><p>The Kookaburra</p><span>Precision Duelist</span></div></article>
-            <article class="ee-fighter-card reveal"><img src="Images/BanjoRedesign.png" alt="Banjo the Sugar Glider" /><div><h3>Banjo</h3><p>The Sugar Glider</p><span>Vine Whip Grappler</span></div></article>
-            <article class="ee-fighter-card reveal"><img src="Images/EchoRedesign.png" alt="Echo the Platypus" /><div><h3>Echo</h3><p>The Platypus</p><span>Crystal Tonfa Specialist</span></div></article>
-            <article class="ee-fighter-card reveal"><img src="Images/AtlusRedesign.png" alt="Atlas the Emu" /><div><h3>Atlas</h3><p>The Emu</p><span>Windspine Polearm Fighter</span></div></article>
-            <article class="ee-fighter-card ee-fighter-mystery reveal"><div><h3>???</h3><p>Locked Challenger</p><span>A visitor from beyond Verdantia&hellip;</span></div></article>
-          </div>
+
+        <div class="ee-roster-status-grid">
+          <article class="ee-roster-status-card is-ready reveal">
+            <img src="Images/WrenRedesign.png" alt="Wren the Kangaroo" />
+            <div class="ee-roster-status-content">
+              <div class="ee-roster-status-top"><div><h3>Wren</h3><p>The Kangaroo · Mobile Bruiser</p></div><span class="ee-production-badge ready">Combat Ready</span></div>
+              <div class="ee-production-track"><span class="complete">Model</span><span class="complete">Rig</span><span class="complete">Animations</span><span class="complete">Unreal</span><span class="active">Combat Testing</span></div>
+              <p class="ee-production-note">Primary Phase 1 fighter. Fully integrated and being validated for the prototype showcase.</p>
+            </div>
+          </article>
+
+          <article class="ee-roster-status-card is-ready reveal">
+            <img src="Images/RipperRedesign.png" alt="Ripper the Tasmanian Devil" />
+            <div class="ee-roster-status-content">
+              <div class="ee-roster-status-top"><div><h3>Ripper</h3><p>The Tasmanian Devil · Aggressive Brawler</p></div><span class="ee-production-badge ready">Combat Ready</span></div>
+              <div class="ee-production-track"><span class="complete">Model</span><span class="complete">Rig</span><span class="complete">Animations</span><span class="complete">Unreal</span><span class="active">Combat Testing</span></div>
+              <p class="ee-production-note">Primary Phase 1 fighter. Complete animation library and Unreal integration ready for match validation.</p>
+            </div>
+          </article>
+
+          <article class="ee-roster-status-card reveal">
+            <img src="Images/KodaRedesign.png" alt="Koda the Koala" />
+            <div class="ee-roster-status-content">
+              <div class="ee-roster-status-top"><div><h3>Koda</h3><p>The Koala · Balanced Staff Fighter</p></div><span class="ee-production-badge dev">In Development</span></div>
+              <div class="ee-production-track"><span class="complete">Model</span><span class="active">Blender Setup</span><span>Rig</span><span>Animations</span><span>Unreal</span></div>
+              <p class="ee-production-note">Awaiting final Blender setup and the two-handed staff production pipeline before Unreal combat integration.</p>
+            </div>
+          </article>
+
+          <article class="ee-roster-status-card reveal">
+            <img src="Images/KiriRedesign.png" alt="Kiri the Kookaburra" />
+            <div class="ee-roster-status-content">
+              <div class="ee-roster-status-top"><div><h3>Kiri</h3><p>The Kookaburra · Precision Duelist</p></div><span class="ee-production-badge integration">Gameplay Integration</span></div>
+              <div class="ee-production-track"><span class="complete">Model</span><span class="complete">Weapons</span><span class="active">Rig Validation</span><span>Animations</span><span>Unreal</span></div>
+              <p class="ee-production-note">Character and attached weapons require final production validation before the combat animation and Blueprint pass.</p>
+            </div>
+          </article>
+
+          <article class="ee-roster-status-card reveal">
+            <img src="Images/BanjoRedesign.png" alt="Banjo the Sugar Glider" />
+            <div class="ee-roster-status-content">
+              <div class="ee-roster-status-top"><div><h3>Banjo</h3><p>The Sugar Glider · Whip Specialist</p></div><span class="ee-production-badge integration">Gameplay Integration</span></div>
+              <div class="ee-production-track"><span class="complete">Model</span><span class="complete">Retopology</span><span class="complete">Rig</span><span class="active">Whip Pipeline</span><span>Unreal</span></div>
+              <p class="ee-production-note">Model and rig are prepared. Flexible whip physics and final Unreal integration remain in development.</p>
+            </div>
+          </article>
+
+          <article class="ee-roster-status-card reveal">
+            <img src="Images/EchoRedesign.png" alt="Echo the Platypus" />
+            <div class="ee-roster-status-content">
+              <div class="ee-roster-status-top"><div><h3>Echo</h3><p>The Platypus · Crystal Tonfa Specialist</p></div><span class="ee-production-badge integration">Gameplay Integration</span></div>
+              <div class="ee-production-track"><span class="complete">Model</span><span class="complete">Weapons</span><span class="active">Import Repair</span><span>Animations</span><span>Unreal</span></div>
+              <p class="ee-production-note">The character is being rebuilt through the standardized import pipeline so Unreal correctly locates and validates the mesh.</p>
+            </div>
+          </article>
+
+          <article class="ee-roster-status-card reveal">
+            <img src="Images/AtlusRedesign.png" alt="Atlas the Emu" />
+            <div class="ee-roster-status-content">
+              <div class="ee-roster-status-top"><div><h3>Atlas</h3><p>The Emu · Windspine Polearm Fighter</p></div><span class="ee-production-badge integration">Gameplay Integration</span></div>
+              <div class="ee-production-track"><span class="complete">Model</span><span class="complete">Scale</span><span class="complete">Base Rig</span><span class="active">Weapon Setup</span><span>Unreal</span></div>
+              <p class="ee-production-note">Height and upright import are corrected. Polearm setup, animation production, and combat integration remain.</p>
+            </div>
+          </article>
+
+          <article class="ee-roster-status-card is-locked reveal">
+            <div class="ee-locked-fighter-art" aria-hidden="true">?</div>
+            <div class="ee-roster-status-content">
+              <div class="ee-roster-status-top"><div><h3>Locked Challenger</h3><p>A visitor from beyond Verdantia</p></div><span class="ee-production-badge locked">Secret Fighter</span></div>
+              <div class="ee-production-track"><span>Locked</span><span>Future Reveal</span></div>
+              <p class="ee-production-note">A secret challenger reserved for a future reveal and later development milestone.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="ee-phase-focus reveal">
+          <span class="ee-kicker">Current Playable Focus</span>
+          <h3>Wren vs. Ripper</h3>
+          <p>Phase 1 is being completed around one polished matchup in Eucalyptus Summit. The immediate goal is a stable, controller-ready, 60 FPS combat showcase with working menus, character select, HUD, complete match flow, and trailer-ready gameplay.</p>
         </div>
       </div>
     </section>
+
 
     <section id="arenas" class="ee-section ee-section-alt">
       <div class="ee-container">
@@ -533,29 +603,36 @@
       </div>
     </section>
 
+    
     <section id="roadmap" class="ee-section ee-section-alt">
       <div class="ee-container">
         <div class="ee-section-head reveal">
           <span class="ee-kicker">Development Timeline</span>
-          <h2>From Prototype to Launch</h2>
+          <h2>Production Milestones</h2>
+          <p>The original five-phase roadmap is now divided into smaller production milestones so progress can be tracked clearly from the current Wren vs. Ripper prototype through the full game.</p>
         </div>
-        <div class="ee-timeline">
-          <article class="done"><span>Complete</span><h3>Visual Identity &amp; World</h3><p>Logo, seven-champion roster art, arena concepts, interactive world map, website, Kickstarter launch, and full shot-by-shot direction for the in-engine reveal cinematic.</p></article>
-          <article class="active"><span>Phase 1 &middot; Now</span><h3>Combat Prototype</h3><p>Third-person movement, camera system, core combat, health, blocking and dodging, Edge Energy, test arena, prototype fighters, and local versus.</p></article>
-          <article><span>Phase 2</span><h3>Vertical Slice</h3><p>Story intro, expanded roster, Edge abilities, arena polish, and updated prototype trailers.</p></article>
-          <article><span>Phase 3</span><h3>Multiplayer</h3><p>Online matchmaking, private lobbies, ranked play, and networked combat validation.</p></article>
-          <article><span>Phase 4</span><h3>Roster Expansion</h3><p>Additional fighters, new arenas, and story expansion across Verdantia.</p></article>
-          <article><span>Phase 5</span><h3>Launch &amp; Live Support</h3><p>Steam release, balance updates, DLC fighters, seasonal content, and community events.</p></article>
+
+        <div class="ee-milestone-grid">
+          <article class="ee-milestone-card complete reveal"><span>Complete</span><h3>Foundation</h3><p>UE5.8 project, visual identity, world direction, roster concepts, core documentation, website, and production standards.</p></article>
+          <article class="ee-milestone-card complete reveal"><span>Phase 1A</span><h3>Core Character Pipeline</h3><p>Wren and Ripper models, rigs, animation Blueprints, locomotion, combat animation libraries, and validated Unreal imports.</p></article>
+          <article class="ee-milestone-card active reveal"><span>Phase 1B · Now</span><h3>Combat Integration Audit</h3><p>Audit and finalize attacks, hit detection, damage, blocking, dodging, counters, Edge Energy, ring-outs, KO, rounds, and victory flow.</p></article>
+          <article class="ee-milestone-card active reveal"><span>Phase 1C · Now</span><h3>Prototype Presentation</h3><p>Complete Main Menu, Character Select, HUD, Options, Pause, controller navigation, Eucalyptus Summit, and 60 FPS optimization.</p></article>
+          <article class="ee-milestone-card reveal"><span>Phase 1D</span><h3>Gameplay Showcase</h3><p>Package and capture a polished Wren vs. Ripper match for a Kickstarter gameplay reveal mixed with the existing concept trailer.</p></article>
+          <article class="ee-milestone-card reveal"><span>Phase 2</span><h3>Vertical Slice Expansion</h3><p>Add the next production-ready fighter, expand arena content, improve AI and training, and strengthen the complete playable slice.</p></article>
+          <article class="ee-milestone-card reveal"><span>Phase 3</span><h3>Multiplayer Integration</h3><p>Online matchmaking, private lobbies, networked combat validation, ranked systems, replay support, and spectator tools.</p></article>
+          <article class="ee-milestone-card reveal"><span>Phase 4</span><h3>Full Roster &amp; World</h3><p>Complete the core roster, remaining arenas, story progression, unlock systems, polish, audio, accessibility, and content balancing.</p></article>
+          <article class="ee-milestone-card reveal"><span>Phase 5</span><h3>Launch &amp; Live Support</h3><p>Steam release, post-launch balance updates, new fighters, arena expansions, DLC, seasonal content, and community events.</p></article>
         </div>
       </div>
     </section>
+
 
     <section id="support" class="ee-section ee-support-section">
       <div class="ee-container">
         <div class="ee-support-panel reveal">
           <span class="ee-kicker">Support Development</span>
           <h2>Help Bring Verdantia to Life</h2>
-          <p>The Kickstarter campaign is live. Every pledge helps fund the Phase 1 combat prototype, the in-engine reveal trailer, and the road to a full Steam release.</p>
+          <p>The Kickstarter campaign is live. Every pledge helps complete the Wren vs. Ripper Phase 1 prototype, fund the gameplay showcase, and move Eucalyptus Edge toward its full vertical slice and Steam release.</p>
           <div class="ee-actions center-actions">
             <a href="https://www.kickstarter.com/projects/phoenixgoldgames/eucalyptus-edge" target="_blank" rel="noopener noreferrer" class="ee-btn ee-btn-primary">Support on Kickstarter</a>
             <a href="#trailer" class="ee-btn ee-btn-secondary">Watch Trailer</a>
