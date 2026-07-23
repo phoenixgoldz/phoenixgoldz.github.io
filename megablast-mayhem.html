@@ -2,72 +2,227 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Eucalyptus Edge: MegaBlast Mayhem | PhoenixGold Game Studios</title>
   <meta
-    name="description"
-    content="Eucalyptus Edge: MegaBlast Mayhem is a fast-paced local multiplayer bomb arena game set in Verdantia and the first playable release in the Eucalyptus Edge universe."
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
   />
 
-  <link rel="stylesheet" href="css/megablast-mayhem.css?v=verdantia-megablast-v3-site-refresh" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <title>
+    Eucalyptus Edge: MegaBlast Mayhem | PhoenixGold Game Studios
+  </title>
+
+  <meta
+    name="description"
+    content="Eucalyptus Edge: MegaBlast Mayhem is a complete local multiplayer bomb-arena game featuring eight fighters, five Verdantia regions, ten handcrafted arenas, adaptive bots, Region Tour, Chaos Bombs, and 55 achievements."
+  />
+
+  <meta
+    name="keywords"
+    content="MegaBlast Mayhem, Eucalyptus Edge, Verdantia, PhoenixGold Game Studios, local multiplayer, party game, bomb arena, indie game, Steam game"
+  />
+
+  <meta
+    name="author"
+    content="PhoenixGold Game Studios"
+  />
+
+  <meta
+    property="og:title"
+    content="Eucalyptus Edge: MegaBlast Mayhem"
+  />
+
+  <meta
+    property="og:description"
+    content="The MegaBlast Festival has begun. Battle across Verdantia in PhoenixGold Game Studios’ first commercial release."
+  />
+
+  <meta
+    property="og:type"
+    content="website"
+  />
+
+  <meta
+    property="og:image"
+    content="Images/EEMMbanner.png"
+  />
+
+  <meta
+    name="twitter:card"
+    content="summary_large_image"
+  />
+
+  <meta
+    name="twitter:title"
+    content="Eucalyptus Edge: MegaBlast Mayhem"
+  />
+
+  <meta
+    name="twitter:description"
+    content="Battle through the annual MegaBlast Festival across five regions of Verdantia."
+  />
+
+  <meta
+    name="twitter:image"
+    content="Images/EEMMbanner.png"
+  />
+
+  <link
+    rel="stylesheet"
+    href="css/megablast-mayhem.css?v=verdantia-megablast-steam-release"
+  />
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  />
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
+
   <link
     href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet"
   />
-  <link rel="icon" type="image/png" href="Images/icon64.png" />
+
+  <link
+    rel="icon"
+    type="image/png"
+    href="Images/icon64.png"
+  />
 </head>
 
 <body>
+  <!-- NAVIGATION -->
   <nav class="mbm-navbar">
     <div class="mbm-container mbm-nav-inner">
-      <a href="index.html" class="mbm-logo" aria-label="PhoenixGold Game Studios Home">
-        <img src="Images/verdant_phoenix_crest_emblem_master.png" alt="PhoenixGold Game Studios Verdant Phoenix crest" />
+      <a
+        href="index.html"
+        class="mbm-logo"
+        aria-label="PhoenixGold Game Studios Home"
+      >
+        <img
+          src="Images/verdant_phoenix_crest_emblem_master.png"
+          alt="PhoenixGold Game Studios Verdant Phoenix crest"
+        />
+
         <span>PhoenixGold</span>
       </a>
 
-      <div class="mbm-nav-links" aria-label="Primary navigation">
+      <div
+        class="mbm-nav-links"
+        aria-label="Primary navigation"
+      >
         <a href="index.html">Studio</a>
-        <a href="eucalyptus-edge.html">Eucalyptus Edge</a>
-        <a href="megablast-mayhem.html" class="active">MegaBlast Mayhem</a>
-        <a href="#gameplay">Gameplay</a>
-        <a href="#regions">Regions</a>
-        <a href="#heroes">Heroes</a>
-        <a href="#gallery">Gallery</a>
+
+        <a href="eucalyptus-edge.html">
+          Eucalyptus Edge
+        </a>
+
         <a
-          href="https://pheonixgold.itch.io/eucalyptus-edge-megablast-mayhem"
+          href="megablast-mayhem.html"
+          class="active"
+        >
+          MegaBlast Mayhem
+        </a>
+
+        <a href="#gameplay">Gameplay</a>
+
+        <a href="#regions">Regions</a>
+
+        <a href="#heroes">Heroes</a>
+
+        <a href="#gallery">Gallery</a>
+
+        <a
+          href="https://store.steampowered.com/app/4999100/"
           target="_blank"
           rel="noopener noreferrer"
           class="mbm-btn mbm-btn-small"
         >
-          View on itch.io
+          View on Steam
         </a>
       </div>
 
-      <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
-        <span></span><span></span><span></span>
+      <button
+        class="mobile-menu-btn"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+        aria-controls="mobile-navigation"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
     </div>
   </nav>
 
-  <div class="mobile-menu" aria-label="Mobile navigation">
+  <!-- MOBILE NAVIGATION -->
+  <div
+    class="mobile-menu"
+    id="mobile-navigation"
+    aria-label="Mobile navigation"
+  >
     <div class="mobile-menu-container">
-      <a href="index.html" class="mobile-link">Studio</a>
-      <a href="eucalyptus-edge.html" class="mobile-link">Eucalyptus Edge</a>
-      <a href="megablast-mayhem.html" class="mobile-link">MegaBlast Mayhem</a>
-      <a href="#gameplay" class="mobile-link">Gameplay</a>
-      <a href="#regions" class="mobile-link">Regions</a>
-      <a href="#heroes" class="mobile-link">Heroes</a>
-      <a href="#gallery" class="mobile-link">Gallery</a>
       <a
-        href="https://pheonixgold.itch.io/eucalyptus-edge-megablast-mayhem"
+        href="index.html"
+        class="mobile-link"
+      >
+        Studio
+      </a>
+
+      <a
+        href="eucalyptus-edge.html"
+        class="mobile-link"
+      >
+        Eucalyptus Edge
+      </a>
+
+      <a
+        href="megablast-mayhem.html"
+        class="mobile-link"
+      >
+        MegaBlast Mayhem
+      </a>
+
+      <a
+        href="#gameplay"
+        class="mobile-link"
+      >
+        Gameplay
+      </a>
+
+      <a
+        href="#regions"
+        class="mobile-link"
+      >
+        Regions
+      </a>
+
+      <a
+        href="#heroes"
+        class="mobile-link"
+      >
+        Heroes
+      </a>
+
+      <a
+        href="#gallery"
+        class="mobile-link"
+      >
+        Gallery
+      </a>
+
+      <a
+        href="https://store.steampowered.com/app/4999100/"
         target="_blank"
         rel="noopener noreferrer"
         class="mobile-link"
       >
-        View on itch.io
+        View on Steam
       </a>
     </div>
   </div>
@@ -75,227 +230,431 @@
   <main>
     <!-- HERO -->
     <section class="mbm-hero">
-      <div class="mbm-hero-bg" aria-hidden="true">
-        <img src="Images/bezel_menu_master.png" alt="" />
+      <div
+        class="mbm-hero-bg"
+        aria-hidden="true"
+      >
+        <img
+          src="Images/bezel_menu_master.png"
+          alt=""
+        />
       </div>
+
       <div class="mbm-hero-overlay"></div>
 
       <div class="mbm-container mbm-hero-inner">
         <div class="mbm-hero-card">
-          <span class="mbm-kicker">PhoenixGold Game Studios’ first commercial release</span>
+          <span class="mbm-kicker">
+            PhoenixGold Game Studios’ first commercial release
+          </span>
 
-          <h1><span>Eucalyptus Edge:</span> MegaBlast Mayhem</h1>
+          <h1>
+            <span>Eucalyptus Edge:</span>
+            MegaBlast Mayhem
+          </h1>
 
-          <p class="mbm-tagline">Blast into Verdantia.</p>
+          <p class="mbm-tagline">
+            The MegaBlast Festival has begun.
+          </p>
 
           <p class="mbm-hero-text">
-            A complete arcade battle game where eight heroes compete across the five regions of Verdantia in the annual MegaBlast Festival—culminating in Sonia’s final challenge.
+            Battle across ten explosive arenas, master powerful
+            Chaos Bombs, compete against adaptive bots, and unlock
+            Sonia’s final challenge in the first complete adventure
+            set in Verdantia.
           </p>
 
           <div class="mbm-status-row">
             <span>Windows</span>
-            <span>macOS</span>
-            <span>Linux</span>
             <span>1–4 Local Players</span>
-            <span>Controller Support</span>
+            <span>Eight Fighters</span>
+            <span>Ten Arenas</span>
             <span>Adaptive Bots</span>
-            <span>55 Achievements</span>
+            <span>Steam Achievements</span>
+            <span>Steam Cloud</span>
           </div>
 
           <div class="mbm-actions">
             <a
-              href="https://pheonixgold.itch.io/eucalyptus-edge-megablast-mayhem"
+              href="https://store.steampowered.com/app/4999100/"
               target="_blank"
               rel="noopener noreferrer"
               class="mbm-btn mbm-btn-primary"
             >
-              View on itch.io
+              View on Steam
             </a>
 
-            <a href="#trailer" class="mbm-btn mbm-btn-secondary">
+            <a
+              href="#trailer"
+              class="mbm-btn mbm-btn-secondary"
+            >
               Watch Trailer
             </a>
 
-            <a href="eucalyptus-edge.html" class="mbm-btn mbm-btn-secondary">
-              Explore Main Game
+            <a
+              href="eucalyptus-edge.html"
+              class="mbm-btn mbm-btn-secondary"
+            >
+              Explore Eucalyptus Edge
             </a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- QUICK STRIP -->
+    <!-- QUICK FEATURES -->
     <section class="mbm-quick-strip">
       <div class="mbm-container mbm-quick-grid">
         <article>
-          <strong>Feature Complete</strong>
-          <span>Version 3.0 is the finished MegaBlast Mayhem experience.</span>
+          <strong>Complete Arcade Experience</strong>
+
+          <span>
+            A polished and self-contained festival adventure
+            from beginning to finale.
+          </span>
         </article>
 
         <article>
           <strong>Local Party Battles</strong>
-          <span>Keyboard seats, controllers, and bots on one PC.</span>
+
+          <span>
+            Play with keyboard seats, game controllers, bots,
+            or any combination of the three.
+          </span>
         </article>
 
         <article>
           <strong>Chaos Bombs</strong>
-          <span>Special bomb mutations change the match flow.</span>
+
+          <span>
+            Special bomb mutations transform the battlefield
+            and change the flow of every match.
+          </span>
         </article>
 
         <article>
-          <strong>Five Regions</strong>
-          <span>Ten handcrafted arenas plus Random Arena generation.</span>
+          <strong>Five Verdantia Regions</strong>
+
+          <span>
+            Ten handcrafted arenas plus procedurally arranged
+            Random Arena battles.
+          </span>
         </article>
       </div>
     </section>
 
     <!-- OFFICIAL TRAILER -->
-    <section id="trailer" class="mbm-section mbm-trailer-section">
+    <section
+      id="trailer"
+      class="mbm-section mbm-trailer-section"
+    >
       <div class="mbm-container">
         <div class="mbm-section-head">
-          <span class="mbm-kicker">Official Trailer</span>
-          <h2>Watch MegaBlast Mayhem in Action</h2>
+          <span class="mbm-kicker">
+            Official Launch Trailer
+          </span>
+
+          <h2>
+            Watch MegaBlast Mayhem in Action
+          </h2>
+
           <p>
-            Blast through explosive arenas, discover powerful upgrades,
-            outsmart adaptive AI, and experience the first playable adventure
-            set in Verdantia (pronounced <strong>VUR-DAN-CHI-A</strong>).
+            Blast through explosive arenas, discover powerful
+            upgrades, outsmart adaptive opponents, and experience
+            the first playable adventure set in Verdantia.
           </p>
         </div>
 
         <div class="mbm-video-wrapper">
-     <iframe
-    src="https://www.youtube.com/embed/5NC4f3ytp9U"
-    title="Eucalyptus Edge: MegaBlast Mayhem | Official Launch Trailer"
-    loading="lazy"
-    referrerpolicy="strict-origin-when-cross-origin"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    allowfullscreen>
-</iframe>
+          <iframe
+            src="https://www.youtube.com/embed/Aq0C070erRg"
+            title="Eucalyptus Edge: MegaBlast Mayhem Official Steam Launch Trailer"
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
         </div>
 
         <div class="mbm-trailer-links">
           <a
             class="mbm-btn mbm-btn-primary"
-            href="https://www.youtube.com/watch?v=5NC4f3ytp9U"
+            href="https://youtu.be/Aq0C070erRg"
             target="_blank"
-            rel="noopener noreferrer">
-            ▶ Watch on YouTube
+            rel="noopener noreferrer"
+          >
+            Watch on YouTube
           </a>
         </div>
 
         <div class="mbm-trailer-meta">
-          <span>✓ 1–4 Players</span>
+          <span>✓ 1–4 Local Players</span>
+          <span>✓ Eight Fighters</span>
           <span>✓ Controller Support</span>
-          <span>✓ Local Multiplayer</span>
           <span>✓ Adaptive Bots</span>
-          <span>✓ Windows • macOS • Linux</span>
+          <span>✓ Region Tour</span>
+          <span>✓ 55 Achievements</span>
         </div>
       </div>
     </section>
 
     <!-- GAMEPLAY -->
-    <section class="mbm-section" id="gameplay">
+    <section
+      class="mbm-section"
+      id="gameplay"
+    >
       <div class="mbm-container">
         <div class="mbm-section-head">
-          <span class="mbm-kicker">Gameplay</span>
-          <h2>Local multiplayer festival battles</h2>
+          <span class="mbm-kicker">
+            Gameplay
+          </span>
+
+          <h2>
+            Easy to learn. Chaotic to master.
+          </h2>
+
           <p>
-            MegaBlast Mayhem keeps the action simple to learn and chaotic to master:
-            plant bombs, break crates, collect powerups, dodge explosions, and survive until the final round.
+            Plant bombs, destroy crates, collect upgrades, dodge
+            chain reactions, outsmart your opponents, and survive
+            until the final round.
           </p>
         </div>
 
         <div class="mbm-feature-grid">
           <article class="mbm-feature-card">
             <h3>Versus Mode</h3>
-            <p>Battle with up to four local players, fill empty seats with bots, and choose from four difficulty levels.</p>
+
+            <p>
+              Battle with up to four local players, fill empty
+              seats with bots, and select from four bot
+              difficulty levels.
+            </p>
           </article>
 
           <article class="mbm-feature-card">
             <h3>Region Tour</h3>
-            <p>Travel through all five regions, earn medals, continue saved tours, and face Sonia in the festival finale.</p>
+
+            <p>
+              Journey through all five regions, earn medals,
+              continue saved tours, and reach the festival finale.
+            </p>
+          </article>
+
+          <article class="mbm-feature-card">
+            <h3>Sonia Finale</h3>
+
+            <p>
+              Complete the Region Tour and face Sonia in the
+              championship battle that concludes the festival.
+            </p>
           </article>
 
           <article class="mbm-feature-card">
             <h3>Random Arena</h3>
-            <p>Generate fresh battleground layouts themed around each Verdantia region for endlessly varied matches.</p>
+
+            <p>
+              Generate new region-themed battleground layouts
+              for unpredictable and highly replayable matches.
+            </p>
           </article>
 
           <article class="mbm-feature-card">
             <h3>Chaos Bombs</h3>
-            <p>Gravity, Chain, MegaBlast, and Ghost mutations combine with powerups and match mutators.</p>
+
+            <p>
+              Gravity, Chain, MegaBlast, and Ghost mutations
+              combine with powerups and match modifiers.
+            </p>
           </article>
 
           <article class="mbm-feature-card">
             <h3>Eight Fighters</h3>
-            <p>Play as Koda, Ripper, Kiri, Banjo, Atlas, Echo, Wren, and unlockable finale challenger Sonia.</p>
+
+            <p>
+              Play as Koda, Ripper, Kiri, Banjo, Atlas, Echo,
+              Wren, and unlockable finale challenger Sonia.
+            </p>
           </article>
 
           <article class="mbm-feature-card">
             <h3>55 Achievements</h3>
-            <p>Complete story, combat, powerup, exploration, bot, and secret achievement challenges.</p>
+
+            <p>
+              Complete story, combat, powerup, exploration,
+              bot, challenge, and secret achievements.
+            </p>
           </article>
 
           <article class="mbm-feature-card">
-            <h3>Controller Ready</h3>
-            <p>Full keyboard and controller navigation with Xbox, PlayStation, Nintendo, and DirectInput support.</p>
+            <h3>Controller Support</h3>
+
+            <p>
+              Navigate menus and compete using keyboard controls
+              or SDL2-compatible game controllers.
+            </p>
           </article>
 
           <article class="mbm-feature-card">
-            <h3>Built for Every Screen</h3>
-            <p>Resolution and display options support handhelds, widescreen, ultrawide, 4:3, and multi-monitor setups.</p>
+            <h3>Display Options</h3>
+
+            <p>
+              Configure fullscreen, windowed mode, resolution,
+              audio, visual presentation, and other settings.
+            </p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- ITCH DOWNLOAD -->
-   <!-- PLAY NOW -->
-<section class="mbm-section mbm-download-section">
-
-    <div class="mbm-container">
-
-        <div class="mbm-section-head">
-
-            <span class="mbm-kicker">Play Now</span>
-
-            <h2>Play the first adventure in Verdantia</h2>
-
-            <p>
-                Before the Unreal Engine 5.8 arena fighter arrives,
-                experience the explosive festival battles that introduce
-                the heroes of Verdantia. Available now for Windows,
-                macOS, and Linux.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-    <!-- GALLERY -->
-    <section class="mbm-section mbm-section-alt" id="gallery">
+    <!-- STEAM -->
+    <section class="mbm-section mbm-download-section">
       <div class="mbm-container">
         <div class="mbm-section-head">
-          <span class="mbm-kicker">Gallery</span>
-          <h2>Verdantia brought to arcade life</h2>
-          <p>Illustrated region art, finished menu presentation, and the handcrafted worlds that define MegaBlast Mayhem.</p>
+          <span class="mbm-kicker">
+            Available on Steam
+          </span>
+
+          <h2>
+            Begin the first adventure in Verdantia
+          </h2>
+
+          <p>
+            Enter the annual MegaBlast Festival and meet the heroes
+            who will shape the future of Verdantia. MegaBlast Mayhem
+            is a complete arcade experience and the first commercial
+            release from PhoenixGold Game Studios.
+          </p>
+
+          <div class="mbm-actions">
+            <a
+              href="https://store.steampowered.com/app/4999100/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mbm-btn mbm-btn-primary"
+            >
+              View on Steam
+            </a>
+
+            <a
+              href="#gallery"
+              class="mbm-btn mbm-btn-secondary"
+            >
+              View Screenshots
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section
+      class="mbm-section mbm-section-alt"
+      id="gallery"
+    >
+      <div class="mbm-container">
+        <div class="mbm-section-head">
+          <span class="mbm-kicker">
+            Game Gallery
+          </span>
+
+          <h2>
+            Verdantia brought to arcade life
+          </h2>
+
+          <p>
+            Explore the finished menus, game features, illustrated
+            regions, and handcrafted presentation of MegaBlast Mayhem.
+          </p>
         </div>
 
         <div class="mbm-screenshot-grid mbm-gallery-grid">
           <article>
-            <img src="Images/illustrated_caverns.png" alt="Illustrated Crystal Caverns artwork" />
+            <img
+              src="Images/PlayGameStartScreen1.png"
+              alt="MegaBlast Mayhem Play Game menu"
+              loading="lazy"
+            />
+
+            <span>Play Game</span>
+          </article>
+
+          <article>
+            <img
+              src="Images/AchievementsStartScreen1.png"
+              alt="MegaBlast Mayhem achievements screen"
+              loading="lazy"
+            />
+
+            <span>Achievements</span>
+          </article>
+
+          <article>
+            <img
+              src="Images/SettingsStartScreen1.png"
+              alt="MegaBlast Mayhem settings screen"
+              loading="lazy"
+            />
+
+            <span>Settings</span>
+          </article>
+
+          <article>
+            <img
+              src="Images/ControlsStartScreen1.png"
+              alt="MegaBlast Mayhem controls menu"
+              loading="lazy"
+            />
+
+            <span>Controls</span>
+          </article>
+
+          <article>
+            <img
+              src="Images/HowToPlayStartScreen1.png"
+              alt="MegaBlast Mayhem how to play screen"
+              loading="lazy"
+            />
+
+            <span>How to Play</span>
+          </article>
+
+          <article>
+            <img
+              src="Images/PlayGameStartScreen2.png"
+              alt="MegaBlast Mayhem game mode selection"
+              loading="lazy"
+            />
+
+            <span>Game Modes</span>
+          </article>
+
+          <article>
+            <img
+              src="Images/illustrated_caverns.png"
+              alt="Illustrated Crystal Caverns artwork"
+              loading="lazy"
+            />
+
             <span>Crystal Caverns</span>
           </article>
 
           <article>
-            <img src="Images/bambooharbor.png" alt="Bamboo Harbor artwork" />
+            <img
+              src="Images/bambooharbor.png"
+              alt="Bamboo Harbor artwork"
+              loading="lazy"
+            />
+
             <span>Bamboo Harbor</span>
           </article>
 
           <article>
-            <img src="Images/EucalptusSummit.png" alt="Eucalyptus Summit artwork" />
+            <img
+              src="Images/EucalptusSummit.png"
+              alt="Eucalyptus Summit artwork"
+              loading="lazy"
+            />
+
             <span>Eucalyptus Summit</span>
           </article>
         </div>
@@ -303,201 +662,537 @@
     </section>
 
     <!-- HEROES -->
-    <section class="mbm-section" id="heroes">
+    <section
+      class="mbm-section"
+      id="heroes"
+    >
       <div class="mbm-container">
         <div class="mbm-section-head">
-          <span class="mbm-kicker">Playable Heroes</span>
-          <h2>The Eucalyptus Edge cast enters MegaBlast</h2>
+          <span class="mbm-kicker">
+            Playable Heroes
+          </span>
+
+          <h2>
+            Meet the MegaBlast Festival competitors
+          </h2>
+
           <p>
-            Inspired by the classic bomb arena games that defined couch multiplayer,
-            MegaBlast Mayhem reimagines the genre using the heroes, locations, and lore of the Eucalyptus Edge universe.
+            Eight fighters from across Verdantia enter the annual
+            tournament, each bringing their own personality,
+            history, and unmistakable fighting spirit.
           </p>
         </div>
 
         <div class="mbm-character-grid">
           <article class="mbm-character-card koda">
-            <img src="Images/extract_koda.png" alt="Koda pixel sprite" />
+            <img
+              src="Images/extract_koda.png"
+              alt="Koda pixel sprite"
+              loading="lazy"
+            />
+
             <h3>Koda</h3>
-            <p>Guardian of Eucalyptus Summit.</p>
+
+            <p>
+              A courageous koala guardian from Eucalyptus Summit
+              who fights to protect his home and friends.
+            </p>
           </article>
 
           <article class="mbm-character-card banjo">
-            <img src="Images/extract_banjo.png" alt="Banjo pixel sprite" />
+            <img
+              src="Images/extract_banjo.png"
+              alt="Banjo pixel sprite"
+              loading="lazy"
+            />
+
             <h3>Banjo</h3>
-            <p>Sugar glider rogue built for quick movement.</p>
+
+            <p>
+              A clever sugar glider rogue whose speed and
+              confidence make him difficult to corner.
+            </p>
           </article>
 
           <article class="mbm-character-card kiri">
-            <img src="Images/extract_kiri.png" alt="Kiri pixel sprite" />
+            <img
+              src="Images/extract_kiri.png"
+              alt="Kiri pixel sprite"
+              loading="lazy"
+            />
+
             <h3>Kiri</h3>
-            <p>Kookaburra warrior with bright blue flair.</p>
+
+            <p>
+              A bold kookaburra competitor who brings bright
+              energy and fearless determination to every arena.
+            </p>
           </article>
 
           <article class="mbm-character-card ripper">
-            <img src="Images/extract_ripper.png" alt="Ripper pixel sprite" />
+            <img
+              src="Images/extract_ripper.png"
+              alt="Ripper pixel sprite"
+              loading="lazy"
+            />
+
             <h3>Ripper</h3>
-            <p>Tasmanian devil brawler made for chaos.</p>
+
+            <p>
+              A powerful Tasmanian devil brawler who thrives
+              in the center of explosive chaos.
+            </p>
           </article>
 
           <article class="mbm-character-card atlas">
-            <img src="Images/extract_atlas.png" alt="Atlas pixel sprite" />
+            <img
+              src="Images/extract_atlas.png"
+              alt="Atlas pixel sprite"
+              loading="lazy"
+            />
+
             <h3>Atlas</h3>
-            <p>Emu spear fighter with reach and precision.</p>
+
+            <p>
+              A proud emu warrior whose reach, precision, and
+              commanding presence make him a formidable rival.
+            </p>
           </article>
 
           <article class="mbm-character-card echo">
-            <img src="Images/extract_echo.png" alt="Echo pixel sprite" />
+            <img
+              src="Images/extract_echo.png"
+              alt="Echo pixel sprite"
+              loading="lazy"
+            />
+
             <h3>Echo</h3>
-            <p>Platypus fighter wielding icy crystal tonfa.</p>
+
+            <p>
+              A resourceful platypus fighter shaped by the frozen
+              beauty and danger of Frostpine Ridge.
+            </p>
           </article>
 
           <article class="mbm-character-card wren">
-            <img src="Images/extract_wren.png" alt="Wren pixel sprite" />
+            <img
+              src="Images/extract_wren.png"
+              alt="Wren pixel sprite"
+              loading="lazy"
+            />
+
             <h3>Wren</h3>
-            <p>Kangaroo boxing brawler with explosive power.</p>
+
+            <p>
+              A fearless kangaroo boxer whose explosive strength
+              makes him one of Verdantia’s toughest competitors.
+            </p>
           </article>
 
           <article class="mbm-character-card sonia">
-            <img src="Images/extract_sonia.png" alt="Sonia pixel sprite" />
+            <img
+              src="Images/extract_sonia.png"
+              alt="Sonia pixel sprite"
+              loading="lazy"
+            />
+
             <h3>Sonia</h3>
-            <p>White tigress warrior and future Verdantia legend.</p>
+
+            <p>
+              The mysterious white tigress champion awaiting
+              anyone strong enough to reach the festival finale.
+            </p>
           </article>
         </div>
       </div>
     </section>
 
     <!-- REGIONS -->
-    <section class="mbm-section mbm-section-alt" id="regions">
+    <section
+      class="mbm-section mbm-section-alt"
+      id="regions"
+    >
       <div class="mbm-container">
         <div class="mbm-section-head">
-          <span class="mbm-kicker">Five Regions · Ten Arenas</span>
-          <h2>Tour the battlegrounds of Verdantia</h2>
-          <p>Every region includes two handcrafted arenas, a distinct visual identity, and its own place in the MegaBlast Festival.</p>
+          <span class="mbm-kicker">
+            Five Regions · Ten Arenas
+          </span>
+
+          <h2>
+            Tour the battlegrounds of Verdantia
+          </h2>
+
+          <p>
+            Every region contains two handcrafted arenas, a
+            distinct visual identity, and its own place in the
+            annual MegaBlast Festival.
+          </p>
         </div>
 
         <div class="mbm-region-grid">
           <article class="mbm-region-card">
-            <img class="mbm-region-art" src="Images/region_summit_v2.png" alt="Eucalyptus Summit region artwork" />
-            <img class="mbm-region-bezel" src="Images/bezel_summit_master.png" alt="Eucalyptus Summit game arena presentation" />
-            <div><h3>Eucalyptus Summit</h3><p>Mossy ruins, great roots, waterfalls, and elevated forest paths.</p></div>
+            <img
+              class="mbm-region-art"
+              src="Images/region_summit_v2.png"
+              alt="Eucalyptus Summit region artwork"
+              loading="lazy"
+            />
+
+            <img
+              class="mbm-region-bezel"
+              src="Images/bezel_summit_master.png"
+              alt="Eucalyptus Summit arena presentation"
+              loading="lazy"
+            />
+
+            <div>
+              <h3>Eucalyptus Summit</h3>
+
+              <p>
+                Moss-covered ruins, towering roots, waterfalls,
+                and elevated forest paths.
+              </p>
+            </div>
           </article>
 
           <article class="mbm-region-card">
-            <img class="mbm-region-art" src="Images/region_caverns_v2.png" alt="Crystal Caverns region artwork" />
-            <img class="mbm-region-bezel" src="Images/bezel_caverns_master.png" alt="Crystal Caverns game arena presentation" />
-            <div><h3>Crystal Caverns</h3><p>Glowing crystals, ancient stone, lantern light, and dangerous underground passages.</p></div>
+            <img
+              class="mbm-region-art"
+              src="Images/region_caverns_v2.png"
+              alt="Crystal Caverns region artwork"
+              loading="lazy"
+            />
+
+            <img
+              class="mbm-region-bezel"
+              src="Images/bezel_caverns_master.png"
+              alt="Crystal Caverns arena presentation"
+              loading="lazy"
+            />
+
+            <div>
+              <h3>Crystal Caverns</h3>
+
+              <p>
+                Glowing crystals, ancient stone, lantern light,
+                and dangerous underground passages.
+              </p>
+            </div>
           </article>
 
           <article class="mbm-region-card">
-            <img class="mbm-region-art" src="Images/region_harbor_v2.png" alt="Bamboo Harbor region artwork" />
-            <img class="mbm-region-bezel" src="Images/bezel_harbor_master.png" alt="Bamboo Harbor game arena presentation" />
-            <div><h3>Bamboo Harbor</h3><p>Busy docks, bamboo walkways, rope posts, lanterns, and open water.</p></div>
+            <img
+              class="mbm-region-art"
+              src="Images/region_harbor_v2.png"
+              alt="Bamboo Harbor region artwork"
+              loading="lazy"
+            />
+
+            <img
+              class="mbm-region-bezel"
+              src="Images/bezel_harbor_master.png"
+              alt="Bamboo Harbor arena presentation"
+              loading="lazy"
+            />
+
+            <div>
+              <h3>Bamboo Harbor</h3>
+
+              <p>
+                Busy docks, bamboo walkways, rope posts,
+                glowing lanterns, and open water.
+              </p>
+            </div>
           </article>
 
           <article class="mbm-region-card">
-            <img class="mbm-region-art" src="Images/region_frostpine_v2.png" alt="Frostpine Ridge region artwork" />
-            <img class="mbm-region-bezel" src="Images/bezel_frostpine_master.png" alt="Frostpine Ridge game arena presentation" />
-            <div><h3>Frostpine Ridge</h3><p>Frozen stone, snow-covered paths, mountain pines, and biting winds.</p></div>
+            <img
+              class="mbm-region-art"
+              src="Images/region_frostpine_v2.png"
+              alt="Frostpine Ridge region artwork"
+              loading="lazy"
+            />
+
+            <img
+              class="mbm-region-bezel"
+              src="Images/bezel_frostpine_master.png"
+              alt="Frostpine Ridge arena presentation"
+              loading="lazy"
+            />
+
+            <div>
+              <h3>Frostpine Ridge</h3>
+
+              <p>
+                Frozen stone, snow-covered paths, mountain pines,
+                glittering ice, and biting winds.
+              </p>
+            </div>
           </article>
 
           <article class="mbm-region-card">
-            <img class="mbm-region-art" src="Images/region_outback_v2.png" alt="Sunbaked Outback region artwork" />
-            <img class="mbm-region-bezel" src="Images/bezel_outback_master.png" alt="Sunbaked Outback game arena presentation" />
-            <div><h3>Sunbaked Outback</h3><p>Red earth, weathered sandstone, dry grass, and ancient desert formations.</p></div>
+            <img
+              class="mbm-region-art"
+              src="Images/region_outback_v2.png"
+              alt="Sunbaked Outback region artwork"
+              loading="lazy"
+            />
+
+            <img
+              class="mbm-region-bezel"
+              src="Images/bezel_outback_master.png"
+              alt="Sunbaked Outback arena presentation"
+              loading="lazy"
+            />
+
+            <div>
+              <h3>Sunbaked Outback</h3>
+
+              <p>
+                Red earth, weathered sandstone, dry grass,
+                desert heat, and ancient rock formations.
+              </p>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- STEAM WISHLIST -->
-    <section class="mbm-section mbm-wishlist-section" id="wishlist">
+    <!-- STEAM RELEASE -->
+    <section
+      class="mbm-section mbm-wishlist-section"
+      id="steam"
+    >
       <div class="mbm-container mbm-wishlist-grid">
         <div>
-          <span class="mbm-kicker">Steam Release</span>
-          <h2>Help MegaBlast Mayhem reach more players</h2>
-          <p>The Steam release is part of the Version 3.0 launch plan, alongside achievements, Steam Cloud, controller glyphs, and the complete festival experience.</p>
-          <p class="mbm-wishlist-note">The official Steam store link will be added here as soon as the page is public.</p>
-        </div>
-        <img src="Images/wishlist_card_approved.png" alt="Wishlist Eucalyptus Edge MegaBlast Mayhem on Steam promotional card" />
-      </div>
-    </section>
+          <span class="mbm-kicker">
+            Steam Release
+          </span>
 
-    <!-- ROADMAP -->
-    <section class="mbm-section mbm-franchise-section">
-      <div class="mbm-container mbm-franchise-grid">
-        <div>
-          <span class="mbm-kicker">The Verdantia Journey</span>
-          <h2>The first complete chapter of Verdantia</h2>
+          <h2>
+            Enter the MegaBlast Festival
+          </h2>
 
           <p>
-            MegaBlast Mayhem began as a university project and grew into PhoenixGold Game Studios’ first commercial game: a polished, self-contained MegaBlast Festival adventure set before Eucalyptus Edge.
+            MegaBlast Mayhem brings the complete festival
+            experience to Steam with achievements, Steam Cloud,
+            controller support, customizable display settings,
+            and the full Region Tour.
           </p>
 
-          <p>
-            Its story ends with Sonia’s challenge, celebrates the tournament, and closes with one promise: “The adventure continues in Eucalyptus Edge.”
+          <p class="mbm-wishlist-note">
+            Visit the official Steam page to wishlist the game,
+            follow development news, or purchase it when available.
           </p>
 
           <div class="mbm-actions">
-            <a href="eucalyptus-edge.html" class="mbm-btn mbm-btn-primary">
+            <a
+              href="https://store.steampowered.com/app/4999100/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mbm-btn mbm-btn-primary"
+            >
+              View on Steam
+            </a>
+          </div>
+        </div>
+
+        <a
+          href="https://store.steampowered.com/app/4999100/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="View MegaBlast Mayhem on Steam"
+        >
+          <img
+            src="Images/wishlist_card_approved.png"
+            alt="Wishlist Eucalyptus Edge MegaBlast Mayhem on Steam promotional card"
+            loading="lazy"
+          />
+        </a>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="mbm-section mbm-franchise-section">
+      <div class="mbm-container mbm-franchise-grid">
+        <div>
+          <span class="mbm-kicker">
+            Project History
+          </span>
+
+          <h2>
+            From classroom prototype to commercial release
+          </h2>
+
+          <p>
+            MegaBlast Mayhem began as a university project
+            approximately four years before its commercial release.
+            The original concept was created by Trevor Hicks and
+            co-developed with classmate Calvin Bryant during an
+            introductory JavaScript and Object-Oriented Programming
+            course.
+          </p>
+
+          <p>
+            What began as a classroom prototype evolved into
+            PhoenixGold Game Studios’ first commercial game and
+            the first playable title set in the world of Verdantia.
+          </p>
+
+          <p>
+            Its story concludes with Sonia’s challenge, celebrates
+            the tournament, and ends with one promise:
+            “The adventure continues in Eucalyptus Edge.”
+          </p>
+
+          <div class="mbm-actions">
+            <a
+              href="eucalyptus-edge.html"
+              class="mbm-btn mbm-btn-primary"
+            >
               Explore Eucalyptus Edge
             </a>
 
             <a
-              href="https://pheonixgold.itch.io/eucalyptus-edge-megablast-mayhem"
+              href="https://store.steampowered.com/app/4999100/"
               target="_blank"
               rel="noopener noreferrer"
               class="mbm-btn mbm-btn-secondary"
             >
-              Visit itch.io
+              Visit Steam
             </a>
           </div>
         </div>
 
         <div class="mbm-franchise-card">
-          <strong>Release Order</strong>
+          <strong>The Verdantia Journey</strong>
 
           <span>1</span>
+
           <h3>MegaBlast Mayhem</h3>
-          <p>First playable Verdantia release.</p>
+
+          <p>
+            The first playable adventure in Verdantia and
+            PhoenixGold Game Studios’ first commercial release.
+          </p>
 
           <span>2</span>
-          <h3>Eucalyptus Edge</h3>
-          <p>Main 3D weapon-based arena fighter.</p>
 
-          <span>3</span>
-          <h3>The Verdantia Legacy</h3>
-          <p>A finished arcade classic that introduces the world before the flagship adventure.</p>
+          <h3>Eucalyptus Edge</h3>
+
+          <p>
+            The flagship 3D weapon-based arena fighter that
+            continues the heroes’ journey through Verdantia.
+          </p>
         </div>
       </div>
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer class="mbm-footer">
     <div class="mbm-container mbm-footer-inner">
-      <p><img class="mbm-footer-crest" src="Images/verdant_phoenix_crest_emblem_master.png" alt="" /> Eucalyptus Edge: MegaBlast Mayhem is a PhoenixGold Game Studios original.</p>
+      <p>
+        <img
+          class="mbm-footer-crest"
+          src="Images/verdant_phoenix_crest_emblem_master.png"
+          alt=""
+        />
 
-      <nav>
-        <a href="index.html">Studio</a>
-        <a href="eucalyptus-edge.html">Eucalyptus Edge</a>
-        <a href="megablast-mayhem.html">MegaBlast Mayhem</a>
+        Eucalyptus Edge: MegaBlast Mayhem is a
+        PhoenixGold Game Studios original.
+      </p>
+
+      <nav aria-label="Footer navigation">
+        <a href="index.html">
+          Studio
+        </a>
+
+        <a href="eucalyptus-edge.html">
+          Eucalyptus Edge
+        </a>
+
+        <a href="megablast-mayhem.html">
+          MegaBlast Mayhem
+        </a>
+
         <a
-          href="https://pheonixgold.itch.io/eucalyptus-edge-megablast-mayhem"
+          href="https://store.steampowered.com/app/4999100/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          itch.io
+          Steam
+        </a>
+
+        <a
+          href="https://youtu.be/Aq0C070erRg"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          YouTube
         </a>
       </nav>
     </div>
 
     <div class="mbm-footer-bottom">
-      © <span id="current-year"></span> PhoenixGold Game Studios. All rights reserved. · Cute Fighters. Serious Skills. · The adventure continues in Eucalyptus Edge.
+      © <span id="current-year"></span>
+      PhoenixGold Game Studios. All rights reserved.
+      · Cute Fighters. Serious Skills.
+      · The adventure continues in Eucalyptus Edge.
     </div>
   </footer>
 
   <script src="js/main.js"></script>
+
   <script>
-    document.getElementById("current-year").textContent = new Date().getFullYear();
+    const currentYear = document.getElementById("current-year");
+
+    if (currentYear) {
+      currentYear.textContent = new Date().getFullYear();
+    }
+
+    const mobileMenuButton =
+      document.querySelector(".mobile-menu-btn");
+
+    const mobileMenu =
+      document.querySelector(".mobile-menu");
+
+    const mobileLinks =
+      document.querySelectorAll(".mobile-menu .mobile-link");
+
+    if (mobileMenuButton && mobileMenu) {
+      mobileMenuButton.addEventListener("click", function () {
+        const isExpanded =
+          mobileMenuButton.getAttribute("aria-expanded") === "true";
+
+        mobileMenuButton.setAttribute(
+          "aria-expanded",
+          String(!isExpanded)
+        );
+
+        mobileMenu.classList.toggle("open", !isExpanded);
+
+        document.body.classList.toggle(
+          "mobile-menu-open",
+          !isExpanded
+        );
+      });
+
+      mobileLinks.forEach(function (link) {
+        link.addEventListener("click", function () {
+          mobileMenuButton.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+          mobileMenu.classList.remove("open");
+
+          document.body.classList.remove(
+            "mobile-menu-open"
+          );
+        });
+      });
+    }
   </script>
 </body>
 </html>
