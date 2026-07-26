@@ -114,3 +114,16 @@
   .home-hero { min-height: auto; padding-block: 7.5rem 4rem; }
   .home-road li { grid-template-columns: 1fr; gap: .5rem; }
 }
+
+/* ---- studio -----------------------------------------------------
+   Prose on the left, hard facts on the right. A solo studio is more
+   convincing with specifics than with adjectives. */
+.home-studio { display: grid; grid-template-columns: 1.35fr 1fr; gap: var(--pg-gap-lg); align-items: start; }
+.home-studio h2 { margin: .4rem 0 1rem; }
+.home-facts { margin: 0; padding: var(--pg-gap-md); border: 1px solid var(--pg-line); border-radius: var(--pg-radius-lg); background: var(--pg-canopy); display: grid; gap: 0; }
+.home-facts > div { display: grid; gap: .15rem; padding-block: .85rem; border-bottom: 1px solid var(--pg-line); }
+.home-facts > div:last-child { border-bottom: 0; padding-bottom: 0; }
+.home-facts > div:first-child { padding-top: 0; }
+.home-facts dt { font-size: var(--pg-t-xs); font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--pg-gold); }
+.home-facts dd { margin: 0; color: var(--pg-text); font-size: var(--pg-t-sm); }
+@media (max-width: 900px) { .home-studio { grid-template-columns: 1fr; } }
