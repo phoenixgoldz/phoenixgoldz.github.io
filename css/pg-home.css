@@ -1,0 +1,112 @@
+/* ============================================================
+   Studio home page. Layers on css/pg-system.css and adds only
+   what this page needs. Nothing here redefines a shared token.
+   ============================================================ */
+
+.pg-skip {
+  position: absolute; left: -9999px; top: 0; z-index: 1000;
+  background: var(--pg-lantern); color: #21160a;
+  padding: .7rem 1.1rem; font-weight: 700; border-radius: 0 0 10px 0;
+}
+.pg-skip:focus { left: 0; }
+
+/* ---- hero -----------------------------------------------------
+   The art sits behind a heavy green wash so the type always wins.
+   The lantern is a single radial light anchored where the eye
+   lands first, top-left of the headline. */
+.home-hero {
+  position: relative;
+  min-height: min(94vh, 900px);
+  display: flex; align-items: center;
+  padding-block: 9rem 5rem;
+  overflow: hidden;
+  isolation: isolate;
+}
+.home-hero-art { position: absolute; inset: 0; z-index: -2; }
+.home-hero-art img { width: 100%; height: 100%; object-fit: cover; object-position: center 28%; }
+.home-hero::after {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background:
+    linear-gradient(105deg, var(--pg-night) 12%, color-mix(in srgb, var(--pg-night) 72%, transparent) 52%, transparent 88%),
+    linear-gradient(180deg, color-mix(in srgb, var(--pg-night) 55%, transparent), var(--pg-night) 96%);
+}
+.home-lantern {
+  position: absolute; z-index: -1;
+  left: clamp(-6rem, 4vw, 6rem); top: 24%;
+  width: min(46rem, 80vw); aspect-ratio: 1;
+  background: radial-gradient(circle, rgba(242,210,124,.19), rgba(242,210,124,.07) 42%, transparent 68%);
+  animation: lantern 7s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+@keyframes lantern { from { opacity: .78; transform: scale(.97); } to { opacity: 1; transform: scale(1.03); } }
+
+.home-hero-inner { position: relative; }
+.home-verdantia { color: var(--pg-lantern); display: block; }
+.home-hero .pg-lede { margin-top: 1.4rem; }
+.home-actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2.2rem; }
+
+/* Page-load sequence: eyebrow, headline, lede, buttons. One
+   orchestrated moment rather than effects scattered down the page. */
+.home-in { opacity: 0; transform: translateY(16px); animation: home-rise .8s cubic-bezier(.2,.7,.3,1) forwards; }
+.home-in-1 { animation-delay: .05s; }
+.home-in-2 { animation-delay: .18s; }
+.home-in-3 { animation-delay: .32s; }
+.home-in-4 { animation-delay: .46s; }
+@keyframes home-rise { to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .home-in { opacity: 1; transform: none; animation: none; }
+  .home-lantern { animation: none; }
+}
+
+/* ---- slate ---------------------------------------------------- */
+.home-slate { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--pg-gap-md); margin-top: var(--pg-gap-lg); }
+.home-title {
+  border: 1px solid var(--pg-line); border-radius: var(--pg-radius-lg);
+  background: var(--pg-canopy); overflow: hidden;
+  display: flex; flex-direction: column;
+  transition: border-color .25s ease, transform .25s ease, box-shadow .25s ease;
+}
+.home-title:hover { border-color: var(--pg-line-lit); transform: translateY(-4px); box-shadow: var(--pg-shadow); }
+.home-title-media { display: block; aspect-ratio: 16 / 8; overflow: hidden; background: var(--pg-bark); }
+.home-title-media img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s cubic-bezier(.2,.7,.3,1); }
+.home-title:hover .home-title-media img { transform: scale(1.04); }
+.home-title-body { padding: var(--pg-gap-md); display: flex; flex-direction: column; gap: .7rem; flex: 1; }
+.home-title-body h3 { margin: 0; }
+.home-title-body p { margin: 0; flex: 1; }
+
+.home-stage {
+  align-self: flex-start;
+  font-size: var(--pg-t-xs); font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+  padding: .3rem .7rem; border-radius: 999px;
+  border: 1px solid var(--pg-line); color: var(--pg-muted);
+}
+.home-stage-live { color: var(--pg-night); background: var(--pg-leaf); border-color: transparent; }
+
+.home-link { font-weight: 700; font-size: var(--pg-t-sm); color: var(--pg-lantern); letter-spacing: .03em; }
+.home-link span { display: inline-block; transition: transform .2s ease; }
+.home-link:hover span { transform: translateX(4px); }
+
+/* ---- vision --------------------------------------------------- */
+.home-vision { background: var(--pg-canopy); border-block: 1px solid var(--pg-line); }
+.home-principles { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--pg-gap-md); margin-top: var(--pg-gap-lg); }
+.home-principles article { padding: var(--pg-gap-md); border-left: 2px solid var(--pg-gold); background: rgba(255,255,255,.02); border-radius: 0 var(--pg-radius) var(--pg-radius) 0; }
+.home-principles h3 { margin: 0 0 .5rem; color: var(--pg-lantern); }
+.home-principles p { margin: 0; }
+
+/* ---- road ahead -----------------------------------------------
+   Numbered, because this genuinely is a sequence: the demo ships
+   before the full game, which ships before the flagship. */
+.home-road { list-style: none; margin: var(--pg-gap-lg) 0 0; padding: 0; display: grid; gap: var(--pg-gap-md); counter-reset: none; }
+.home-road li { display: grid; grid-template-columns: auto 1fr; gap: var(--pg-gap-md); align-items: start; padding-bottom: var(--pg-gap-md); border-bottom: 1px solid var(--pg-line); }
+.home-road li:last-child { border-bottom: 0; padding-bottom: 0; }
+.home-road-n { font-family: var(--pg-display); font-size: var(--pg-t-xl); color: var(--pg-gold); opacity: .55; line-height: 1; }
+.home-road h3 { margin: 0 0 .35rem; }
+.home-road p { margin: 0; }
+
+@media (max-width: 900px) {
+  .home-slate, .home-principles { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .home-hero { min-height: auto; padding-block: 7.5rem 4rem; }
+  .home-road li { grid-template-columns: 1fr; gap: .5rem; }
+}
