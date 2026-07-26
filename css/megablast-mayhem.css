@@ -264,3 +264,9 @@ body.mobile-menu-open,body.lightbox-open{overflow:hidden}
   .demo-shot img,.demo-shot-main img{height:240px}
   .mbm-game-region-grid .mbm-region-bezel{height:230px}
 }
+
+/* MegaBlast key-art refresh: no menu screenshots */
+.mbm-promo-preview img{aspect-ratio:4/3;object-position:center 35%}
+.gallery-card[data-category="art"] img{object-position:center 28%}
+.gallery-card[data-full$="mbm_vertical_capsule.png"] img,
+.gallery-card[data-full$="mbm_library_capsule.png"] img{object-position:center 22%}
