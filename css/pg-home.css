@@ -81,6 +81,10 @@
   border: 1px solid var(--pg-line); color: var(--pg-muted);
 }
 .home-stage-live { color: var(--pg-night); background: var(--pg-leaf); border-color: transparent; }
+/* The active project gets the lantern, not the leaf: gold is the studio's
+   "this is where the work is" signal, used in exactly one place per page. */
+.home-stage-active { color: var(--pg-night); background: var(--pg-lantern); border-color: transparent; }
+.home-slate-note { margin: .6rem 0 0; }
 
 .home-link { font-weight: 700; font-size: var(--pg-t-sm); color: var(--pg-lantern); letter-spacing: .03em; }
 .home-link span { display: inline-block; transition: transform .2s ease; }
