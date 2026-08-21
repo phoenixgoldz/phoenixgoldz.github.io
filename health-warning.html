@@ -1,141 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#04100b">
-  <link rel="icon" href="Images/Logo2026.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/pg-system.css">
+<!--#include head-->
+  <title>Health &amp; Safety — PhoenixGold Game Studios</title>
+  <meta name="description" content="Health, photosensitivity, comfort, and player-safety information for PhoenixGold Game Studios titles including Faefera, MegaBlast Mayhem, and Eucalyptus Edge.">
   <link rel="stylesheet" href="css/pg-home.css">
-  <title>Health Warning — Eucalyptus Edge: MegaBlast Mayhem</title>
-  <meta name="description" content="Health, photosensitivity, and accessibility information for Eucalyptus Edge: MegaBlast Mayhem by PhoenixGold Game Studios.">
   <style>
-    .health-wrap{max-width:900px}
+    .health-wrap{max-width:920px}
     .health-card{margin:1.4rem 0;padding:1.35rem 1.45rem;border:1px solid var(--pg-line);border-radius:var(--pg-radius-lg);background:var(--pg-canopy)}
     .health-card-warning{border-left:4px solid #ff6b5e;background:linear-gradient(90deg,rgba(255,107,94,.09),var(--pg-canopy) 28%)}
     .health-card-access{border-left:4px solid var(--pg-leaf);background:linear-gradient(90deg,rgba(154,203,61,.09),var(--pg-canopy) 28%)}
+    .health-card-fae{border-left:4px solid #75d9ff;background:linear-gradient(90deg,rgba(117,217,255,.08),var(--pg-canopy) 30%)}
     .health-card strong{color:var(--pg-lantern)}
     .health-list{color:var(--pg-muted);padding-left:1.3rem}
-    .health-list li+li{margin-top:.3rem}
+    .health-list li+li{margin-top:.35rem}
     .health-note{margin-top:1.5rem;color:var(--pg-muted);font-size:var(--pg-t-sm)}
+    .health-games{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:1.5rem 0 2rem}
+    .health-games article{padding:1rem;border:1px solid var(--pg-line);border-radius:14px;background:rgba(255,255,255,.02)}
+    .health-games h3{margin:0 0 .4rem;font-size:1.15rem;color:var(--pg-lantern)}
+    .health-games p{margin:0;color:var(--pg-muted);font-size:var(--pg-t-sm)}
+    @media(max-width:760px){.health-games{grid-template-columns:1fr}}
   </style>
 </head>
 <body data-page="legal">
-<a class="pg-skip" href="#main">Skip to content</a>
-
-<header class="pg-header" id="pg-header">
-  <div class="pg-wrap pg-header-inner">
-    <a class="pg-brand" href="index.html">
-      <img src="Images/Logo2026.png" alt="" width="40" height="40">
-      <span>PhoenixGold</span>
-    </a>
-    <button class="pg-menu-btn" type="button" aria-expanded="false" aria-controls="pg-nav">Menu</button>
-    <nav class="pg-nav" id="pg-nav" aria-label="Primary">
-      <a href="index.html">Studio</a>
-      <a href="megablast-mayhem.html">MegaBlast Mayhem</a>
-      <a href="eucalyptus-edge.html">Eucalyptus Edge</a>
-      <a class="pg-btn pg-btn-primary" href="https://store.steampowered.com/app/4999100/" target="_blank" rel="noopener">View on Steam</a>
-    </nav>
-  </div>
-</header>
+<!--#include header-->
 
 <main id="main" class="pg-section" style="padding-top:8rem;min-height:65vh">
   <div class="pg-wrap health-wrap">
     <p class="pg-eyebrow">Player Safety</p>
-    <h1 class="pg-display">Health Warning</h1>
-    <p class="pg-lede">Health and photosensitivity information for Eucalyptus Edge: MegaBlast Mayhem.</p>
+    <h1 class="pg-display">Health &amp; Safety</h1>
+    <p class="pg-lede">General health, photosensitivity, and comfort information for PhoenixGold Game Studios games.</p>
 
     <section class="health-card health-card-warning" aria-labelledby="photosensitive-warning">
       <h2 id="photosensitive-warning" class="pg-display" style="font-size:2rem;margin-top:0">Photosensitive Seizure Warning</h2>
       <p class="pg-body">
-        Some visual effects in Eucalyptus Edge: MegaBlast Mayhem include flashing lights, rapid visual transitions,
-        explosions, screen shake, and bright particle effects. A very small percentage of people may experience
-        seizures or other adverse reactions when exposed to certain flashing lights or visual patterns.
+        Video games can include flashing lights, changing colors, particle effects, rapid visual transitions, screen movement, explosions, or repeating visual patterns.
+        A very small percentage of people may experience seizures or other adverse reactions when exposed to certain visual effects, even without a previous history of seizures.
+      </p>
+      <p class="pg-body">
+        Stop playing immediately if you experience dizziness, altered vision, eye or muscle twitching, disorientation, loss of awareness, involuntary movement, nausea, or severe discomfort.
+        If you have a history of epilepsy or photosensitive seizures, consult a qualified medical professional before playing.
       </p>
     </section>
 
-    <h2 class="pg-display" style="font-size:2rem">Accessibility Options</h2>
+    <h2 class="pg-display" style="font-size:2rem">How this applies to our games</h2>
+    <div class="health-games">
+      <article>
+        <h3>Faefera</h3>
+        <p>A non-combat cozy adventure, but it still uses magical glow effects, particles, animated UI, day/night transitions, environmental lighting, and camera movement. Development builds may change as presentation and accessibility options are refined.</p>
+      </article>
+      <article>
+        <h3>MegaBlast Mayhem</h3>
+        <p>Contains explosions, bright effects, screen shake, rapid action, and fast visual transitions associated with its arena gameplay.</p>
+      </article>
+      <article>
+        <h3>Eucalyptus Edge</h3>
+        <p>Its in-development 3D combat presentation may include impacts, camera movement, bright ability effects, and other high-motion sequences.</p>
+      </article>
+    </div>
+
+    <section class="health-card health-card-fae">
+      <h2 class="pg-display" style="font-size:2rem;margin-top:0">Faefera environmental hazards</h2>
+      <p class="pg-body" style="margin-bottom:0">
+        Faefera does not use traditional combat as its main source of danger. In-game health can instead be affected by environmental hazards such as lava, extreme cold, or dangerous falls.
+        These are fictional game systems and should not be treated as real-world safety guidance.
+      </p>
+    </section>
+
+    <h2 class="pg-display" style="font-size:2rem">Play comfortably</h2>
+    <ul class="health-list">
+      <li>Play in a comfortably lit room and sit an appropriate distance from the display.</li>
+      <li>Take regular breaks, especially during longer sessions.</li>
+      <li>Avoid playing when exhausted, ill, dizzy, or otherwise uncomfortable.</li>
+      <li>Keep game and headphone volume at a comfortable level.</li>
+      <li>Use a comfortable posture and stop if your hands, wrists, neck, eyes, or back begin to hurt.</li>
+      <li>For gamepad play, use a controller and grip that are comfortable for you; for keyboard and mouse, position both to avoid unnecessary strain.</li>
+    </ul>
+
     <section class="health-card health-card-access">
-      <p class="pg-body" style="margin:0">
-        MegaBlast Mayhem includes visual and accessibility settings intended to reduce visual intensity.
-        Players can adjust relevant effects and display options from the in-game settings menus.
+      <h2 class="pg-display" style="font-size:2rem;margin-top:0">Accessibility &amp; reduced intensity</h2>
+      <p class="pg-body">
+        Accessibility and presentation settings vary by title and by development stage. Where a game provides controls for visual intensity, screen shake, audio, display, or similar options,
+        use the settings that make play more comfortable for you. Pre-release features may be revised before launch.
+      </p>
+      <p class="pg-body" style="margin-bottom:0">
+        Web animations on this site also respect your operating system or browser&rsquo;s <strong>reduced motion</strong> preference where supported.
       </p>
     </section>
-
-    <h2 class="pg-display" style="font-size:2rem">Stop Playing Immediately If You Experience</h2>
-    <ul class="health-list">
-      <li>Dizziness</li>
-      <li>Altered vision</li>
-      <li>Eye or muscle twitching</li>
-      <li>Disorientation</li>
-      <li>Loss of awareness</li>
-      <li>Involuntary movements or convulsions</li>
-      <li>Nausea or severe discomfort</li>
-    </ul>
-
-    <h2 class="pg-display" style="font-size:2rem;margin-top:2rem">General Health Recommendations</h2>
-    <ul class="health-list">
-      <li>Play in a well-lit room.</li>
-      <li>Take regular breaks.</li>
-      <li>Avoid playing when tired or fatigued.</li>
-      <li>Sit a comfortable distance from your display.</li>
-      <li>If you have a history of epilepsy or photosensitive seizures, consult a medical professional before playing.</li>
-    </ul>
 
     <p class="health-note">
-      This page is provided as general player-safety information and is not a substitute for professional medical advice.
+      This page provides general player-safety information only and is not a substitute for professional medical advice, diagnosis, or treatment.
     </p>
   </div>
 </main>
 
-<hr class="pg-bunting" aria-hidden="true">
-<footer class="pg-footer">
-  <div class="pg-wrap">
-    <div class="pg-footer-grid">
-      <div>
-        <a class="pg-brand" href="index.html">
-          <img src="Images/Logo2026.png" alt="" width="40" height="40">
-          <span>PhoenixGold Game Studios</span>
-        </a>
-        <p class="pg-body" style="margin-top:.9rem;font-size:var(--pg-t-sm)">
-          An independent studio building family-friendly games set in Verdantia.
-        </p>
-      </div>
-      <div>
-        <h4>Games</h4>
-        <ul>
-          <li><a href="megablast-mayhem.html">MegaBlast Mayhem</a></li>
-          <li><a href="eucalyptus-edge.html">Eucalyptus Edge</a></li>
-          <li><a href="https://store.steampowered.com/app/4999100/" target="_blank" rel="noopener">Steam store page</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Studio</h4>
-        <ul>
-          <li><a href="https://www.youtube.com/watch?v=w6gMkhti-Lo" target="_blank" rel="noopener">Official trailer</a></li>
-          <li><a href="https://github.com/phoenixgoldz" target="_blank" rel="noopener">GitHub</a></li>
-          <li><a href="index.html#studio">About the studio</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Help &amp; Legal</h4>
-        <ul>
-          <li><a href="support.html">Support</a></li>
-          <li><a href="health-warning.html" aria-current="page">Health Warning</a></li>
-          <li><a href="privacy.html">Privacy Policy</a></li>
-          <li><a href="terms.html">Terms of Use</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="pg-colophon">
-      <span>&copy; 2026 PhoenixGold Game Studios. All rights reserved.</span>
-      <span>Eucalyptus Edge&trade; and MegaBlast Mayhem&trade; are trademarks of PhoenixGold Game Studios.</span>
-    </div>
-  </div>
-</footer>
-<script src="js/pg-site.js" defer></script>
+<!--#include footer-->
 </body>
 </html>
