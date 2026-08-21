@@ -127,3 +127,20 @@
 .home-facts dt { font-size: var(--pg-t-xs); font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--pg-gold); }
 .home-facts dd { margin: 0; color: var(--pg-text); font-size: var(--pg-t-sm); }
 @media (max-width: 900px) { .home-studio { grid-template-columns: 1fr; } }
+
+/* The studio page stays PhoenixGold forest/gold, but each game card previews its own identity. */
+.home-slate .home-title:nth-child(1){
+  border-color:rgba(126,205,239,.36);
+  background:linear-gradient(180deg,rgba(16,35,59,.96),rgba(9,23,43,.98));
+}
+.home-slate .home-title:nth-child(1) .home-link{color:#9edcf2}
+.home-slate .home-title:nth-child(2){
+  border-color:rgba(169,107,255,.34);
+  background:linear-gradient(180deg,rgba(22,17,43,.96),rgba(10,16,32,.98));
+}
+.home-slate .home-title:nth-child(2) .home-link{color:#86d9b5}
+.home-slate .home-title:nth-child(3){
+  border-color:rgba(255,120,28,.38);
+  background:linear-gradient(180deg,rgba(46,10,22,.96),rgba(25,6,13,.98));
+}
+.home-slate .home-title:nth-child(3) .home-link{color:#ffd75a}

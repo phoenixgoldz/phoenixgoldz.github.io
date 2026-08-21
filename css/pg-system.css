@@ -246,3 +246,62 @@ h3.pg-display { font-size: var(--pg-t-lg); }
 ::view-transition-new(root) { animation: pg-fade-in .3s ease both; }
 @keyframes pg-fade-out { to { opacity: 0; } }
 @keyframes pg-fade-in { from { opacity: 0; } }
+
+/* ============================================================
+   PAGE THEME OVERRIDES
+   Shared structure stays consistent, but each part of the site
+   gets its own atmosphere. The studio home keeps the forest/gold
+   PhoenixGold palette; legal/support pages no longer inherit it.
+   Game pages provide their own stronger palettes in their game CSS.
+   ============================================================ */
+body[data-page="legal"] {
+  --pg-night: #0b0e16;
+  --pg-canopy: #141927;
+  --pg-bark: #20283a;
+  --pg-lantern: #f1d8a3;
+  --pg-gold: #c9a96b;
+  --pg-leaf: #8faac7;
+  --pg-ember: #d37d72;
+  --pg-text: #f4f1eb;
+  --pg-muted: #c3c8d4;
+  --pg-line: rgba(201, 169, 107, .2);
+  --pg-line-lit: rgba(201, 169, 107, .48);
+  background:
+    radial-gradient(circle at 15% 0, rgba(87, 113, 164, .16), transparent 30rem),
+    linear-gradient(180deg, #0b0e16 0%, #101521 55%, #0b0e16 100%);
+}
+
+body[data-page="health"] {
+  --pg-night: #08131d;
+  --pg-canopy: #0e2130;
+  --pg-bark: #173143;
+  --pg-lantern: #ffd486;
+  --pg-gold: #f0a85e;
+  --pg-leaf: #79cfe3;
+  --pg-ember: #ff7f5f;
+  --pg-text: #f8f5ef;
+  --pg-muted: #bed0dc;
+  --pg-line: rgba(121, 207, 227, .18);
+  --pg-line-lit: rgba(255, 212, 134, .5);
+  background:
+    radial-gradient(circle at 18% 12%, rgba(121, 207, 227, .14), transparent 28rem),
+    radial-gradient(circle at 86% 8%, rgba(255, 127, 95, .12), transparent 24rem),
+    linear-gradient(180deg, #07121c 0%, #0b1b29 58%, #08131d 100%);
+}
+
+body[data-page="support"] {
+  --pg-night: #07131a;
+  --pg-canopy: #0d2027;
+  --pg-bark: #15313a;
+  --pg-lantern: #f5d783;
+  --pg-gold: #d5b15a;
+  --pg-leaf: #67d4bf;
+  --pg-ember: #f09a62;
+  --pg-text: #f4f5ef;
+  --pg-muted: #b9d1cf;
+  --pg-line: rgba(103, 212, 191, .17);
+  --pg-line-lit: rgba(245, 215, 131, .48);
+  background:
+    radial-gradient(circle at 50% 0, rgba(103, 212, 191, .12), transparent 32rem),
+    linear-gradient(180deg, #07131a, #0d2027 60%, #07131a);
+}

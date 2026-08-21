@@ -1,142 +1,195 @@
 /* ============================================================
-   Faefera — game page
-   Storybook daylight layered on the PhoenixGold design system.
-   All imagery on this page comes from supplied Faefera art.
+   Faefera — storybook fantasy theme
+   Uses supplied Faefera art + supplied VFX mote PNGs only.
+   This page intentionally does NOT inherit the studio-home green.
    ============================================================ */
 body[data-page="faefera"] {
-  --fae-sky: #7bd2ff;
-  --fae-deep: #071912;
-  --fae-leaf: #b9e968;
-  --fae-gold: #f7da7d;
-  --fae-blue: #75d9ff;
+  --pg-night: #09172b;
+  --pg-canopy: #10233b;
+  --pg-bark: #263a4f;
+  --pg-lantern: #ffe9a9;
+  --pg-gold: #d9ad54;
+  --pg-leaf: #86bd63;
+  --pg-ember: #ef9874;
+  --pg-text: #fff8e9;
+  --pg-muted: #d4dce7;
+  --pg-line: rgba(217, 173, 84, .2);
+  --pg-line-lit: rgba(255, 233, 169, .52);
+  background: #09172b;
+}
+
+body[data-page="faefera"] .pg-header {
+  background: color-mix(in srgb, #09172b 88%, transparent);
+}
+body[data-page="faefera"] .pg-header[data-scrolled="true"] {
+  background: color-mix(in srgb, #09172b 97%, transparent);
+}
+body[data-page="faefera"] .pg-footer {
+  background: #091522;
+  border-color: rgba(217,173,84,.25);
+}
+body[data-page="faefera"] .pg-bunting {
   background:
-    radial-gradient(circle at 50% 0, rgba(117,217,255,.08), transparent 34rem),
-    var(--pg-night);
+    linear-gradient(to bottom, rgba(255,233,169,.45) 0 2px, transparent 2px),
+    repeating-linear-gradient(90deg,#d9ad54 0 18px,#86bd63 18px 36px,#7fc9e8 36px 54px);
 }
 
 .fae-hero {
   position: relative;
-  min-height: min(96vh, 940px);
+  min-height: min(100vh, 980px);
   display: grid;
   align-items: end;
   overflow: hidden;
   isolation: isolate;
   padding: 8.5rem 0 4.5rem;
 }
-.fae-hero-art { position: absolute; inset: 0; z-index: -3; }
-.fae-hero-art img { width: 100%; height: 100%; object-fit: cover; object-position: center 52%; }
+.fae-hero-art { position:absolute; inset:0; z-index:-4; }
+.fae-hero-art img {
+  width:100%; height:100%; object-fit:cover; object-position:center 52%;
+  filter:saturate(1.04) contrast(1.02);
+}
 .fae-hero::before {
-  content:""; position:absolute; inset:0; z-index:-2;
+  content:""; position:absolute; inset:0; z-index:-3;
   background:
-    linear-gradient(180deg, rgba(4,16,11,.12) 0%, rgba(4,16,11,.12) 38%, rgba(4,16,11,.72) 78%, var(--pg-night) 100%),
-    linear-gradient(90deg, rgba(4,16,11,.7), transparent 60%);
+    linear-gradient(180deg,rgba(9,23,43,.08) 0%,rgba(9,23,43,.18) 42%,rgba(9,23,43,.7) 79%,#09172b 100%),
+    linear-gradient(90deg,rgba(9,23,43,.72) 0%,rgba(9,23,43,.42) 38%,rgba(9,23,43,.08) 72%);
 }
 .fae-hero::after {
-  content:""; position:absolute; inset:0; z-index:-1; pointer-events:none;
+  content:""; position:absolute; inset:0; z-index:-2; pointer-events:none;
   background:
-    radial-gradient(circle at 18% 22%, rgba(247,218,125,.24), transparent 17rem),
-    radial-gradient(circle at 76% 28%, rgba(117,217,255,.12), transparent 19rem);
+    radial-gradient(circle at 18% 22%,rgba(255,230,155,.2),transparent 17rem),
+    radial-gradient(circle at 78% 24%,rgba(126,205,239,.12),transparent 21rem);
 }
-.fae-sparkles, .fae-sparkles::before, .fae-sparkles::after {
-  position:absolute; inset:0; pointer-events:none;
-  background-image:
-    radial-gradient(circle, rgba(255,255,255,.95) 0 1px, transparent 1.8px),
-    radial-gradient(circle, rgba(247,218,125,.85) 0 1.2px, transparent 2px);
-  background-size: 160px 160px, 230px 230px;
-  background-position: 18px 42px, 88px 14px;
-  opacity:.42;
-  animation: fae-drift 12s linear infinite;
+.fae-hero-layout { position:relative; z-index:2; }
+.fae-hero-inner {
+  max-width: 760px;
+  padding: clamp(1.35rem, 2.5vw, 2.25rem);
+  border:1px solid rgba(255,233,169,.28);
+  border-radius: 24px;
+  background: linear-gradient(110deg,rgba(8,20,38,.82),rgba(8,20,38,.52));
+  box-shadow: 0 28px 80px rgba(0,0,0,.34);
+  backdrop-filter: blur(7px);
 }
-.fae-sparkles::before, .fae-sparkles::after { content:""; }
-.fae-sparkles::before { transform: translateY(18px) scale(.8); opacity:.45; animation-duration:17s; }
-.fae-sparkles::after { transform: translateY(-28px) scale(1.15); opacity:.26; animation-duration:23s; }
-@keyframes fae-drift { to { background-position: 178px 202px, 318px 244px; } }
-
-.fae-hero-inner { position:relative; max-width: 780px; }
-.fae-logo { width: min(580px, 86vw); filter: drop-shadow(0 18px 35px rgba(0,0,0,.42)); }
-.fae-hero .pg-lede { color:#f7f4e9; text-shadow:0 2px 16px rgba(0,0,0,.7); margin:1.1rem 0 0; }
-.fae-badges { display:flex; flex-wrap:wrap; gap:.55rem; margin-top:1.5rem; }
+.fae-logo { width:min(540px,82vw); filter:drop-shadow(0 15px 28px rgba(0,0,0,.42)); }
+.fae-hero .pg-lede { margin:1rem 0 0; color:#fffaf0; text-shadow:0 2px 18px rgba(0,0,0,.62); }
+.fae-badges { display:flex; flex-wrap:wrap; gap:.55rem; margin-top:1.35rem; }
 .fae-badge {
-  display:inline-flex; align-items:center; gap:.45rem;
-  padding:.42rem .78rem; border-radius:999px;
-  border:1px solid rgba(255,255,255,.28);
-  background:rgba(4,16,11,.56); backdrop-filter:blur(10px);
-  color:#fff; font-size:var(--pg-t-xs); font-weight:700; letter-spacing:.06em; text-transform:uppercase;
+  display:inline-flex; align-items:center; padding:.4rem .72rem; border-radius:999px;
+  border:1px solid rgba(255,255,255,.25); background:rgba(9,23,43,.62);
+  color:#fff; font-size:var(--pg-t-xs); font-weight:800; letter-spacing:.055em; text-transform:uppercase;
 }
-.fae-actions { display:flex; flex-wrap:wrap; gap:.8rem; margin-top:1.8rem; }
-.fae-btn-soft { background:rgba(4,16,11,.68); backdrop-filter:blur(10px); }
-.fae-status { display:inline-flex; align-items:center; gap:.55rem; color:var(--fae-gold); font-weight:700; }
-.fae-status::before { content:""; width:.55rem; height:.55rem; border-radius:50%; background:var(--fae-leaf); box-shadow:0 0 14px rgba(185,233,104,.7); }
+.fae-actions { display:flex; flex-wrap:wrap; gap:.8rem; margin-top:1.55rem; }
+.fae-btn-soft { background:rgba(9,23,43,.62); backdrop-filter:blur(7px); }
+.fae-status { margin:1rem 0 0; color:#ffe8a4; font-weight:700; }
+.fae-status::before {
+  content:""; display:inline-block; width:.55rem; height:.55rem; border-radius:50%; margin-right:.5rem;
+  background:#9ee06b; box-shadow:0 0 16px rgba(158,224,107,.85);
+}
 
-.fae-section { padding-block: clamp(4rem, 3rem + 5vw, 7.5rem); position:relative; }
-.fae-section-soft { background:linear-gradient(180deg, rgba(11,29,19,.82), rgba(7,25,18,.96)); border-block:1px solid var(--pg-line); }
-.fae-intro { display:grid; grid-template-columns: 1.05fr .95fr; gap:clamp(2rem,4vw,5rem); align-items:center; }
-.fae-intro h2, .fae-copy h2 { margin:.4rem 0 1rem; }
-.fae-art-card {
-  position:relative; overflow:hidden; border-radius:var(--pg-radius-lg);
-  border:1px solid rgba(247,218,125,.28); background:var(--pg-canopy); box-shadow:var(--pg-shadow);
+/* Real Faefera VFX motes. */
+.fae-mote-field { position:absolute; inset:0; z-index:1; pointer-events:none; overflow:hidden; }
+.fae-mote { position:absolute; width:clamp(28px,3vw,52px); opacity:.78; filter:drop-shadow(0 0 12px rgba(255,236,173,.35)); animation:fae-float 9s ease-in-out infinite alternate; }
+.mote-a{left:7%;top:23%;animation-duration:9s}.mote-b{left:26%;top:13%;animation-duration:12s;animation-delay:-2s}
+.mote-c{right:23%;top:21%;animation-duration:10s;animation-delay:-4s}.mote-d{right:8%;top:37%;animation-duration:13s;animation-delay:-1s}
+.mote-e{left:48%;top:8%;animation-duration:11s;animation-delay:-5s}.mote-f{right:34%;top:48%;animation-duration:14s;animation-delay:-7s}
+@keyframes fae-float { from{transform:translate3d(0,-8px,0) rotate(-4deg)} to{transform:translate3d(16px,18px,0) rotate(7deg)} }
+
+.fae-section { padding-block:clamp(4.5rem,3rem + 5vw,8rem); position:relative; overflow:hidden; }
+.fae-paper, .fae-paper-blue { color:#332f2a; }
+.fae-paper {
+  background:
+    radial-gradient(circle at 10% 15%,rgba(145,189,99,.12),transparent 22rem),
+    linear-gradient(180deg,#fff8e7,#f5ecd6);
+}
+.fae-paper-blue {
+  background:
+    radial-gradient(circle at 88% 15%,rgba(110,196,227,.15),transparent 24rem),
+    linear-gradient(180deg,#eef8f8,#e5f0ee);
+}
+.fae-sky-section {
+  color:#25384a;
+  background:
+    radial-gradient(circle at 15% 0,rgba(255,255,255,.7),transparent 24rem),
+    linear-gradient(180deg,#dff2fb 0%,#cde8f3 55%,#e9f4e8 100%);
+  border-block:1px solid rgba(76,130,153,.16);
+}
+.fae-night-section {
+  color:#fff7e7;
+  background:
+    radial-gradient(circle at 15% 15%,rgba(98,98,218,.18),transparent 26rem),
+    radial-gradient(circle at 86% 18%,rgba(78,203,232,.12),transparent 24rem),
+    linear-gradient(180deg,#0b1630,#102844 70%,#0a1b31);
+  border-block:1px solid rgba(126,205,239,.2);
+}
+.fae-dev-section { background:linear-gradient(180deg,#0b1d32,#081522); }
+
+.fae-paper .pg-display,.fae-paper-blue .pg-display,.fae-sky-section .pg-display { color:#2c493d; }
+.fae-paper .pg-eyebrow,.fae-paper-blue .pg-eyebrow,.fae-sky-section .pg-eyebrow { color:#8d672b; }
+.fae-paper .pg-body,.fae-paper-blue .pg-body,.fae-sky-section .pg-body { color:#5f5a52; }
+.fae-night-section .pg-body { color:#cdd8e8; }
+.fae-night-section .pg-eyebrow { color:#ffe08f; }
+.fae-night-section .pg-display { color:#fff5d6; }
+
+.fae-intro,.fae-split { display:grid; grid-template-columns:1.03fr .97fr; gap:clamp(2rem,4vw,5rem); align-items:center; }
+.fae-split.reverse .fae-copy{order:2}.fae-split.reverse>*:last-child{order:1}
+.fae-intro h2,.fae-copy h2 { margin:.35rem 0 1rem; }
+.fae-wide-copy { max-width:76ch; }
+
+.fae-creature-stage {
+  min-height:430px; position:relative; display:flex; align-items:flex-end; justify-content:center; gap:clamp(1.25rem,3vw,2.5rem);
+  padding:2rem; border:1px solid rgba(98,135,86,.25); border-radius:26px;
+  background:
+    radial-gradient(circle at 50% 75%,rgba(255,224,138,.44),transparent 15rem),
+    linear-gradient(180deg,#dff2ef 0%,#c8e6d6 48%,#88b873 100%);
+  box-shadow:0 24px 55px rgba(51,65,50,.18), inset 0 -60px 85px rgba(44,101,63,.18);
+}
+.fae-creature { margin:0; text-align:center; position:relative; z-index:2; }
+.fae-creature img { image-rendering:auto; filter:drop-shadow(0 18px 22px rgba(42,64,42,.32)); transform-origin:center bottom; }
+.fae-creature-mosslet img { width:clamp(150px,17vw,250px); }
+.fae-creature-cinderpaw img { width:clamp(190px,20vw,300px); }
+.fae-creature figcaption {
+  margin-top:.65rem; font-family:var(--pg-display); font-weight:700; color:#375340; font-size:1.2rem;
+}
+.fae-stage-mote { position:absolute; width:52px; top:14%; right:12%; animation:fae-float 10s ease-in-out infinite alternate; }
+
+.fae-avatar-gallery { display:grid; grid-template-columns:repeat(2,1fr); gap:1.25rem; margin-top:2rem; }
+.fae-concept-card,.fae-art-card,.fae-hatch-card {
+  margin:0; overflow:hidden; border-radius:22px; border:1px solid rgba(105,94,70,.24);
+  background:#fffaf0; box-shadow:0 22px 55px rgba(65,75,84,.17);
+}
+.fae-concept-card img { width:100%; aspect-ratio:4/3; object-fit:cover; object-position:center; }
+.fae-concept-card figcaption,.fae-hatch-card figcaption {
+  padding:.8rem 1rem; text-align:center; font-weight:800; color:#4d4538; background:rgba(255,250,240,.96);
 }
 .fae-art-card img { width:100%; height:100%; object-fit:cover; }
-.fae-art-card::after { content:""; position:absolute; inset:0; box-shadow:inset 0 0 0 1px rgba(255,255,255,.04), inset 0 -70px 90px rgba(4,16,11,.2); pointer-events:none; }
+.fae-world-card img { aspect-ratio:16/9; }
 
-.fae-pillars { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--pg-gap-md); margin-top:var(--pg-gap-lg); }
-.fae-pillar {
-  padding:var(--pg-gap-md); border:1px solid var(--pg-line); border-radius:var(--pg-radius-lg);
-  background:linear-gradient(145deg, rgba(255,255,255,.035), rgba(154,203,61,.025));
-  position:relative; overflow:hidden;
-}
-.fae-pillar::before { content:""; position:absolute; inset:0 auto 0 0; width:3px; background:linear-gradient(var(--fae-gold),var(--fae-leaf)); }
-.fae-pillar h3 { margin:0 0 .65rem; color:var(--fae-gold); }
-.fae-pillar p { margin:0; }
+.fae-hatch-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1rem; }
+.fae-hatch-card { background:linear-gradient(180deg,#fffaf2,#e9f0e7); }
+.fae-hatch-card img { width:100%; aspect-ratio:3/4; object-fit:cover; object-position:center; }
 
-.fae-split { display:grid; grid-template-columns:1fr 1fr; gap:clamp(2rem,4vw,5rem); align-items:center; }
-.fae-split.reverse .fae-copy { order:2; }
-.fae-split.reverse .fae-art-card { order:1; }
-.fae-copy .pg-body + .pg-body { margin-top:1rem; }
-
-.fae-helper-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:.75rem; margin-top:var(--pg-gap-lg); }
+.fae-helper-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:.8rem; margin-top:2rem; }
 .fae-helper {
-  padding:1rem; border-radius:16px; border:1px solid var(--pg-line); background:rgba(255,255,255,.025);
-  text-align:center;
+  padding:1.1rem .9rem; border-radius:18px; text-align:center;
+  border:1px solid rgba(255,224,143,.24); background:rgba(255,255,255,.045); box-shadow:inset 0 0 28px rgba(126,205,239,.025);
 }
-.fae-helper strong { display:block; color:var(--pg-text); margin-bottom:.25rem; }
-.fae-helper span { color:var(--pg-muted); font-size:var(--pg-t-sm); }
-.fae-helper .fae-element { display:block; font-family:var(--pg-display); color:var(--fae-gold); font-size:1.25rem; margin-bottom:.3rem; }
+.fae-helper strong { display:block; margin-bottom:.25rem; color:#fff6df; }
+.fae-helper span { color:#cbd8e9; font-size:var(--pg-t-sm); }
+.fae-helper .fae-element { display:block; margin-bottom:.3rem; color:#ffe28d; font-family:var(--pg-display); font-size:1.2rem; font-weight:700; }
+.fae-night-mote { position:absolute; width:54px; opacity:.72; pointer-events:none; animation:fae-float 12s ease-in-out infinite alternate; }
+.fae-night-mote-left{left:5%;bottom:12%}.fae-night-mote-right{right:5%;top:18%;animation-delay:-5s}
 
 .fae-devcard {
   display:grid; grid-template-columns:1fr auto; gap:var(--pg-gap-lg); align-items:center;
-  border:1px solid rgba(117,217,255,.28); border-radius:var(--pg-radius-lg);
-  padding:clamp(1.5rem,3vw,2.5rem); background:
-    radial-gradient(circle at 90% 10%, rgba(117,217,255,.12), transparent 22rem),
-    var(--pg-canopy);
+  border:1px solid rgba(126,205,239,.28); border-radius:24px; padding:clamp(1.5rem,3vw,2.5rem);
+  background:radial-gradient(circle at 92% 8%,rgba(126,205,239,.1),transparent 20rem),rgba(14,35,59,.78);
+  box-shadow:0 25px 65px rgba(0,0,0,.28);
 }
-.fae-devcard h2 { margin:0 0 .7rem; }
-.fae-devcard p { margin:0; }
-.fae-devmeta { display:grid; gap:.5rem; min-width:220px; }
-.fae-devmeta span { display:flex; justify-content:space-between; gap:1rem; border-bottom:1px solid var(--pg-line); padding-bottom:.45rem; color:var(--pg-muted); font-size:var(--pg-t-sm); }
-.fae-devmeta b { color:var(--pg-text); }
+.fae-devcard h2{margin:.2rem 0 .7rem}.fae-devcard p{margin:0}.fae-devcard .pg-body{color:#cbd6e2}
+.fae-devmeta{display:grid;gap:.55rem;min-width:235px}.fae-devmeta span{display:flex;justify-content:space-between;gap:1.1rem;border-bottom:1px solid rgba(255,255,255,.12);padding-bottom:.45rem;color:#bcc8d8;font-size:var(--pg-t-sm)}.fae-devmeta b{color:#fff4d1}.fae-devmeta em{font-style:normal}
+.fae-note{margin-top:1rem!important;padding:1rem 1.1rem;border-radius:14px;border:1px solid rgba(255,226,141,.24);background:rgba(255,226,141,.06);color:#cfd8e4!important;font-size:var(--pg-t-sm)}
 
-.fae-note {
-  margin-top:var(--pg-gap-md); padding:1rem 1.15rem; border-radius:14px;
-  border:1px solid rgba(247,218,125,.24); background:rgba(247,218,125,.05); color:var(--pg-muted);
-  font-size:var(--pg-t-sm);
-}
-
-@media (max-width: 980px) {
-  .fae-pillars { grid-template-columns:1fr; }
-  .fae-helper-grid { grid-template-columns:repeat(2,1fr); }
-}
-@media (max-width: 820px) {
-  .fae-intro, .fae-split, .fae-devcard { grid-template-columns:1fr; }
-  .fae-split.reverse .fae-copy, .fae-split.reverse .fae-art-card { order:initial; }
-  .fae-devmeta { min-width:0; }
-  .fae-hero { min-height:760px; }
-}
-@media (max-width: 560px) {
-  .fae-hero { min-height:720px; padding-top:7.5rem; }
-  .fae-hero-art img { object-position:60% 52%; }
-  .fae-helper-grid { grid-template-columns:1fr; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .fae-sparkles, .fae-sparkles::before, .fae-sparkles::after { animation:none; }
-}
+@media(max-width:980px){.fae-helper-grid{grid-template-columns:repeat(2,1fr)}.fae-avatar-gallery{grid-template-columns:1fr}}
+@media(max-width:820px){.fae-intro,.fae-split,.fae-devcard{grid-template-columns:1fr}.fae-split.reverse .fae-copy,.fae-split.reverse>*:last-child{order:initial}.fae-devmeta{min-width:0}.fae-hero{min-height:820px}.fae-creature-stage{min-height:360px}.fae-hatch-grid{max-width:620px;margin-inline:auto}}
+@media(max-width:560px){.fae-hero{min-height:760px;padding-top:7rem}.fae-hero-art img{object-position:62% 52%}.fae-hero-inner{padding:1.1rem}.fae-helper-grid,.fae-hatch-grid{grid-template-columns:1fr}.fae-creature-stage{gap:.5rem;padding:1.25rem}.fae-creature-mosslet img{width:140px}.fae-creature-cinderpaw img{width:175px}.fae-mote{opacity:.5}}
+@media(prefers-reduced-motion:reduce){.fae-mote,.fae-stage-mote,.fae-night-mote{animation:none}}

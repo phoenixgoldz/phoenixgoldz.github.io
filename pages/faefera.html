@@ -2,179 +2,214 @@
 <html lang="en">
 <head>
 <!--#include head-->
+  <meta name="theme-color" content="#09172b">
   <title>Faefera — Cozy creature collecting, crafting &amp; exploration</title>
   <meta name="description" content="Faefera is a family-friendly PC fantasy adventure about discovering hidden eggs, raising magical baby creatures, building, crafting, gardening, and exploring a seamless world. In development at PhoenixGold Game Studios.">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="PhoenixGold Game Studios">
   <meta property="og:title" content="Faefera — A magical world to build, explore, and care for">
-  <meta property="og:description" content="Discover hidden eggs, raise magical baby companions, build a home and shop, garden, craft, and explore from deep caverns to floating islands.">
+  <meta property="og:description" content="Discover hidden eggs, raise magical baby companions, build a home and shop, garden, craft, and explore one connected fantasy world.">
   <meta property="og:url" content="https://phoenixgoldz.github.io/faefera.html">
-  <meta property="og:image" content="https://phoenixgoldz.github.io/Images/faefera/faefera_gameplay_concept.png">
+  <meta property="og:image" content="https://phoenixgoldz.github.io/Images/faefera/canon/main_menu_backdrop.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Faefera">
   <meta name="twitter:description" content="A cozy fantasy adventure about discovery, creativity, and magical baby creatures.">
-  <meta name="twitter:image" content="https://phoenixgoldz.github.io/Images/faefera/faefera_gameplay_concept.png">
-  <link rel="stylesheet" href="css/faefera.css">
+  <meta name="twitter:image" content="https://phoenixgoldz.github.io/Images/faefera/canon/main_menu_backdrop.png">
+  <link rel="stylesheet" href="css/faefera.css?v=faefera-theme-20260821">
 </head>
 <body data-page="faefera">
 <!--#include header-->
 
 <main id="main">
-  <section class="fae-hero">
-    <div class="fae-hero-art" aria-hidden="true">
-      <img src="Images/faefera/faefera_gameplay_concept.png" alt="" fetchpriority="high" decoding="async">
-    </div>
-    <div class="fae-sparkles" aria-hidden="true"></div>
-    <div class="pg-wrap">
-      <div class="fae-hero-inner">
-        <img class="fae-logo" src="Images/faefera/faefera_logo.png" alt="Faefera" width="520">
-        <p class="pg-lede">
-          A cozy fantasy adventure about discovering hidden eggs, raising magical baby companions,
-          building a place of your own, growing a garden, crafting from the world, and exploring what waits beyond the next hill.
+<section class="fae-hero">
+<div aria-hidden="true" class="fae-hero-art">
+<img alt="" decoding="async" fetchpriority="high" src="Images/faefera/canon/main_menu_backdrop.png"/>
+</div>
+<div aria-hidden="true" class="fae-mote-field">
+<img alt="" class="fae-mote mote-a" src="Images/faefera/vfx/mote_03.png"/>
+<img alt="" class="fae-mote mote-b" src="Images/faefera/vfx/mote_04.png"/>
+<img alt="" class="fae-mote mote-c" src="Images/faefera/vfx/mote_06.png"/>
+<img alt="" class="fae-mote mote-d" src="Images/faefera/vfx/mote_07.png"/>
+<img alt="" class="fae-mote mote-e" src="Images/faefera/vfx/mote_08.png"/>
+<img alt="" class="fae-mote mote-f" src="Images/faefera/vfx/mote_09.png"/>
+</div>
+<div class="pg-wrap fae-hero-layout">
+<div class="fae-hero-inner">
+<img alt="Faefera" class="fae-logo" src="Images/faefera/faefera_logo.png" width="520"/>
+<p class="pg-lede">
+          A cozy fantasy adventure about hidden eggs, magical baby companions, building a place of your own,
+          growing a garden, crafting from the world, and discovering what waits beyond the next hill.
         </p>
-        <div class="fae-badges" aria-label="Platform and input information">
-          <span class="fae-badge">PC only</span>
-          <span class="fae-badge">Keyboard + mouse</span>
-          <span class="fae-badge">Gamepad</span>
-          <span class="fae-badge">Family-friendly</span>
-          <span class="fae-badge">Localization planned</span>
-        </div>
-        <div class="fae-actions">
-          <span class="pg-btn pg-btn-primary" aria-label="Faefera demo is currently in development">Demo in development</span>
-          <a class="pg-btn pg-btn-ghost fae-btn-soft" href="#world">Explore Faefera</a>
-        </div>
-        <p class="fae-status" style="margin-top:1.2rem">Pre-alpha &middot; built in Godot &middot; active development</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="fae-section" id="world">
-    <div class="pg-wrap fae-intro">
-      <div class="pg-reveal">
-        <p class="pg-eyebrow">A gentler kind of adventure</p>
-        <h2 class="pg-display">Make a home in a world that keeps opening up</h2>
-        <p class="pg-body">
-          Faefera begins simply: choose one of four starter eggs, gather from the meadow, and build a shelter.
-          Care for the egg and meet its needs, and eventually it hatches into your first baby Faefera.
+<div aria-label="Platform and input information" class="fae-badges">
+<span class="fae-badge">PC only</span>
+<span class="fae-badge">Keyboard + mouse</span>
+<span class="fae-badge">Gamepad</span>
+<span class="fae-badge">Family-friendly</span>
+<span class="fae-badge">Localization planned</span>
+</div>
+<div class="fae-actions">
+<span aria-label="Faefera demo is currently in development" class="pg-btn pg-btn-primary">Demo in development</span>
+<a class="pg-btn pg-btn-ghost fae-btn-soft" href="#discover">Explore Faefera</a>
+</div>
+<p class="fae-status">Pre-alpha · Godot · active development</p>
+</div>
+</div>
+</section>
+<section class="fae-section fae-paper" id="discover">
+<div class="pg-wrap fae-intro">
+<div class="pg-reveal">
+<p class="pg-eyebrow">A gentler kind of adventure</p>
+<h2 class="pg-display">Begin with an egg. Build a home. Let the world unfold.</h2>
+<p class="pg-body">
+          A new adventure starts by choosing one of four mysterious starter eggs. The others are not deleted or spoiled;
+          they become hidden discoveries somewhere in the world. Your first goal is simple: gather what the meadow gives you,
+          make a shelter, and create the right conditions for your egg to hatch.
         </p>
-        <p class="pg-body">
-          From there the world expands through curiosity instead of combat. Hidden eggs reward exploration, new materials unlock crafting,
-          gardens become reliable sources of food and trade goods, and visiting NPCs bring requests, shops, and new reasons to keep building.
+<p class="pg-body">
+          There is no traditional combat loop. Progress comes from exploration, building, gardening, crafting, trading,
+          caring for creatures, and learning how the world fits together.
         </p>
-      </div>
-      <figure class="fae-art-card pg-reveal">
-        <img src="Images/faefera/faefera_mosslet.png" alt="A cute moss-covered baby Faefera creature with glowing blooms" loading="lazy" width="1254" height="1254">
-      </figure>
-    </div>
-  </section>
-
-  <section class="fae-section fae-section-soft">
-    <div class="pg-wrap">
-      <p class="pg-eyebrow pg-reveal">The heart of Faefera</p>
-      <h2 class="pg-display pg-reveal">Discover. Care. Create.</h2>
-      <div class="fae-pillars">
-        <article class="fae-pillar pg-reveal">
-          <h3 class="pg-display">Find what the world is hiding</h3>
-          <p class="pg-body">Eggs are tucked into the world like a fantasy Easter-egg hunt. The ones you do not choose at the beginning are not lost &mdash; they become part of the adventure.</p>
-        </article>
-        <article class="fae-pillar pg-reveal">
-          <h3 class="pg-display">Build somewhere worth returning to</h3>
-          <p class="pg-body">Gather natural materials, craft furniture and useful objects, build a shelter and shop, and shape a garden that can feed you and supply visitors.</p>
-        </article>
-        <article class="fae-pillar pg-reveal">
-          <h3 class="pg-display">Raise companions with a purpose</h3>
-          <p class="pg-body">Baby Faefera are not weapons. They help with exploration, building, gardening, gathering, and other everyday tasks as your bond grows.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="fae-section">
-    <div class="pg-wrap fae-split">
-      <div class="fae-copy pg-reveal">
-        <p class="pg-eyebrow">Companions, not combat units</p>
-        <h2 class="pg-display">Every baby monster should matter</h2>
-        <p class="pg-body">
-          Collecting Faefera is meant to change how you play, not just fill a checklist. Different elemental families can lend a hand in different ways,
-          and their help is limited by energy so caring, resting, and bonding remain part of the loop.
+</div>
+<div aria-label="Faefera creature artwork" class="fae-creature-stage pg-reveal">
+<figure class="fae-creature fae-creature-mosslet">
+<img alt="Mosslet, a green baby Faefera creature" loading="lazy" src="Images/faefera/canon/mosslet.png"/>
+<figcaption>Mosslet</figcaption>
+</figure>
+<figure class="fae-creature fae-creature-cinderpaw">
+<img alt="Cinderpaw, a fiery baby Faefera creature" loading="lazy" src="Images/faefera/canon/cinderpaw.png"/>
+<figcaption>Cinderpaw</figcaption>
+</figure>
+<img alt="" aria-hidden="true" class="fae-stage-mote" src="Images/faefera/vfx/mote_09.png"/>
+</div>
+</div>
+</section>
+<section class="fae-section fae-sky-section">
+<div class="pg-wrap">
+<p class="pg-eyebrow pg-reveal">Your adventurer</p>
+<h2 class="pg-display pg-reveal">Create a fae explorer that actually looks like yours</h2>
+<p class="pg-body fae-wide-copy pg-reveal">
+        The character creator is built around the Faefera avatar art canon: male- and female-presenting bases,
+        hairstyles, outfits, cloaks, shoes, accessories, palettes, and layered parts that combine into the in-game adventurer.
+      </p>
+<div class="fae-avatar-gallery">
+<figure class="fae-concept-card pg-reveal">
+<img alt="Faefera male- and female-presenting player avatar concept sheet" loading="lazy" src="Images/faefera/canon/player_avatars_concept.png"/>
+<figcaption>Player avatar art direction</figcaption>
+</figure>
+<figure class="fae-concept-card pg-reveal">
+<img alt="Faefera modular wardrobe and avatar customization concept sheet" loading="lazy" src="Images/faefera/canon/player_avatars_wardrobe_concept.png"/>
+<figcaption>Modular wardrobe and customization</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section class="fae-section fae-paper fae-hatch-section">
+<div class="pg-wrap fae-split">
+<div class="fae-copy pg-reveal">
+<p class="pg-eyebrow">Discovery should feel magical</p>
+<h2 class="pg-display">Eggs wobble, crack, hatch, and become somebody</h2>
+<p class="pg-body">
+          Eggs are discoveries, not menu unlocks. When the right conditions are met, the egg comes alive with a wobble-and-hatch sequence,
+          revealing a baby creature the player can name. Names across players, creatures, and other player-authored fields are designed to stay kid-friendly.
         </p>
-        <div class="fae-helper-grid" aria-label="Example companion roles">
-          <div class="fae-helper"><span class="fae-element">Earth</span><strong>Dig &amp; gather</strong><span>Help uncover materials underground.</span></div>
-          <div class="fae-helper"><span class="fae-element">Water</span><strong>Water gardens</strong><span>Help care for crops and thirsty plants.</span></div>
-          <div class="fae-helper"><span class="fae-element">Fire</span><strong>Light the dark</strong><span>Help illuminate caves and night travel.</span></div>
-          <div class="fae-helper"><span class="fae-element">Flying</span><strong>Reach higher</strong><span>Give short, limited movement assists.</span></div>
-          <div class="fae-helper"><span class="fae-element">Forest</span><strong>Craft &amp; build</strong><span>Support hands-on creation and construction.</span></div>
-        </div>
-      </div>
-      <figure class="fae-art-card pg-reveal">
-        <img src="Images/faefera/faefera_avatar_portraits.png" alt="Faefera player portrait and interface art showing customizable young adventurers" loading="lazy" width="1448" height="1086">
-      </figure>
-    </div>
-  </section>
-
-  <section class="fae-section fae-section-soft">
-    <div class="pg-wrap fae-split reverse">
-      <div class="fae-copy pg-reveal">
-        <p class="pg-eyebrow">One connected world</p>
-        <h2 class="pg-display">From sunny meadows to the places beneath them</h2>
-        <p class="pg-body">
-          Faefera is being built as a persistent side-scrolling world that wraps horizontally, so traveling far enough in one direction can eventually bring you back around.
-          The surface is only the beginning: the full game is planned to expand through forests, winter regions, underground root caverns, crystal caves, magma depths, and floating islands overhead.
+<p class="pg-body">
+          The same creature families can appear later as hidden eggs, rare finds, or things a visiting merchant may offer — giving exploration and currency a reason to matter.
         </p>
-        <p class="pg-body">
-          Parallax scenery, day-and-night atmosphere, darker unexplored spaces, environmental lighting, and biome transitions are designed to make exploration feel continuous instead of like moving between disconnected rooms.
+</div>
+<div class="fae-hatch-grid pg-reveal">
+<figure class="fae-hatch-card">
+<img alt="Stonepaw hatching artwork" loading="lazy" src="Images/faefera/canon/stonepaw_hatch_5.png"/>
+<figcaption>Stonepaw</figcaption>
+</figure>
+<figure class="fae-hatch-card">
+<img alt="Tidebloom hatching artwork" loading="lazy" src="Images/faefera/canon/tidebloom_hatch_7.png"/>
+<figcaption>Tidebloom</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section class="fae-section fae-night-section">
+<div class="pg-wrap">
+<p class="pg-eyebrow pg-reveal">Companions, not combat units</p>
+<h2 class="pg-display pg-reveal">Every baby Faefera should change how you play</h2>
+<p class="pg-body fae-wide-copy pg-reveal">
+        Creatures are useful because of who they are. Their elemental families can help with everyday tasks and exploration,
+        but assists consume energy. Rest, care, and bonding matter; they are not unlimited tools you can spam forever.
+      </p>
+<div aria-label="Example companion roles" class="fae-helper-grid">
+<div class="fae-helper pg-reveal"><span class="fae-element">Earth</span><strong>Dig &amp; gather</strong><span>Help uncover materials underground.</span></div>
+<div class="fae-helper pg-reveal"><span class="fae-element">Water</span><strong>Water gardens</strong><span>Help care for crops and thirsty plants.</span></div>
+<div class="fae-helper pg-reveal"><span class="fae-element">Fire</span><strong>Light the dark</strong><span>Help illuminate caves and night travel.</span></div>
+<div class="fae-helper pg-reveal"><span class="fae-element">Flying</span><strong>Reach higher</strong><span>Give short, limited movement assists.</span></div>
+<div class="fae-helper pg-reveal"><span class="fae-element">Forest</span><strong>Craft &amp; build</strong><span>Support hands-on creation and construction.</span></div>
+</div>
+<img alt="" aria-hidden="true" class="fae-night-mote fae-night-mote-left" src="Images/faefera/vfx/mote_03.png"/>
+<img alt="" aria-hidden="true" class="fae-night-mote fae-night-mote-right" src="Images/faefera/vfx/mote_04.png"/>
+</div>
+</section>
+<section class="fae-section fae-paper-blue">
+<div class="pg-wrap fae-split reverse">
+<div class="fae-copy pg-reveal">
+<p class="pg-eyebrow">One connected world</p>
+<h2 class="pg-display">From the Sunny Meadow to everything beyond it</h2>
+<p class="pg-body">
+          The demo is deliberately focused on one biome so its first loop can be finished properly. The full game is planned to expand into forests,
+          winter regions, root-filled underground spaces, crystal caverns, magma depths, and floating islands overhead.
         </p>
-      </div>
-      <figure class="fae-art-card pg-reveal">
-        <img src="Images/faefera/faefera_world_panorama.png" alt="Faefera fantasy panorama with mountains, villages, waterfalls, and floating islands" loading="lazy" width="1672" height="941">
-      </figure>
-    </div>
-  </section>
-
-  <section class="fae-section">
-    <div class="pg-wrap fae-split">
-      <div class="fae-copy pg-reveal">
-        <p class="pg-eyebrow">Build it your way</p>
-        <h2 class="pg-display">A world made from things you can actually use</h2>
-        <p class="pg-body">
-          Terrain, plants, breakables, materials, and crafted objects are being designed as parts of the same sandbox. Dig below the surface, gather what you find,
-          use those resources to make your shelter and shop your own, then turn what you grow or discover into something visitors may want to buy.
+<p class="pg-body">
+          Parallax scenery, biome transitions, day-and-night atmosphere, darker unexplored spaces, environmental lighting,
+          and a camera that opens up outdoors are being built to make the world feel continuous rather than stitched together.
         </p>
-        <p class="pg-body">
-          There is no traditional combat loop. Health is tied to environmental danger such as lava, extreme cold, and dangerous falls, while food grown in your garden and crafted healing items help you recover.
+</div>
+<figure class="fae-art-card fae-world-card pg-reveal">
+<img alt="Faefera fantasy panorama with mountains, villages, waterfalls, and floating islands" height="941" loading="lazy" src="Images/faefera/faefera_world_panorama.png" width="1672"/>
+</figure>
+</div>
+</section>
+<section class="fae-section fae-paper">
+<div class="pg-wrap fae-split">
+<div class="fae-copy pg-reveal">
+<p class="pg-eyebrow">Build it your way</p>
+<h2 class="pg-display">A cozy sandbox where resources have a reason to exist</h2>
+<p class="pg-body">
+          Gather materials, build shelter, furnish a shop, grow food, craft useful objects, and sell what you make to visiting NPCs.
+          Currency is meant to feed back into discovery: merchants can offer resources, rare eggs, useful items, and conveniences that help the player keep expanding.
         </p>
-      </div>
-      <figure class="fae-art-card pg-reveal">
-        <img src="Images/faefera/faefera_terrain_system.png" alt="Faefera terrain art showing detailed natural ground blocks and a continuous surface" loading="lazy" width="1448" height="1086">
-      </figure>
-    </div>
-  </section>
-
-  <section class="fae-section fae-section-soft">
-    <div class="pg-wrap">
-      <div class="fae-devcard pg-reveal">
-        <div>
-          <p class="pg-eyebrow">Development status</p>
-          <h2 class="pg-display">The demo comes first</h2>
-          <p class="pg-body">
-            Faefera is in active pre-alpha development. The first public-facing goal is a cohesive PC demo focused on the starting Sunny Meadow,
-            the first egg and shelter loop, gathering, building, gardening, companion care, exploration, and the magical interface that ties it together.
+<p class="pg-body">
+          Environmental hazards — falls, lava, freezing regions, and similar dangers — are the main sources of damage.
+          Food and healing items restore health and are consumed when used.
+        </p>
+</div>
+<figure class="fae-art-card pg-reveal">
+<img alt="Faefera terrain art showing detailed natural ground blocks and a continuous surface" height="1086" loading="lazy" src="Images/faefera/faefera_terrain_system.png" width="1448"/>
+</figure>
+</div>
+</section>
+<section class="fae-section fae-dev-section">
+<div class="pg-wrap">
+<div class="fae-devcard pg-reveal">
+<div>
+<p class="pg-eyebrow">Development status</p>
+<h2 class="pg-display">The demo comes first</h2>
+<p class="pg-body">
+            Faefera is in active pre-alpha development. The first public-facing goal is a cohesive PC demo centered on the Sunny Meadow,
+            the starter-egg and shelter loop, gathering, building, gardening, companion care, exploration, and the magical interface that ties it together.
           </p>
-          <p class="fae-note">
+<p class="fae-note">
             There is no Faefera Steam page or trailer yet. Those will be created after the demo is ready to represent the game properly.
             Localization across multiple languages is planned; the final supported-language list will be confirmed before release.
           </p>
-        </div>
-        <div class="fae-devmeta" aria-label="Faefera development details">
-          <span><b>Platform</b><em>PC</em></span>
-          <span><b>Engine</b><em>Godot 4.7.1</em></span>
-          <span><b>Input</b><em>Gamepad + KB/M</em></span>
-          <span><b>Genre</b><em>Cozy fantasy sandbox</em></span>
-          <span><b>Stage</b><em>Pre-alpha</em></span>
-        </div>
-      </div>
-    </div>
-  </section>
+</div>
+<div aria-label="Faefera development details" class="fae-devmeta">
+<span><b>Platform</b><em>PC</em></span>
+<span><b>Engine</b><em>Godot</em></span>
+<span><b>Input</b><em>Gamepad + KB/M</em></span>
+<span><b>Genre</b><em>Cozy fantasy sandbox</em></span>
+<span><b>Stage</b><em>Pre-alpha</em></span>
+</div>
+</div>
+</div>
+</section>
 </main>
 
 <!--#include footer-->
