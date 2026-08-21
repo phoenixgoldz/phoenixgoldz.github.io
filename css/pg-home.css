@@ -59,7 +59,7 @@
 }
 
 /* ---- slate ---------------------------------------------------- */
-.home-slate { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--pg-gap-md); margin-top: var(--pg-gap-lg); }
+.home-slate { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--pg-gap-md); margin-top: var(--pg-gap-lg); }
 .home-title {
   border: 1px solid var(--pg-line); border-radius: var(--pg-radius-lg);
   background: var(--pg-canopy); overflow: hidden;
