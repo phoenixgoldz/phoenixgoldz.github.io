@@ -1,8 +1,10 @@
 /* ============================================================
    Faefera — storybook fantasy theme
    Uses supplied Faefera art + supplied VFX mote PNGs only.
-   This page intentionally does NOT inherit the studio-home green.
+   2026-09-03 refresh: current demo scope, Steam target, updated
+   companion/building/world copy, and development-status panel.
    ============================================================ */
+
 body[data-page="faefera"] {
   --pg-night: #09172b;
   --pg-canopy: #10233b;
@@ -61,51 +63,121 @@ body[data-page="faefera"] .pg-bunting {
     radial-gradient(circle at 78% 24%,rgba(126,205,239,.12),transparent 21rem);
 }
 .fae-hero-layout { position:relative; z-index:2; }
+
 .fae-hero-inner {
-  max-width: 760px;
+  max-width: 780px;
   padding: clamp(1.35rem, 2.5vw, 2.25rem);
   border:1px solid rgba(255,233,169,.28);
   border-radius: 24px;
-  background: linear-gradient(110deg,rgba(8,20,38,.82),rgba(8,20,38,.52));
+  background: linear-gradient(110deg,rgba(8,20,38,.84),rgba(8,20,38,.55));
   box-shadow: 0 28px 80px rgba(0,0,0,.34);
   backdrop-filter: blur(7px);
 }
-.fae-logo { width:min(540px,82vw); filter:drop-shadow(0 15px 28px rgba(0,0,0,.42)); }
-.fae-hero .pg-lede { margin:1rem 0 0; color:#fffaf0; text-shadow:0 2px 18px rgba(0,0,0,.62); }
-.fae-badges { display:flex; flex-wrap:wrap; gap:.55rem; margin-top:1.35rem; }
-.fae-badge {
-  display:inline-flex; align-items:center; padding:.4rem .72rem; border-radius:999px;
-  border:1px solid rgba(255,255,255,.25); background:rgba(9,23,43,.62);
-  color:#fff; font-size:var(--pg-t-xs); font-weight:800; letter-spacing:.055em; text-transform:uppercase;
+
+.fae-logo {
+  width:min(540px,82vw);
+  filter:drop-shadow(0 15px 28px rgba(0,0,0,.42));
 }
-.fae-actions { display:flex; flex-wrap:wrap; gap:.8rem; margin-top:1.55rem; }
-.fae-btn-soft { background:rgba(9,23,43,.62); backdrop-filter:blur(7px); }
-.fae-status { margin:1rem 0 0; color:#ffe8a4; font-weight:700; }
+.fae-hero .pg-lede {
+  margin:1rem 0 0;
+  color:#fffaf0;
+  text-shadow:0 2px 18px rgba(0,0,0,.62);
+}
+
+.fae-badges {
+  display:flex;
+  flex-wrap:wrap;
+  gap:.55rem;
+  margin-top:1.35rem;
+}
+.fae-badge {
+  display:inline-flex;
+  align-items:center;
+  padding:.4rem .72rem;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.25);
+  background:rgba(9,23,43,.62);
+  color:#fff;
+  font-size:var(--pg-t-xs);
+  font-weight:800;
+  letter-spacing:.055em;
+  text-transform:uppercase;
+}
+
+.fae-actions {
+  display:flex;
+  flex-wrap:wrap;
+  gap:.8rem;
+  margin-top:1.55rem;
+}
+.fae-btn-soft {
+  background:rgba(9,23,43,.62);
+  backdrop-filter:blur(7px);
+}
+.fae-status {
+  margin:1rem 0 0;
+  color:#ffe8a4;
+  font-weight:700;
+}
 .fae-status::before {
-  content:""; display:inline-block; width:.55rem; height:.55rem; border-radius:50%; margin-right:.5rem;
-  background:#9ee06b; box-shadow:0 0 16px rgba(158,224,107,.85);
+  content:"";
+  display:inline-block;
+  width:.55rem;
+  height:.55rem;
+  border-radius:50%;
+  margin-right:.5rem;
+  background:#9ee06b;
+  box-shadow:0 0 16px rgba(158,224,107,.85);
 }
 
 /* Real Faefera VFX motes. */
-.fae-mote-field { position:absolute; inset:0; z-index:1; pointer-events:none; overflow:hidden; }
-.fae-mote { position:absolute; width:clamp(28px,3vw,52px); opacity:.78; filter:drop-shadow(0 0 12px rgba(255,236,173,.35)); animation:fae-float 9s ease-in-out infinite alternate; }
-.mote-a{left:7%;top:23%;animation-duration:9s}.mote-b{left:26%;top:13%;animation-duration:12s;animation-delay:-2s}
-.mote-c{right:23%;top:21%;animation-duration:10s;animation-delay:-4s}.mote-d{right:8%;top:37%;animation-duration:13s;animation-delay:-1s}
-.mote-e{left:48%;top:8%;animation-duration:11s;animation-delay:-5s}.mote-f{right:34%;top:48%;animation-duration:14s;animation-delay:-7s}
-@keyframes fae-float { from{transform:translate3d(0,-8px,0) rotate(-4deg)} to{transform:translate3d(16px,18px,0) rotate(7deg)} }
+.fae-mote-field {
+  position:absolute;
+  inset:0;
+  z-index:1;
+  pointer-events:none;
+  overflow:hidden;
+}
+.fae-mote {
+  position:absolute;
+  width:clamp(28px,3vw,52px);
+  opacity:.78;
+  filter:drop-shadow(0 0 12px rgba(255,236,173,.35));
+  animation:fae-float 9s ease-in-out infinite alternate;
+}
+.mote-a{left:7%;top:23%;animation-duration:9s}
+.mote-b{left:26%;top:13%;animation-duration:12s;animation-delay:-2s}
+.mote-c{right:23%;top:21%;animation-duration:10s;animation-delay:-4s}
+.mote-d{right:8%;top:37%;animation-duration:13s;animation-delay:-1s}
+.mote-e{left:48%;top:8%;animation-duration:11s;animation-delay:-5s}
+.mote-f{right:34%;top:48%;animation-duration:14s;animation-delay:-7s}
 
-.fae-section { padding-block:clamp(4.5rem,3rem + 5vw,8rem); position:relative; overflow:hidden; }
-.fae-paper, .fae-paper-blue { color:#332f2a; }
+@keyframes fae-float {
+  from{transform:translate3d(0,-8px,0) rotate(-4deg)}
+  to{transform:translate3d(16px,18px,0) rotate(7deg)}
+}
+
+.fae-section {
+  padding-block:clamp(4.5rem,3rem + 5vw,8rem);
+  position:relative;
+  overflow:hidden;
+}
+
+.fae-paper,
+.fae-paper-blue { color:#332f2a; }
+
 .fae-paper {
   background:
     radial-gradient(circle at 10% 15%,rgba(145,189,99,.12),transparent 22rem),
     linear-gradient(180deg,#fff8e7,#f5ecd6);
 }
+
 .fae-paper-blue {
   background:
     radial-gradient(circle at 88% 15%,rgba(110,196,227,.15),transparent 24rem),
     linear-gradient(180deg,#eef8f8,#e5f0ee);
 }
+
 .fae-sky-section {
   color:#25384a;
   background:
@@ -113,6 +185,7 @@ body[data-page="faefera"] .pg-bunting {
     linear-gradient(180deg,#dff2fb 0%,#cde8f3 55%,#e9f4e8 100%);
   border-block:1px solid rgba(76,130,153,.16);
 }
+
 .fae-night-section {
   color:#fff7e7;
   background:
@@ -121,75 +194,360 @@ body[data-page="faefera"] .pg-bunting {
     linear-gradient(180deg,#0b1630,#102844 70%,#0a1b31);
   border-block:1px solid rgba(126,205,239,.2);
 }
-.fae-dev-section { background:linear-gradient(180deg,#0b1d32,#081522); }
 
-.fae-paper .pg-display,.fae-paper-blue .pg-display,.fae-sky-section .pg-display { color:#2c493d; }
-.fae-paper .pg-eyebrow,.fae-paper-blue .pg-eyebrow,.fae-sky-section .pg-eyebrow { color:#8d672b; }
-.fae-paper .pg-body,.fae-paper-blue .pg-body,.fae-sky-section .pg-body { color:#5f5a52; }
+.fae-no-combat-section {
+  text-align:center;
+}
+.fae-centered-copy {
+  max-width:880px;
+  margin-inline:auto;
+}
+
+.fae-dev-section {
+  background:linear-gradient(180deg,#0b1d32,#081522);
+}
+
+.fae-paper .pg-display,
+.fae-paper-blue .pg-display,
+.fae-sky-section .pg-display {
+  color:#2c493d;
+}
+.fae-paper .pg-eyebrow,
+.fae-paper-blue .pg-eyebrow,
+.fae-sky-section .pg-eyebrow {
+  color:#8d672b;
+}
+.fae-paper .pg-body,
+.fae-paper-blue .pg-body,
+.fae-sky-section .pg-body {
+  color:#5f5a52;
+}
 .fae-night-section .pg-body { color:#cdd8e8; }
 .fae-night-section .pg-eyebrow { color:#ffe08f; }
 .fae-night-section .pg-display { color:#fff5d6; }
 
-.fae-intro,.fae-split { display:grid; grid-template-columns:1.03fr .97fr; gap:clamp(2rem,4vw,5rem); align-items:center; }
-.fae-split.reverse .fae-copy{order:2}.fae-split.reverse>*:last-child{order:1}
-.fae-intro h2,.fae-copy h2 { margin:.35rem 0 1rem; }
-.fae-wide-copy { max-width:76ch; }
+.fae-intro,
+.fae-split {
+  display:grid;
+  grid-template-columns:1.03fr .97fr;
+  gap:clamp(2rem,4vw,5rem);
+  align-items:center;
+}
+.fae-split.reverse .fae-copy { order:2; }
+.fae-split.reverse>*:last-child { order:1; }
+.fae-intro h2,
+.fae-copy h2 {
+  margin:.35rem 0 1rem;
+}
+.fae-wide-copy {
+  max-width:76ch;
+}
 
 .fae-creature-stage {
-  min-height:430px; position:relative; display:flex; align-items:flex-end; justify-content:center; gap:clamp(1.25rem,3vw,2.5rem);
-  padding:2rem; border:1px solid rgba(98,135,86,.25); border-radius:26px;
+  min-height:430px;
+  position:relative;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  gap:clamp(1.25rem,3vw,2.5rem);
+  padding:2rem;
+  border:1px solid rgba(98,135,86,.25);
+  border-radius:26px;
   background:
     radial-gradient(circle at 50% 75%,rgba(255,224,138,.44),transparent 15rem),
     linear-gradient(180deg,#dff2ef 0%,#c8e6d6 48%,#88b873 100%);
   box-shadow:0 24px 55px rgba(51,65,50,.18), inset 0 -60px 85px rgba(44,101,63,.18);
 }
-.fae-creature { margin:0; text-align:center; position:relative; z-index:2; }
-.fae-creature img { image-rendering:auto; filter:drop-shadow(0 18px 22px rgba(42,64,42,.32)); transform-origin:center bottom; }
+.fae-creature {
+  margin:0;
+  text-align:center;
+  position:relative;
+  z-index:2;
+}
+.fae-creature img {
+  image-rendering:auto;
+  filter:drop-shadow(0 18px 22px rgba(42,64,42,.32));
+  transform-origin:center bottom;
+}
 .fae-creature-mosslet img { width:clamp(150px,17vw,250px); }
 .fae-creature-cinderpaw img { width:clamp(190px,20vw,300px); }
 .fae-creature figcaption {
-  margin-top:.65rem; font-family:var(--pg-display); font-weight:700; color:#375340; font-size:1.2rem;
+  margin-top:.65rem;
+  font-family:var(--pg-display);
+  font-weight:700;
+  color:#375340;
+  font-size:1.2rem;
+  letter-spacing:.015em;
 }
-.fae-stage-mote { position:absolute; width:52px; top:14%; right:12%; animation:fae-float 10s ease-in-out infinite alternate; }
-
-.fae-avatar-gallery { display:grid; grid-template-columns:repeat(2,1fr); gap:1.25rem; margin-top:2rem; }
-.fae-concept-card,.fae-art-card,.fae-hatch-card {
-  margin:0; overflow:hidden; border-radius:22px; border:1px solid rgba(105,94,70,.24);
-  background:#fffaf0; box-shadow:0 22px 55px rgba(65,75,84,.17);
+.fae-stage-mote {
+  position:absolute;
+  width:52px;
+  top:14%;
+  right:12%;
+  animation:fae-float 10s ease-in-out infinite alternate;
 }
-.fae-concept-card img { width:100%; aspect-ratio:4/3; object-fit:cover; object-position:center; }
-.fae-concept-card figcaption,.fae-hatch-card figcaption {
-  padding:.8rem 1rem; text-align:center; font-weight:800; color:#4d4538; background:rgba(255,250,240,.96);
+
+.fae-avatar-gallery {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:1.25rem;
+  margin-top:2rem;
 }
-.fae-art-card img { width:100%; height:100%; object-fit:cover; }
-.fae-world-card img { aspect-ratio:16/9; }
+.fae-concept-card,
+.fae-art-card,
+.fae-hatch-card {
+  margin:0;
+  overflow:hidden;
+  border-radius:22px;
+  border:1px solid rgba(105,94,70,.24);
+  background:#fffaf0;
+  box-shadow:0 22px 55px rgba(65,75,84,.17);
+}
+.fae-concept-card img {
+  width:100%;
+  aspect-ratio:4/3;
+  object-fit:cover;
+  object-position:center;
+}
+.fae-concept-card figcaption,
+.fae-hatch-card figcaption {
+  padding:.8rem 1rem;
+  text-align:center;
+  font-weight:800;
+  color:#4d4538;
+  background:rgba(255,250,240,.96);
+}
+.fae-art-card img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.fae-world-card img {
+  aspect-ratio:16/9;
+}
 
-.fae-hatch-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1rem; }
-.fae-hatch-card { background:linear-gradient(180deg,#fffaf2,#e9f0e7); }
-.fae-hatch-card img { width:100%; aspect-ratio:3/4; object-fit:cover; object-position:center; }
+.fae-hatch-grid {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:1rem;
+}
+.fae-hatch-card {
+  background:linear-gradient(180deg,#fffaf2,#e9f0e7);
+}
+.fae-hatch-card img {
+  width:100%;
+  aspect-ratio:3/4;
+  object-fit:cover;
+  object-position:center;
+}
 
-.fae-helper-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:.8rem; margin-top:2rem; }
+.fae-helper-grid {
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:.8rem;
+  margin-top:2rem;
+}
 .fae-helper {
-  padding:1.1rem .9rem; border-radius:18px; text-align:center;
-  border:1px solid rgba(255,224,143,.24); background:rgba(255,255,255,.045); box-shadow:inset 0 0 28px rgba(126,205,239,.025);
+  padding:1.1rem .9rem;
+  border-radius:18px;
+  text-align:center;
+  border:1px solid rgba(255,224,143,.24);
+  background:rgba(255,255,255,.045);
+  box-shadow:inset 0 0 28px rgba(126,205,239,.025);
 }
-.fae-helper strong { display:block; margin-bottom:.25rem; color:#fff6df; }
-.fae-helper span { color:#cbd8e9; font-size:var(--pg-t-sm); }
-.fae-helper .fae-element { display:block; margin-bottom:.3rem; color:#ffe28d; font-family:var(--pg-display); font-size:1.2rem; font-weight:700; }
-.fae-night-mote { position:absolute; width:54px; opacity:.72; pointer-events:none; animation:fae-float 12s ease-in-out infinite alternate; }
-.fae-night-mote-left{left:5%;bottom:12%}.fae-night-mote-right{right:5%;top:18%;animation-delay:-5s}
+.fae-helper strong {
+  display:block;
+  margin-bottom:.25rem;
+  color:#fff6df;
+}
+.fae-helper span {
+  color:#cbd8e9;
+  font-size:var(--pg-t-sm);
+}
+.fae-helper .fae-element {
+  display:block;
+  margin-bottom:.3rem;
+  color:#ffe28d;
+  font-family:var(--pg-display);
+  font-size:1.14rem;
+  font-weight:700;
+}
+.fae-night-mote {
+  position:absolute;
+  width:54px;
+  opacity:.72;
+  pointer-events:none;
+  animation:fae-float 12s ease-in-out infinite alternate;
+}
+.fae-night-mote-left { left:5%;bottom:12%; }
+.fae-night-mote-right { right:5%;top:18%;animation-delay:-5s; }
 
 .fae-devcard {
-  display:grid; grid-template-columns:1fr auto; gap:var(--pg-gap-lg); align-items:center;
-  border:1px solid rgba(126,205,239,.28); border-radius:24px; padding:clamp(1.5rem,3vw,2.5rem);
-  background:radial-gradient(circle at 92% 8%,rgba(126,205,239,.1),transparent 20rem),rgba(14,35,59,.78);
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:var(--pg-gap-lg);
+  align-items:center;
+  border:1px solid rgba(126,205,239,.28);
+  border-radius:24px;
+  padding:clamp(1.5rem,3vw,2.5rem);
+  background:
+    radial-gradient(circle at 92% 8%,rgba(126,205,239,.1),transparent 20rem),
+    rgba(14,35,59,.78);
   box-shadow:0 25px 65px rgba(0,0,0,.28);
 }
-.fae-devcard h2{margin:.2rem 0 .7rem}.fae-devcard p{margin:0}.fae-devcard .pg-body{color:#cbd6e2}
-.fae-devmeta{display:grid;gap:.55rem;min-width:235px}.fae-devmeta span{display:flex;justify-content:space-between;gap:1.1rem;border-bottom:1px solid rgba(255,255,255,.12);padding-bottom:.45rem;color:#bcc8d8;font-size:var(--pg-t-sm)}.fae-devmeta b{color:#fff4d1}.fae-devmeta em{font-style:normal}
-.fae-note{margin-top:1rem!important;padding:1rem 1.1rem;border-radius:14px;border:1px solid rgba(255,226,141,.24);background:rgba(255,226,141,.06);color:#cfd8e4!important;font-size:var(--pg-t-sm)}
+.fae-devcard-expanded {
+  grid-template-columns:minmax(0,1.25fr) minmax(240px,.75fr) minmax(235px,auto);
+}
+.fae-devcard h2 { margin:.2rem 0 .7rem; }
+.fae-devcard p { margin:0; }
+.fae-devcard .pg-body { color:#cbd6e2; }
 
-@media(max-width:980px){.fae-helper-grid{grid-template-columns:repeat(2,1fr)}.fae-avatar-gallery{grid-template-columns:1fr}}
-@media(max-width:820px){.fae-intro,.fae-split,.fae-devcard{grid-template-columns:1fr}.fae-split.reverse .fae-copy,.fae-split.reverse>*:last-child{order:initial}.fae-devmeta{min-width:0}.fae-hero{min-height:820px}.fae-creature-stage{min-height:360px}.fae-hatch-grid{max-width:620px;margin-inline:auto}}
-@media(max-width:560px){.fae-hero{min-height:760px;padding-top:7rem}.fae-hero-art img{object-position:62% 52%}.fae-hero-inner{padding:1.1rem}.fae-helper-grid,.fae-hatch-grid{grid-template-columns:1fr}.fae-creature-stage{gap:.5rem;padding:1.25rem}.fae-creature-mosslet img{width:140px}.fae-creature-cinderpaw img{width:175px}.fae-mote{opacity:.5}}
-@media(prefers-reduced-motion:reduce){.fae-mote,.fae-stage-mote,.fae-night-mote{animation:none}}
+.fae-devmeta {
+  display:grid;
+  gap:.55rem;
+  min-width:235px;
+}
+.fae-devmeta span {
+  display:flex;
+  justify-content:space-between;
+  gap:1.1rem;
+  border-bottom:1px solid rgba(255,255,255,.12);
+  padding-bottom:.45rem;
+  color:#bcc8d8;
+  font-size:var(--pg-t-sm);
+}
+.fae-devmeta b { color:#fff4d1; }
+.fae-devmeta em { font-style:normal; text-align:right; }
+
+.fae-note {
+  margin-top:1rem!important;
+  padding:1rem 1.1rem;
+  border-radius:14px;
+  border:1px solid rgba(255,226,141,.24);
+  background:rgba(255,226,141,.06);
+  color:#cfd8e4!important;
+  font-size:var(--pg-t-sm);
+}
+
+.fae-current-focus {
+  padding:1rem 1.05rem;
+  border-radius:16px;
+  border:1px solid rgba(126,205,239,.24);
+  background:rgba(126,205,239,.055);
+}
+.fae-current-focus span {
+  display:block;
+  margin-bottom:.35rem;
+  color:#ffe28d;
+  font-family:var(--pg-display);
+  font-size:.92rem;
+  font-weight:700;
+  letter-spacing:.055em;
+  text-transform:uppercase;
+}
+.fae-current-focus strong {
+  display:block;
+  color:#f5f8fb;
+  line-height:1.55;
+  font-size:var(--pg-t-sm);
+}
+
+.fae-language-list {
+  display:flex;
+  flex-wrap:wrap;
+  gap:.4rem;
+  margin-top:.75rem;
+}
+.fae-language-list span {
+  min-width:2.55rem;
+  padding:.32rem .48rem;
+  border-radius:999px;
+  border:1px solid rgba(255,226,141,.18);
+  background:rgba(255,255,255,.045);
+  color:#dbe6f3;
+  font-size:.72rem;
+  font-weight:800;
+  letter-spacing:.04em;
+  text-align:center;
+}
+
+@media(max-width:1120px) {
+  .fae-devcard-expanded {
+    grid-template-columns:1fr 1fr;
+  }
+  .fae-devcard-expanded > :first-child {
+    grid-column:1 / -1;
+  }
+}
+
+@media(max-width:980px) {
+  .fae-helper-grid { grid-template-columns:repeat(2,1fr); }
+  .fae-avatar-gallery { grid-template-columns:1fr; }
+}
+
+@media(max-width:820px) {
+  .fae-intro,
+  .fae-split,
+  .fae-devcard,
+  .fae-devcard-expanded {
+    grid-template-columns:1fr;
+  }
+  .fae-devcard-expanded > :first-child {
+    grid-column:auto;
+  }
+  .fae-split.reverse .fae-copy,
+  .fae-split.reverse>*:last-child {
+    order:initial;
+  }
+  .fae-devmeta {
+    min-width:0;
+  }
+  .fae-hero {
+    min-height:820px;
+  }
+  .fae-creature-stage {
+    min-height:360px;
+  }
+  .fae-hatch-grid {
+    max-width:620px;
+    margin-inline:auto;
+  }
+}
+
+@media(max-width:560px) {
+  .fae-hero {
+    min-height:760px;
+    padding-top:7rem;
+  }
+  .fae-hero-art img {
+    object-position:62% 52%;
+  }
+  .fae-hero-inner {
+    padding:1.1rem;
+  }
+  .fae-helper-grid,
+  .fae-hatch-grid {
+    grid-template-columns:1fr;
+  }
+  .fae-creature-stage {
+    gap:.5rem;
+    padding:1.25rem;
+  }
+  .fae-creature-mosslet img {
+    width:140px;
+  }
+  .fae-creature-cinderpaw img {
+    width:175px;
+  }
+  .fae-mote {
+    opacity:.5;
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  .fae-mote,
+  .fae-stage-mote,
+  .fae-night-mote {
+    animation:none;
+  }
+}
