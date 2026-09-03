@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin" />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Black&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #08161f; color: #eef4f2; font-family: Archivo, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: #e8b44b; text-decoration: none; transition: color .22s ease, background-color .22s ease, border-color .22s ease, transform .22s ease; }
+  a:hover { color: #f7cf74; }
+  a:focus-visible, button:focus-visible { outline: 2px solid #e8b44b; outline-offset: 3px; }
+  ::selection { background: #e8b44b; color: #08161f; }
+  figure { transition: border-color .3s ease, transform .4s cubic-bezier(.2,.7,.2,1); }
+  figure img { transition: transform .7s cubic-bezier(.2,.7,.2,1), filter .5s ease; }
+  figure:hover { border-color: rgba(232,180,75,.55) !important; }
+  figure:hover img { transform: scale(1.05); filter: saturate(1.06); }
+  @keyframes pgMarquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @keyframes pgRise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+  @keyframes pgCue { 0%, 100% { transform: translateY(0); opacity: .55; } 50% { transform: translateY(7px); opacity: 1; } }
+  @keyframes faeDrift { 0%, 100% { transform: translate3d(0,0,0); opacity: .5; } 50% { transform: translate3d(14px,-22px,0); opacity: .9; } }
+</style>
+</helmet>
+
+<div style="background:#08161f;color:#eef4f2;overflow-x:hidden">
+
+<header style="position:sticky;top:0;z-index:80;backdrop-filter:blur(14px);background:rgba(8,22,31,.84);border-bottom:1px solid rgba(232,180,75,.16)">
+  <div style="max-width:1560px;margin:0 auto;padding:14px 40px;display:flex;align-items:center;gap:40px;flex-wrap:wrap">
+    <a href="index.html" style="display:flex;align-items:center;gap:12px;color:#eef4f2">
+      <img src="Images/verdant_phoenix_crest_emblem_master.png" alt="" style="width:34px;height:34px;object-fit:contain" />
+      <span style="font-family:'Archivo Black',sans-serif;font-size:15px;letter-spacing:.16em;text-transform:uppercase">PhoenixGold</span>
+    </a>
+    <nav style="display:flex;align-items:center;gap:30px;margin-left:auto;flex-wrap:wrap">
+      <a href="index.html" style="font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:rgba(238,244,242,.7)" style-hover="color:#e8b44b">Studio</a>
+      <a href="megablast-mayhem.html" style="font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:rgba(238,244,242,.7)" style-hover="color:#e8b44b">MegaBlast Mayhem</a>
+      <a href="eucalyptus-edge.html" style="font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:rgba(238,244,242,.7)" style-hover="color:#e8b44b">Eucalyptus Edge</a>
+      <a href="faefera.html" style="font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#e8b44b;border-bottom:1px solid #e8b44b;padding-bottom:3px">Faefera</a>
+      <a href="https://store.steampowered.com/app/4999100/Eucalyptus_Edge_MegaBlast_Mayhem/" target="_blank" rel="noopener" style="padding:11px 20px;background:#e8b44b;color:#08161f;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;clip-path:polygon(9px 0,100% 0,100% calc(100% - 9px),calc(100% - 9px) 100%,0 100%,0 9px)" style-hover="background:#f7cf74">MegaBlast on Steam</a>
+    </nav>
+  </div>
+  <div style="height:2px;background:rgba(232,180,75,.12)">
+    <div data-pg-progress="true" style="height:2px;width:0;background:#e8b44b"></div>
+  </div>
+</header>
+
+<section style="position:relative;min-height:88vh;display:flex;align-items:flex-end;overflow:hidden">
+  <img src="Images/faefera/faefera_world_panorama.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%" />
+  <div style="position:absolute;inset:0;background:linear-gradient(to top,#08161f 3%,rgba(8,22,31,.9) 42%,rgba(8,22,31,.55) 72%,rgba(8,22,31,.35) 100%)"></div>
+  <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(8,22,31,.8) 0%,rgba(8,22,31,.35) 52%,transparent 82%)"></div>
+  <img src="Images/faefera/vfx/mote_03.png" alt="" style="position:absolute;left:14%;top:26%;width:120px;opacity:.6;animation:faeDrift 11s ease-in-out infinite" />
+  <img src="Images/faefera/vfx/mote_07.png" alt="" style="position:absolute;right:22%;top:38%;width:90px;opacity:.5;animation:faeDrift 14s ease-in-out infinite 1.5s" />
+  <img src="Images/faefera/vfx/mote_09.png" alt="" style="position:absolute;right:9%;bottom:26%;width:150px;opacity:.45;animation:faeDrift 17s ease-in-out infinite .8s" />
+
+  <div style="position:relative;width:100%;max-width:1560px;margin:0 auto;padding:0 40px 60px">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:24px;animation:pgRise .7s ease both">
+      <span style="width:34px;height:1px;background:#e8b44b"></span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#e8b44b">Pre-alpha &middot; Godot 4.7.1 &middot; in active development</span>
+    </div>
+    <img src="Images/faefera/faefera_logo.png" alt="Faefera" style="display:block;width:min(560px,72vw);height:auto;animation:pgRise .8s .06s ease both;filter:drop-shadow(0 18px 40px rgba(0,0,0,.55))" />
+    <p style="margin:28px 0 0;max-width:60ch;font-size:19px;line-height:1.64;color:rgba(238,244,242,.82);text-wrap:pretty;animation:pgRise .8s .12s ease both">
+      A cozy fantasy sandbox about mysterious eggs, magical baby companions, building and remodeling a home, gardening, crafting, digging, and discovering what waits beyond the next hill.
+    </p>
+    <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:26px;animation:pgRise .8s .16s ease both">
+      <sc-for list="{{ badges }}" as="badge" hint-placeholder-count="6">
+        <span style="padding:9px 16px;border:1px solid rgba(238,244,242,.24);border-radius:999px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(238,244,242,.78)">{{ badge }}</span>
+      </sc-for>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:32px;animation:pgRise .8s .2s ease both">
+      <span style="padding:16px 30px;background:#e8b44b;color:#08161f;font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;clip-path:polygon(11px 0,100% 0,100% calc(100% - 11px),calc(100% - 11px) 100%,0 100%,0 11px)">Demo in development</span>
+      <a href="#world" style="padding:16px 30px;border:1px solid rgba(238,244,242,.3);color:#eef4f2;font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase" style-hover="border-color:#e8b44b;color:#e8b44b">Explore Faefera</a>
+    </div>
+    <div style="margin-top:44px;display:flex;align-items:center;gap:10px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:rgba(238,244,242,.5);animation:pgCue 2.4s ease-in-out infinite">
+      <span style="width:1px;height:22px;background:rgba(232,180,75,.7)"></span>
+      <span>Scroll</span>
+    </div>
+  </div>
+</section>
+
+<div style="border-top:1px solid rgba(232,180,75,.16);border-bottom:1px solid rgba(232,180,75,.16);background:#0c1e2a;overflow:hidden">
+  <div style="display:flex;width:max-content;animation:pgMarquee 36s linear infinite">
+    <div style="display:flex;align-items:center;gap:56px;padding:14px 28px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:rgba(238,244,242,.52)">
+      <span>Windows PC &middot; Steam</span><span style="color:#e8b44b">&#10022;</span>
+      <span>Godot 4.7.1</span><span style="color:#e8b44b">&#10022;</span>
+      <span>Steam Deck target</span><span style="color:#e8b44b">&#10022;</span>
+      <span>11 languages in testing</span><span style="color:#e8b44b">&#10022;</span>
+      <span>No traditional combat loop</span><span style="color:#e8b44b">&#10022;</span>
+      <span>Demo first</span><span style="color:#e8b44b">&#10022;</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:56px;padding:14px 28px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:rgba(238,244,242,.52)" aria-hidden="true">
+      <span>Windows PC &middot; Steam</span><span style="color:#e8b44b">&#10022;</span>
+      <span>Godot 4.7.1</span><span style="color:#e8b44b">&#10022;</span>
+      <span>Steam Deck target</span><span style="color:#e8b44b">&#10022;</span>
+      <span>11 languages in testing</span><span style="color:#e8b44b">&#10022;</span>
+      <span>No traditional combat loop</span><span style="color:#e8b44b">&#10022;</span>
+      <span>Demo first</span><span style="color:#e8b44b">&#10022;</span>
+    </div>
+  </div>
+</div>
+
+<section id="begin" style="background:#08161f">
+  <div data-reveal="true" style="opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1);max-width:1560px;margin:0 auto;padding:104px 40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:64px;align-items:center">
+    <div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#e8b44b">A gentler kind of adventure</div>
+      <h2 style="margin:14px 0 0;font-family:'Archivo Black',sans-serif;font-size:clamp(32px,3.8vw,58px);line-height:.94;letter-spacing:-.03em;text-transform:uppercase">Begin with an egg.<br />Build a home.<br />Let the world unfold.</h2>
+      <p style="margin:24px 0 0;max-width:54ch;font-size:18px;line-height:1.64;color:rgba(238,244,242,.78);text-wrap:pretty">A new adventure begins with character creation, followed by a short journey into the world and the discovery of a natural starter nest. Choose one of four mysterious eggs, watch your new companion hatch, and give that individual Faefera a name of your own.</p>
+      <p style="margin:18px 0 0;max-width:54ch;font-size:18px;line-height:1.64;color:rgba(238,244,242,.66);text-wrap:pretty">There is no traditional combat loop. Progress comes from exploration, building, gardening, crafting, digging, caring for companions, and reshaping the world.</p>
+      <div style="margin-top:32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;max-width:640px">
+        <sc-for list="{{ loop }}" as="step" hint-placeholder-count="4">
+          <div style="border:1px solid rgba(238,244,242,.14);border-radius:12px;background:#0c1e2a;padding:16px">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.2em;color:rgba(232,180,75,.75)">{{ step.no }}</div>
+            <div style="margin-top:8px;font-family:'Archivo Black',sans-serif;font-size:14px;text-transform:uppercase;letter-spacing:.01em">{{ step.title }}</div>
+            <div style="margin-top:6px;font-size:14px;line-height:1.5;color:rgba(238,244,242,.66)">{{ step.text }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px">
+      <figure style="margin:0;grid-column:span 2;border:1px solid rgba(238,244,242,.14);border-radius:16px;overflow:hidden;background:#0c1e2a">
+        <img src="Images/faefera/faefera_gameplay_concept.png" alt="Faefera gameplay concept — meadow, home and companions" style="display:block;width:100%;aspect-ratio:16/9;object-fit:cover" />
+      </figure>
+      <figure style="margin:0;position:relative;border:1px solid rgba(238,244,242,.14);border-radius:16px;overflow:hidden;background:radial-gradient(80% 70% at 50% 40%,#16323d,#0a1a24 72%);display:grid;place-items:center">
+        <img src="Images/faefera/pufflet_egg.png" alt="A mysterious starter egg" style="display:block;width:100%;aspect-ratio:1/1;object-fit:contain;padding:16%;box-sizing:border-box" />
+        <figcaption style="position:absolute;left:0;right:0;bottom:0;padding:10px 14px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(238,244,242,.72);background:linear-gradient(transparent,rgba(8,22,31,.92) 60%)">One of four starter eggs</figcaption>
+      </figure>
+      <figure style="margin:0;position:relative;border:1px solid rgba(238,244,242,.14);border-radius:16px;overflow:hidden;background:radial-gradient(80% 70% at 50% 40%,#16323d,#0a1a24 72%);display:grid;place-items:center">
+        <img src="Images/faefera/thornlet_hatch_7.png" alt="A baby Faefera hatching" style="display:block;width:100%;aspect-ratio:1/1;object-fit:contain;padding:12%;box-sizing:border-box" />
+        <figcaption style="position:absolute;left:0;right:0;bottom:0;padding:10px 14px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(238,244,242,.72);background:linear-gradient(transparent,rgba(8,22,31,.92) 60%)">The hatching moment</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="companions" style="background:#0c1e2a;border-top:1px solid rgba(238,244,242,.1)">
+  <div data-reveal="true" style="opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1);max-width:1560px;margin:0 auto;padding:96px 40px 40px">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#e8b44b">The compendium</div>
+    <h2 style="margin:14px 0 0;font-family:'Archivo Black',sans-serif;font-size:clamp(32px,3.8vw,58px);line-height:.94;letter-spacing:-.03em;text-transform:uppercase">A world full of<br />baby Faefera</h2>
+    <p style="margin:20px 0 0;max-width:66ch;font-size:18px;line-height:1.64;color:rgba(238,244,242,.72);text-wrap:pretty">Every companion is drawn as a full compendium entry &mdash; base art, colour variations, animation frames, modular parts and egg families &mdash; before it becomes a sprite. A palette-channel rendering system is being prototyped around those colour variations, so the same kind of companion can look different while staying recognisable.</p>
+    <div style="margin-top:36px;display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px">
+      <sc-for list="{{ companions }}" as="c" hint-placeholder-count="12">
+        <figure style="margin:0;border:1px solid rgba(238,244,242,.12);border-radius:16px;overflow:hidden;background:#08161f">
+          <img src="{{ c }}" alt="Baby Faefera companion art" style="display:block;width:100%;aspect-ratio:1/1;object-fit:cover" />
+        </figure>
+      </sc-for>
+    </div>
+    <p style="margin:18px 0 0;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(238,244,242,.42)">Compendium art &middot; species naming under review &middot; players name their own companions in game</p>
+  </div>
+  <div data-reveal="true" style="opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1);max-width:1560px;margin:0 auto;padding:40px 40px 96px">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#e8b44b">Companions, not combat units</div>
+    <h3 style="margin:14px 0 26px;font-family:'Archivo Black',sans-serif;font-size:clamp(24px,2.4vw,36px);line-height:.98;letter-spacing:-.02em;text-transform:uppercase">Every companion changes how you explore</h3>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px">
+      <sc-for list="{{ helpers }}" as="h" hint-placeholder-count="5">
+        <div style="border:1px solid rgba(238,244,242,.14);border-radius:14px;background:#08161f;padding:22px">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#8fd3c7">{{ h.tag }}</div>
+          <div style="margin-top:12px;font-family:'Archivo Black',sans-serif;font-size:17px;text-transform:uppercase;letter-spacing:-.01em">{{ h.title }}</div>
+          <div style="margin-top:10px;font-size:15px;line-height:1.55;color:rgba(238,244,242,.68)">{{ h.text }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section id="world" style="position:relative;background:#08161f">
+  <div data-reveal="true" style="opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1);max-width:1560px;margin:0 auto;padding:96px 40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:56px;align-items:start">
+    <div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#e8b44b">One connected world</div>
+      <h2 style="margin:14px 0 0;font-family:'Archivo Black',sans-serif;font-size:clamp(30px,3.4vw,52px);line-height:.94;letter-spacing:-.03em;text-transform:uppercase">Four places,<br />one continuous world</h2>
+      <p style="margin:22px 0 0;max-width:54ch;font-size:18px;line-height:1.64;color:rgba(238,244,242,.76);text-wrap:pretty">The current demo world is built around four connected identities. Each is part of the same side-scrolling world rather than a separate level, and day-and-night atmosphere, biome transitions, diggable terrain and player-made structures are being refined together.</p>
+      <div style="margin-top:28px;display:grid;gap:10px;max-width:560px">
+        <sc-for list="{{ regions }}" as="r" hint-placeholder-count="4">
+          <div style="display:grid;grid-template-columns:26px minmax(0,1fr);gap:16px;align-items:baseline;border-top:1px solid rgba(238,244,242,.14);padding-top:14px">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:rgba(232,180,75,.8)">{{ r.no }}</span>
+            <div>
+              <div style="font-family:'Archivo Black',sans-serif;font-size:16px;text-transform:uppercase;letter-spacing:-.01em">{{ r.name }}</div>
+              <div style="margin-top:5px;font-size:15px;line-height:1.5;color:rgba(238,244,242,.66)">{{ r.text }}</div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+    <div style="display:grid;gap:14px">
+      <figure style="margin:0;border:1px solid rgba(238,244,242,.14);border-radius:16px;overflow:hidden;background:#0c1e2a">
+        <img src="Images/faefera/faefera_world_panorama.png" alt="Faefera panorama with mountains, villages, waterfalls and floating islands" style="display:block;width:100%;aspect-ratio:16/9;object-fit:cover" />
+        <figcaption style="padding:12px 16px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(238,244,242,.6);border-top:1px solid rgba(238,244,242,.1)">World art direction &mdash; beyond the demo regions</figcaption>
+      </figure>
+      <figure style="margin:0;border:1px solid rgba(238,244,242,.14);border-radius:16px;overflow:hidden;background:#0c1e2a">
+        <img src="Images/faefera/faefera_terrain_system.png" alt="Faefera terrain system art" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover" />
+        <figcaption style="padding:12px 16px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(238,244,242,.6);border-top:1px solid rgba(238,244,242,.1)">Diggable terrain &mdash; natural ground blocks and slopes</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="build" style="background:#0c1e2a;border-top:1px solid rgba(238,244,242,.1)">
+  <div data-reveal="true" style="opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1);max-width:1560px;margin:0 auto;padding:96px 40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:56px;align-items:start">
+    <div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#e8b44b">Build it your way</div>
+      <h2 style="margin:14px 0 0;font-family:'Archivo Black',sans-serif;font-size:clamp(30px,3.4vw,52px);line-height:.94;letter-spacing:-.03em;text-transform:uppercase">A home that keeps evolving</h2>
+      <p style="margin:22px 0 0;max-width:54ch;font-size:18px;line-height:1.64;color:rgba(238,244,242,.76);text-wrap:pretty">Construction is being built around freeform pieces rather than fixed house prefabs, with fine placement intended to support rooms, towers, balconies, beams, walls, doors, mixed materials and asymmetrical designs.</p>
+      <p style="margin:18px 0 0;max-width:54ch;font-size:18px;line-height:1.64;color:rgba(238,244,242,.64);text-wrap:pretty">The goal is not simply to prove that pieces can be placed. Building should feel good enough that you want to move a doorway, redo a roof and add another room. Digging follows the same philosophy: reshaping the underground should stay coherent even during long excavation sessions.</p>
+    </div>
+    <div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:rgba(238,244,242,.45);margin-bottom:16px">Handmade interface &amp; materials</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:10px">
+        <sc-for list="{{ kit }}" as="k" hint-placeholder-count="8">
+          <figure style="margin:0;border:1px solid rgba(238,244,242,.12);border-radius:12px;background:#08161f;padding:14px;display:grid;place-items:center;gap:10px">
+            <img src="{{ k.src }}" alt="{{ k.name }}" style="display:block;width:100%;height:56px;object-fit:contain" />
+            <figcaption style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:rgba(238,244,242,.5);text-align:center">{{ k.name }}</figcaption>
+          </figure>
+        </sc-for>
+      </div>
+      <p style="margin:16px 0 0;font-size:15px;line-height:1.6;color:rgba(238,244,242,.6);max-width:52ch">Every panel, button, block and icon in the demo is authored as part of one storybook UI kit, so the interface reads as part of the world rather than a layer on top of it.</p>
+    </div>
+  </div>
+</section>
+
+<section style="position:relative;background:#08161f;border-top:1px solid rgba(232,180,75,.16)">
+  <div data-reveal="true" style="opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1);max-width:980px;margin:0 auto;padding:104px 40px;text-align:center">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#e8b44b">A different kind of challenge</div>
+    <h2 style="margin:16px 0 0;font-family:'Archivo Black',sans-serif;font-size:clamp(28px,3.4vw,52px);line-height:.98;letter-spacing:-.03em;text-transform:uppercase">A world without a traditional combat loop</h2>
+    <p style="margin:22px auto 0;max-width:64ch;font-size:19px;line-height:1.64;color:rgba(238,244,242,.74);text-wrap:pretty">Environmental challenges can still matter, but Faefera is not built around fighting enemies or turning companions into battle units. The focus stays on exploration, discovery, problem-solving, building, crafting, caring for companions, and creating a place worth returning to.</p>
+  </div>
+</section>
+
+<section id="status" style="background:#0c1e2a;border-top:1px solid rgba(238,244,242,.1)">
+  <div data-reveal="true" style="opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1);max-width:1560px;margin:0 auto;padding:96px 40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:48px;align-items:start">
+    <div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#e8b44b">Development status</div>
+      <h2 style="margin:14px 0 0;font-family:'Archivo Black',sans-serif;font-size:clamp(30px,3.2vw,48px);line-height:.94;letter-spacing:-.03em;text-transform:uppercase">The demo comes first</h2>
+      <p style="margin:22px 0 0;max-width:52ch;font-size:18px;line-height:1.64;color:rgba(238,244,242,.76);text-wrap:pretty">Faefera is in active pre-alpha development in Godot 4.7.1. The first public-facing goal is a polished Steam demo for Windows PC centred on the starter-egg experience, exploration, freeform building, digging, gardening, crafting, companion care, save persistence and controller support.</p>
+      <p style="margin:18px 0 0;max-width:52ch;font-size:15px;line-height:1.6;color:rgba(238,244,242,.58)">There is no public Faefera Steam page or trailer yet. Those will be created when the demo is ready to represent the game properly.</p>
+    </div>
+    <div style="display:grid;gap:14px">
+      <div style="border:1px solid rgba(232,180,75,.35);border-radius:14px;background:#08161f;padding:24px">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#e8b44b">Current demo focus</div>
+        <div style="margin-top:12px;font-size:17px;line-height:1.55;color:rgba(238,244,242,.86)">Building coherence, long-session digging, companion polish, localization, controller UX, and Steam Deck readability.</div>
+      </div>
+      <div style="border:1px solid rgba(238,244,242,.14);border-radius:14px;background:#08161f;padding:24px">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(238,244,242,.5)">Localization &mdash; 11 languages implemented, in QA</div>
+        <div style="margin-top:14px;display:flex;flex-wrap:wrap;gap:8px">
+          <sc-for list="{{ languages }}" as="l" hint-placeholder-count="11">
+            <span style="padding:7px 12px;border:1px solid rgba(238,244,242,.18);border-radius:8px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;color:rgba(238,244,242,.74)">{{ l }}</span>
+          </sc-for>
+        </div>
+      </div>
+      <dl style="margin:0;display:grid;gap:10px">
+        <sc-for list="{{ meta }}" as="m" hint-placeholder-count="6">
+          <div style="border:1px solid rgba(238,244,242,.12);border-radius:12px;background:#08161f;padding:14px 18px;display:flex;justify-content:space-between;gap:20px;align-items:baseline">
+            <dt style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(238,244,242,.5)">{{ m.k }}</dt>
+            <dd style="margin:0;font-size:15px;text-align:right;color:rgba(238,244,242,.88)">{{ m.v }}</dd>
+          </div>
+        </sc-for>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<footer style="background:#08161f;border-top:1px solid rgba(238,244,242,.12)">
+  <div style="max-width:1560px;margin:0 auto;padding:64px 40px 30px;display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:44px">
+    <div>
+      <div style="display:flex;align-items:center;gap:12px">
+        <img src="Images/Logo2026.png" alt="" style="width:38px;height:38px;object-fit:contain" />
+        <span style="font-family:'Archivo Black',sans-serif;font-size:14px;letter-spacing:.14em;text-transform:uppercase">PhoenixGold Game Studios</span>
+      </div>
+      <p style="margin:16px 0 0;max-width:44ch;font-size:15px;line-height:1.6;color:rgba(238,244,242,.6)">An independent studio in Salt Lake City building colorful, family-friendly games with strong worlds and memorable characters.</p>
+    </div>
+    <div>
+      <h4 style="margin:0 0 14px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#e8b44b">Games</h4>
+      <div style="display:grid;gap:10px;font-size:15px">
+        <a href="faefera.html" style="color:rgba(238,244,242,.7)" style-hover="color:#e8b44b">Faefera</a>
+        <a href="megablast-mayhem.html" style="color:rgba(238,244,242,.7)" style-hover="color:#e8b44b">MegaBlast Mayhem</a>
+        <a href="eucalyptus-edge.html" style="color:rgba(238,244,242,.7)" style-hover="color:#e8b44b">Eucalyptus Edge</a>
+      </div>
+    </div>
+    <div>
+      <h4 style="margin:0 0 14px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#e8b44b">Studio</h4>
+      <div style="display:grid;gap:10px;font-size:15px">
+        <a href="index.html#studio" style="color:rgba(238,244,242,.7)" style-hover="color:#e8b44b">About</a>
+        <a href="index.html#roadmap" style="color:rgba(238,244,242,.7)" style-hover="color:#e8b44b">Road ahead</a>
+        <a href="https://github.com/phoenixgoldz" target="_blank" rel="noopener" style="color:rgba(238,244,242,.7)" style-hover="color:#e8b44b">GitHub</a>
+      </div>
+    </div>
+    <div>
+      <h4 style="margin:0 0 14px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#e8b44b">Help &amp; legal</h4>
+      <div style="display:grid;gap:10px;font-size:15px">
+        <a href="support.html" style="color:rgba(238,244,242,.7)" style-hover="color:#e8b44b">Support</a>
+        <a href="health-warning.html" style="color:rgba(238,244,242,.7)" style-hover="color:#e8b44b">Health &amp; safety</a>
+        <a href="privacy.html" style="color:rgba(238,244,242,.7)" style-hover="color:#e8b44b">Privacy</a>
+        <a href="terms.html" style="color:rgba(238,244,242,.7)" style-hover="color:#e8b44b">Terms</a>
+      </div>
+    </div>
+  </div>
+  <div style="max-width:1560px;margin:0 auto;padding:22px 40px 46px;border-top:1px solid rgba(238,244,242,.1);display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(238,244,242,.42)">
+    <span>&copy; 2026 PhoenixGold Game Studios</span>
+    <span>Faefera, Eucalyptus Edge and MegaBlast Mayhem are projects of PhoenixGold Game Studios</span>
+  </div>
+</footer>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440}}">
+class Component extends DCLogic {
+  componentDidMount() {
+    this._seen = new WeakSet();
+    requestAnimationFrame(() => requestAnimationFrame(() => this._wire()));
+    this._onScroll = () => {
+      const bar = document.querySelector("[data-pg-progress]");
+      if (!bar) return;
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = (max > 0 ? (window.scrollY / max) * 100 : 0) + "%";
+    };
+    window.addEventListener("scroll", this._onScroll, { passive: true });
+    this._onScroll();
+  }
+  componentDidUpdate() { this._wire(); }
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this._onScroll);
+    if (this._io) this._io.disconnect();
+  }
+  _wire() {
+    const calm = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const nodes = Array.from(document.querySelectorAll("[data-reveal]"));
+    const show = el => { el.style.opacity = "1"; el.style.transform = "none"; };
+    if (calm || typeof IntersectionObserver === "undefined") { nodes.forEach(show); return; }
+    if (!this._io) {
+      this._io = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) { show(e.target); this._io.unobserve(e.target); } });
+      }, { rootMargin: "0px 0px -12% 0px", threshold: 0.08 });
+    }
+    nodes.forEach(el => {
+      if (this._seen.has(el)) return;
+      this._seen.add(el);
+      this._io.observe(el);
+    });
+    setTimeout(() => nodes.forEach(el => {
+      const r = el.getBoundingClientRect();
+      if (getComputedStyle(el).opacity === "0" && r.top < window.innerHeight && r.bottom > 0) show(el);
+    }), 2500);
+  }
+  renderVals() {
+    const portrait = n => `Images/faefera/portraits/${n}.png`;
+    return {
+      badges: ["Windows PC", "Steam", "Keyboard + mouse", "Gamepad", "Steam Deck target", "11 languages in testing"],
+      loop: [
+        { no: "01", title: "Create", text: "Build a fae explorer from layered parts, palettes and wardrobe." },
+        { no: "02", title: "Find the nest", text: "A short journey out leads to a natural starter nest." },
+        { no: "03", title: "Choose an egg", text: "Four mysterious eggs; one becomes your first companion." },
+        { no: "04", title: "Name them", text: "Watch the hatch, then give that individual a name of your own." }
+      ],
+      companions: [
+        "Mosslet_Deer_Variant", "Emberhog", "Frostnip", "Hydripple", "Grifflet", "Cerbercub",
+        "Djinnlet", "Froglume", "Jacklune", "MoonMouse", "Starspawn_v2", "BumbleBud"
+      ].map(portrait),
+      helpers: [
+        { tag: "Digging", title: "Shape the earth", text: "Help uncover materials and open routes underground." },
+        { tag: "Water", title: "Care for plants", text: "Help water gardens and thirsty plants." },
+        { tag: "Light", title: "Brighten the dark", text: "Make caves and night exploration easier to read." },
+        { tag: "Cloud magic", title: "Create a stepping point", text: "A brief stationary cloud platform for a well-timed jump." },
+        { tag: "Nature", title: "Harvest & build", text: "Support gathering and hands-on creation." }
+      ],
+      regions: [
+        { no: "01", name: "Sunny Meadow", text: "The starting ground: open light, first shelter, first garden." },
+        { no: "02", name: "Whisperwood", text: "Deeper cover and quieter light as the world thickens." },
+        { no: "03", name: "Shallow Crystal Caverns", text: "The first step underground, where digging starts to matter." },
+        { no: "04", name: "Frostedge", text: "Colder ground at the edge of the demo world." }
+      ],
+      kit: [
+        { name: "Time panel", src: "Images/faefera/panel_time.png" },
+        { name: "Night panel", src: "Images/faefera/panel_time_night.png" },
+        { name: "Health", src: "Images/faefera/heart_full.png" },
+        { name: "Coin", src: "Images/faefera/panel_coin.png" },
+        { name: "Hotbar", src: "Images/faefera/hotbar_strip.png" },
+        { name: "Minimap frame", src: "Images/faefera/minimap_frame.png" },
+        { name: "Creatures tab", src: "Images/faefera/nav_creatures.png" },
+        { name: "Care tab", src: "Images/faefera/nav_care.png" },
+        { name: "Compass", src: "Images/faefera/nav_compass.png" },
+        { name: "Seed bag", src: "Images/faefera/item_seedbag.png" },
+        { name: "Watering can", src: "Images/faefera/item_wateringcan.png" },
+        { name: "Wood plank", src: "Images/faefera/block_wood_plank.png" },
+        { name: "Biome banner", src: "Images/faefera/banner_biome.png" },
+        { name: "Stone brick", src: "Images/faefera/block_stone_brick.png" },
+        { name: "Backpack tab", src: "Images/faefera/nav_backpack.png" }
+      ],
+      languages: ["EN", "FR", "DE", "ES", "PT-BR", "RU", "ZH-CN", "JA", "KO", "HI", "UR"],
+      meta: [
+        { k: "Platform", v: "Windows PC / Steam" },
+        { k: "Engine", v: "Godot 4.7.1" },
+        { k: "Input", v: "Gamepad + KB/M" },
+        { k: "Handheld", v: "Steam Deck target" },
+        { k: "Genre", v: "Cozy fantasy sandbox" },
+        { k: "Stage", v: "Pre-alpha demo" }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

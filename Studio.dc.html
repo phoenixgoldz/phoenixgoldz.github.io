@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin" />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Black&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #06100b; color: #eef3ee; font-family: Archivo, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: #e8b44b; text-decoration: none; transition: color .22s ease, background-color .22s ease, border-color .22s ease, transform .22s ease; }
+  a:hover { color: #f7cf74; }
+  a:focus-visible, button:focus-visible { outline: 2px solid #e8b44b; outline-offset: 3px; }
+  ::selection { background: #e8b44b; color: #07130d; }
+  figure { transition: border-color .3s ease; }
+  figure img { transition: transform .7s cubic-bezier(.2,.7,.2,1), filter .5s ease; }
+  figure:hover { border-color: rgba(232,180,75,.55) !important; }
+  figure:hover img { transform: scale(1.045); filter: saturate(1.08); }
+  video { pointer-events: none; }
+  @keyframes pgMarquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @keyframes pgRise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+  @keyframes pgCue { 0%, 100% { transform: translateY(0); opacity: .55; } 50% { transform: translateY(7px); opacity: 1; } }
+</style>
+</helmet>
+
+<div style="background:#06100b;color:#eef3ee;overflow-x:hidden">
+
+<header style="position:sticky;top:0;z-index:80;backdrop-filter:blur(14px);background:rgba(6,16,11,.82);border-bottom:1px solid rgba(232,180,75,.16)">
+  <div style="max-width:1560px;margin:0 auto;padding:14px 40px;display:flex;align-items:center;gap:40px;flex-wrap:wrap">
+    <a href="index.html" style="display:flex;align-items:center;gap:12px;color:#eef3ee">
+      <img src="Images/verdant_phoenix_crest_emblem_master.png" alt="" style="width:34px;height:34px;object-fit:contain" />
+      <span style="font-family:'Archivo Black',sans-serif;font-size:15px;letter-spacing:.16em;text-transform:uppercase">PhoenixGold</span>
+    </a>
+    <nav style="display:flex;align-items:center;gap:30px;margin-left:auto;flex-wrap:wrap">
+      <a href="#studio" style="font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:rgba(238,243,238,.7)" style-hover="color:#e8b44b">Studio</a>
+      <a href="#megablast" style="font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:rgba(238,243,238,.7)" style-hover="color:#e8b44b">MegaBlast</a>
+      <a href="#edge" style="font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:rgba(238,243,238,.7)" style-hover="color:#e8b44b">Eucalyptus Edge</a>
+      <a href="#faefera" style="font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:rgba(238,243,238,.7)" style-hover="color:#e8b44b">Faefera</a>
+      <a href="https://store.steampowered.com/app/4999100/" target="_blank" rel="noopener" style="padding:11px 20px;background:#e8b44b;color:#07130d;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;clip-path:polygon(9px 0,100% 0,100% calc(100% - 9px),calc(100% - 9px) 100%,0 100%,0 9px)" style-hover="background:#f7cf74">Wishlist on Steam</a>
+    </nav>
+  </div>
+  <div style="height:2px;background:rgba(232,180,75,.12)">
+    <div data-pg-progress="true" style="height:2px;width:0;background:#e8b44b"></div>
+  </div>
+</header>
+
+<section style="position:relative;height:92vh;min-height:720px;display:flex;align-items:flex-end;overflow:hidden">
+  <sc-if value="{{ videoHero }}" hint-placeholder-val="{{ true }}">
+    <video src="Video/IntroLogo.mp4" autoplay="autoplay" muted="muted" loop="loop" playsinline="playsinline" poster="Images/Eucalyptus Edge_Images/EE_Wallpaper1920x1080.png" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(1.05) contrast(1.05)"></video>
+  </sc-if>
+  <sc-if value="{{ stillHero }}">
+    <img src="Images/Eucalyptus Edge_Images/EE_Wallpaper1920x1080.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
+  </sc-if>
+  <div style="position:absolute;inset:0;background:linear-gradient(to top,#06100b 4%,rgba(6,16,11,.94) 46%,rgba(6,16,11,.86) 66%,rgba(6,16,11,.6) 100%)"></div>
+  <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(6,16,11,.86) 0%,rgba(6,16,11,.5) 46%,transparent 78%)"></div>
+  <div style="position:absolute;inset:0;background:radial-gradient(120% 70% at 16% 88%,rgba(232,180,75,.16),transparent 62%)"></div>
+
+  <div style="position:relative;width:100%;max-width:1560px;margin:0 auto;padding:0 40px 56px">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:22px;animation:pgRise .7s ease both">
+      <span style="width:34px;height:1px;background:#e8b44b"></span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#e8b44b">Independent studio &middot; Salt Lake City</span>
+    </div>
+    <h1 style="margin:0;font-family:'Archivo Black',sans-serif;font-size:clamp(56px,8.2vw,132px);line-height:.9;letter-spacing:-.035em;text-transform:uppercase;max-width:16ch;animation:pgRise .8s .06s ease both">
+      Games with<br /><span style="color:#e8b44b">heart &amp; magic</span>
+    </h1>
+    <p style="margin:26px 0 0;max-width:60ch;font-size:19px;line-height:1.62;color:rgba(238,243,238,.76);text-wrap:pretty;animation:pgRise .8s .12s ease both">
+      Three worlds built by one studio. A 4-player couch bomber launching 29 October 2026 with a free demo playable now, a 3D arena fighter in Unreal Engine 5.8, and a cozy creature-collecting adventure in Godot.
+    </p>
+    <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:34px;animation:pgRise .8s .18s ease both">
+      <a href="https://store.steampowered.com/app/5016620/Eucalyptus_Edge_MegaBlast_Mayhem_Demo/" target="_blank" rel="noopener" style="padding:16px 30px;background:#e8b44b;color:#07130d;font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;clip-path:polygon(11px 0,100% 0,100% calc(100% - 11px),calc(100% - 11px) 100%,0 100%,0 11px)" style-hover="background:#f7cf74">Play the free demo</a>
+      <a href="#edge" style="padding:16px 30px;border:1px solid rgba(238,243,238,.28);color:#eef3ee;font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase" style-hover="border-color:#e8b44b;color:#e8b44b">See the slate</a>
+    </div>
+    <div style="margin-top:44px;display:flex;align-items:center;gap:10px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:rgba(238,243,238,.5);animation:pgCue 2.4s ease-in-out infinite">
+      <span style="width:1px;height:22px;background:rgba(232,180,75,.7)"></span>
+      <span>Scroll</span>
+    </div>
+  </div>
+</section>
+
+<div style="border-top:1px solid rgba(232,180,75,.16);border-bottom:1px solid rgba(232,180,75,.16);background:#0a1610;overflow:hidden">
+  <div style="display:flex;width:max-content;animation:pgMarquee 34s linear infinite">
+    <div style="display:flex;align-items:center;gap:56px;padding:14px 28px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:rgba(238,243,238,.5)">
+      <span>Founded 2026</span><span style="color:#e8b44b">&#9670;</span>
+      <span>Solo studio &middot; design, engineering, art direction</span><span style="color:#e8b44b">&#9670;</span>
+      <span>MegaBlast Mayhem &mdash; launching 29 Oct 2026</span><span style="color:#e8b44b">&#9670;</span>
+      <span>Free demo playable now on Steam</span><span style="color:#e8b44b">&#9670;</span>
+      <span>Steam Next Fest &middot; 19&ndash;26 Oct 2026</span><span style="color:#e8b44b">&#9670;</span>
+      <span>Unreal Engine 5.8 &middot; Godot 4.7.1</span><span style="color:#e8b44b">&#9670;</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:56px;padding:14px 28px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:rgba(238,243,238,.5)" aria-hidden="true">
+      <span>Founded 2026</span><span style="color:#e8b44b">&#9670;</span>
+      <span>Solo studio &middot; design, engineering, art direction</span><span style="color:#e8b44b">&#9670;</span>
+      <span>MegaBlast Mayhem &mdash; launching 29 Oct 2026</span><span style="color:#e8b44b">&#9670;</span>
+      <span>Free demo playable now on Steam</span><span style="color:#e8b44b">&#9670;</span>
+      <span>Steam Next Fest &middot; 19&ndash;26 Oct 2026</span><span style="color:#e8b44b">&#9670;</span>
+      <span>Unreal Engine 5.8 &middot; Godot 4.7.1</span><span style="color:#e8b44b">&#9670;</span>
+    </div>
+  </div>
+</div>
+
+<section id="megablast" style="position:relative;padding:0;background:#06100b">
+  <div style="position:relative;overflow:hidden">
+    <img src="Images/web/library_hero.jpg" alt="MegaBlast Mayhem key art" style="display:block;width:100%;height:min(64vh,620px);object-fit:cover;object-position:center 38%" />
+    <div style="position:absolute;inset:0;background:linear-gradient(to top,#06100b 1%,rgba(6,16,11,.35) 46%,rgba(6,16,11,.12) 100%)"></div>
+  </div>
+  <div data-reveal="true" style="opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1);position:relative;max-width:1560px;margin:0 auto;padding:0 40px 64px;display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:56px;align-items:start">
+    <div style="position:relative;margin-top:-96px;display:flex;flex-direction:column;gap:26px;z-index:2">
+      <div style="display:flex;align-items:center;gap:12px">
+        <span style="padding:6px 12px;background:#7fd48b;color:#06180d;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.24em;text-transform:uppercase">Demo playable now</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:rgba(238,243,238,.5)">Title 01 &middot; Launches 29 Oct 2026</span>
+      </div>
+      <h2 style="margin:0;font-family:'Archivo Black',sans-serif;font-size:clamp(38px,4.6vw,72px);line-height:.92;letter-spacing:-.03em;text-transform:uppercase">Eucalyptus Edge:<br /><span style="color:#e8b44b">MegaBlast Mayhem</span></h2>
+      <p style="margin:0;max-width:52ch;font-size:18px;line-height:1.64;color:rgba(238,243,238,.74);text-wrap:pretty">Battle friends or bots in explosive four-player local multiplayer across Verdantia. Smash crates, collect powerups, trap your rivals in the blast &mdash; last fighter standing wins the round, first to three wins the match. A bot fills every empty seat, so nobody sits out.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));gap:10px;max-width:640px">
+        <div style="background:#0a1610;border:1px solid rgba(238,243,238,.12);padding:18px 16px"><div style="font-family:'Archivo Black',sans-serif;font-size:30px;color:#e8b44b">8</div><div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(238,243,238,.55);margin-top:6px">Fighters</div></div>
+        <div style="background:#0a1610;border:1px solid rgba(238,243,238,.12);padding:18px 16px"><div style="font-family:'Archivo Black',sans-serif;font-size:30px;color:#e8b44b">10</div><div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(238,243,238,.55);margin-top:6px">Arenas</div></div>
+        <div style="background:#0a1610;border:1px solid rgba(238,243,238,.12);padding:18px 16px"><div style="font-family:'Archivo Black',sans-serif;font-size:30px;color:#e8b44b">4</div><div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(238,243,238,.55);margin-top:6px">Local players</div></div>
+        <div style="background:#0a1610;border:1px solid rgba(238,243,238,.12);padding:18px 16px"><div style="font-family:'Archivo Black',sans-serif;font-size:30px;color:#e8b44b">55</div><div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(238,243,238,.55);margin-top:6px">Achievements</div></div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:6px">
+        <a href="https://store.steampowered.com/app/4999100/Eucalyptus_Edge_MegaBlast_Mayhem/" target="_blank" rel="noopener" style="padding:15px 28px;background:#e8b44b;color:#07130d;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;clip-path:polygon(10px 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%,0 10px)" style-hover="background:#f7cf74">Wishlist on Steam</a>
+        <a href="https://store.steampowered.com/app/5016620/Eucalyptus_Edge_MegaBlast_Mayhem_Demo/" target="_blank" rel="noopener" style="padding:15px 28px;border:1px solid rgba(238,243,238,.26);color:#eef3ee;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase" style-hover="border-color:#e8b44b;color:#e8b44b">Free demo</a>
+        <a href="https://www.youtube.com/watch?v=5NC4f3ytp9U" target="_blank" rel="noopener" style="padding:15px 28px;border:1px solid rgba(238,243,238,.26);color:#eef3ee;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase" style-hover="border-color:#e8b44b;color:#e8b44b">Watch trailer</a>
+      </div>
+    </div>
+    <div style="padding-top:40px;display:grid;gap:12px;align-content:start">
+      <figure style="margin:0;border:1px solid rgba(238,243,238,.12);background:#0a1610;overflow:hidden">
+        <img src="Images/Megablast_Images/00_character_select.png" alt="Character select — eight fighters" style="display:block;width:100%;aspect-ratio:4/3;object-fit:contain;image-rendering:pixelated" />
+      </figure>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(238,243,238,.45)">Choose your fighter &mdash; eight champions of Verdantia</div>
+    </div>
+  </div>
+  <div data-reveal="true" style="opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1);max-width:1560px;margin:0 auto;padding:0 40px 56px">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:rgba(238,243,238,.45);margin-bottom:16px">A match, start to finish</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px">
+      <sc-for list="{{ shots }}" as="shot" hint-placeholder-count="5">
+        <figure style="margin:0;border:1px solid rgba(238,243,238,.12);background:#0a1610;overflow:hidden">
+          <img src="{{ shot.src }}" alt="{{ shot.name }}" style="display:block;width:100%;aspect-ratio:1/1;object-fit:cover;image-rendering:pixelated" />
+          <figcaption style="padding:12px 14px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(238,243,238,.6);border-top:1px solid rgba(238,243,238,.1)">{{ shot.name }}</figcaption>
+        </figure>
+      </sc-for>
+    </div>
+  </div>
+  <div data-reveal="true" style="opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1);max-width:1560px;margin:0 auto;padding:0 40px 64px">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:rgba(238,243,238,.45);margin-bottom:16px">Five regions</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px">
+      <sc-for list="{{ regions }}" as="region" hint-placeholder-count="5">
+        <figure style="margin:0;position:relative;overflow:hidden;border:1px solid rgba(238,243,238,.12)">
+          <img src="{{ region.src }}" alt="{{ region.name }}" style="display:block;width:100%;aspect-ratio:16/10;object-fit:cover;filter:saturate(.95)" />
+          <figcaption style="position:absolute;left:0;right:0;bottom:0;padding:40px 14px 14px;background:linear-gradient(rgba(6,16,11,0) 0%,rgba(6,16,11,.72) 38%,rgba(6,16,11,.95) 72%,rgba(6,16,11,.99) 100%)">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#e8b44b">{{ region.name }}</div>
+            <div style="margin-top:6px;font-size:13px;line-height:1.45;color:rgba(238,243,238,.78)">{{ region.note }}</div>
+          </figcaption>
+        </figure>
+      </sc-for>
+    </div>
+  </div>
+  <div data-reveal="true" style="opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1);border-top:1px solid rgba(238,243,238,.1);background:#0a1610">
+    <div style="max-width:1560px;margin:0 auto;padding:76px 40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:56px;align-items:start">
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#e8b44b">Chaos bombs</div>
+        <h3 style="margin:14px 0 0;font-family:'Archivo Black',sans-serif;font-size:clamp(26px,2.6vw,40px);line-height:.96;letter-spacing:-.025em;text-transform:uppercase">Every fifth bomb<br />changes everything</h3>
+        <p style="margin:16px 0 26px;max-width:46ch;font-size:16px;line-height:1.6;color:rgba(238,243,238,.68);text-wrap:pretty">Roughly one bomb in five mutates the instant it touches the ground &mdash; and nobody knows which one.</p>
+        <div style="display:grid;gap:10px">
+          <sc-for list="{{ mutators }}" as="m" hint-placeholder-count="4">
+            <div style="display:grid;grid-template-columns:130px minmax(0,1fr);gap:18px;align-items:baseline;border-top:1px solid rgba(238,243,238,.12);padding-top:12px">
+              <span style="font-family:'Archivo Black',sans-serif;font-size:14px;letter-spacing:.04em;text-transform:uppercase;color:#e8b44b">{{ m.name }}</span>
+              <span style="font-size:15px;line-height:1.5;color:rgba(238,243,238,.78)">{{ m.text }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#e8b44b">Seven powerups</div>
+        <h3 style="margin:14px 0 0;font-family:'Archivo Black',sans-serif;font-size:clamp(26px,2.6vw,40px);line-height:.96;letter-spacing:-.025em;text-transform:uppercase">Countless<br />ways to win</h3>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:22px">
+          <sc-for list="{{ powerups }}" as="p" hint-placeholder-count="7">
+            <span style="padding:11px 18px;border:1px solid rgba(232,180,75,.4);color:#e8b44b;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase">{{ p }}</span>
+          </sc-for>
+        </div>
+        <div style="margin-top:34px;display:grid;gap:1px;background:rgba(238,243,238,.12);border:1px solid rgba(238,243,238,.12)">
+          <div style="background:#06100b;padding:16px 18px;display:flex;justify-content:space-between;gap:16px"><span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(238,243,238,.5)">Modes</span><span style="font-size:15px;text-align:right">Versus &middot; Region Tour &middot; Random Arena</span></div>
+          <div style="background:#06100b;padding:16px 18px;display:flex;justify-content:space-between;gap:16px"><span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(238,243,238,.5)">Difficulty</span><span style="font-size:15px;text-align:right">Sprout &middot; Ranger &middot; Champion &middot; Legend</span></div>
+          <div style="background:#06100b;padding:16px 18px;display:flex;justify-content:space-between;gap:16px"><span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(238,243,238,.5)">Audio</span><span style="font-size:15px;text-align:right">Original score, unique per region</span></div>
+          <div style="background:#06100b;padding:16px 18px;display:flex;justify-content:space-between;gap:16px"><span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(238,243,238,.5)">Play</span><span style="font-size:15px;text-align:right">Local only, one shared screen</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="edge" style="position:relative;padding:0">
+  <div style="position:relative;min-height:92vh;display:flex;align-items:center;overflow:hidden">
+    <img src="Images/web/Scene1.jpg" alt="Eucalyptus Edge arena combat" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
+    <div style="position:absolute;inset:0;background:linear-gradient(105deg,rgba(6,16,11,.94) 0%,rgba(6,16,11,.72) 46%,rgba(6,16,11,.2) 100%)"></div>
+    <div style="position:relative;width:100%;max-width:1560px;margin:0 auto;padding:110px 40px">
+      <div data-reveal="true" style="opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1);max-width:640px;display:flex;flex-direction:column;gap:24px">
+        <div style="display:flex;align-items:center;gap:12px">
+          <span style="padding:6px 12px;border:1px solid #e8b44b;color:#e8b44b;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.24em;text-transform:uppercase">In production &middot; UE 5.8</span>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:rgba(238,243,238,.5)">Title 02</span>
+        </div>
+        <h2 style="margin:0;font-family:'Archivo Black',sans-serif;font-size:clamp(40px,5.4vw,86px);line-height:.9;letter-spacing:-.035em;text-transform:uppercase">Eucalyptus<br />Edge</h2>
+        <p style="margin:0;padding-left:20px;border-left:2px solid #e8b44b;font-size:17px;line-height:1.6;color:rgba(238,243,238,.7);font-style:italic;max-width:52ch">Verdantia &mdash; a continent of eucalyptus forests, crystal caverns, frozen ridges, bamboo coastlines and sunbaked outback, where animal civilisations have grown up around a shared respect for the wild.</p>
+        <p style="margin:0;font-size:18px;line-height:1.64;color:rgba(238,243,238,.78);text-wrap:pretty">A stylised 3D weapon-based arena fighter. Australian animal champions duel across Verdantia &mdash; light, medium and heavy attacks, blocking, parrying and dodging in full 3D movement, with Edge Energy abilities and ring-out victories.</p>
+        <ul style="margin:0;padding:0;list-style:none;display:grid;gap:1px;background:rgba(238,243,238,.14);border:1px solid rgba(238,243,238,.14)">
+          <sc-for list="{{ edgeFeatures }}" as="feat" hint-placeholder-count="4">
+            <li style="background:rgba(6,16,11,.82);padding:16px 18px;display:flex;gap:16px;align-items:baseline">
+              <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#e8b44b;letter-spacing:.16em">{{ feat.no }}</span>
+              <span style="font-size:16px;color:rgba(238,243,238,.86)">{{ feat.text }}</span>
+            </li>
+          </sc-for>
+        </ul>
+        <a href="eucalyptus-edge.html" style="align-self:flex-start;padding:15px 28px;background:#e8b44b;color:#07130d;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;clip-path:polygon(10px 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%,0 10px)" style-hover="background:#f7cf74">Enter Verdantia</a>
+      </div>
+    </div>
+  </div>
+  <div style="background:#0a1610;border-top:1px solid rgba(238,243,238,.1)">
+    <div style="max-width:1560px;margin:0 auto;padding:28px 40px;display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:thin;mask-image:linear-gradient(to right,transparent,#000 3%,#000 97%,transparent)">
+      <sc-for list="{{ champions }}" as="champ" hint-placeholder-count="6">
+        <figure style="margin:0;flex:0 0 190px;border:1px solid rgba(238,243,238,.12);background:#06100b;position:relative;overflow:hidden;scroll-snap-align:start">
+          <img src="{{ champ.src }}" alt="{{ champ.name }}" style="display:block;width:100%;aspect-ratio:4/5;object-fit:contain" />
+          <figcaption style="position:absolute;left:0;right:0;bottom:0;padding:24px 12px 10px;background:linear-gradient(transparent,rgba(6,16,11,.95));font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase">{{ champ.name }}</figcaption>
+        </figure>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section id="faefera" style="position:relative;padding:0;background:#07130d">
+  <div style="position:relative;overflow:hidden">
+    <img src="Images/faefera/faefera_world_panorama.png" alt="Faefera world panorama" style="display:block;width:100%;height:min(72vh,760px);object-fit:cover" />
+    <div style="position:absolute;inset:0;background:linear-gradient(to top,#07130d 2%,rgba(7,19,13,.55) 40%,rgba(7,19,13,.1) 100%)"></div>
+    <div style="position:absolute;left:0;right:0;bottom:0;max-width:1560px;margin:0 auto;padding:0 40px 54px">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px">
+        <span style="padding:6px 12px;border:1px solid rgba(238,243,238,.4);color:#eef3ee;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.24em;text-transform:uppercase">Pre-alpha &middot; Godot 4.7.1</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:rgba(238,243,238,.55)">Title 03</span>
+      </div>
+      <h2 style="margin:0;font-family:'Archivo Black',sans-serif;font-size:clamp(44px,6vw,96px);line-height:.9;letter-spacing:-.035em;text-transform:uppercase">Faefera</h2>
+    </div>
+  </div>
+  <div data-reveal="true" style="opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1);max-width:1560px;margin:0 auto;padding:56px 40px 100px;display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:56px;align-items:start">
+    <div style="display:flex;flex-direction:column;gap:22px">
+      <p style="margin:0;font-size:19px;line-height:1.64;color:rgba(238,243,238,.8);text-wrap:pretty">A cozy PC fantasy adventure about hidden eggs, magical baby companions, building, crafting, gardening, trading, and exploring one connected world &mdash; from deep caverns to floating islands.</p>
+      <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:rgba(238,243,238,.12);border:1px solid rgba(238,243,238,.12)">
+        <sc-for list="{{ faeferaPillars }}" as="pillar" hint-placeholder-count="4">
+          <div style="background:#0a1610;padding:20px">
+            <div style="font-family:'Archivo Black',sans-serif;font-size:15px;letter-spacing:-.01em;text-transform:uppercase;color:#e8b44b">{{ pillar.title }}</div>
+            <div style="margin-top:8px;font-size:15px;line-height:1.5;color:rgba(238,243,238,.7)">{{ pillar.text }}</div>
+          </div>
+        </sc-for>
+      </div>
+      <a href="faefera.html" style="align-self:flex-start;padding:15px 28px;border:1px solid rgba(238,243,238,.28);color:#eef3ee;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase" style-hover="border-color:#e8b44b;color:#e8b44b">Discover Faefera</a>
+    </div>
+    <div style="display:grid;gap:12px">
+      <figure style="margin:0;border:1px solid rgba(238,243,238,.12);background:#0a1610;overflow:hidden">
+        <img src="Images/faefera/faefera_gameplay_concept.png" alt="Faefera gameplay concept" style="display:block;width:100%;aspect-ratio:16/9;object-fit:cover" />
+      </figure>
+      <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px">
+        <figure style="margin:0;position:relative;border:1px solid rgba(238,243,238,.12);background:radial-gradient(80% 70% at 50% 40%,#123021,#08150e 70%);overflow:hidden;display:grid;place-items:center">
+          <img src="Images/faefera/faefera_mosslet.png" alt="Mosslet companion" style="display:block;width:100%;aspect-ratio:1/1;object-fit:contain;padding:10%;box-sizing:border-box" />
+          <figcaption style="position:absolute;left:0;right:0;bottom:0;padding:10px 12px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(238,243,238,.7);background:linear-gradient(transparent,rgba(6,16,11,.92) 60%)">Mosslet</figcaption>
+        </figure>
+        <figure style="margin:0;position:relative;border:1px solid rgba(238,243,238,.12);background:radial-gradient(80% 70% at 50% 40%,#123021,#08150e 70%);overflow:hidden;display:grid;place-items:center">
+          <img src="Images/faefera/burrowkin_hatch_7.png" alt="Burrowkin hatchling" style="display:block;width:100%;aspect-ratio:1/1;object-fit:contain;padding:12%;box-sizing:border-box" />
+          <figcaption style="position:absolute;left:0;right:0;bottom:0;padding:10px 12px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(238,243,238,.7);background:linear-gradient(transparent,rgba(6,16,11,.92) 60%)">Burrowkin hatchling</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="studio" style="position:relative;background:#06100b;border-top:1px solid rgba(232,180,75,.16)">
+  <div data-reveal="true" style="opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1);max-width:1560px;margin:0 auto;padding:104px 40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:72px;align-items:start">
+    <div>
+      <img src="Images/verdant_phoenix_crest_emblem_master.png" alt="" style="width:170px;height:auto;opacity:.9" />
+      <div style="margin-top:28px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:#e8b44b">The studio</div>
+      <h2 style="margin:14px 0 0;font-family:'Archivo Black',sans-serif;font-size:clamp(32px,3.4vw,54px);line-height:.94;letter-spacing:-.03em;text-transform:uppercase">One person,<br />shipping real games</h2>
+      <dl style="margin:34px 0 0;display:grid;gap:1px;background:rgba(238,243,238,.12);border:1px solid rgba(238,243,238,.12)">
+        <sc-for list="{{ facts }}" as="fact" hint-placeholder-count="5">
+          <div style="background:#0a1610;padding:15px 18px;display:flex;justify-content:space-between;gap:20px;align-items:baseline">
+            <dt style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(238,243,238,.5)">{{ fact.k }}</dt>
+            <dd style="margin:0;font-size:15px;text-align:right;color:rgba(238,243,238,.88)">{{ fact.v }}</dd>
+          </div>
+        </sc-for>
+      </dl>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:30px">
+      <p style="margin:0;font-size:21px;line-height:1.58;color:rgba(238,243,238,.82);text-wrap:pretty">PhoenixGold Game Studios is Trevor Hicks, working out of Salt Lake City. Design, code, art direction, audio and release engineering are all done here &mdash; which means nothing ships until it is genuinely finished, because there is no one to hand a half-built feature to.</p>
+      <div style="display:grid;gap:1px;background:rgba(238,243,238,.12);border:1px solid rgba(238,243,238,.12)">
+        <sc-for list="{{ principles }}" as="p" hint-placeholder-count="3">
+          <article style="background:#0a1610;padding:28px 30px;display:grid;grid-template-columns:56px minmax(0,1fr);gap:20px;align-items:start">
+            <span style="font-family:'Archivo Black',sans-serif;font-size:26px;color:rgba(232,180,75,.42)">{{ p.no }}</span>
+            <div>
+              <h3 style="margin:0;font-family:'Archivo Black',sans-serif;font-size:20px;letter-spacing:-.01em;text-transform:uppercase">{{ p.title }}</h3>
+              <p style="margin:10px 0 0;font-size:16px;line-height:1.6;color:rgba(238,243,238,.7);text-wrap:pretty">{{ p.text }}</p>
+            </div>
+          </article>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+</section>
+
+<sc-if value="{{ showRoadmap }}" hint-placeholder-val="{{ true }}">
+<section id="roadmap" style="background:#0a1610;border-top:1px solid rgba(238,243,238,.1)">
+  <div data-reveal="true" style="opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1);max-width:1560px;margin:0 auto;padding:100px 40px">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:#e8b44b">Road ahead</div>
+    <h2 style="margin:14px 0 48px;font-family:'Archivo Black',sans-serif;font-size:clamp(32px,3.6vw,58px);line-height:.94;letter-spacing:-.03em;text-transform:uppercase">Where the studio is now</h2>
+    <ol style="margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px">
+      <sc-for list="{{ roadmap }}" as="step" hint-placeholder-count="3">
+        <li style="background:#06100b;border:1px solid rgba(238,243,238,.12);padding:34px 30px 38px">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:14px">
+            <span style="font-family:'Archivo Black',sans-serif;font-size:44px;color:rgba(232,180,75,.32)">{{ step.no }}</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#7fd48b">{{ step.status }}</span>
+          </div>
+          <h3 style="margin:18px 0 0;font-family:'Archivo Black',sans-serif;font-size:20px;letter-spacing:-.01em;text-transform:uppercase">{{ step.title }}</h3>
+          <p style="margin:12px 0 0;font-size:16px;line-height:1.6;color:rgba(238,243,238,.7);text-wrap:pretty">{{ step.text }}</p>
+        </li>
+      </sc-for>
+    </ol>
+  </div>
+</section>
+</sc-if>
+
+<section style="position:relative;overflow:hidden;border-top:1px solid rgba(232,180,75,.16)">
+  <img src="Images/web/EdgeFestivalColosseum.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.34" />
+  <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(6,16,11,.82),rgba(6,16,11,.94))"></div>
+  <div style="position:relative;max-width:1560px;margin:0 auto;padding:110px 40px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:36px">
+    <div>
+      <h2 style="margin:0;font-family:'Archivo Black',sans-serif;font-size:clamp(32px,4vw,64px);line-height:.94;letter-spacing:-.03em;text-transform:uppercase;max-width:22ch">Follow the studio<br />as the slate grows</h2>
+      <p style="margin:18px 0 0;max-width:52ch;font-size:17px;line-height:1.6;color:rgba(238,243,238,.72)">Wishlists and demo feedback shape what gets built next. Follow PhoenixGold on Steam &mdash; the MegaBlast demo goes to Next Fest in October 2026.</p>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:12px">
+      <a href="https://store.steampowered.com/app/4999100/" target="_blank" rel="noopener" style="padding:17px 32px;background:#e8b44b;color:#07130d;font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;clip-path:polygon(11px 0,100% 0,100% calc(100% - 11px),calc(100% - 11px) 100%,0 100%,0 11px)" style-hover="background:#f7cf74">Wishlist on Steam</a>
+      <a href="https://store.steampowered.com/publisher/phoenixgold" target="_blank" rel="noopener" style="padding:17px 32px;border:1px solid rgba(238,243,238,.3);color:#eef3ee;font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase" style-hover="border-color:#e8b44b;color:#e8b44b">Follow on Steam</a>
+    </div>
+  </div>
+</section>
+
+<footer style="background:#06100b;border-top:1px solid rgba(238,243,238,.12)">
+  <div style="max-width:1560px;margin:0 auto;padding:64px 40px 30px;display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:44px">
+    <div>
+      <div style="display:flex;align-items:center;gap:12px">
+        <img src="Images/Logo2026.png" alt="" style="width:38px;height:38px;object-fit:contain" />
+        <span style="font-family:'Archivo Black',sans-serif;font-size:14px;letter-spacing:.14em;text-transform:uppercase">PhoenixGold Game Studios</span>
+      </div>
+      <p style="margin:16px 0 0;max-width:44ch;font-size:15px;line-height:1.6;color:rgba(238,243,238,.6)">An independent studio in Salt Lake City building colorful, family-friendly games with strong worlds and memorable characters.</p>
+    </div>
+    <div>
+      <h4 style="margin:0 0 14px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#e8b44b">Games</h4>
+      <div style="display:grid;gap:10px;font-size:15px">
+        <a href="faefera.html" style="color:rgba(238,243,238,.7)" style-hover="color:#e8b44b">Faefera</a>
+        <a href="megablast-mayhem.html" style="color:rgba(238,243,238,.7)" style-hover="color:#e8b44b">MegaBlast Mayhem</a>
+        <a href="eucalyptus-edge.html" style="color:rgba(238,243,238,.7)" style-hover="color:#e8b44b">Eucalyptus Edge</a>
+      </div>
+    </div>
+    <div>
+      <h4 style="margin:0 0 14px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#e8b44b">Studio</h4>
+      <div style="display:grid;gap:10px;font-size:15px">
+        <a href="#studio" style="color:rgba(238,243,238,.7)" style-hover="color:#e8b44b">About</a>
+        <a href="#roadmap" style="color:rgba(238,243,238,.7)" style-hover="color:#e8b44b">Road ahead</a>
+        <a href="https://github.com/phoenixgoldz" target="_blank" rel="noopener" style="color:rgba(238,243,238,.7)" style-hover="color:#e8b44b">GitHub</a>
+      </div>
+    </div>
+    <div>
+      <h4 style="margin:0 0 14px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#e8b44b">Help &amp; legal</h4>
+      <div style="display:grid;gap:10px;font-size:15px">
+        <a href="support.html" style="color:rgba(238,243,238,.7)" style-hover="color:#e8b44b">Support</a>
+        <a href="health-warning.html" style="color:rgba(238,243,238,.7)" style-hover="color:#e8b44b">Health &amp; safety</a>
+        <a href="privacy.html" style="color:rgba(238,243,238,.7)" style-hover="color:#e8b44b">Privacy</a>
+        <a href="terms.html" style="color:rgba(238,243,238,.7)" style-hover="color:#e8b44b">Terms</a>
+      </div>
+    </div>
+  </div>
+  <div style="max-width:1560px;margin:0 auto;padding:22px 40px 46px;border-top:1px solid rgba(238,243,238,.1);display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(238,243,238,.42)">
+    <span>&copy; 2026 PhoenixGold Game Studios</span>
+    <span>Faefera&trade;, Eucalyptus Edge&trade; and MegaBlast Mayhem&trade; are trademarks of PhoenixGold Game Studios</span>
+  </div>
+</footer>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;heroMedia&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;trailer video&quot;,&quot;still key art&quot;],&quot;default&quot;:&quot;trailer video&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Hero&quot;},&quot;showRoadmap&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;}}">
+class Component extends DCLogic {
+  componentDidMount() {
+    this._seen = new WeakSet();
+    requestAnimationFrame(() => requestAnimationFrame(() => this._wire()));
+    this._onScroll = () => {
+      const bar = document.querySelector("[data-pg-progress]");
+      if (!bar) return;
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = (max > 0 ? (window.scrollY / max) * 100 : 0) + "%";
+    };
+    window.addEventListener("scroll", this._onScroll, { passive: true });
+    this._onScroll();
+  }
+  componentDidUpdate() { this._wire(); }
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this._onScroll);
+    if (this._io) this._io.disconnect();
+  }
+  _wire() {
+    const calm = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const nodes = Array.from(document.querySelectorAll("[data-reveal]"));
+    const show = el => { el.style.opacity = "1"; el.style.transform = "none"; };
+    if (calm || typeof IntersectionObserver === "undefined") { nodes.forEach(show); return; }
+    if (!this._io) {
+      this._io = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) { show(e.target); this._io.unobserve(e.target); } });
+      }, { rootMargin: "0px 0px -12% 0px", threshold: 0.08 });
+    }
+    nodes.forEach(el => {
+      if (this._seen.has(el)) return;
+      this._seen.add(el);
+      this._io.observe(el);
+    });
+    setTimeout(() => nodes.forEach(el => {
+      const r = el.getBoundingClientRect();
+      if (getComputedStyle(el).opacity === "0" && r.top < window.innerHeight && r.bottom > 0) show(el);
+    }), 2500);
+  }
+  renderVals() {
+    const hero = this.props.heroMedia ?? "trailer video";
+    return {
+      videoHero: hero === "trailer video",
+      stillHero: hero !== "trailer video",
+      showRoadmap: this.props.showRoadmap ?? true,
+      regions: [
+        { name: "Sunbaked Outback", note: "Wide-open spaces with nowhere left to hide", src: "Images/web/bezel_outback_master.jpg" },
+        { name: "Bamboo Harbor", note: "Busy pathways full of ambush opportunities", src: "Images/web/bezel_harbor_master.jpg" },
+        { name: "Crystal Caverns", note: "Tight corridors where every bomb matters", src: "Images/web/bezel_caverns_master.jpg" },
+        { name: "Frostpine Ridge", note: "Frozen terrain where hesitation is costly", src: "Images/web/bezel_frostpine_master.jpg" },
+        { name: "Eucalyptus Summit", note: "Open ridges and sweeping sightlines", src: "Images/web/bezel_summit_master.jpg" }
+      ],
+      mutators: [
+        { name: "Gravity", text: "Pull nearby rivals in before the blast lands." },
+        { name: "Chain", text: "Spawns a surprise quick-fuse bomb." },
+        { name: "Ghost", text: "Hides the explosion until it is too late." },
+        { name: "MegaBlast", text: "Double blast power, straight through crates." }
+      ],
+      powerups: ["Bomb+", "Fire", "MAX", "Speed", "Pierce", "Kick", "Fuse"],
+      edgeFeatures: [
+        { no: "01", text: "Light, medium and heavy attacks with blocking, parrying and dodging" },
+        { no: "02", text: "Full 3D movement across arenas built for ring-out victories" },
+        { no: "03", text: "Edge Energy abilities that turn a losing round around" },
+        { no: "04", text: "Australian animal champions, each with a distinct silhouette and weapon" }
+      ],
+      champions: [
+        { name: "Wren", src: "Images/Eucalyptus Edge_Images/WrenRedesign.png" },
+        { name: "Ripper", src: "Images/Eucalyptus Edge_Images/RipperRedesign.png" },
+        { name: "Atlas", src: "Images/Eucalyptus Edge_Images/AtlusRedesign.png" },
+        { name: "Banjo", src: "Images/Eucalyptus Edge_Images/BanjoRedesign.png" },
+        { name: "Echo", src: "Images/Eucalyptus Edge_Images/EchoRedesign.png" },
+        { name: "Kiri", src: "Images/Eucalyptus Edge_Images/KiriRedesign.png" },
+        { name: "Koda", src: "Images/Eucalyptus Edge_Images/KodaRedesign.png" }
+      ],
+      faeferaPillars: [
+        { title: "Hatch", text: "Find hidden eggs and raise magical baby companions." },
+        { title: "Build", text: "Craft, place and shape a home out of the world's materials." },
+        { title: "Grow", text: "Gardening, gathering and trading across the seasons." },
+        { title: "Explore", text: "One connected world from deep caverns to floating islands." }
+      ],
+      shots: [
+        { name: "Round start \u2014 Crystal Caverns", src: "Images/Megablast_Images/01_walking.png" },
+        { name: "Mid-match, four fighters live", src: "Images/Megablast_Images/02_explosion.png" },
+        { name: "Sudden death closes the arena", src: "Images/Megablast_Images/06_sudden_death.png" },
+        { name: "Koda takes the round", src: "Images/Megablast_Images/03_round_banner.png" },
+        { name: "Match over \u2014 Koda wins", src: "Images/Megablast_Images/04_match_over.png" }
+      ],
+      facts: [
+        { k: "Founded", v: "2026 \u00b7 Salt Lake City, Utah" },
+        { k: "Team", v: "Solo \u2014 design, engineering, art" },
+        { k: "First release", v: "MegaBlast Mayhem \u00b7 29 Oct 2026" },
+        { k: "Playable now", v: "Free MegaBlast demo on Steam" },
+        { k: "In development", v: "Faefera \u00b7 Godot 4.7.1" },
+        { k: "In production", v: "Eucalyptus Edge \u00b7 UE 5.8" }
+      ],
+      principles: [
+        { no: "I", title: "It reads in one frame", text: "A player should know who they are, where they are, and what is about to hit them, without being told." },
+        { no: "II", title: "It feels right on the first input", text: "Movement and impact are tuned before anything is built on top. Feel is not a polish task you get to later." },
+        { no: "III", title: "It has a world worth remembering", text: "A clear visual language, memorable places, and characters that make the world worth returning to." }
+      ],
+      roadmap: [
+        { no: "01", status: "Launching 29 Oct 2026", title: "MegaBlast Mayhem", text: "Steam page live and the free demo is playable now, with Steam Next Fest running 19\u201326 October ahead of launch." },
+        { no: "02", status: "Current milestone", title: "Faefera \u2014 playable demo", text: "Finish the Sunny Meadow demo loop: creature care, building, gathering, gardening, exploration, UI and presentation." },
+        { no: "03", status: "Next", title: "Eucalyptus Edge \u2014 vertical slice", text: "Continue the 3D arena fighter toward a polished combat slice in Unreal Engine 5.8." }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
