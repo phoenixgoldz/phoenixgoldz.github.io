@@ -4,28 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#09172b">
-  <link rel="icon" href="Images/Logo2026.png">
+  <link rel="icon" href="Images/verdant_phoenix_crest_emblem_master.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/pg-system.css?v=themes-20260821">
-  <link rel="stylesheet" href="css/faefera.css?v=faefera-theme-20260821">
-  <title>Faefera — Cozy creature collecting, crafting &amp; exploration</title>
-  <meta name="description" content="Faefera is a family-friendly PC fantasy adventure about discovering hidden eggs, raising magical baby creatures, building, crafting, gardening, and exploring a seamless world. In development at PhoenixGold Game Studios.">
+  <link rel="stylesheet" href="css/faefera.css?v=faefera-keyart-20260903">
+  <title>Faefera — Cozy fantasy sandbox, building &amp; magical companions</title>
+  <meta name="description" content="Faefera is a cozy Windows PC fantasy sandbox in development for Steam: hatch and name magical baby companions, build and remodel a home, garden, craft, dig, and explore a connected world without a traditional combat loop.">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="PhoenixGold Game Studios">
-  <meta property="og:title" content="Faefera — A magical world to build, explore, and care for">
-  <meta property="og:description" content="Discover hidden eggs, raise magical baby companions, build a home and shop, garden, craft, and explore one connected fantasy world.">
+  <meta property="og:title" content="Faefera — Build a home, hatch a companion, explore a connected world">
+  <meta property="og:description" content="A cozy fantasy sandbox about mysterious eggs, magical baby companions, freeform building, digging, gardening, crafting, and exploration.">
   <meta property="og:url" content="https://phoenixgoldz.github.io/faefera.html">
-  <meta property="og:image" content="https://phoenixgoldz.github.io/Images/faefera/faefera_world_panorama.png">
+  <meta property="og:image" content="https://phoenixgoldz.github.io/Images/faefera/Faefera_main.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Faefera">
-  <meta name="twitter:description" content="A cozy fantasy adventure about discovery, creativity, and magical baby creatures.">
-  <meta name="twitter:image" content="https://phoenixgoldz.github.io/Images/faefera/faefera_world_panorama.png">
+  <meta name="twitter:description" content="A cozy fantasy sandbox about building, exploration, and magical baby companions.">
+  <meta name="twitter:image" content="https://phoenixgoldz.github.io/Images/faefera/Faefera_main.png">
   <link rel="stylesheet" href="css/pg-nav.css?v=nav-20260903">
 </head>
 <body data-page="faefera">
 <a class="pg-skip" href="#main">Skip to content</a>
+
 <header class="pg-header" id="pg-header">
   <div class="pg-wrap pg-header-inner">
     <a class="pg-brand" href="index.html">
@@ -38,17 +39,20 @@
       <a href="megablast-mayhem.html" data-nav="megablast">MegaBlast Mayhem</a>
       <a href="eucalyptus-edge.html" data-nav="eucalyptus">Eucalyptus Edge</a>
       <a href="faefera.html" data-nav="faefera">Faefera</a>
-      <a class="pg-btn pg-btn-primary" href="https://store.steampowered.com/app/4999100/Eucalyptus_Edge_MegaBlast_Mayhem/" target="_blank" rel="noopener">MegaBlast on Steam</a>
+      <a class="pg-btn pg-btn-primary" href="https://store.steampowered.com/publisher/phoenixgold" target="_blank" rel="noopener">Follow on Steam</a>
     </nav>
   </div>
   <div class="pg-progress" aria-hidden="true"><span data-pg-progress></span></div>
 </header>
 
 <main id="main">
-  <section class="fae-hero">
-    <div class="fae-hero-art" aria-hidden="true">
-      <img src="Images/faefera/faefera_world_panorama.png" alt="" fetchpriority="high" decoding="async">
-    </div>
+  <section class="fae-hero" aria-label="Faefera key art">
+    <picture class="fae-hero-art">
+      <source media="(max-width: 680px)" srcset="Images/faefera/Faefera_header.png">
+      <img src="Images/faefera/Faefera_main.png"
+           alt="Faefera key art showing a fae adventurer with four magical companions beside a cozy cottage in a bright fantasy meadow"
+           fetchpriority="high" decoding="async">
+    </picture>
     <div class="fae-mote-field" aria-hidden="true">
       <img class="fae-mote mote-a" src="Images/faefera/vfx/mote_03.png" alt="">
       <img class="fae-mote mote-b" src="Images/faefera/vfx/mote_04.png" alt="">
@@ -57,13 +61,15 @@
       <img class="fae-mote mote-e" src="Images/faefera/vfx/mote_08.png" alt="">
       <img class="fae-mote mote-f" src="Images/faefera/vfx/mote_09.png" alt="">
     </div>
+  </section>
 
-    <div class="pg-wrap fae-hero-layout">
-      <div class="fae-hero-inner">
-        <img class="fae-logo" src="Images/faefera/faefera_logo.png" alt="Faefera" width="520">
+  <section class="fae-hero-info" aria-label="Faefera overview">
+    <div class="pg-wrap">
+      <div class="fae-hero-inner pg-reveal">
+        <p class="fae-hero-kicker">Hatch a companion. Build a home. Let the world unfold.</p>
         <p class="pg-lede">
-          A cozy fantasy sandbox about mysterious eggs, magical baby companions, building and remodeling a home,
-          gardening, crafting, digging, and discovering what waits beyond the next hill.
+          A cozy fantasy sandbox about mysterious eggs, magical baby companions, freeform building,
+          crafting discoveries, gardening, digging, and exploring a connected world.
         </p>
 
         <div class="fae-badges" aria-label="Platform and development information">
@@ -76,7 +82,7 @@
         </div>
 
         <div class="fae-actions">
-          <span class="pg-btn pg-btn-primary" aria-label="Faefera demo is currently in development">Demo in development</span>
+          <a class="pg-btn pg-btn-primary" href="https://store.steampowered.com/publisher/phoenixgold" target="_blank" rel="noopener">Follow on Steam</a>
           <a class="pg-btn pg-btn-ghost fae-btn-soft" href="#discover">Explore Faefera</a>
         </div>
         <p class="fae-status">Pre-alpha &middot; Godot 4.7.1 &middot; active development</p>
@@ -195,6 +201,12 @@
     </div>
   </section>
 
+  <section class="fae-keyart-band" aria-label="Faefera promotional key art">
+    <img src="Images/faefera/Faefera_banner.png"
+         alt="Faefera banner art showing the adventurer and four magical companions in a bright fantasy landscape"
+         loading="lazy">
+  </section>
+
   <section class="fae-section fae-paper-blue">
     <div class="pg-wrap fae-split reverse">
       <div class="fae-copy pg-reveal">
@@ -252,6 +264,12 @@
 
   <section class="fae-section fae-dev-section">
     <div class="pg-wrap">
+      <figure class="fae-library-art pg-reveal">
+        <img src="Images/faefera/Faefera_libraryHeader.png"
+             alt="Faefera key art with the adventurer, companions, cottage, mountains, and meadow"
+             loading="lazy">
+      </figure>
+
       <div class="fae-devcard fae-devcard-expanded pg-reveal">
         <div>
           <p class="pg-eyebrow">Development status</p>
@@ -269,7 +287,7 @@
         <div>
           <div class="fae-current-focus" aria-label="Current demo focus">
             <span>Current demo focus</span>
-            <strong>Building coherence, long-session digging, companion polish, localization, controller UX, and Steam Deck readability.</strong>
+            <strong>Building coherence, long-session digging, crafting discovery, companion polish, localization, controller UX, and Steam Deck readability.</strong>
           </div>
           <div class="fae-language-list" aria-label="Languages currently implemented in development">
             <span>EN</span><span>HI</span><span>UR</span><span>ZH-CN</span><span>RU</span><span>ES</span>
@@ -291,24 +309,30 @@
 </main>
 
 <hr class="pg-bunting" aria-hidden="true">
+
 <footer class="pg-footer">
+  <div class="pg-wrap">
     <div class="pg-footer-grid">
       <div>
         <a class="pg-brand" href="index.html">
           <img src="Images/verdant_phoenix_crest_emblem_master.png" alt="" width="40" height="40">
           <span>PhoenixGold Game Studios</span>
         </a>
-        <p class="pg-footer-blurb">An independent studio in Salt Lake City building colorful, family-friendly games with strong worlds and memorable characters.</p>
+        <p class="pg-body" style="margin-top:.9rem;font-size:var(--pg-t-sm)">
+          An independent studio in Salt Lake City building colorful, family-friendly games with strong worlds and memorable characters.
+        </p>
       </div>
+
       <div>
         <h4>Games</h4>
         <ul>
+          <li><a href="faefera.html">Faefera</a></li>
           <li><a href="megablast-mayhem.html">MegaBlast Mayhem</a></li>
           <li><a href="eucalyptus-edge.html">Eucalyptus Edge</a></li>
-          <li><a href="faefera.html">Faefera</a></li>
           <li><a href="https://store.steampowered.com/app/4999100/Eucalyptus_Edge_MegaBlast_Mayhem/" target="_blank" rel="noopener">MegaBlast on Steam</a></li>
         </ul>
       </div>
+
       <div>
         <h4>Studio</h4>
         <ul>
@@ -318,8 +342,9 @@
           <li><a href="https://github.com/phoenixgoldz" target="_blank" rel="noopener">GitHub</a></li>
         </ul>
       </div>
+
       <div>
-        <h4>Help &amp; legal</h4>
+        <h4>Help &amp; Legal</h4>
         <ul>
           <li><a href="support.html">Support</a></li>
           <li><a href="health-warning.html">Health &amp; Safety</a></li>
@@ -328,11 +353,14 @@
         </ul>
       </div>
     </div>
+
     <div class="pg-colophon">
-      <span>&copy; <span id="current-year">2026</span> PhoenixGold Game Studios. All rights reserved.</span>
-      <span>Faefera, Eucalyptus Edge and MegaBlast Mayhem are projects of PhoenixGold Game Studios</span>
+      <span>&copy; 2026 PhoenixGold Game Studios. All rights reserved.</span>
+      <span>Faefera, Eucalyptus Edge, and MegaBlast Mayhem are projects of PhoenixGold Game Studios.</span>
     </div>
-  </footer>
+  </div>
+</footer>
+
 <script src="js/pg-site.js" defer></script>
 <script src="js/pg-nav.js" defer></script>
 </body>
