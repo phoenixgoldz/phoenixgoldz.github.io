@@ -1,6 +1,6 @@
 /* ============================================================
-   Studio home page. Layers on css/pg-system.css and adds only
-   what this page needs. Nothing here redefines a shared token.
+   PhoenixGold home page — MegaBlast Mayhem focused edition
+   Public slate: MegaBlast Mayhem + Padmara Expansion only.
    ============================================================ */
 
 .pg-skip {
@@ -10,43 +10,47 @@
 }
 .pg-skip:focus { left: 0; }
 
-/* ---- hero -----------------------------------------------------
-   The art sits behind a heavy green wash so the type always wins.
-   The lantern is a single radial light anchored where the eye
-   lands first, top-left of the headline. */
+/* ---- hero ---------------------------------------------------- */
 .home-hero {
   position: relative;
-  min-height: min(94vh, 900px);
-  display: flex; align-items: center;
-  padding-block: 9rem 5rem;
+  min-height: min(94vh, 940px);
+  display: flex;
+  align-items: center;
+  padding-block: 8.5rem 5rem;
   overflow: hidden;
   isolation: isolate;
 }
-.home-hero-art { position: absolute; inset: 0; z-index: -2; }
-.home-hero-art img { width: 100%; height: 100%; object-fit: cover; object-position: center 28%; }
-.home-hero::after {
-  content: ""; position: absolute; inset: 0; z-index: -1;
+.home-hero-art { position: absolute; inset: 0; z-index: -3; }
+.home-hero-art img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center;
+  filter: saturate(1.07) contrast(1.03);
+}
+.home-hero-shade {
+  position: absolute; inset: 0; z-index: -2; pointer-events: none;
   background:
-    linear-gradient(105deg, var(--pg-night) 12%, color-mix(in srgb, var(--pg-night) 72%, transparent) 52%, transparent 88%),
-    linear-gradient(180deg, color-mix(in srgb, var(--pg-night) 55%, transparent), var(--pg-night) 96%);
+    linear-gradient(90deg, rgba(4,16,11,.93) 0%, rgba(4,16,11,.69) 42%, rgba(4,16,11,.22) 76%, rgba(4,16,11,.35) 100%),
+    linear-gradient(180deg, rgba(4,16,11,.16) 0%, rgba(4,16,11,.28) 52%, #04100b 100%);
 }
-.home-lantern {
-  position: absolute; z-index: -1;
-  left: clamp(-6rem, 4vw, 6rem); top: 24%;
-  width: min(46rem, 80vw); aspect-ratio: 1;
-  background: radial-gradient(circle, rgba(242,210,124,.19), rgba(242,210,124,.07) 42%, transparent 68%);
-  animation: lantern 7s ease-in-out infinite alternate;
-  pointer-events: none;
+.home-hero::after {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background:
+    radial-gradient(circle at 18% 28%, rgba(242,210,124,.18), transparent 25rem),
+    radial-gradient(circle at 78% 44%, rgba(198,58,75,.13), transparent 32rem);
 }
-@keyframes lantern { from { opacity: .78; transform: scale(.97); } to { opacity: 1; transform: scale(1.03); } }
+.home-hero-inner { position: relative; width: 100%; }
+.home-hero-logo {
+  display: block;
+  width: min(780px, 90vw);
+  max-height: 360px;
+  object-fit: contain;
+  object-position: left center;
+  margin-top: .8rem;
+  filter: drop-shadow(0 18px 42px rgba(0,0,0,.5));
+}
+.home-hero .pg-lede { margin-top: 1.35rem; max-width: 760px; color: #f7f1e2; text-shadow: 0 2px 18px rgba(0,0,0,.55); }
+.home-actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2rem; }
 
-.home-hero-inner { position: relative; }
-.home-verdantia { color: var(--pg-lantern); display: block; }
-.home-hero .pg-lede { margin-top: 1.4rem; }
-.home-actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2.2rem; }
-
-/* Page-load sequence: eyebrow, headline, lede, buttons. One
-   orchestrated moment rather than effects scattered down the page. */
+/* Page-load sequence */
 .home-in { opacity: 0; transform: translateY(16px); animation: home-rise .8s cubic-bezier(.2,.7,.3,1) forwards; }
 .home-in-1 { animation-delay: .05s; }
 .home-in-2 { animation-delay: .18s; }
@@ -55,92 +59,116 @@
 @keyframes home-rise { to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) {
   .home-in { opacity: 1; transform: none; animation: none; }
-  .home-lantern { animation: none; }
 }
 
-/* ---- slate ---------------------------------------------------- */
-.home-slate { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--pg-gap-md); margin-top: var(--pg-gap-lg); }
-.home-title {
-  border: 1px solid var(--pg-line); border-radius: var(--pg-radius-lg);
-  background: var(--pg-canopy); overflow: hidden;
-  display: flex; flex-direction: column;
-  transition: border-color .25s ease, transform .25s ease, box-shadow .25s ease;
-}
-.home-title:hover { border-color: var(--pg-line-lit); transform: translateY(-4px); box-shadow: var(--pg-shadow); }
-.home-title-media { display: block; aspect-ratio: 16 / 8; overflow: hidden; background: var(--pg-bark); }
-.home-title-media img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s cubic-bezier(.2,.7,.3,1); }
-.home-title:hover .home-title-media img { transform: scale(1.04); }
-.home-title-body { padding: var(--pg-gap-md); display: flex; flex-direction: column; gap: .7rem; flex: 1; }
-.home-title-body h3 { margin: 0; }
-.home-title-body p { margin: 0; flex: 1; }
-
-.home-stage {
-  align-self: flex-start;
-  font-size: var(--pg-t-xs); font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
-  padding: .3rem .7rem; border-radius: 999px;
-  border: 1px solid var(--pg-line); color: var(--pg-muted);
-}
-.home-stage-live { color: var(--pg-night); background: var(--pg-leaf); border-color: transparent; }
-/* The active project gets the lantern, not the leaf: gold is the studio's
-   "this is where the work is" signal, used in exactly one place per page. */
-.home-stage-active { color: var(--pg-night); background: var(--pg-lantern); border-color: transparent; }
-.home-slate-note { margin: .6rem 0 0; }
-
-.home-link { font-weight: 700; font-size: var(--pg-t-sm); color: var(--pg-lantern); letter-spacing: .03em; }
-.home-link span { display: inline-block; transition: transform .2s ease; }
-.home-link:hover span { transform: translateX(4px); }
-
-/* ---- vision --------------------------------------------------- */
-.home-vision { background: var(--pg-canopy); border-block: 1px solid var(--pg-line); }
-.home-principles { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--pg-gap-md); margin-top: var(--pg-gap-lg); }
-.home-principles article { padding: var(--pg-gap-md); border-left: 2px solid var(--pg-gold); background: rgba(255,255,255,.02); border-radius: 0 var(--pg-radius) var(--pg-radius) 0; }
-.home-principles h3 { margin: 0 0 .5rem; color: var(--pg-lantern); }
-.home-principles p { margin: 0; }
-
-/* ---- road ahead -----------------------------------------------
-   Numbered, because this genuinely is a sequence: the demo ships
-   before the full game, which ships before the flagship. */
-.home-road { list-style: none; margin: var(--pg-gap-lg) 0 0; padding: 0; display: grid; gap: var(--pg-gap-md); counter-reset: none; }
-.home-road li { display: grid; grid-template-columns: auto 1fr; gap: var(--pg-gap-md); align-items: start; padding-bottom: var(--pg-gap-md); border-bottom: 1px solid var(--pg-line); }
-.home-road li:last-child { border-bottom: 0; padding-bottom: 0; }
-.home-road-n { font-family: var(--pg-display); font-size: var(--pg-t-xl); color: var(--pg-gold); opacity: .55; line-height: 1; }
-.home-road h3 { margin: 0 0 .35rem; }
-.home-road p { margin: 0; }
-
-@media (max-width: 900px) {
-  .home-slate, .home-principles { grid-template-columns: 1fr; }
-}
-@media (max-width: 560px) {
-  .home-hero { min-height: auto; padding-block: 7.5rem 4rem; }
-  .home-road li { grid-template-columns: 1fr; gap: .5rem; }
-}
-
-/* ---- studio -----------------------------------------------------
-   Prose on the left, hard facts on the right. A solo studio is more
-   convincing with specifics than with adjectives. */
+/* ---- studio -------------------------------------------------- */
 .home-studio { display: grid; grid-template-columns: 1.35fr 1fr; gap: var(--pg-gap-lg); align-items: start; }
 .home-studio h2 { margin: .4rem 0 1rem; }
-.home-facts { margin: 0; padding: var(--pg-gap-md); border: 1px solid var(--pg-line); border-radius: var(--pg-radius-lg); background: var(--pg-canopy); display: grid; gap: 0; }
+.home-facts {
+  margin: 0; padding: var(--pg-gap-md); border: 1px solid var(--pg-line);
+  border-radius: var(--pg-radius-lg); background: var(--pg-canopy); display: grid;
+}
 .home-facts > div { display: grid; gap: .15rem; padding-block: .85rem; border-bottom: 1px solid var(--pg-line); }
 .home-facts > div:last-child { border-bottom: 0; padding-bottom: 0; }
 .home-facts > div:first-child { padding-top: 0; }
 .home-facts dt { font-size: var(--pg-t-xs); font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--pg-gold); }
 .home-facts dd { margin: 0; color: var(--pg-text); font-size: var(--pg-t-sm); }
-@media (max-width: 900px) { .home-studio { grid-template-columns: 1fr; } }
 
-/* The studio page stays PhoenixGold forest/gold, but each game card previews its own identity. */
-.home-slate .home-title:nth-child(1){
-  border-color:rgba(126,205,239,.36);
-  background:linear-gradient(180deg,rgba(16,35,59,.96),rgba(9,23,43,.98));
+/* ---- principles --------------------------------------------- */
+.home-vision { background: var(--pg-canopy); border-block: 1px solid var(--pg-line); }
+.home-principles { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--pg-gap-md); margin-top: var(--pg-gap-lg); }
+.home-principles article {
+  padding: var(--pg-gap-md); border-left: 2px solid var(--pg-gold);
+  background: rgba(255,255,255,.02); border-radius: 0 var(--pg-radius) var(--pg-radius) 0;
 }
-.home-slate .home-title:nth-child(1) .home-link{color:#9edcf2}
-.home-slate .home-title:nth-child(2){
-  border-color:rgba(169,107,255,.34);
-  background:linear-gradient(180deg,rgba(22,17,43,.96),rgba(10,16,32,.98));
+.home-principles h3 { margin: 0 0 .5rem; color: var(--pg-lantern); }
+.home-principles p { margin: 0; }
+
+/* ---- two-product slate -------------------------------------- */
+.home-slate-note { margin: .6rem 0 0; max-width: 780px; }
+.home-slate {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.25rem, 3vw, 2.25rem);
+  margin-top: var(--pg-gap-lg);
 }
-.home-slate .home-title:nth-child(2) .home-link{color:#86d9b5}
-.home-slate .home-title:nth-child(3){
-  border-color:rgba(255,120,28,.38);
-  background:linear-gradient(180deg,rgba(46,10,22,.96),rgba(25,6,13,.98));
+.home-title {
+  min-width: 0;
+  border: 1px solid var(--pg-line);
+  border-radius: var(--pg-radius-lg);
+  background: var(--pg-canopy);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: minmax(180px, .72fr) minmax(0, 1.28fr);
+  min-height: 520px;
+  transition: border-color .25s ease, transform .25s ease, box-shadow .25s ease;
 }
-.home-slate .home-title:nth-child(3) .home-link{color:#ffd75a}
+.home-title:hover { border-color: var(--pg-line-lit); transform: translateY(-4px); box-shadow: var(--pg-shadow); }
+.home-title-media { display: block; overflow: hidden; background: #12070d; min-height: 100%; }
+.home-title-media img { width: 100%; height: 100%; object-fit: cover; transition: transform .55s cubic-bezier(.2,.7,.3,1), filter .55s ease; }
+.home-title-media-poster img { object-position: center top; }
+.home-title:hover .home-title-media img { transform: scale(1.035); filter: saturate(1.07); }
+.home-title-body { padding: clamp(1.35rem, 3vw, 2.25rem); display: flex; flex-direction: column; gap: .85rem; min-width: 0; }
+.home-title-body h3 { margin: 0; color: var(--pg-lantern); font-size: clamp(1.6rem, 2.5vw, 2.55rem); overflow-wrap: anywhere; }
+.home-title-body p { margin: 0; flex: 1; }
+.home-stage {
+  align-self: flex-start; font-size: var(--pg-t-xs); font-weight: 700;
+  letter-spacing: .14em; text-transform: uppercase; padding: .3rem .7rem;
+  border-radius: 999px; border: 1px solid var(--pg-line); color: var(--pg-muted);
+}
+.home-stage-live { color: var(--pg-night); background: var(--pg-leaf); border-color: transparent; }
+.home-stage-expansion { color: #fff5d7; background: #7b183b; border-color: rgba(242,210,124,.55); }
+.home-link { font-weight: 700; font-size: var(--pg-t-sm); color: var(--pg-lantern); letter-spacing: .03em; }
+.home-link span { display: inline-block; transition: transform .2s ease; }
+.home-link:hover span { transform: translateX(4px); }
+.home-link-steam { color: #9acb3d; }
+.home-card-actions { display: flex; flex-wrap: wrap; gap: .9rem 1.25rem; margin-top: .35rem; }
+.home-title-megablast {
+  border-color: rgba(255,120,28,.38);
+  background: linear-gradient(145deg, rgba(43,8,18,.98), rgba(17,7,13,.98));
+}
+.home-title-padmara {
+  border-color: rgba(242,210,124,.4);
+  background: linear-gradient(145deg, rgba(63,7,42,.98), rgba(26,7,24,.98));
+}
+
+.home-compare {
+  margin: clamp(2rem, 5vw, 4rem) auto 0;
+  border: 1px solid var(--pg-line);
+  border-radius: var(--pg-radius-lg);
+  overflow: hidden;
+  background: #07100c;
+  box-shadow: var(--pg-shadow);
+}
+.home-compare img { width: 100%; height: auto; }
+
+/* ---- current focus ------------------------------------------ */
+.home-road { list-style: none; margin: var(--pg-gap-lg) 0 0; padding: 0; display: grid; gap: var(--pg-gap-md); }
+.home-road-two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.home-road li {
+  display: grid; grid-template-columns: auto 1fr; gap: var(--pg-gap-md); align-items: start;
+  padding: var(--pg-gap-md); border: 1px solid var(--pg-line); border-radius: var(--pg-radius-lg);
+  background: rgba(255,255,255,.025);
+}
+.home-road-n { font-family: var(--pg-display); font-size: var(--pg-t-xl); color: var(--pg-gold); opacity: .65; line-height: 1; }
+.home-road h3 { margin: 0 0 .35rem; color: var(--pg-lantern); }
+.home-road p { margin: 0; }
+
+@media (max-width: 1080px) {
+  .home-title { grid-template-columns: 1fr; min-height: 0; }
+  .home-title-media { min-height: 0; aspect-ratio: 16 / 10; }
+  .home-title-media-poster img { object-position: center 30%; }
+}
+@media (max-width: 900px) {
+  .home-studio, .home-slate, .home-principles, .home-road-two { grid-template-columns: 1fr; }
+  .home-hero-logo { width: min(690px, 94vw); }
+}
+@media (max-width: 560px) {
+  .home-hero { min-height: auto; padding-block: 7rem 3.5rem; }
+  .home-hero-shade { background: linear-gradient(180deg, rgba(4,16,11,.48), rgba(4,16,11,.86) 58%, #04100b 100%); }
+  .home-hero-logo { width: 100%; max-height: 260px; object-position: center; }
+  .home-actions { align-items: stretch; }
+  .home-actions .pg-btn { width: 100%; }
+  .home-road li { grid-template-columns: 1fr; gap: .5rem; }
+  .home-title-media { aspect-ratio: 4 / 3; }
+}
