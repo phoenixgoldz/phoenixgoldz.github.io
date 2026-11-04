@@ -2,8 +2,7 @@
    PhoenixGold Game Studios — shared design system
    ------------------------------------------------------------
    ONE source of truth for colour, type, rhythm and the shared
-   chrome. Page stylesheets (megablast-mayhem.css,
-   eucalyptus-edge.css) layer on top and must not redefine
+   chrome. The MegaBlast Mayhem page stylesheet layers on top and must not redefine
    anything declared here.
 
    DIRECTION — "the festival at night"
@@ -252,7 +251,7 @@ h3.pg-display { font-size: var(--pg-t-lg); }
    Shared structure stays consistent, but each part of the site
    gets its own atmosphere. The studio home keeps the forest/gold
    PhoenixGold palette; legal/support pages no longer inherit it.
-   Game pages provide their own stronger palettes in their game CSS.
+   The MegaBlast Mayhem page uses its own festival palette.
    ============================================================ */
 body[data-page="legal"] {
   --pg-night: #0b0e16;
