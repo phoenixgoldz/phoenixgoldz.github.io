@@ -1,9 +1,8 @@
-name: Deploy Website to GitHub Pages
+name: Deploy PhoenixGold to GitHub Pages
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -17,24 +16,23 @@ concurrency:
 
 jobs:
   deploy:
+    runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-
-    runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v5
-
-      - name: Configure GitHub Pages
-        uses: actions/configure-pages@v6
-
-      - name: Upload static website
-        uses: actions/upload-pages-artifact@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v4
         with:
-          path: .
-
-      - name: Deploy to GitHub Pages
+          node-version: '22'
+      - name: Build the static website
+        run: npm run build
+      - name: Verify pages, navigation, links, and release details
+        run: npm run check
+      - uses: actions/configure-pages@v6
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: dist
+      - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v5

@@ -1,0 +1,50 @@
+{
+  "bamboo-harbor": {
+    "width": 1200,
+    "height": 675
+  },
+  "crystal-caverns": {
+    "width": 783,
+    "height": 153
+  },
+  "eucalyptus-summit": {
+    "width": 1200,
+    "height": 848
+  },
+  "frostpine-ridge": {
+    "width": 1200,
+    "height": 850
+  },
+  "lotus-gardens": {
+    "width": 1600,
+    "height": 900
+  },
+  "megablast-key-art": {
+    "width": 1232,
+    "height": 706
+  },
+  "padmara-gameplay": {
+    "width": 1600,
+    "height": 900
+  },
+  "padmara-key-art": {
+    "width": 1232,
+    "height": 706
+  },
+  "padmara-poster": {
+    "width": 650,
+    "height": 779
+  },
+  "padmara-world": {
+    "width": 1920,
+    "height": 620
+  },
+  "studio-emblem": {
+    "width": 160,
+    "height": 160
+  },
+  "sunbaked-outback": {
+    "width": 1200,
+    "height": 675
+  }
+}

@@ -1,24 +1,14 @@
 {
-  "name": "phoenixgoldz.github.io",
-  "version": "2.0.0",
+  "name": "phoenixgold-game-studios",
+  "version": "3.0.0",
   "private": true,
-  "description": "Official PhoenixGold Game Studios portfolio featuring Eucalyptus Edge and software engineering projects.",
-  "author": "Trevor Hicks",
-  "license": "MIT",
+  "type": "module",
+  "description": "The official PhoenixGold Game Studios website for MegaBlast Mayhem and the Padmara expansion.",
+  "engines": { "node": ">=22" },
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "keywords": [
-    "portfolio",
-    "phoenixgold",
-    "eucalyptus-edge",
-    "unreal-engine",
-    "nextjs",
-    "tailwind",
-    "typescript",
-    "game-development"
-  ]
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/check.mjs",
+    "dev": "node scripts/serve.mjs",
+    "preview": "node scripts/serve.mjs"
+  }
 }
