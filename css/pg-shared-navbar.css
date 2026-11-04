@@ -1,0 +1,77 @@
+/* Shared two-link navigation for PhoenixGold's MegaBlast Mayhem website.
+   Used without modification on index.html and megablast-mayhem.html. */
+.pgx-header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 2500;
+  background: rgba(12, 12, 15, .96);
+  border-bottom: 1px solid rgba(226, 177, 77, .36);
+  box-shadow: 0 6px 26px rgba(0, 0, 0, .28);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+}
+.pgx-nav-shell {
+  width: min(calc(100% - 2.5rem), 1320px);
+  min-height: 76px;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.pgx-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: .7rem;
+  color: #f7edda;
+  font: 800 clamp(.94rem, 1.25vw, 1.13rem)/1.2 "Inter", "Archivo", system-ui, sans-serif;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.pgx-brand img { width: 42px; height: 42px; object-fit: contain; flex-shrink: 0; }
+.pgx-links { display: flex; align-items: center; gap: clamp(.2rem, 1.4vw, .9rem); }
+.pgx-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 42px;
+  padding: .65rem .9rem;
+  border-radius: 9px;
+  color: #e7dfd1;
+  font: 800 .86rem/1.2 "Inter", "Archivo", system-ui, sans-serif;
+  letter-spacing: .045em;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color .2s ease, background-color .2s ease;
+}
+.pgx-links a:hover, .pgx-links a[aria-current="page"] {
+  color: #ffd47c;
+  background: rgba(255, 205, 104, .12);
+}
+.pgx-header a:focus-visible { outline: 2px solid #ffd47c; outline-offset: 3px; }
+.pgx-skip {
+  position: fixed;
+  z-index: 2600;
+  left: .75rem;
+  top: -5rem;
+  padding: .65rem 1rem;
+  background: #f2d27c;
+  color: #15110a;
+  border-radius: 0 0 8px 8px;
+  font-weight: 800;
+}
+.pgx-skip:focus { top: 0; }
+@media (max-width: 680px) {
+  .pgx-nav-shell { width: calc(100% - 1.25rem); min-height: 68px; gap: .5rem; }
+  .pgx-brand span { display: none; }
+  .pgx-brand img { width: 38px; height: 38px; }
+  .pgx-links { gap: .1rem; }
+  .pgx-links a { font-size: .75rem; padding: .65rem .55rem; }
+}
+@media (max-width: 360px) {
+  .pgx-nav-shell { width: calc(100% - .8rem); }
+  .pgx-links a { font-size: .71rem; padding-inline: .36rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pgx-links a { transition: none; }
+}
