@@ -1,48 +1,34 @@
-/* ============================================================
-   PhoenixGold static build.
-   Assembles pages/*.html with the shared partials into the repo
-   root, which is what GitHub Pages serves.
-
-       node build.mjs
-
-   Why this exists: the three pages each carried their own copy of
-   the nav and footer. Adding one link meant editing three files
-   and forgetting one. Now the chrome lives in partials/ and is
-   injected at build time — no framework, no client-side fetch, no
-   flash of missing header, and the output is still plain static
-   HTML that Pages can serve directly.
-   ============================================================ */
-import { readFileSync, writeFileSync, readdirSync, mkdirSync, existsSync } from 'node:fs';
+/* PhoenixGold static website builder.
+   Source pages live in pages/. All published root HTML is generated from them.
+   Shared navigation/footer live in partials/ and must never be copied by hand.
+   Run: node build.mjs
+*/
+import { readFileSync, writeFileSync, readdirSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 
-const partial = (n) => readFileSync(join('partials', n + '.html'), 'utf8').trimEnd();
+const partial = (name) => readFileSync(join('partials', name + '.html'), 'utf8').trimEnd();
 const parts = { head: partial('head'), header: partial('header'), footer: partial('footer') };
-
-if (!existsSync('pages')) {
-  console.error('No pages/ directory — nothing to build.');
-  process.exit(1);
-}
+if (!existsSync('pages')) throw new Error('pages/ directory is missing');
 
 let built = 0;
 for (const file of readdirSync('pages').filter((f) => f.endsWith('.html'))) {
   let html = readFileSync(join('pages', file), 'utf8');
-  let missing = [];
-
-  for (const [name, value] of Object.entries(parts)) {
+  for (const name of ['header', 'footer']) {
     const token = `<!--#include ${name}-->`;
-    if (!html.includes(token)) { missing.push(token); continue; }
-    html = html.split(token).join(value);
+    if (!html.includes(token)) throw new Error(`${file}: missing ${token}`);
   }
-
-  // Fail loudly. A page that silently loses its header is worse than
-  // a build that stops and says which token is missing.
-  if (missing.length) {
-    console.error(`FAIL ${file}: missing ${missing.join(', ')}`);
-    process.exit(1);
+  for (const [name, value] of Object.entries(parts)) {
+    html = html.split(`<!--#include ${name}-->`).join(value);
   }
-
+  // Only the active primary link gets aria-current. Support/legal pages have neither selected.
+  const current = file === 'index.html' ? 'index' : file === 'megablast-mayhem.html' ? 'megablast' : null;
+  if (current) {
+    const nav = `data-nav="${current}"`;
+    if (!html.includes(nav)) throw new Error(`${file}: active nav link not found`);
+    html = html.replace(nav, `${nav} aria-current="page"`);
+  }
   writeFileSync(file, html);
   console.log(`  built ${file}`);
   built++;
 }
-console.log(`\n${built} page(s) built from partials/`);
+console.log(`\n${built} page(s) built with shared header and footer.`);
