@@ -48,7 +48,21 @@ export async function build() {
   }
   const urls = pages.filter((page) => !page.noindex).map((page) => `${site.url}/${page.file === 'index.html' ? '' : page.file}`);
   writeFileSync(join(output, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((url) => `  <url><loc>${url}</loc></url>`).join('\n')}\n</urlset>\n`);
-  console.log(`Built ${pages.length} pages, ${aliases.length} legacy routes, and shared assets into dist/.`);
+  // GitHub Pages can publish main / (root) without running our Node build.
+  // Commit this generated copy as well as dist/ so both publishing modes work.
+  // These two directories contain generated content only; source lives in src/ and public/.
+  for (const entry of readdirSync(output, { withFileTypes: true })) {
+    const destination = resolve(root, entry.name);
+    if (relative(root, destination) !== entry.name) throw new Error('Unexpected root publication target');
+    if (entry.isDirectory()) {
+      if (!['assets', 'pages'].includes(entry.name)) throw new Error(`Unexpected published directory: ${entry.name}`);
+      rmSync(destination, { recursive: true, force: true });
+    } else if (!/^(?:[\w.-]+\.html|sitemap\.xml|robots\.txt|\.nojekyll)$/.test(entry.name)) {
+      throw new Error(`Unexpected published file: ${entry.name}`);
+    }
+    cpSync(join(output, entry.name), destination, { recursive: true });
+  }
+  console.log(`Built ${pages.length} pages, ${aliases.length} legacy routes, and shared assets into dist/ and the repository root.`);
   return pages;
 }
 

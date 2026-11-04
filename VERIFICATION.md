@@ -3,6 +3,7 @@
 Verified on November 4, 2026 using local Chrome, Playwright, axe-core, and the project's structural checks.
 
 - Build passes with Node.js; no production dependencies or install step.
+- The build also writes a real `index.html`, assets, all pages, and `.nojekyll` at the repository root for branch-based GitHub Pages. Checks compare every root publication file against `dist/`, preventing a README landing page.
 - 25 generated pages and legacy routes share the same header and footer.
 - 716 local link and asset references pass validation.
 - All 10 primary page types were checked at 320, 375, 768, 1024, 1440, and 1920 pixels: no horizontal overflow or broken local resources.

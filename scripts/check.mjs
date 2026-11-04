@@ -6,6 +6,14 @@ const root = fileURLToPath(new URL('../dist/', import.meta.url));
 const walk = (folder) => readdirSync(folder, { withFileTypes: true }).flatMap((entry) => entry.isDirectory() ? walk(join(folder, entry.name)) : [join(folder, entry.name)]);
 assert(existsSync(root), 'Run npm run build first');
 const files = walk(root);
+const repository = resolve(root, '..');
+assert(existsSync(join(repository, 'index.html')), 'Repository-root homepage missing: branch-based GitHub Pages would show the README');
+assert(existsSync(join(repository, '.nojekyll')), 'Repository-root .nojekyll missing');
+for (const file of files) {
+  const published = join(repository, file.slice(root.length));
+  assert(existsSync(published), `Missing repository-root publication file: ${published}`);
+  assert.deepEqual(readFileSync(published), readFileSync(file), `Repository-root publication differs from dist: ${published}`);
+}
 const pages = files.filter((file) => file.endsWith('.html'));
 const contents = new Map(pages.map((file) => [file, readFileSync(file, 'utf8')]));
 let commonHeader;
@@ -59,4 +67,5 @@ assert(padmara.includes('Requires MegaBlast Mayhem on Steam'), 'DLC base-game re
 assert(readFileSync(join(root, 'assets/css/site.css'), 'utf8').includes('prefers-reduced-motion'), 'Reduced motion support missing');
 const bytes = files.reduce((total, file) => total + statSync(file).size, 0);
 console.log(`PASS: ${pages.length} pages share one header/footer; ${checkedLinks} local links/assets checked; metadata, release dates, DLC requirement, and name exclusion verified.`);
+console.log(`PASS: All ${files.length} published files also match the repository-root copy, including index.html and .nojekyll.`);
 console.log(`Deployment: ${(bytes / 1024 / 1024).toFixed(2)} MB. No production dependencies.`);

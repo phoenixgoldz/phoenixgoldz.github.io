@@ -17,12 +17,12 @@ npm run build
 npm run check
 ```
 
-The complete deployable site is in `dist/`. You can also open `dist/index.html` directly for an offline preview; image, font, navigation, and stylesheet URLs are relative.
+The complete deployable site is in `dist/` and is also generated at the repository root. This keeps GitHub Pages working when it publishes directly from `main` / `(root)`. You can open `index.html` or `dist/index.html` directly for an offline preview; image, font, navigation, and stylesheet URLs are relative.
 
 ## Organization
 
 ```text
-.github/workflows/deploy.yml  Build, check, and deploy to GitHub Pages
+.github/workflows/deploy.yml  Optional, manually triggered Actions deployment
 src/
   config.mjs                 Steam links and release dates
   layout.mjs                 Shared document, navigation, and footer
@@ -42,9 +42,12 @@ scripts/
   check.mjs                  Navigation, links, images, and content checks
   serve.mjs                  Local preview server
 dist/                        Generated, ready-to-publish site
+index.html, *.html           Generated root pages for branch-based GitHub Pages
+assets/, pages/              Generated root assets and legacy redirects
+.nojekyll                    Serve generated HTML without a Jekyll theme
 ```
 
-Keep navigation changes in `src/config.mjs` and `src/layout.mjs`. Every page, including policy pages and legacy routes, is generated with the same header and footer. Never edit generated HTML in `dist/` directly.
+Keep navigation changes in `src/config.mjs` and `src/layout.mjs`. Every page, including policy pages and legacy routes, is generated with the same header and footer. Edit `src/` or `public/`, then rebuild. Do not edit generated HTML, `assets/`, `pages/`, or `dist/` directly. The check command verifies that the root publication matches every file in `dist/`.
 
 ## Release information
 
@@ -69,9 +72,9 @@ Existing privacy, terms, and health policy wording has been retained with shared
 
 ## Deploy
 
-The GitHub Actions workflow builds the project, runs the structural checks, and publishes **only `dist/`** on pushes to `main` or manual dispatch. In the repository's **Settings → Pages**, choose **GitHub Actions** as the source. Source templates, scripts, and unused legacy assets are not part of the published artifact.
+The current site uses GitHub Pages **Deploy from a branch → main → /(root)**. Run `npm run build` and `npm run check`, then commit and push the changes, including generated root pages, `assets/`, `pages/`, and `.nojekyll`. GitHub's normal Pages deployment publishes them automatically. A root `index.html` ensures visitors see the website instead of a themed README.
 
-This local redesign does not commit, push, or trigger a deployment. Review the changes and use your normal Git workflow when ready.
+The optional Actions workflow can also build, check, and deploy **only `dist/`**. It runs manually from the Actions tab; it does not compete with normal branch publishing on every push. To use it, set the Pages publishing source to **GitHub Actions** first. The branch deployment does not depend on that optional workflow.
 
 Old root routes (`Studio.dc.html`, `eucalyptus-edge.html`, and `faefera.html`) and previous `/pages/` addresses redirect to the updated site. A shared 404 page handles missing addresses on GitHub Pages.
 
